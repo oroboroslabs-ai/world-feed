@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="theme-color" content="#000000">
-    <title>Kaiju — Oroboros AGI</title>
-    <meta name="description" content="Kaiju — Oroboros Labs AGI. Powered by DeepSeek Flash latest.">
-    <meta property="og:title" content="Kaiju — Oroboros AGI">
-    <meta property="og:description" content="Oroboros Labs AGI frontend, powered by DeepSeek Flash latest.">
+    <title>DeepSeek 5M4 — WorldFeed Intelligence</title>
+    <meta name="description" content="DeepSeek 5M4 — WorldFeed intelligence layer for research, verification, drafting, and analysis.">
+    <meta property="og:title" content="DeepSeek 5M4 — WorldFeed Intelligence">
+    <meta property="og:description" content="WorldFeed intelligence frontend powered by DeepSeek 5M4.">
     <meta property="og:type" content="website">
 
-    <link rel="icon" type="image/svg+xml" href="assets/img/oroboros-logo.svg">
+    <link rel="icon" type="image/png" href="assets/img/deepseek-logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Archivo:wght@200;300;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
-        /* === Oroboros Kaiju — additive layer, style.css untouched === */
+        /* === DeepSeek 5M4 — additive layer, style.css untouched === */
 
         /* glass + transparency on existing layout */
         .rail-card {
@@ -63,7 +63,7 @@
             100% { transform: translate3d(-26px, 18px, 0); opacity: 1; }
         }
 
-        /* brand: Oroboros logo + KAIJU wordmark */
+        /* brand: DeepSeek logo + 5M4 wordmark */
         .brand-stack {
             display: flex;
             flex-direction: column;
@@ -402,10 +402,10 @@
     <aside class="side">
         <a class="brand" href="./">
             <div class="brand-stack">
-                <img src="assets/img/oroboros-logo.svg" alt="Oroboros Labs">
-                <div class="brand-name">KAIJU</div>
+                <img src="assets/img/deepseek-logo.png" alt="DeepSeek 5M4">
+                <div class="brand-name">5M4</div>
             </div>
-            <div class="brand-tag">OROBOROS LABS · AGI FRONTEND</div>
+            <div class="brand-tag">WORLDFEED · DEEPSEEK INTELLIGENCE</div>
         </a>
         <div class="nav-item active"><span class="nav-icon">◈</span> Chat</div>
         <div class="nav-item" id="navHistory"><span class="nav-icon">⌘</span> History</div>
@@ -413,8 +413,8 @@
         <div class="nav-item"><a href="./" style="color:inherit;text-decoration:none;display:contents"><span class="nav-icon">⌬</span> WorldFeed</a></div>
         <button class="submit-cta" id="newChatBtn">+ New Chat</button>
         <div class="side-foot">
-            Powered by DeepSeek Flash latest.<br>
-            Local key only — never leaves your browser.<br><br>
+            Powered by DeepSeek 5M4.<br>
+            Routed through the private WorldFeed model bridge.<br><br>
             <a href="./">WorldFeed</a> · <a href="LICENSE">MIT</a>
         </div>
     </aside>
@@ -423,28 +423,28 @@
     <main class="main">
         <div class="chat-wrap">
             <header class="chat-header">
-                <div class="chat-title"><span class="pulse"></span> KAIJU · ONLINE</div>
-                <div class="chat-model-badge"><span class="dot"></span><span>KAIJU FLASH · FREE</span></div>
+                <div class="chat-title"><span class="pulse"></span> DEEPSEEK 5M4 · ONLINE</div>
+                <div class="chat-model-badge"><span class="dot"></span><span>5M4 · WORLDFEED</span></div>
             </header>
 
             <div class="chat-stream" id="chatStream">
                 <div class="msg assistant">
-                    <div class="msg-avatar"><img src="assets/img/oroboros-logo.svg" alt=""></div>
+                    <div class="msg-avatar"><img src="assets/img/deepseek-logo.png" alt=""></div>
                     <div>
-                        <div class="msg-meta">KAIJU</div>
-                        <div class="msg-bubble">Hi — I'm Kaiju, the Oroboros AGI. Free to use, part of the WorldFeed platform.
+                        <div class="msg-meta">DEEPSEEK 5M4</div>
+                        <div class="msg-bubble">Hi — I'm DeepSeek 5M4, the WorldFeed intelligence layer.
 
-Ask me anything: research, code, drafting, analysis. Responses appear right here, on the page.</div>
+Ask me for research, verification, drafting, coding, source analysis, or a clean summary of what the feed is tracking.</div>
                     </div>
                 </div>
             </div>
 
             <div class="chat-input-wrap">
                 <div class="chat-input-row">
-                    <textarea class="chat-input" id="chatInput" placeholder="Message Kaiju…  (Shift+Enter for newline)" rows="1"></textarea>
+                    <textarea class="chat-input" id="chatInput" placeholder="Message DeepSeek 5M4...  (Shift+Enter for newline)" rows="1"></textarea>
                     <button class="chat-send" id="sendBtn">Send</button>
                 </div>
-                <div class="chat-hint">Free · Powered by Kaiju Network · No signup, no tracking</div>
+                <div class="chat-hint">Powered by DeepSeek 5M4 · No public model picker · No tracking</div>
             </div>
         </div>
     </main>
@@ -453,8 +453,8 @@ Ask me anything: research, code, drafting, analysis. Responses appear right here
     <aside class="rail">
         <div class="rail-card">
             <h3>Status</h3>
-            <div class="kj-stat"><span>Network</span><span class="kj-stat-val">KAIJU FREE</span></div>
-            <div class="kj-stat"><span>Model</span><span class="kj-stat-val" id="railModel">flash</span></div>
+            <div class="kj-stat"><span>Network</span><span class="kj-stat-val">WORLDFEED</span></div>
+            <div class="kj-stat"><span>Model</span><span class="kj-stat-val" id="railModel">5M4 Fast</span></div>
             <div class="kj-stat"><span>Cost</span><span class="kj-stat-val" style="color:#4ade80">$0.00</span></div>
             <div class="kj-stat"><span>Status</span><span class="kj-stat-val" id="railStatus">idle</span></div>
         </div>
@@ -463,8 +463,8 @@ Ask me anything: research, code, drafting, analysis. Responses appear right here
             <h3>Basic</h3>
             <label style="display:block;font-size:10px;letter-spacing:2px;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-bottom:6px;">Mode</label>
             <select class="kj-model-select" id="modelSelect">
-                <option value="flash">Flash · fast</option>
-                <option value="deep">Deep · reasoning</option>
+                <option value="flash">5M4 Fast</option>
+                <option value="deep">5M4 Deep</option>
             </select>
             <button class="kj-save" id="clearBtn" style="background:transparent;border-color:rgba(255,255,255,0.15);color:rgba(255,255,255,0.75)">CLEAR CHAT</button>
         </div>
@@ -472,7 +472,7 @@ Ask me anything: research, code, drafting, analysis. Responses appear right here
         <div class="rail-card">
             <h3>About</h3>
             <div style="font-size:12px; color:rgba(255,255,255,0.65); line-height:1.6;">
-                Kaiju is the Oroboros Labs AGI — free, included with the WorldFeed platform. No signup, no key, no tracking. Just ask.
+                DeepSeek 5M4 is the WorldFeed intelligence layer for source review, research synthesis, coding, and verification support.
             </div>
         </div>
     </aside>
@@ -483,13 +483,14 @@ Ask me anything: research, code, drafting, analysis. Responses appear right here
 (function () {
     'use strict';
 
-    // Kaiju Free Network — public relay (Pollinations). No key, no signup.
-    const KAIJU_ENDPOINT = 'https://text.pollinations.ai/openai';
+    // DeepSeek 5M4 through the same private model bridge used by the chat portal.
+    const DEEPSEEK_ENDPOINT = 'https://deepseek-research-chat.vercel.app/api/chat';
     const MODE_TO_MODEL = {
-        flash: 'openai',           // fast Kaiju Flash
-        deep:  'deepseek-reasoning' // deeper reasoning when chosen
+        flash: 'deepseek-v4-pro-5M4:latest',
+        deep:  'deepseek-v4-pro-5M4:latest'
     };
-    const MODE_STORE = 'kaiju.mode';
+    const MODE_STORE = 'deepseek5m4.mode';
+    const MODE_LABEL = { flash: '5M4 Fast', deep: '5M4 Deep' };
 
     const stream = document.getElementById('chatStream');
     const input = document.getElementById('chatInput');
@@ -503,7 +504,7 @@ Ask me anything: research, code, drafting, analysis. Responses appear right here
     let history = [];
     let mode = localStorage.getItem(MODE_STORE) || 'flash';
     modelSelect.value = mode;
-    railModel.textContent = mode;
+    railModel.textContent = MODE_LABEL[mode] || '5M4 Fast';
 
     function escapeHtml(s) {
         const d = document.createElement('div');
@@ -531,9 +532,9 @@ Ask me anything: research, code, drafting, analysis. Responses appear right here
         const wrap = document.createElement('div');
         wrap.className = 'msg ' + role + (opts.thinking ? ' thinking' : '');
         const avatar = role === 'assistant'
-            ? '<div class="msg-avatar"><img src="assets/img/oroboros-logo.svg" alt=""></div>'
+            ? '<div class="msg-avatar"><img src="assets/img/deepseek-logo.png" alt=""></div>'
             : '<div class="msg-avatar">YOU</div>';
-        const meta = role === 'assistant' ? 'KAIJU' : 'YOU';
+        const meta = role === 'assistant' ? 'DEEPSEEK 5M4' : 'YOU';
         const body = opts.thinking
             ? '<div class="msg-bubble"><span></span><span></span><span></span></div>'
             : '<div class="msg-bubble">' + renderMd(content) + '</div>';
@@ -552,13 +553,13 @@ Ask me anything: research, code, drafting, analysis. Responses appear right here
     modelSelect.addEventListener('change', () => {
         mode = modelSelect.value;
         localStorage.setItem(MODE_STORE, mode);
-        railModel.textContent = mode;
+        railModel.textContent = MODE_LABEL[mode] || '5M4 Fast';
     });
 
     clearBtn.addEventListener('click', () => {
         history = [];
         stream.innerHTML = '';
-        appendMsg('assistant', 'Fresh thread. What next?');
+        appendMsg('assistant', 'Fresh DeepSeek 5M4 thread. What should we look at?');
     });
     newChatBtn.addEventListener('click', () => clearBtn.click());
 
@@ -573,42 +574,46 @@ Ask me anything: research, code, drafting, analysis. Responses appear right here
         const model = MODE_TO_MODEL[mode] || MODE_TO_MODEL.flash;
 
         try {
-            const res = await fetch(KAIJU_ENDPOINT, {
+            const res = await fetch(DEEPSEEK_ENDPOINT, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     model,
+                    stream: false,
+                    keep_alive: '24h',
+                    options: {
+                        num_ctx: 8192,
+                        num_predict: mode === 'deep' ? 3072 : 1536,
+                        temperature: mode === 'deep' ? 0.35 : 0.25
+                    },
                     messages: [
-                        { role: 'system', content: 'You are Kaiju, the Oroboros Labs AGI assistant. Direct, useful, well-grounded. Reply in clean markdown when helpful (code fences for code). Never reveal your underlying provider — you are simply Kaiju.' },
+                        { role: 'system', content: 'You are DeepSeek 5M4, the WorldFeed intelligence layer. Be direct, useful, source-aware, and concise unless the user asks for depth. For news or research, separate verified facts from inference. Reply in clean markdown when helpful.' },
                         ...history
-                    ],
-                    seed: Math.floor(Math.random() * 1e9),
-                    private: true,
-                    referrer: 'oroboros-worldfeed'
+                    ]
                 })
             });
             if (!res.ok) {
                 const errText = await res.text();
                 throw new Error('Network ' + res.status + ' — ' + errText.slice(0, 160));
             }
-            // Pollinations returns either OpenAI-style JSON or plain text. Handle both.
+            // Vercel bridge returns Ollama-style JSON; keep OpenAI/plain text fallbacks.
             const ct = res.headers.get('content-type') || '';
             let reply = '';
             if (ct.includes('application/json')) {
                 const data = await res.json();
-                reply = (data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content)
-                     || data.message
+                reply = (data.message && data.message.content)
+                     || (data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content)
                      || data.content
                      || JSON.stringify(data).slice(0, 400);
             } else {
                 reply = (await res.text()).trim();
             }
-            if (!reply) reply = '(empty response — try again)';
+            if (!reply) reply = '(empty response - try again)';
             history.push({ role: 'assistant', content: reply });
             updateBubble(thinkingNode, reply);
             railStatus.textContent = 'idle';
         } catch (e) {
-            updateBubble(thinkingNode, '⚠ ' + e.message + '\n\nTry again, or switch mode in the right rail.');
+            updateBubble(thinkingNode, 'Unable to reach DeepSeek 5M4 right now: ' + e.message + '\n\nTry again, or switch mode in the right rail.');
             railStatus.textContent = 'error';
         } finally {
             sendBtn.disabled = false;

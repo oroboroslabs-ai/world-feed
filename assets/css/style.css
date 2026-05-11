@@ -526,6 +526,47 @@ a:hover { color: var(--hi); }
     letter-spacing: 0.5px;
 }
 
+.rail-video-item {
+    display: grid;
+    grid-template-columns: 112px 1fr;
+    gap: 12px;
+    align-items: center;
+}
+.rail-video-thumb {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: linear-gradient(135deg, #121218, #050507);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+.rail-video-thumb::after {
+    content: "PLAY";
+    position: absolute;
+    inset: auto 8px 7px auto;
+    padding: 3px 6px;
+    border-radius: 4px;
+    background: rgba(0,0,0,0.74);
+    border: 1px solid rgba(255,255,255,0.18);
+    color: #fff;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+.rail-video-title {
+    font-size: 15px;
+    line-height: 1.25;
+    color: var(--fg);
+}
+.rail-video-source {
+    font-size: 11px;
+    color: var(--fg-dim);
+    margin-top: 6px;
+    letter-spacing: 0.5px;
+}
+
 .principle {
     display: grid;
     grid-template-columns: 16px 1fr;

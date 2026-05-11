@@ -1,1094 +1,1556 @@
 {
-  "updatedAt": "2026-04-26T18:46:55.120Z",
-  "sourcesTried": 18,
-  "itemCount": 60,
+  "updatedAt": "2026-05-11T22:22:30.167Z",
+  "sourcesTried": 19,
+  "itemCount": 75,
+  "videoCount": 15,
+  "focus": "underreported-public-interest",
   "items": [
     {
+      "id": "sudan-health-crisis",
       "tier": 5,
       "cats": [
-        "new"
+        "new",
+        "verified",
+        "developing"
       ],
-      "title": "4/26: Sunday Morning",
-      "body": "Hosted by Jane Pauley. Featured: America's adversarial relationship with Cuba; singer-songwriter Kacey Musgraves; Rep. Jim Clyburn; reviving a Welsh soccer town; tree lovers; artist Jenny Saville; and rescuing Venus fly traps.",
-      "summary": "Hosted by Jane Pauley. Featured: America's adversarial relationship with Cuba; singer-songwriter Kacey Musgraves; Rep. Jim Clyburn; reviving a Welsh soccer town; tree lovers; artist Jenny Saville; and rescuing Venus fly traps.",
+      "title": "Sudan's war enters a fourth year with the world's largest humanitarian crisis still underfunded",
+      "body": "WHO reports 34 million people needing aid in Sudan, 21 million lacking health services, repeated attacks on health care, and disease outbreaks across multiple states.",
+      "summary": "Sudan remains the largest humanitarian and health crisis in the world.",
       "sources": [
-        "CBS News"
+        "WHO",
+        "IPC",
+        "UN agencies"
       ],
-      "type": "story",
-      "minutesAgo": 0,
-      "location": "wire",
-      "imageUrl": "",
-      "videoUrl": "",
-      "link": "https://www.cbsnews.com/video/042626-sunday-morning/",
-      "hasFullText": false
-    },
-    {
-      "tier": 4,
-      "cats": [
-        "new"
-      ],
-      "title": "Video shows deadly highway bombing in Colombia",
-      "body": "",
-      "summary": "",
-      "sources": [
-        "CNN (video)"
-      ],
-      "type": "video",
+      "type": "document",
       "minutesAgo": 12,
-      "location": "wire",
-      "imageUrl": "https://i3.ytimg.com/vi/FSSgDC2OR-Y/hqdefault.jpg",
-      "videoUrl": "https://www.youtube.com/shorts/FSSgDC2OR-Y",
-      "link": "https://www.youtube.com/shorts/FSSgDC2OR-Y",
-      "hasFullText": false
-    },
-    {
-      "tier": 5,
-      "cats": [
-        "new",
-        "viral"
-      ],
-      "title": "What to know about the shooting suspect in White House Correspondents dinner",
-      "body": "",
-      "summary": "",
-      "sources": [
-        "AP (video)"
-      ],
-      "type": "video",
-      "minutesAgo": 16,
-      "location": "wire",
-      "imageUrl": "https://i4.ytimg.com/vi/Gr-igw-SC98/hqdefault.jpg",
-      "videoUrl": "https://www.youtube.com/watch?v=Gr-igw-SC98",
-      "link": "https://www.youtube.com/watch?v=Gr-igw-SC98",
-      "hasFullText": false
-    },
-    {
-      "tier": 4,
-      "cats": [
-        "new",
-        "viral"
-      ],
-      "title": "Washington residents react to shooting at White House Correspondents' dinner",
-      "body": "",
-      "summary": "",
-      "sources": [
-        "NBC News (video)"
-      ],
-      "type": "video",
-      "minutesAgo": 20,
-      "location": "wire",
-      "imageUrl": "https://i2.ytimg.com/vi/YijQG_OK7y4/hqdefault.jpg",
-      "videoUrl": "https://www.youtube.com/shorts/YijQG_OK7y4",
-      "link": "https://www.youtube.com/shorts/YijQG_OK7y4",
-      "hasFullText": false
-    },
-    {
-      "tier": 5,
-      "cats": [
-        "new"
-      ],
-      "title": "Israel and Hezbollah Trade Strikes in Lebanon, as Iran Talks Remain on Hold",
-      "body": "Cease-fires in Lebanon and Iran are on shaky ground, with military attacks flaring and direct talks between Washington and Tehran to end their war stalled.",
-      "summary": "Cease-fires in Lebanon and Iran are on shaky ground, with military attacks flaring and direct talks between Washington and Tehran to end their war stalled.",
-      "sources": [
-        "NYT World"
-      ],
-      "type": "image",
-      "minutesAgo": 21,
-      "location": "wire",
-      "imageUrl": "https://static01.nyt.com/images/2026/04/26/multimedia/26-iran-us-fgzw/26-iran-us-fgzw-mediumSquareAt3X.jpg",
+      "location": "Sudan",
+      "imageUrl": "https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=1200&q=80",
       "videoUrl": "",
-      "link": "https://www.nytimes.com/2026/04/26/world/middleeast/iranian-negotiators-set-to-return-to-pakistan-to-try-to-revive-truce-talks.html",
+      "link": "https://www.who.int/news/item/14-04-2026-after-three-years-of-conflict--sudan-faces-a-deeper-health-crisis",
       "hasFullText": false
     },
     {
-      "tier": 4,
-      "cats": [
-        "new",
-        "viral"
-      ],
-      "title": "Inside the room: How Trump dinner shooting unfolded",
-      "body": "",
-      "summary": "",
-      "sources": [
-        "Sky News (video)"
-      ],
-      "type": "video",
-      "minutesAgo": 28,
-      "location": "wire",
-      "imageUrl": "https://i2.ytimg.com/vi/Ays_xvNMYDM/hqdefault.jpg",
-      "videoUrl": "https://www.youtube.com/watch?v=Ays_xvNMYDM",
-      "link": "https://www.youtube.com/watch?v=Ays_xvNMYDM",
-      "hasFullText": false
-    },
-    {
-      "tier": 4,
-      "cats": [
-        "new"
-      ],
-      "title": "Meet the Press Full Episode — April 26",
-      "body": "",
-      "summary": "",
-      "sources": [
-        "NBC News (video)"
-      ],
-      "type": "video",
-      "minutesAgo": 32,
-      "location": "wire",
-      "imageUrl": "https://i2.ytimg.com/vi/-LEhCTzMpJs/hqdefault.jpg",
-      "videoUrl": "https://www.youtube.com/watch?v=-LEhCTzMpJs",
-      "link": "https://www.youtube.com/watch?v=-LEhCTzMpJs",
-      "hasFullText": false
-    },
-    {
+      "id": "myanmar-2026-needs",
       "tier": 5,
       "cats": [
-        "new"
+        "verified",
+        "docs"
       ],
-      "title": "Iran's foreign minister returns to Pakistan after U.S. envoys' trip canceled",
-      "body": "Iranian Foreign Minister Abbas Araghchi returned to Islamabad on Sunday, where he is expected to participate in talks focused on ending the war with the U.S., Iranian state media reported.",
-      "summary": "Iranian Foreign Minister Abbas Araghchi returned to Islamabad on Sunday, where he is expected to participate in talks focused on ending the war with the U.S., Iranian state media reported.",
+      "title": "Myanmar 2026 humanitarian plan warns 16 million people need life-saving assistance",
+      "body": "The UN in Myanmar says conflict, disaster, displacement, and economic collapse continue to compound needs. Humanitarians warn that Myanmar remains dire and under-funded.",
+      "summary": "Myanmar needs are rising while funding is narrowing.",
       "sources": [
-        "CBS News"
+        "UN Myanmar",
+        "OCHA",
+        "2026 HNRP"
+      ],
+      "type": "document",
+      "minutesAgo": 38,
+      "location": "Myanmar",
+      "imageUrl": "https://images.unsplash.com/photo-1517148815978-75f6acaaf32c?auto=format&fit=crop&w=1200&q=80",
+      "videoUrl": "",
+      "link": "https://myanmar.un.org/en/306830-conflict-fuels-suffering-myanmar-un-publishes-humanitarian-report-forecasting-most-urgent",
+      "hasFullText": false
+    },
+    {
+      "id": "haiti-access-crisis",
+      "tier": 5,
+      "cats": [
+        "new",
+        "verified",
+        "developing"
+      ],
+      "title": "Haiti access crisis keeps aid, food, health, water, and education under severe pressure",
+      "body": "UN reporting says armed groups control large parts of Port-au-Prince, more than 1.4 million people have fled their homes, and six million people need some form of humanitarian assistance in 2026.",
+      "summary": "Haiti remains overlooked and badly underfunded.",
+      "sources": [
+        "UN Geneva",
+        "OCHA",
+        "IOM",
+        "WFP"
       ],
       "type": "story",
-      "minutesAgo": 32,
+      "minutesAgo": 55,
+      "location": "Haiti",
+      "imageUrl": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80",
+      "videoUrl": "",
+      "link": "https://www.ungeneva.org/en/news-media/news/2026/02/115602/keeping-hope-alive-younger-generations-haiti-funding-falters",
+      "hasFullText": false
+    },
+    {
+      "id": "global-food-crises-2026",
+      "tier": 5,
+      "cats": [
+        "verified",
+        "docs"
+      ],
+      "title": "Global Report on Food Crises 2026: acute hunger remains entrenched across protracted crises",
+      "body": "The 2026 GRFC reports severe food insecurity concentrated in protracted crisis contexts, with conflict as the main driver and malnutrition still critical.",
+      "summary": "Food-system data belongs on the front page.",
+      "sources": [
+        "FAO",
+        "WFP",
+        "GNAFC",
+        "FSIN"
+      ],
+      "type": "document",
+      "minutesAgo": 72,
+      "location": "global",
+      "imageUrl": "https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=1200&q=80",
+      "videoUrl": "",
+      "link": "https://www.preventionweb.net/publication/documents-and-publications/2026-global-report-food-crises",
+      "hasFullText": false
+    },
+    {
+      "id": "wfp-global-outlook",
+      "tier": 5,
+      "cats": [
+        "verified",
+        "docs"
+      ],
+      "title": "WFP 2026 outlook: acute hunger remains double pre-pandemic levels",
+      "body": "WFP estimates 318 million people face acute hunger in 2026, with 41 million at Emergency levels or worse. Conflict, climate shocks, and funding shortfalls keep the pressure high.",
+      "summary": "Conflict and climate shocks compound hunger.",
+      "sources": [
+        "World Food Programme"
+      ],
+      "type": "document",
+      "minutesAgo": 96,
+      "location": "global",
+      "imageUrl": "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1200&q=80",
+      "videoUrl": "",
+      "link": "https://www.wfp.org/publications/wfp-global-outlook",
+      "hasFullText": false
+    },
+    {
+      "id": "who-responds-to-hantavirus-outbreak",
+      "tier": 5,
+      "cats": [
+        "developing",
+        "video"
+      ],
+      "title": "#WHO Responds to #Hantavirus Outbreak",
+      "body": "The World Health Organization is supporting the response to a hantavirus outbreak aboard a passenger ship after its arrival in Tenerife, Canary Islands. Passengers and crew are disembarking under health monitoring measures, with specially arranged flights taking them home as WHO teams continue investigations and advise governments on follow-up procedures.",
+      "summary": "The World Health Organization is supporting the response to a hantavirus outbreak aboard a passenger ship after its arrival in Tenerife, Canary Islands. Passengers and crew are disembarking under health monitoring measures, with specially arranged flights taking them home as WHO teams continue investigations and advise governments on follow-up procedures.",
+      "sources": [
+        "United Nations (video)"
+      ],
+      "type": "video",
+      "minutesAgo": 324,
+      "location": "wire",
+      "imageUrl": "https://i2.ytimg.com/vi/5RyThHJoz68/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/shorts/5RyThHJoz68",
+      "link": "https://www.youtube.com/shorts/5RyThHJoz68",
+      "hasFullText": false
+    },
+    {
+      "id": "take-care-of-forests-and-they-will-take-care-of-us",
+      "tier": 5,
+      "cats": [
+        "video"
+      ],
+      "title": "Take care of forests and they will take care of us",
+      "body": "Healing the planet by helping forests tops the agenda at the UN Please let me know if you create a link and I'll send it to colleagues for posting on their Trello board plus of course put it in the notificator and send that Monday morning.",
+      "summary": "Healing the planet by helping forests tops the agenda at the UN Please let me know if you create a link and I'll send it to colleagues for posting on their Trello board plus of course put it in the notificator and send that Monday morning.",
+      "sources": [
+        "United Nations (video)"
+      ],
+      "type": "video",
+      "minutesAgo": 613,
+      "location": "wire",
+      "imageUrl": "https://i3.ytimg.com/vi/NAHIpFzdiuo/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/shorts/NAHIpFzdiuo",
+      "link": "https://www.youtube.com/shorts/NAHIpFzdiuo",
+      "hasFullText": false
+    },
+    {
+      "id": "world-news-in-brief-human-rights-in-mongolia-surge-in-sexual-violence-in-haiti-w",
+      "tier": 5,
+      "cats": [
+        "developing"
+      ],
+      "title": "World News in Brief: Human rights in Mongolia, surge in sexual violence in Haiti, worsening hunger in Afghanistan",
+      "body": "Published Time: 2026-05-11T16:46:18-04:00\n\n# World News in Brief: Human rights in Mongolia, surge in sexual violence in Haiti, worsening hunger in Afghanistan | UN News\n\n[Skip to main content / navigation](https://news.un.org/feed/view/en/story/2026/05/1167484#main-content)\n\n[Welcome to the United Nations](https://www.un.org/en \"United Nations\")\n## Language\n\n*   [العربية](https://news.un.org/ar/)\n*   [中文](https://news.un.org/zh/)\n*   [English](https://news.un.org/en/)\n*   [Français](https://news.un.org/fr/)\n*   [Русский](https://news.un.org/ru/)\n*   [Español](https://news.un.org/es/)\n*   [Português](https://news.un.org/pt/)\n*   [Kiswahili](https://news.un.org/sw/)\n*   Other\n    *   [Hindi हिंदी](https://news.un.org/hi/)\n    *   [Urdu اردو](https://news.un.org/ur/)\n    *   [Global](https://unic.un.org/aroundworld/unics/en/whatWeDo/productsAndServices/websites/index.asp?callPage=home)\n\n\n\n[UN News](https://news.un.org/en/ \"UN News\")\n\n Global perspective Human stories \n\nEnglish Search\n\nSearch\n\n[Advanced Search](https://news.un.org/en/advanced-search)\n\n## Language\n\n*   [العربية](https://news.un.org/ar/)\n*   [中文](https://news.un.org/zh/)\n*   [English](https://news.un.org/en/)\n*   [Français](https://news.un.org/fr/)\n*   [Русский](https://news.un.org/ru/)\n*   [Español](https://news.un.org/es/)\n*   [Português](https://news.un.org/pt/)\n*   [Kiswahili](https://news.un.org/sw/)\n*   Other\n    *   [Hindi हिंदी](https://news.un.org/hi/)\n    *   [Urdu اردو](https://news.un.org/ur/)\n    *   [Global](https://unic.un.org/aroundworld/unics/en/whatWeDo/productsAndServices/websites/index.asp?callPage=home)\n\n[UN News](https://news.un.org/en/ \"UN News\")\n\n Global perspective Human stories \n\n## [Menu](https://news.un.org/feed/view/en/story/2026/05/1167484#CollapsingNavbar)\n\n*   [Home](https://news.un.org/en/ \"Home\")\n    *   [Global](https://news.un.org/en/news/region/global)\n    *   [Africa](https://news.un.org/en/news/region/africa \"Africa\")\n    *   [Americas](https://news.un.org/en/news/region/americas \"Americas\")\n    *   [Asia Pacific](https://news.un.org/en/news/region/asia-pacific \"Asia Pacific\")\n    *   [Middle East](https://news.un.org/en/news/region/middle-east \"Middle East\")\n    *   [Europe](https://news.un.org/en/news/region/europe \"Europe\")\n    *   [UN Art and Gifts](https://news.un.org/en/spotlight/un-art-and-gifts \"UN Art and Gifts\")\n    *   [History Corner](https://news.un.org/en/spotlight/character-sketches-brian-urquhart \"History Corner\")\n\n*   [Topics](https://news.un.org/feed/view/en/story/2026/05/1167484 \"Topics\")\n    *   [Peace and Security](https://news.un.org/en/news/topic/peace-and-security \"Peace and Security\")\n    *   [Economic Development](https://news.un.org/en/news/topic/economic-development \"Economic Development\")\n    *   [Humanitarian Aid](https://news.un.org/en/news/topic/humanitarian-aid \"Humanitarian Aid\")\n    *   [Climate and Environment](https://news.un.org/en/news/topic/climate-change \"Climate and Environment\")\n    *   [Human Rights](https://news.un.org/en/news/topic/human-rights \"Human Rights\")\n    *   [UN Affairs](https://news.un.org/en/news/topic/un-affairs \"UN Affairs\")\n    *   [Women](https://news.un.org/en/news/topic/women \"Women\")\n    *   [Law and Crime Prevention](https://news.un.org/en/news/topic/law-and-crime-prevention \"Law and Crime Prevention\")\n    *   [Health](https://news.un.org/en/news/topic/health \"Health\")\n    *   [Culture and Education](https://news.un.org/en/news/topic/culture-and-education \"Culture and Education\")\n    *   [SDGs](https://news.un.org/en/news/topic/sdgs \"SDGs\")\n    *   [Migrants and Refugees](https://news.un.org/en/news/topic/migrants-and-refugees \"Migrants and Refugees\")\n\n*   [In depth](https://news.un.org/feed/view/en/story/2026/05/1167484 \"In depth\")\n    *   [In Focus](https://news.un.org/en/focus)\n    *   [Interviews](https://news.un.org/en/interviews \"Interviews\")\n    *   [Features](https://news.un.org/en/features \"Features\")\n    *   [Photo Stories](https://news.un.org/en/gallery \"Photo Stories\")\n    *   [UN News Today](https://news.un.org/en/audio-product/un-news-today \"News in Brief\")\n    *   [The Lid is On](https://news.un.org/en/audio-product/podcast-the-lid-is-on \"The L",
+      "summary": "UN human rights chief Volker Türk on Monday praised Mongolia’s recent human rights progress during a visit to the country, which recently adopted the region’s first law protecting human rights defenders.",
+      "sources": [
+        "UN News"
+      ],
+      "type": "image",
+      "minutesAgo": 623,
+      "location": "wire",
+      "imageUrl": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Embargoed/14-03-2024_WFP_Afghanistan-02.jpg/image560x340cropped.jpg",
+      "videoUrl": "",
+      "link": "https://news.un.org/feed/view/en/story/2026/05/1167484",
+      "hasFullText": true
+    },
+    {
+      "id": "storm-displacement-and-hidden-wartime-explosives-deepen-emergency-in-solomon-isl",
+      "tier": 5,
+      "cats": [
+        "developing"
+      ],
+      "title": "Storm, displacement and hidden wartime explosives deepen emergency in Solomon Islands",
+      "body": "More than 150,000 people have been affected by Tropical Cyclone Maila, the latest storm in the Pacific area, which continues to drive what the UN relief coordination office OCHA has described as “significant humanitarian needs” across the Solomon Islands.",
+      "summary": "More than 150,000 people have been affected by Tropical Cyclone Maila, the latest storm in the Pacific area, which continues to drive what the UN relief coordination office OCHA has described as “significant humanitarian needs” across the Solomon Islands.",
+      "sources": [
+        "UN News"
+      ],
+      "type": "image",
+      "minutesAgo": 623,
+      "location": "wire",
+      "imageUrl": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Embargoed/29-05-2025-World-Ocean-Day-Competition-05.jpg/image560x340cropped.jpg",
+      "videoUrl": "",
+      "link": "https://news.un.org/feed/view/en/story/2026/05/1167485",
+      "hasFullText": false
+    },
+    {
+      "id": "middle-east-deadly-weekend-in-lebanon-continued-violence-in-gaza",
+      "tier": 5,
+      "cats": [
+        "developing"
+      ],
+      "title": "Middle East: Deadly weekend in Lebanon, continued violence in Gaza",
+      "body": "Published Time: 2026-05-11T15:49:30-04:00\n\n# Middle East: Deadly weekend in Lebanon, continued violence in Gaza | UN News\n\n[Skip to main content / navigation](https://news.un.org/feed/view/en/story/2026/05/1167483#main-content)\n\n[Welcome to the United Nations](https://www.un.org/en \"United Nations\")\n## Language\n\n*   [العربية](https://news.un.org/ar/)\n*   [中文](https://news.un.org/zh/)\n*   [English](https://news.un.org/en/)\n*   [Français](https://news.un.org/fr/)\n*   [Русский](https://news.un.org/ru/)\n*   [Español](https://news.un.org/es/)\n*   [Português](https://news.un.org/pt/)\n*   [Kiswahili](https://news.un.org/sw/)\n*   Other\n    *   [Hindi हिंदी](https://news.un.org/hi/)\n    *   [Urdu اردو](https://news.un.org/ur/)\n    *   [Global](https://unic.un.org/aroundworld/unics/en/whatWeDo/productsAndServices/websites/index.asp?callPage=home)\n\n\n\n[UN News](https://news.un.org/en/ \"UN News\")\n\n Global perspective Human stories \n\nEnglish Search\n\nSearch\n\n[Advanced Search](https://news.un.org/en/advanced-search)\n\n## Language\n\n*   [العربية](https://news.un.org/ar/)\n*   [中文](https://news.un.org/zh/)\n*   [English](https://news.un.org/en/)\n*   [Français](https://news.un.org/fr/)\n*   [Русский](https://news.un.org/ru/)\n*   [Español](https://news.un.org/es/)\n*   [Português](https://news.un.org/pt/)\n*   [Kiswahili](https://news.un.org/sw/)\n*   Other\n    *   [Hindi हिंदी](https://news.un.org/hi/)\n    *   [Urdu اردو](https://news.un.org/ur/)\n    *   [Global](https://unic.un.org/aroundworld/unics/en/whatWeDo/productsAndServices/websites/index.asp?callPage=home)\n\n[UN News](https://news.un.org/en/ \"UN News\")\n\n Global perspective Human stories \n\n## [Menu](https://news.un.org/feed/view/en/story/2026/05/1167483#CollapsingNavbar)\n\n*   [Home](https://news.un.org/en/ \"Home\")\n    *   [Global](https://news.un.org/en/news/region/global)\n    *   [Africa](https://news.un.org/en/news/region/africa \"Africa\")\n    *   [Americas](https://news.un.org/en/news/region/americas \"Americas\")\n    *   [Asia Pacific](https://news.un.org/en/news/region/asia-pacific \"Asia Pacific\")\n    *   [Middle East](https://news.un.org/en/news/region/middle-east \"Middle East\")\n    *   [Europe](https://news.un.org/en/news/region/europe \"Europe\")\n    *   [UN Art and Gifts](https://news.un.org/en/spotlight/un-art-and-gifts \"UN Art and Gifts\")\n    *   [History Corner](https://news.un.org/en/spotlight/character-sketches-brian-urquhart \"History Corner\")\n\n*   [Topics](https://news.un.org/feed/view/en/story/2026/05/1167483 \"Topics\")\n    *   [Peace and Security](https://news.un.org/en/news/topic/peace-and-security \"Peace and Security\")\n    *   [Economic Development](https://news.un.org/en/news/topic/economic-development \"Economic Development\")\n    *   [Humanitarian Aid](https://news.un.org/en/news/topic/humanitarian-aid \"Humanitarian Aid\")\n    *   [Climate and Environment](https://news.un.org/en/news/topic/climate-change \"Climate and Environment\")\n    *   [Human Rights](https://news.un.org/en/news/topic/human-rights \"Human Rights\")\n    *   [UN Affairs](https://news.un.org/en/news/topic/un-affairs \"UN Affairs\")\n    *   [Women](https://news.un.org/en/news/topic/women \"Women\")\n    *   [Law and Crime Prevention](https://news.un.org/en/news/topic/law-and-crime-prevention \"Law and Crime Prevention\")\n    *   [Health](https://news.un.org/en/news/topic/health \"Health\")\n    *   [Culture and Education](https://news.un.org/en/news/topic/culture-and-education \"Culture and Education\")\n    *   [SDGs](https://news.un.org/en/news/topic/sdgs \"SDGs\")\n    *   [Migrants and Refugees](https://news.un.org/en/news/topic/migrants-and-refugees \"Migrants and Refugees\")\n\n*   [In depth](https://news.un.org/feed/view/en/story/2026/05/1167483 \"In depth\")\n    *   [In Focus](https://news.un.org/en/focus)\n    *   [Interviews](https://news.un.org/en/interviews \"Interviews\")\n    *   [Features](https://news.un.org/en/features \"Features\")\n    *   [Photo Stories](https://news.un.org/en/gallery \"Photo Stories\")\n    *   [UN News Today](https://news.un.org/en/audio-product/un-news-today \"News in Brief\")\n    *   [The Lid is On](https://news.un.org/en/audio-product/podcast-the-lid-is-on \"The Lid is On\")\n    *   [UN Gender Focus](https://ne",
+      "summary": "The humanitarian situation in Lebanon continues to deteriorate despite the ceasefire announced last month with Israel, the United Nations said on Monday.",
+      "sources": [
+        "UN News"
+      ],
+      "type": "image",
+      "minutesAgo": 623,
+      "location": "wire",
+      "imageUrl": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Embargoed/09-04-2026-UNHCR-Lebanon-02.jpg/image560x340cropped.jpg",
+      "videoUrl": "",
+      "link": "https://news.un.org/feed/view/en/story/2026/05/1167483",
+      "hasFullText": true
+    },
+    {
+      "id": "armed-drones-leading-cause-of-civilian-death-in-sudan-war-un-rights-chief",
+      "tier": 5,
+      "cats": [
+        "developing"
+      ],
+      "title": "Armed drones leading cause of civilian death in Sudan war: UN rights chief",
+      "body": "Published Time: 2026-05-11T11:27:43-04:00\n\n# Armed drones leading cause of civilian death in Sudan war: UN rights chief | UN News\n\n[Skip to main content / navigation](https://news.un.org/feed/view/en/story/2026/05/1167479#main-content)\n\n[Welcome to the United Nations](https://www.un.org/en \"United Nations\")\n## Language\n\n*   [العربية](https://news.un.org/ar/)\n*   [中文](https://news.un.org/zh/)\n*   [English](https://news.un.org/en/)\n*   [Français](https://news.un.org/fr/)\n*   [Русский](https://news.un.org/ru/)\n*   [Español](https://news.un.org/es/)\n*   [Português](https://news.un.org/pt/)\n*   [Kiswahili](https://news.un.org/sw/)\n*   Other\n    *   [Hindi हिंदी](https://news.un.org/hi/)\n    *   [Urdu اردو](https://news.un.org/ur/)\n    *   [Global](https://unic.un.org/aroundworld/unics/en/whatWeDo/productsAndServices/websites/index.asp?callPage=home)\n\n\n\n[UN News](https://news.un.org/en/ \"UN News\")\n\n Global perspective Human stories \n\nEnglish Search\n\nSearch\n\n[Advanced Search](https://news.un.org/en/advanced-search)\n\n## Language\n\n*   [العربية](https://news.un.org/ar/)\n*   [中文](https://news.un.org/zh/)\n*   [English](https://news.un.org/en/)\n*   [Français](https://news.un.org/fr/)\n*   [Русский](https://news.un.org/ru/)\n*   [Español](https://news.un.org/es/)\n*   [Português](https://news.un.org/pt/)\n*   [Kiswahili](https://news.un.org/sw/)\n*   Other\n    *   [Hindi हिंदी](https://news.un.org/hi/)\n    *   [Urdu اردو](https://news.un.org/ur/)\n    *   [Global](https://unic.un.org/aroundworld/unics/en/whatWeDo/productsAndServices/websites/index.asp?callPage=home)\n\n[UN News](https://news.un.org/en/ \"UN News\")\n\n Global perspective Human stories \n\n## [Menu](https://news.un.org/feed/view/en/story/2026/05/1167479#CollapsingNavbar)\n\n*   [Home](https://news.un.org/en/ \"Home\")\n    *   [Global](https://news.un.org/en/news/region/global)\n    *   [Africa](https://news.un.org/en/news/region/africa \"Africa\")\n    *   [Americas](https://news.un.org/en/news/region/americas \"Americas\")\n    *   [Asia Pacific](https://news.un.org/en/news/region/asia-pacific \"Asia Pacific\")\n    *   [Middle East](https://news.un.org/en/news/region/middle-east \"Middle East\")\n    *   [Europe](https://news.un.org/en/news/region/europe \"Europe\")\n    *   [UN Art and Gifts](https://news.un.org/en/spotlight/un-art-and-gifts \"UN Art and Gifts\")\n    *   [History Corner](https://news.un.org/en/spotlight/character-sketches-brian-urquhart \"History Corner\")\n\n*   [Topics](https://news.un.org/feed/view/en/story/2026/05/1167479 \"Topics\")\n    *   [Peace and Security](https://news.un.org/en/news/topic/peace-and-security \"Peace and Security\")\n    *   [Economic Development](https://news.un.org/en/news/topic/economic-development \"Economic Development\")\n    *   [Humanitarian Aid](https://news.un.org/en/news/topic/humanitarian-aid \"Humanitarian Aid\")\n    *   [Climate and Environment](https://news.un.org/en/news/topic/climate-change \"Climate and Environment\")\n    *   [Human Rights](https://news.un.org/en/news/topic/human-rights \"Human Rights\")\n    *   [UN Affairs](https://news.un.org/en/news/topic/un-affairs \"UN Affairs\")\n    *   [Women](https://news.un.org/en/news/topic/women \"Women\")\n    *   [Law and Crime Prevention](https://news.un.org/en/news/topic/law-and-crime-prevention \"Law and Crime Prevention\")\n    *   [Health](https://news.un.org/en/news/topic/health \"Health\")\n    *   [Culture and Education](https://news.un.org/en/news/topic/culture-and-education \"Culture and Education\")\n    *   [SDGs](https://news.un.org/en/news/topic/sdgs \"SDGs\")\n    *   [Migrants and Refugees](https://news.un.org/en/news/topic/migrants-and-refugees \"Migrants and Refugees\")\n\n*   [In depth](https://news.un.org/feed/view/en/story/2026/05/1167479 \"In depth\")\n    *   [In Focus](https://news.un.org/en/focus)\n    *   [Interviews](https://news.un.org/en/interviews \"Interviews\")\n    *   [Features](https://news.un.org/en/features \"Features\")\n    *   [Photo Stories](https://news.un.org/en/gallery \"Photo Stories\")\n    *   [UN News Today](https://news.un.org/en/audio-product/un-news-today \"News in Brief\")\n    *   [The Lid is On](https://news.un.org/en/audio-product/podcast-the-lid-is-on \"The Lid is On\")\n    *   [UN Gender Focus](ht",
+      "summary": "Drones caused more than 80 per cent of civilian deaths in Sudan’s war during the first four months of 2026, killing at least 880 people, the UN human rights chief said on Monday, warning that escalating drone warfare could push the conflict into an even deadlier phase.",
+      "sources": [
+        "UN News"
+      ],
+      "type": "image",
+      "minutesAgo": 623,
+      "location": "wire",
+      "imageUrl": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Embargoed/13-04-2026-UNOCHA-Sudan-Darfur-04.jpg/image560x340cropped.jpg",
+      "videoUrl": "",
+      "link": "https://news.un.org/feed/view/en/story/2026/05/1167479",
+      "hasFullText": true
+    },
+    {
+      "id": "who-director-general-dr-tedros-updates-on-passengers-crew-disembarking-from-mv-h",
+      "tier": 5,
+      "cats": [
+        "video"
+      ],
+      "title": "WHO Director-General Dr Tedros updates on passengers & crew disembarking from MV Hondius in Tenerife",
+      "body": "Most passengers and crew of the MV Hondius cruise ship successfully disembarked on the 10th of May 2026. The World Health Organization continues to work closely with experts in all involved countries, as coordination remains key to keeping passengers, crew, responders and communities healthy and safe. #hantavirus",
+      "summary": "Most passengers and crew of the MV Hondius cruise ship successfully disembarked on the 10th of May 2026. The World Health Organization continues to work closely with experts in all involved countries, as coordination remains key to keeping passengers, crew, responders and communities healthy and safe. #hantavirus",
+      "sources": [
+        "WHO (video)"
+      ],
+      "type": "video",
+      "minutesAgo": 928,
+      "location": "wire",
+      "imageUrl": "https://i3.ytimg.com/vi/J9F58xjGRj0/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/shorts/J9F58xjGRj0",
+      "link": "https://www.youtube.com/shorts/J9F58xjGRj0",
+      "hasFullText": false
+    },
+    {
+      "id": "passengers-leave-hantavirus-hit-cruise-ship-in-tenerife-as-who-says-outbreak-not",
+      "tier": 5,
+      "cats": [
+        "developing"
+      ],
+      "title": "Passengers leave hantavirus-hit cruise ship in Tenerife as WHO says outbreak ‘not another COVID’",
+      "body": "Published Time: 2026-05-10T13:13:52-04:00\n\n# Passengers leave hantavirus-hit cruise ship in Tenerife as WHO says outbreak ‘not another COVID’ | UN News\n\n[Skip to main content / navigation](https://news.un.org/feed/view/en/story/2026/05/1167477#main-content)\n\n[Welcome to the United Nations](https://www.un.org/en \"United Nations\")\n## Language\n\n*   [العربية](https://news.un.org/ar/)\n*   [中文](https://news.un.org/zh/)\n*   [English](https://news.un.org/en/)\n*   [Français](https://news.un.org/fr/)\n*   [Русский](https://news.un.org/ru/)\n*   [Español](https://news.un.org/es/)\n*   [Português](https://news.un.org/pt/)\n*   [Kiswahili](https://news.un.org/sw/)\n*   Other\n    *   [Hindi हिंदी](https://news.un.org/hi/)\n    *   [Urdu اردو](https://news.un.org/ur/)\n    *   [Global](https://unic.un.org/aroundworld/unics/en/whatWeDo/productsAndServices/websites/index.asp?callPage=home)\n\n\n\n[UN News](https://news.un.org/en/ \"UN News\")\n\n Global perspective Human stories \n\nEnglish Search\n\nSearch\n\n[Advanced Search](https://news.un.org/en/advanced-search)\n\n## Language\n\n*   [العربية](https://news.un.org/ar/)\n*   [中文](https://news.un.org/zh/)\n*   [English](https://news.un.org/en/)\n*   [Français](https://news.un.org/fr/)\n*   [Русский](https://news.un.org/ru/)\n*   [Español](https://news.un.org/es/)\n*   [Português](https://news.un.org/pt/)\n*   [Kiswahili](https://news.un.org/sw/)\n*   Other\n    *   [Hindi हिंदी](https://news.un.org/hi/)\n    *   [Urdu اردو](https://news.un.org/ur/)\n    *   [Global](https://unic.un.org/aroundworld/unics/en/whatWeDo/productsAndServices/websites/index.asp?callPage=home)\n\n[UN News](https://news.un.org/en/ \"UN News\")\n\n Global perspective Human stories \n\n## [Menu](https://news.un.org/feed/view/en/story/2026/05/1167477#CollapsingNavbar)\n\n*   [Home](https://news.un.org/en/ \"Home\")\n    *   [Global](https://news.un.org/en/news/region/global)\n    *   [Africa](https://news.un.org/en/news/region/africa \"Africa\")\n    *   [Americas](https://news.un.org/en/news/region/americas \"Americas\")\n    *   [Asia Pacific](https://news.un.org/en/news/region/asia-pacific \"Asia Pacific\")\n    *   [Middle East](https://news.un.org/en/news/region/middle-east \"Middle East\")\n    *   [Europe](https://news.un.org/en/news/region/europe \"Europe\")\n    *   [UN Art and Gifts](https://news.un.org/en/spotlight/un-art-and-gifts \"UN Art and Gifts\")\n    *   [History Corner](https://news.un.org/en/spotlight/character-sketches-brian-urquhart \"History Corner\")\n\n*   [Topics](https://news.un.org/feed/view/en/story/2026/05/1167477 \"Topics\")\n    *   [Peace and Security](https://news.un.org/en/news/topic/peace-and-security \"Peace and Security\")\n    *   [Economic Development](https://news.un.org/en/news/topic/economic-development \"Economic Development\")\n    *   [Humanitarian Aid](https://news.un.org/en/news/topic/humanitarian-aid \"Humanitarian Aid\")\n    *   [Climate and Environment](https://news.un.org/en/news/topic/climate-change \"Climate and Environment\")\n    *   [Human Rights](https://news.un.org/en/news/topic/human-rights \"Human Rights\")\n    *   [UN Affairs](https://news.un.org/en/news/topic/un-affairs \"UN Affairs\")\n    *   [Women](https://news.un.org/en/news/topic/women \"Women\")\n    *   [Law and Crime Prevention](https://news.un.org/en/news/topic/law-and-crime-prevention \"Law and Crime Prevention\")\n    *   [Health](https://news.un.org/en/news/topic/health \"Health\")\n    *   [Culture and Education](https://news.un.org/en/news/topic/culture-and-education \"Culture and Education\")\n    *   [SDGs](https://news.un.org/en/news/topic/sdgs \"SDGs\")\n    *   [Migrants and Refugees](https://news.un.org/en/news/topic/migrants-and-refugees \"Migrants and Refugees\")\n\n*   [In depth](https://news.un.org/feed/view/en/story/2026/05/1167477 \"In depth\")\n    *   [In Focus](https://news.un.org/en/focus)\n    *   [Interviews](https://news.un.org/en/interviews \"Interviews\")\n    *   [Features](https://news.un.org/en/features \"Features\")\n    *   [Photo Stories](https://news.un.org/en/gallery \"Photo Stories\")\n    *   [UN News Today](https://news.un.org/en/audio-product/un-news-today \"News in Brief\")\n    *   [The Lid is On](https://news.un.org/en/audio-product/podcast-the-lid-is-on \"The Lid is On\")\n    * ",
+      "summary": "Passengers and crew from the cruise ship MV Hondius began disembarking in Tenerife on Sunday under a tightly coordinated international health operation led by Spanish authorities and the World Health Organization (WHO), as officials sought to reassure the public that the outbreak “is not another COVID.”",
+      "sources": [
+        "UN News"
+      ],
+      "type": "image",
+      "minutesAgo": 2063,
+      "location": "wire",
+      "imageUrl": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Production%20Library/10-05-2026-WHO-Hantavirus-01.jpg/image560x340cropped.jpg",
+      "videoUrl": "",
+      "link": "https://news.un.org/feed/view/en/story/2026/05/1167477",
+      "hasFullText": true
+    },
+    {
+      "id": "your-daily-dose-caring-for-carers",
+      "tier": 5,
+      "cats": [
+        "video"
+      ],
+      "title": "Your daily dose: caring for carers",
+      "body": "Caring for a loved one is one of the most profound things a person can do. But carers are not just a workforce—they deserve care themselves.",
+      "summary": "Caring for a loved one is one of the most profound things a person can do. But carers are not just a workforce—they deserve care themselves.",
+      "sources": [
+        "WHO (video)"
+      ],
+      "type": "video",
+      "minutesAgo": 3814,
+      "location": "wire",
+      "imageUrl": "https://i4.ytimg.com/vi/wHOYemJyAvs/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/shorts/wHOYemJyAvs",
+      "link": "https://www.youtube.com/shorts/wHOYemJyAvs",
+      "hasFullText": false
+    },
+    {
+      "id": "central-african-republic-still-fragile-un-humanitarian-office-car-ocha",
+      "tier": 5,
+      "cats": [
+        "developing",
+        "video"
+      ],
+      "title": "Central African Republic still 'fragile': UN Humanitarian Office #CAR #OCHA",
+      "body": "OCHA Official Returns from her First Visit to The Central African Republic",
+      "summary": "OCHA Official Returns from her First Visit to The Central African Republic",
+      "sources": [
+        "United Nations (video)"
+      ],
+      "type": "video",
+      "minutesAgo": 4440,
+      "location": "wire",
+      "imageUrl": "https://i2.ytimg.com/vi/5W3QgAfaZiM/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/shorts/5W3QgAfaZiM",
+      "link": "https://www.youtube.com/shorts/5W3QgAfaZiM",
+      "hasFullText": false
+    },
+    {
+      "id": "her-grandmother-survived-the-holocaust-in-ukraine",
+      "tier": 5,
+      "cats": [
+        "video"
+      ],
+      "title": "Her Grandmother Survived the Holocaust in #ukraine",
+      "body": "As part of the annual UN remembrance days (8–9 May) dedicated to victims of World War II, this video features the personal testimony of a Roma survivor from Ukraine presented at the United Nations, recounting experiences of the Holocaust in Eastern Europe.",
+      "summary": "As part of the annual UN remembrance days (8–9 May) dedicated to victims of World War II, this video features the personal testimony of a Roma survivor from Ukraine presented at the United Nations, recounting experiences of the Holocaust in Eastern Europe.",
+      "sources": [
+        "United Nations (video)"
+      ],
+      "type": "video",
+      "minutesAgo": 4636,
+      "location": "wire",
+      "imageUrl": "https://i2.ytimg.com/vi/iCTf6Q8kLiA/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/shorts/iCTf6Q8kLiA",
+      "link": "https://www.youtube.com/shorts/iCTf6Q8kLiA",
+      "hasFullText": false
+    },
+    {
+      "id": "world-news-in-brief-haiti-crisis-continues-gaza-west-bank-update-sir-david-atten",
+      "tier": 5,
+      "cats": [
+        "developing"
+      ],
+      "title": "World News in Brief: Haiti crisis continues, Gaza-West Bank update, Sir David Attenborough at 100",
+      "body": "Published Time: 2026-05-08T17:04:34-04:00\n\n# World News in Brief: Haiti crisis continues, Gaza-West Bank update, Sir David Attenborough at 100 | UN News\n\n[Skip to main content / navigation](https://news.un.org/feed/view/en/story/2026/05/1167475#main-content)\n\n[Welcome to the United Nations](https://www.un.org/en \"United Nations\")\n## Language\n\n*   [العربية](https://news.un.org/ar/)\n*   [中文](https://news.un.org/zh/)\n*   [English](https://news.un.org/en/)\n*   [Français](https://news.un.org/fr/)\n*   [Русский](https://news.un.org/ru/)\n*   [Español](https://news.un.org/es/)\n*   [Português](https://news.un.org/pt/)\n*   [Kiswahili](https://news.un.org/sw/)\n*   Other\n    *   [Hindi हिंदी](https://news.un.org/hi/)\n    *   [Urdu اردو](https://news.un.org/ur/)\n    *   [Global](https://unic.un.org/aroundworld/unics/en/whatWeDo/productsAndServices/websites/index.asp?callPage=home)\n\n\n\n[UN News](https://news.un.org/en/ \"UN News\")\n\n Global perspective Human stories \n\nEnglish Search\n\nSearch\n\n[Advanced Search](https://news.un.org/en/advanced-search)\n\n## Language\n\n*   [العربية](https://news.un.org/ar/)\n*   [中文](https://news.un.org/zh/)\n*   [English](https://news.un.org/en/)\n*   [Français](https://news.un.org/fr/)\n*   [Русский](https://news.un.org/ru/)\n*   [Español](https://news.un.org/es/)\n*   [Português](https://news.un.org/pt/)\n*   [Kiswahili](https://news.un.org/sw/)\n*   Other\n    *   [Hindi हिंदी](https://news.un.org/hi/)\n    *   [Urdu اردو](https://news.un.org/ur/)\n    *   [Global](https://unic.un.org/aroundworld/unics/en/whatWeDo/productsAndServices/websites/index.asp?callPage=home)\n\n[UN News](https://news.un.org/en/ \"UN News\")\n\n Global perspective Human stories \n\n## [Menu](https://news.un.org/feed/view/en/story/2026/05/1167475#CollapsingNavbar)\n\n*   [Home](https://news.un.org/en/ \"Home\")\n    *   [Global](https://news.un.org/en/news/region/global)\n    *   [Africa](https://news.un.org/en/news/region/africa \"Africa\")\n    *   [Americas](https://news.un.org/en/news/region/americas \"Americas\")\n    *   [Asia Pacific](https://news.un.org/en/news/region/asia-pacific \"Asia Pacific\")\n    *   [Middle East](https://news.un.org/en/news/region/middle-east \"Middle East\")\n    *   [Europe](https://news.un.org/en/news/region/europe \"Europe\")\n    *   [UN Art and Gifts](https://news.un.org/en/spotlight/un-art-and-gifts \"UN Art and Gifts\")\n    *   [History Corner](https://news.un.org/en/spotlight/character-sketches-brian-urquhart \"History Corner\")\n\n*   [Topics](https://news.un.org/feed/view/en/story/2026/05/1167475 \"Topics\")\n    *   [Peace and Security](https://news.un.org/en/news/topic/peace-and-security \"Peace and Security\")\n    *   [Economic Development](https://news.un.org/en/news/topic/economic-development \"Economic Development\")\n    *   [Humanitarian Aid](https://news.un.org/en/news/topic/humanitarian-aid \"Humanitarian Aid\")\n    *   [Climate and Environment](https://news.un.org/en/news/topic/climate-change \"Climate and Environment\")\n    *   [Human Rights](https://news.un.org/en/news/topic/human-rights \"Human Rights\")\n    *   [UN Affairs](https://news.un.org/en/news/topic/un-affairs \"UN Affairs\")\n    *   [Women](https://news.un.org/en/news/topic/women \"Women\")\n    *   [Law and Crime Prevention](https://news.un.org/en/news/topic/law-and-crime-prevention \"Law and Crime Prevention\")\n    *   [Health](https://news.un.org/en/news/topic/health \"Health\")\n    *   [Culture and Education](https://news.un.org/en/news/topic/culture-and-education \"Culture and Education\")\n    *   [SDGs](https://news.un.org/en/news/topic/sdgs \"SDGs\")\n    *   [Migrants and Refugees](https://news.un.org/en/news/topic/migrants-and-refugees \"Migrants and Refugees\")\n\n*   [In depth](https://news.un.org/feed/view/en/story/2026/05/1167475 \"In depth\")\n    *   [In Focus](https://news.un.org/en/focus)\n    *   [Interviews](https://news.un.org/en/interviews \"Interviews\")\n    *   [Features](https://news.un.org/en/features \"Features\")\n    *   [Photo Stories](https://news.un.org/en/gallery \"Photo Stories\")\n    *   [UN News Today](https://news.un.org/en/audio-product/un-news-today \"News in Brief\")\n    *   [The Lid is On](https://news.un.org/en/audio-product/podcast-the-lid-is-on \"The Lid is On\")\n    *",
+      "summary": "Haiti continues to face escalating violence and deepening insecurity, with gangs expanding their reach beyond Port-au-Prince and civilians increasingly caught between armed groups and security operations.",
+      "sources": [
+        "UN News"
+      ],
+      "type": "image",
+      "minutesAgo": 4943,
+      "location": "wire",
+      "imageUrl": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Production%20Library/08-05-2026-FAO-Haiti.jpg/image560x340cropped.jpg",
+      "videoUrl": "",
+      "link": "https://news.un.org/feed/view/en/story/2026/05/1167475",
+      "hasFullText": true
+    },
+    {
+      "id": "central-african-republic-funding-cuts-put-humanitarian-support-at-risk",
+      "tier": 5,
+      "cats": [
+        "developing"
+      ],
+      "title": "Central African Republic: Funding cuts put humanitarian support at risk",
+      "body": "Published Time: 2026-05-08T16:13:37-04:00\n\n# Central African Republic: Funding cuts put humanitarian support at risk | UN News\n\n[Skip to main content / navigation](https://news.un.org/feed/view/en/story/2026/05/1167474#main-content)\n\n[Welcome to the United Nations](https://www.un.org/en \"United Nations\")\n## Language\n\n*   [العربية](https://news.un.org/ar/)\n*   [中文](https://news.un.org/zh/)\n*   [English](https://news.un.org/en/)\n*   [Français](https://news.un.org/fr/)\n*   [Русский](https://news.un.org/ru/)\n*   [Español](https://news.un.org/es/)\n*   [Português](https://news.un.org/pt/)\n*   [Kiswahili](https://news.un.org/sw/)\n*   Other\n    *   [Hindi हिंदी](https://news.un.org/hi/)\n    *   [Urdu اردو](https://news.un.org/ur/)\n    *   [Global](https://unic.un.org/aroundworld/unics/en/whatWeDo/productsAndServices/websites/index.asp?callPage=home)\n\n\n\n[UN News](https://news.un.org/en/ \"UN News\")\n\n Global perspective Human stories \n\nEnglish Search\n\nSearch\n\n[Advanced Search](https://news.un.org/en/advanced-search)\n\n## Language\n\n*   [العربية](https://news.un.org/ar/)\n*   [中文](https://news.un.org/zh/)\n*   [English](https://news.un.org/en/)\n*   [Français](https://news.un.org/fr/)\n*   [Русский](https://news.un.org/ru/)\n*   [Español](https://news.un.org/es/)\n*   [Português](https://news.un.org/pt/)\n*   [Kiswahili](https://news.un.org/sw/)\n*   Other\n    *   [Hindi हिंदी](https://news.un.org/hi/)\n    *   [Urdu اردو](https://news.un.org/ur/)\n    *   [Global](https://unic.un.org/aroundworld/unics/en/whatWeDo/productsAndServices/websites/index.asp?callPage=home)\n\n[UN News](https://news.un.org/en/ \"UN News\")\n\n Global perspective Human stories \n\n## [Menu](https://news.un.org/feed/view/en/story/2026/05/1167474#CollapsingNavbar)\n\n*   [Home](https://news.un.org/en/ \"Home\")\n    *   [Global](https://news.un.org/en/news/region/global)\n    *   [Africa](https://news.un.org/en/news/region/africa \"Africa\")\n    *   [Americas](https://news.un.org/en/news/region/americas \"Americas\")\n    *   [Asia Pacific](https://news.un.org/en/news/region/asia-pacific \"Asia Pacific\")\n    *   [Middle East](https://news.un.org/en/news/region/middle-east \"Middle East\")\n    *   [Europe](https://news.un.org/en/news/region/europe \"Europe\")\n    *   [UN Art and Gifts](https://news.un.org/en/spotlight/un-art-and-gifts \"UN Art and Gifts\")\n    *   [History Corner](https://news.un.org/en/spotlight/character-sketches-brian-urquhart \"History Corner\")\n\n*   [Topics](https://news.un.org/feed/view/en/story/2026/05/1167474 \"Topics\")\n    *   [Peace and Security](https://news.un.org/en/news/topic/peace-and-security \"Peace and Security\")\n    *   [Economic Development](https://news.un.org/en/news/topic/economic-development \"Economic Development\")\n    *   [Humanitarian Aid](https://news.un.org/en/news/topic/humanitarian-aid \"Humanitarian Aid\")\n    *   [Climate and Environment](https://news.un.org/en/news/topic/climate-change \"Climate and Environment\")\n    *   [Human Rights](https://news.un.org/en/news/topic/human-rights \"Human Rights\")\n    *   [UN Affairs](https://news.un.org/en/news/topic/un-affairs \"UN Affairs\")\n    *   [Women](https://news.un.org/en/news/topic/women \"Women\")\n    *   [Law and Crime Prevention](https://news.un.org/en/news/topic/law-and-crime-prevention \"Law and Crime Prevention\")\n    *   [Health](https://news.un.org/en/news/topic/health \"Health\")\n    *   [Culture and Education](https://news.un.org/en/news/topic/culture-and-education \"Culture and Education\")\n    *   [SDGs](https://news.un.org/en/news/topic/sdgs \"SDGs\")\n    *   [Migrants and Refugees](https://news.un.org/en/news/topic/migrants-and-refugees \"Migrants and Refugees\")\n\n*   [In depth](https://news.un.org/feed/view/en/story/2026/05/1167474 \"In depth\")\n    *   [In Focus](https://news.un.org/en/focus)\n    *   [Interviews](https://news.un.org/en/interviews \"Interviews\")\n    *   [Features](https://news.un.org/en/features \"Features\")\n    *   [Photo Stories](https://news.un.org/en/gallery \"Photo Stories\")\n    *   [UN News Today](https://news.un.org/en/audio-product/un-news-today \"News in Brief\")\n    *   [The Lid is On](https://news.un.org/en/audio-product/podcast-the-lid-is-on \"The Lid is On\")\n    *   [UN Gender Focus](https",
+      "summary": "The Central African Republic (CAR) is making progress towards stability and security but major aid budget cuts threaten humanitarian operations there, a senior official with the UN aid coordination office OCHA said on Friday in New York.",
+      "sources": [
+        "UN News"
+      ],
+      "type": "image",
+      "minutesAgo": 4943,
+      "location": "wire",
+      "imageUrl": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Embargoed/08-05-2026-UNOCHA-CAR-Edem-Wosornu-02.jpg/image560x340cropped.jpg",
+      "videoUrl": "",
+      "link": "https://news.un.org/feed/view/en/story/2026/05/1167474",
+      "hasFullText": true
+    },
+    {
+      "id": "somalia-teeters-on-the-brink-of-catastrophe-as-hunger-crisis-deepens",
+      "tier": 5,
+      "cats": [
+        "developing"
+      ],
+      "title": "Somalia teeters on the brink of catastrophe as hunger crisis deepens",
+      "body": "Published Time: 2026-05-08T12:32:48-04:00\n\n# Somalia teeters on the brink of catastrophe as hunger crisis deepens | UN News\n\n[Skip to main content / navigation](https://news.un.org/feed/view/en/story/2026/05/1167473#main-content)\n\n[Welcome to the United Nations](https://www.un.org/en \"United Nations\")\n## Language\n\n*   [العربية](https://news.un.org/ar/)\n*   [中文](https://news.un.org/zh/)\n*   [English](https://news.un.org/en/)\n*   [Français](https://news.un.org/fr/)\n*   [Русский](https://news.un.org/ru/)\n*   [Español](https://news.un.org/es/)\n*   [Português](https://news.un.org/pt/)\n*   [Kiswahili](https://news.un.org/sw/)\n*   Other\n    *   [Hindi हिंदी](https://news.un.org/hi/)\n    *   [Urdu اردو](https://news.un.org/ur/)\n    *   [Global](https://unic.un.org/aroundworld/unics/en/whatWeDo/productsAndServices/websites/index.asp?callPage=home)\n\n\n\n[UN News](https://news.un.org/en/ \"UN News\")\n\n Global perspective Human stories \n\nEnglish Search\n\nSearch\n\n[Advanced Search](https://news.un.org/en/advanced-search)\n\n## Language\n\n*   [العربية](https://news.un.org/ar/)\n*   [中文](https://news.un.org/zh/)\n*   [English](https://news.un.org/en/)\n*   [Français](https://news.un.org/fr/)\n*   [Русский](https://news.un.org/ru/)\n*   [Español](https://news.un.org/es/)\n*   [Português](https://news.un.org/pt/)\n*   [Kiswahili](https://news.un.org/sw/)\n*   Other\n    *   [Hindi हिंदी](https://news.un.org/hi/)\n    *   [Urdu اردو](https://news.un.org/ur/)\n    *   [Global](https://unic.un.org/aroundworld/unics/en/whatWeDo/productsAndServices/websites/index.asp?callPage=home)\n\n[UN News](https://news.un.org/en/ \"UN News\")\n\n Global perspective Human stories \n\n## [Menu](https://news.un.org/feed/view/en/story/2026/05/1167473#CollapsingNavbar)\n\n*   [Home](https://news.un.org/en/ \"Home\")\n    *   [Global](https://news.un.org/en/news/region/global)\n    *   [Africa](https://news.un.org/en/news/region/africa \"Africa\")\n    *   [Americas](https://news.un.org/en/news/region/americas \"Americas\")\n    *   [Asia Pacific](https://news.un.org/en/news/region/asia-pacific \"Asia Pacific\")\n    *   [Middle East](https://news.un.org/en/news/region/middle-east \"Middle East\")\n    *   [Europe](https://news.un.org/en/news/region/europe \"Europe\")\n    *   [UN Art and Gifts](https://news.un.org/en/spotlight/un-art-and-gifts \"UN Art and Gifts\")\n    *   [History Corner](https://news.un.org/en/spotlight/character-sketches-brian-urquhart \"History Corner\")\n\n*   [Topics](https://news.un.org/feed/view/en/story/2026/05/1167473 \"Topics\")\n    *   [Peace and Security](https://news.un.org/en/news/topic/peace-and-security \"Peace and Security\")\n    *   [Economic Development](https://news.un.org/en/news/topic/economic-development \"Economic Development\")\n    *   [Humanitarian Aid](https://news.un.org/en/news/topic/humanitarian-aid \"Humanitarian Aid\")\n    *   [Climate and Environment](https://news.un.org/en/news/topic/climate-change \"Climate and Environment\")\n    *   [Human Rights](https://news.un.org/en/news/topic/human-rights \"Human Rights\")\n    *   [UN Affairs](https://news.un.org/en/news/topic/un-affairs \"UN Affairs\")\n    *   [Women](https://news.un.org/en/news/topic/women \"Women\")\n    *   [Law and Crime Prevention](https://news.un.org/en/news/topic/law-and-crime-prevention \"Law and Crime Prevention\")\n    *   [Health](https://news.un.org/en/news/topic/health \"Health\")\n    *   [Culture and Education](https://news.un.org/en/news/topic/culture-and-education \"Culture and Education\")\n    *   [SDGs](https://news.un.org/en/news/topic/sdgs \"SDGs\")\n    *   [Migrants and Refugees](https://news.un.org/en/news/topic/migrants-and-refugees \"Migrants and Refugees\")\n\n*   [In depth](https://news.un.org/feed/view/en/story/2026/05/1167473 \"In depth\")\n    *   [In Focus](https://news.un.org/en/focus)\n    *   [Interviews](https://news.un.org/en/interviews \"Interviews\")\n    *   [Features](https://news.un.org/en/features \"Features\")\n    *   [Photo Stories](https://news.un.org/en/gallery \"Photo Stories\")\n    *   [UN News Today](https://news.un.org/en/audio-product/un-news-today \"News in Brief\")\n    *   [The Lid is On](https://news.un.org/en/audio-product/podcast-the-lid-is-on \"The Lid is On\")\n    *   [UN Gender Focus](https://",
+      "summary": "“This is not a distant warning. This is a crisis that is unfolding right now and it's deepening quickly.”",
+      "sources": [
+        "UN News"
+      ],
+      "type": "image",
+      "minutesAgo": 4943,
+      "location": "wire",
+      "imageUrl": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Embargoed/08-12-2025-UNICEF-Somalia-03.jpg/image560x340cropped.jpg",
+      "videoUrl": "",
+      "link": "https://news.un.org/feed/view/en/story/2026/05/1167473",
+      "hasFullText": true
+    },
+    {
+      "id": "your-daily-dose-caring-well-for-older-people-is-about-understanding-the-whole-pe",
+      "tier": 5,
+      "cats": [
+        "video"
+      ],
+      "title": "Your daily dose: Caring well for older people is about understanding the whole person",
+      "body": "Caring well for older people is about understanding the whole person, from how they feel to where they live. Learn about integrated care and how it helps people live, thrive, and stay independent.",
+      "summary": "Caring well for older people is about understanding the whole person, from how they feel to where they live. Learn about integrated care and how it helps people live, thrive, and stay independent.",
+      "sources": [
+        "WHO (video)"
+      ],
+      "type": "video",
+      "minutesAgo": 5148,
+      "location": "wire",
+      "imageUrl": "https://i4.ytimg.com/vi/SIxgPnKt47M/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/shorts/SIxgPnKt47M",
+      "link": "https://www.youtube.com/shorts/SIxgPnKt47M",
+      "hasFullText": false
+    },
+    {
+      "id": "who-director-general-dr-tedros-updates-on-hantavirus-at-press-conference",
+      "tier": 5,
+      "cats": [
+        "video"
+      ],
+      "title": "WHO Director-General Dr Tedros updates on hantavirus at press conference",
+      "body": "WHO Director-General Dr Tedros participated in a press conference on hantavirus cluster linked to cruise ship travel on the 8th of May 2026. WHO will continue to work with all relevant governments and partners to provide care for those who are affected, protect the safety and dignity of passengers, and prevent onward spread of the virus. Watch the entire press conference here: https://www.youtube.com/live/ksOTrl0zM5A?si=IzMRMZVXABrP6ml0",
+      "summary": "WHO Director-General Dr Tedros participated in a press conference on hantavirus cluster linked to cruise ship travel on the 8th of May 2026. WHO will continue to work with all relevant governments and partners to provide care for those who are affected, protect the safety and dignity of passengers, and prevent onward spread of the virus. Watch the entire press conference here: https://www.youtube.com/live/ksOTrl0zM5A?si=IzMRMZVXABrP6ml0",
+      "sources": [
+        "WHO (video)"
+      ],
+      "type": "video",
+      "minutesAgo": 5154,
+      "location": "wire",
+      "imageUrl": "https://i4.ytimg.com/vi/_Q2ILkyMfg0/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/shorts/_Q2ILkyMfg0",
+      "link": "https://www.youtube.com/shorts/_Q2ILkyMfg0",
+      "hasFullText": false
+    },
+    {
+      "id": "australia-becomes-the-30th-country-to-eliminate-trachoma-as-a-public-health-prob",
+      "tier": 5,
+      "cats": [
+        "developing"
+      ],
+      "title": "Australia becomes the 30th country to eliminate trachoma as a public health problem",
+      "body": "Published Time: Mon, 11 May 2026 15:36:18 GMT\n\n# Australia becomes the 30th country to eliminate trachoma as a public health problem\n[Skip to main content](https://www.who.int/news/item/29-04-2026-australia-becomes-the-30th-country-to-eliminate-trachoma-as-a-public-health-problem#content)\n\n*   [](https://www.who.int/)[Global](https://www.who.int/)\n*   [Regions](https://www.who.int/news/item/29-04-2026-australia-becomes-the-30th-country-to-eliminate-trachoma-as-a-public-health-problem#)\n\nWHO Regional websites   \n    *   [![Image 1: Africa](https://www.who.int/images/default-source/fallback/maps/africa8bd96ad167204ac7ac4811b8ae1dfe2c.png?sfvrsn=3204f957_20)Africa](https://www.afro.who.int/)\n    *   [![Image 2: Americas](https://www.who.int/images/default-source/fallback/maps/americas.png?sfvrsn=9efd6df3_19)Americas](https://www.paho.org/en)\n    *   [![Image 3: South-East Asia](https://www.who.int/images/default-source/fallback/maps/south-east-asia1c6bd1d9eb5b4cf0b5ad5da36ff3912d.png?sfvrsn=68e76dc2_17)South-East Asia](https://www.who.int/southeastasia)\n    *   [![Image 4: Europe](https://www.who.int/images/default-source/fallback/maps/europeae57428b4f114210ae7067e1f5119e1a.png?sfvrsn=c7d5c5a5_19)Europe](https://www.who.int/europe/)\n    *   [![Image 5: Eastern Mediterranean](https://www.who.int/images/default-source/fallback/maps/eastern-mediterraneanadf4e81056b84e75b83a1faed30a1e0a.png?sfvrsn=71211e18_17)Eastern Mediterranean](http://www.emro.who.int/index.html)\n    *   [![Image 6: Western Pacific](https://www.who.int/images/default-source/fallback/maps/western-pacifice1e576200c9b4fe59078eb28958428a9.png?sfvrsn=88cbdcd5_19)Western Pacific](https://www.who.int/westernpacific/)\n\nWhen autocomplete results are available use up and down arrows to review and enter to select.\n\n Select language  \n\n[](https://www.who.int/ \"Home\")\n\n[](https://www.who.int/news/item/29-04-2026-australia-becomes-the-30th-country-to-eliminate-trachoma-as-a-public-health-problem#)\n*       \n        *   [](https://www.who.int/)[Global](https://www.who.int/)\n        *   [Regions](https://www.who.int/news/item/29-04-2026-australia-becomes-the-30th-country-to-eliminate-trachoma-as-a-public-health-problem#)\n\nWHO Regional websites   \n            *   [![Image 7: Africa](https://www.who.int/images/default-source/fallback/maps/africa8bd96ad167204ac7ac4811b8ae1dfe2c.png?sfvrsn=3204f957_20)Africa](https://www.afro.who.int/)\n            *   [![Image 8: Americas](https://www.who.int/images/default-source/fallback/maps/americas.png?sfvrsn=9efd6df3_19)Americas](https://www.paho.org/en)\n            *   [![Image 9: South-East Asia](https://www.who.int/images/default-source/fallback/maps/south-east-asia1c6bd1d9eb5b4cf0b5ad5da36ff3912d.png?sfvrsn=68e76dc2_17)South-East Asia](https://www.who.int/southeastasia)\n            *   [![Image 10: Europe](https://www.who.int/images/default-source/fallback/maps/europeae57428b4f114210ae7067e1f5119e1a.png?sfvrsn=c7d5c5a5_19)Europe](https://www.who.int/europe/)\n            *   [![Image 11: Eastern Mediterranean](https://www.who.int/images/default-source/fallback/maps/eastern-mediterraneanadf4e81056b84e75b83a1faed30a1e0a.png?sfvrsn=71211e18_17)Eastern Mediterranean](http://www.emro.who.int/index.html)\n            *   [![Image 12: Western Pacific](https://www.who.int/images/default-source/fallback/maps/western-pacifice1e576200c9b4fe59078eb28958428a9.png?sfvrsn=88cbdcd5_19)Western Pacific](https://www.who.int/westernpacific/)\n\n*   [Home](https://www.who.int/)\n*   [[Health Topics](https://www.who.int/mega-menu/health-topics)](https://www.who.int/news/item/29-04-2026-australia-becomes-the-30th-country-to-eliminate-trachoma-as-a-public-health-problem#)\n    *   [[All topics](https://www.who.int/health-topics/)](https://www.who.int/news/item/29-04-2026-australia-becomes-the-30th-country-to-eliminate-trachoma-as-a-public-health-problem#)\n        *   [All topics](https://www.who.int/health-topics/)\n        *   [A](https://www.who.int/health-topics/#A)\n        *   [B](https://www.who.int/health-topics/#B)\n        *   [C](https://www.who.int/health-topics/#C)\n        *   [D](https://www.who.int/health-topics/#D)\n        *   [E](https://www.who.int/hea",
+      "summary": "The World Health Organization (WHO) has validated Australia for eliminating trachoma as a public health problem, marking a significant milestone in the health of indigenous peoples and in global efforts to combat neglected tropical diseases (NTDs). Trachoma, the world’s leading infectious cause of blindness, no longer represents a public health problem in the country.",
+      "sources": [
+        "WHO"
+      ],
+      "type": "story",
+      "minutesAgo": 18252,
       "location": "wire",
       "imageUrl": "",
       "videoUrl": "",
-      "link": "https://www.cbsnews.com/live-updates/us-iran-war-trump-strait-of-hormuz-hezbollah-lebanon-israel-ceasefire/",
-      "hasFullText": false
+      "link": "https://www.who.int/news/item/29-04-2026-australia-becomes-the-30th-country-to-eliminate-trachoma-as-a-public-health-problem",
+      "hasFullText": true
     },
     {
+      "id": "practicing-today-for-tomorrow-s-emergencies-who-convenes-countries-and-partners-",
       "tier": 5,
       "cats": [
-        "new"
+        "developing"
       ],
-      "title": "Epstein survivors, activists pay tribute to Virginia Giuffre",
-      "body": "",
-      "summary": "",
+      "title": "Practicing today for tomorrow’s emergencies – WHO convenes countries and partners to simulate response to major disease outbreak",
+      "body": "Published Time: Mon, 11 May 2026 15:28:17 GMT\n\n# Practicing today for tomorrow’s emergencies – WHO convenes countries and partners to simulate response to major disease outbreak\n[Skip to main content](https://www.who.int/news/item/27-04-2026-practicing-today-for-tomorrow-s-emergencies-who-convenes-countries-and-partners-to-simulate-response-to-major-disease-outbreak#content)\n\n*   [](https://www.who.int/)[Global](https://www.who.int/)\n*   [Regions](https://www.who.int/news/item/27-04-2026-practicing-today-for-tomorrow-s-emergencies-who-convenes-countries-and-partners-to-simulate-response-to-major-disease-outbreak#)\n\nWHO Regional websites   \n    *   [![Image 1: Africa](https://www.who.int/images/default-source/fallback/maps/africa8bd96ad167204ac7ac4811b8ae1dfe2c.png?sfvrsn=3204f957_20)Africa](https://www.afro.who.int/)\n    *   [![Image 2: Americas](https://www.who.int/images/default-source/fallback/maps/americas.png?sfvrsn=9efd6df3_19)Americas](https://www.paho.org/en)\n    *   [![Image 3: South-East Asia](https://www.who.int/images/default-source/fallback/maps/south-east-asia1c6bd1d9eb5b4cf0b5ad5da36ff3912d.png?sfvrsn=68e76dc2_17)South-East Asia](https://www.who.int/southeastasia)\n    *   [![Image 4: Europe](https://www.who.int/images/default-source/fallback/maps/europeae57428b4f114210ae7067e1f5119e1a.png?sfvrsn=c7d5c5a5_19)Europe](https://www.who.int/europe/)\n    *   [![Image 5: Eastern Mediterranean](https://www.who.int/images/default-source/fallback/maps/eastern-mediterraneanadf4e81056b84e75b83a1faed30a1e0a.png?sfvrsn=71211e18_17)Eastern Mediterranean](http://www.emro.who.int/index.html)\n    *   [![Image 6: Western Pacific](https://www.who.int/images/default-source/fallback/maps/western-pacifice1e576200c9b4fe59078eb28958428a9.png?sfvrsn=88cbdcd5_19)Western Pacific](https://www.who.int/westernpacific/)\n\nWhen autocomplete results are available use up and down arrows to review and enter to select.\n\n Select language  \n\n[](https://www.who.int/ \"Home\")\n\n[](https://www.who.int/news/item/27-04-2026-practicing-today-for-tomorrow-s-emergencies-who-convenes-countries-and-partners-to-simulate-response-to-major-disease-outbreak#)\n*       \n        *   [](https://www.who.int/)[Global](https://www.who.int/)\n        *   [Regions](https://www.who.int/news/item/27-04-2026-practicing-today-for-tomorrow-s-emergencies-who-convenes-countries-and-partners-to-simulate-response-to-major-disease-outbreak#)\n\nWHO Regional websites   \n            *   [![Image 7: Africa](https://www.who.int/images/default-source/fallback/maps/africa8bd96ad167204ac7ac4811b8ae1dfe2c.png?sfvrsn=3204f957_20)Africa](https://www.afro.who.int/)\n            *   [![Image 8: Americas](https://www.who.int/images/default-source/fallback/maps/americas.png?sfvrsn=9efd6df3_19)Americas](https://www.paho.org/en)\n            *   [![Image 9: South-East Asia](https://www.who.int/images/default-source/fallback/maps/south-east-asia1c6bd1d9eb5b4cf0b5ad5da36ff3912d.png?sfvrsn=68e76dc2_17)South-East Asia](https://www.who.int/southeastasia)\n            *   [![Image 10: Europe](https://www.who.int/images/default-source/fallback/maps/europeae57428b4f114210ae7067e1f5119e1a.png?sfvrsn=c7d5c5a5_19)Europe](https://www.who.int/europe/)\n            *   [![Image 11: Eastern Mediterranean](https://www.who.int/images/default-source/fallback/maps/eastern-mediterraneanadf4e81056b84e75b83a1faed30a1e0a.png?sfvrsn=71211e18_17)Eastern Mediterranean](http://www.emro.who.int/index.html)\n            *   [![Image 12: Western Pacific](https://www.who.int/images/default-source/fallback/maps/western-pacifice1e576200c9b4fe59078eb28958428a9.png?sfvrsn=88cbdcd5_19)Western Pacific](https://www.who.int/westernpacific/)\n\n*   [Home](https://www.who.int/)\n*   [[Health Topics](https://www.who.int/mega-menu/health-topics)](https://www.who.int/news/item/27-04-2026-practicing-today-for-tomorrow-s-emergencies-who-convenes-countries-and-partners-to-simulate-response-to-major-disease-outbreak#)\n    *   [[All topics](https://www.who.int/health-topics/)](https://www.who.int/news/item/27-04-2026-practicing-today-for-tomorrow-s-emergencies-who-convenes-countries-and-partners-to-simulate-response-to-major-disease-outbreak#)\n        *   [",
+      "summary": "<p>The World Health Organization (WHO) wrapped up Exercise Polaris II, a 2-day high-level simulation exercise, based around an outbreak of a fictional new bacterium spreading across the world. Bringing together 26 countries and territories, 600 health emergency experts and over 25 partners, the exercise, which took place on 22 and 23 April, allowed countries to test their preparedness for pandemics and other major health emergencies, including activating their emergency workforce structures, information flow and co",
       "sources": [
-        "Reuters (video)"
+        "WHO"
       ],
-      "type": "video",
-      "minutesAgo": 43,
+      "type": "story",
+      "minutesAgo": 20710,
       "location": "wire",
-      "imageUrl": "https://i1.ytimg.com/vi/8G02IxXGABY/hqdefault.jpg",
-      "videoUrl": "https://www.youtube.com/watch?v=8G02IxXGABY",
-      "link": "https://www.youtube.com/watch?v=8G02IxXGABY",
-      "hasFullText": false
+      "imageUrl": "",
+      "videoUrl": "",
+      "link": "https://www.who.int/news/item/27-04-2026-practicing-today-for-tomorrow-s-emergencies-who-convenes-countries-and-partners-to-simulate-response-to-major-disease-outbreak",
+      "hasFullText": true
     },
     {
+      "id": "largest-catch-up-initiative-delivers-over-100-million-childhood-vaccinations",
       "tier": 5,
       "cats": [
-        "new"
+        "developing"
       ],
-      "title": "Ukraine marks 40 years since Chornobyl nuclear disaster",
-      "body": "",
-      "summary": "",
+      "title": "Largest catch-up initiative delivers over 100 million childhood vaccinations",
+      "body": "Published Time: Mon, 11 May 2026 15:26:31 GMT\n\n# Largest catch-up initiative delivers over 100 million childhood vaccinations\n[Skip to main content](https://www.who.int/news/item/24-04-2026-largest-catch-up-initiative-delivers-over-100-million-childhood-vaccinations#content)\n\n*   [](https://www.who.int/)[Global](https://www.who.int/)\n*   [Regions](https://www.who.int/news/item/24-04-2026-largest-catch-up-initiative-delivers-over-100-million-childhood-vaccinations#)\n\nWHO Regional websites   \n    *   [![Image 1: Africa](https://www.who.int/images/default-source/fallback/maps/africa8bd96ad167204ac7ac4811b8ae1dfe2c.png?sfvrsn=3204f957_20)Africa](https://www.afro.who.int/)\n    *   [![Image 2: Americas](https://www.who.int/images/default-source/fallback/maps/americas.png?sfvrsn=9efd6df3_19)Americas](https://www.paho.org/en)\n    *   [![Image 3: South-East Asia](https://www.who.int/images/default-source/fallback/maps/south-east-asia1c6bd1d9eb5b4cf0b5ad5da36ff3912d.png?sfvrsn=68e76dc2_17)South-East Asia](https://www.who.int/southeastasia)\n    *   [![Image 4: Europe](https://www.who.int/images/default-source/fallback/maps/europeae57428b4f114210ae7067e1f5119e1a.png?sfvrsn=c7d5c5a5_19)Europe](https://www.who.int/europe/)\n    *   [![Image 5: Eastern Mediterranean](https://www.who.int/images/default-source/fallback/maps/eastern-mediterraneanadf4e81056b84e75b83a1faed30a1e0a.png?sfvrsn=71211e18_17)Eastern Mediterranean](http://www.emro.who.int/index.html)\n    *   [![Image 6: Western Pacific](https://www.who.int/images/default-source/fallback/maps/western-pacifice1e576200c9b4fe59078eb28958428a9.png?sfvrsn=88cbdcd5_19)Western Pacific](https://www.who.int/westernpacific/)\n\nWhen autocomplete results are available use up and down arrows to review and enter to select.\n\n Select language  \n\n[](https://www.who.int/ \"Home\")\n\n[](https://www.who.int/news/item/24-04-2026-largest-catch-up-initiative-delivers-over-100-million-childhood-vaccinations#)\n*       \n        *   [](https://www.who.int/)[Global](https://www.who.int/)\n        *   [Regions](https://www.who.int/news/item/24-04-2026-largest-catch-up-initiative-delivers-over-100-million-childhood-vaccinations#)\n\nWHO Regional websites   \n            *   [![Image 7: Africa](https://www.who.int/images/default-source/fallback/maps/africa8bd96ad167204ac7ac4811b8ae1dfe2c.png?sfvrsn=3204f957_20)Africa](https://www.afro.who.int/)\n            *   [![Image 8: Americas](https://www.who.int/images/default-source/fallback/maps/americas.png?sfvrsn=9efd6df3_19)Americas](https://www.paho.org/en)\n            *   [![Image 9: South-East Asia](https://www.who.int/images/default-source/fallback/maps/south-east-asia1c6bd1d9eb5b4cf0b5ad5da36ff3912d.png?sfvrsn=68e76dc2_17)South-East Asia](https://www.who.int/southeastasia)\n            *   [![Image 10: Europe](https://www.who.int/images/default-source/fallback/maps/europeae57428b4f114210ae7067e1f5119e1a.png?sfvrsn=c7d5c5a5_19)Europe](https://www.who.int/europe/)\n            *   [![Image 11: Eastern Mediterranean](https://www.who.int/images/default-source/fallback/maps/eastern-mediterraneanadf4e81056b84e75b83a1faed30a1e0a.png?sfvrsn=71211e18_17)Eastern Mediterranean](http://www.emro.who.int/index.html)\n            *   [![Image 12: Western Pacific](https://www.who.int/images/default-source/fallback/maps/western-pacifice1e576200c9b4fe59078eb28958428a9.png?sfvrsn=88cbdcd5_19)Western Pacific](https://www.who.int/westernpacific/)\n\n*   [Home](https://www.who.int/)\n*   [[Health Topics](https://www.who.int/mega-menu/health-topics)](https://www.who.int/news/item/24-04-2026-largest-catch-up-initiative-delivers-over-100-million-childhood-vaccinations#)\n    *   [[All topics](https://www.who.int/health-topics/)](https://www.who.int/news/item/24-04-2026-largest-catch-up-initiative-delivers-over-100-million-childhood-vaccinations#)\n        *   [All topics](https://www.who.int/health-topics/)\n        *   [A](https://www.who.int/health-topics/#A)\n        *   [B](https://www.who.int/health-topics/#B)\n        *   [C](https://www.who.int/health-topics/#C)\n        *   [D](https://www.who.int/health-topics/#D)\n        *   [E](https://www.who.int/health-topics/#E)\n        *   [F](https://www.who.in",
+      "summary": "<ul><li>The Big Catch-Up, launched during World Immunization Week 2023, has delivered over 100 million vaccine doses to an estimated 18.3 million children across 36 countries</li><li>Around 12.3 million were &ldquo;zero-dose children&rdquo; who had not previously received any vaccines and 15 million who had never received a measles vaccine.</li><li>The initiative concluded in March 2026 and is on track to meet its target of catching up 21 million children &ndash; but agencies warn that many infants still miss out o",
       "sources": [
-        "Reuters (video)"
+        "WHO"
       ],
-      "type": "video",
-      "minutesAgo": 43,
+      "type": "story",
+      "minutesAgo": 25821,
       "location": "wire",
-      "imageUrl": "https://i2.ytimg.com/vi/UOTPSWpNu6c/hqdefault.jpg",
-      "videoUrl": "https://www.youtube.com/watch?v=UOTPSWpNu6c",
-      "link": "https://www.youtube.com/watch?v=UOTPSWpNu6c",
+      "imageUrl": "",
+      "videoUrl": "",
+      "link": "https://www.who.int/news/item/24-04-2026-largest-catch-up-initiative-delivers-over-100-million-childhood-vaccinations",
+      "hasFullText": true
+    },
+    {
+      "id": "the-gifts-i-have-been-given-survival-as-a-collective-act-in-sudan",
+      "tier": 5,
+      "cats": [
+        "developing"
+      ],
+      "title": "The gifts I have been given: Survival as a collective act in Sudan",
+      "body": "<span>The gifts I have been given: Survival as a collective act in Sudan</span> <span><span>sofia</span></span> <span><time datetime=\"2026-01-08T10:38:12+00:00\" title=\"Thursday, January 8, 2026 - 10:38\">Thu, 01/08/2026 - 10:38</time> </span> <drupal-render-placeholder callback=\"flag.link_builder:build\" arguments=\"0=node&amp;1=264287&amp;2=member_bookmarks&amp;3=rss\" token=\"VKUy4cnQtc5bpLCI52_9kuzFJLv1aMV9zRHXeKJDVV4\"></drupal-render-placeholder><drupal-render-placeholder callback=\"Drupal\\node\\NodeViewBuilder::rende",
+      "summary": "<span>The gifts I have been given: Survival as a collective act in Sudan</span> <span><span>sofia</span></span> <span><time datetime=\"2026-01-08T10:38:12+00:00\" title=\"Thursday, January 8, 2026 - 10:38\">Thu, 01/08/2026 - 10:38</time> </span> <drupal-render-placeholder callback=\"flag.link_builder:build\" arguments=\"0=node&amp;1=264287&amp;2=member_bookmarks&amp;3=rss\" token=\"VKUy4cnQtc5bpLCI52_9kuzFJLv1aMV9zRHXeKJDVV4\"></drupal-render-placeholder><drupal-render-placeholder callback=\"Drupal\\node\\NodeViewBuilder::rende",
+      "sources": [
+        "The New Humanitarian"
+      ],
+      "type": "story",
+      "minutesAgo": 177824,
+      "location": "wire",
+      "imageUrl": "",
+      "videoUrl": "",
+      "link": "https://www.thenewhumanitarian.org/opinion/first-person/2026/01/08/gifts-survival-collective-help-sudan",
       "hasFullText": false
     },
     {
+      "id": "hope-and-resistance-slam-poets-capture-the-weight-of-war-in-dr-congo",
       "tier": 5,
       "cats": [
-        "new"
+        "developing"
       ],
-      "title": "Accused shooter was targeting Trump and US officials, authorities say",
-      "body": "President Donald Trump says suspect wrote an anti-Christian declaration and is 'sick guy'.",
-      "summary": "President Donald Trump says suspect wrote an anti-Christian declaration and is 'sick guy'.",
+      "title": "Hope and resistance: Slam poets capture the weight of war in DR Congo",
+      "body": "<span>Hope and resistance: Slam poets capture the weight of war in DR Congo</span> <span><span>marcduby</span></span> <span><time datetime=\"2025-09-22T12:40:00+01:00\" title=\"Monday, September 22, 2025 - 12:40\">Mon, 09/22/2025 - 12:40</time> </span> <drupal-render-placeholder callback=\"flag.link_builder:build\" arguments=\"0=node&amp;1=264103&amp;2=member_bookmarks&amp;3=rss\" token=\"RwcGFP5u7Bn83VkCXOvrIfvxnyVcEY24nM12fZrvpZs\"></drupal-render-placeholder><drupal-render-placeholder callback=\"Drupal\\node\\NodeViewBuilder",
+      "summary": "<span>Hope and resistance: Slam poets capture the weight of war in DR Congo</span> <span><span>marcduby</span></span> <span><time datetime=\"2025-09-22T12:40:00+01:00\" title=\"Monday, September 22, 2025 - 12:40\">Mon, 09/22/2025 - 12:40</time> </span> <drupal-render-placeholder callback=\"flag.link_builder:build\" arguments=\"0=node&amp;1=264103&amp;2=member_bookmarks&amp;3=rss\" token=\"RwcGFP5u7Bn83VkCXOvrIfvxnyVcEY24nM12fZrvpZs\"></drupal-render-placeholder><drupal-render-placeholder callback=\"Drupal\\node\\NodeViewBuilder",
+      "sources": [
+        "The New Humanitarian"
+      ],
+      "type": "story",
+      "minutesAgo": 333283,
+      "location": "wire",
+      "imageUrl": "",
+      "videoUrl": "",
+      "link": "https://www.thenewhumanitarian.org/feature/2025/09/22/hope-resistance-slam-poetry-poets-capture-weight-war-drc-congo",
+      "hasFullText": false
+    },
+    {
+      "id": "the-lebanon-displacement-diaries",
+      "tier": 5,
+      "cats": [
+        "developing"
+      ],
+      "title": "The Lebanon Displacement Diaries",
+      "body": "<span>The Lebanon Displacement Diaries</span> <span><span>marcduby</span></span> <span><time datetime=\"2025-05-22T08:00:00+01:00\" title=\"Thursday, May 22, 2025 - 08:00\">Thu, 05/22/2025 - 08:00</time> </span> <drupal-render-placeholder callback=\"flag.link_builder:build\" arguments=\"0=node&amp;1=264005&amp;2=member_bookmarks&amp;3=rss\" token=\"9qzN_Twz_BLYXeaqvI82e7B6kzWrVf9ovOApm87CNsE\"></drupal-render-placeholder><drupal-render-placeholder callback=\"Drupal\\node\\NodeViewBuilder::renderLinks\" arguments=\"0=264005&amp;1=",
+      "summary": "<span>The Lebanon Displacement Diaries</span> <span><span>marcduby</span></span> <span><time datetime=\"2025-05-22T08:00:00+01:00\" title=\"Thursday, May 22, 2025 - 08:00\">Thu, 05/22/2025 - 08:00</time> </span> <drupal-render-placeholder callback=\"flag.link_builder:build\" arguments=\"0=node&amp;1=264005&amp;2=member_bookmarks&amp;3=rss\" token=\"9qzN_Twz_BLYXeaqvI82e7B6kzWrVf9ovOApm87CNsE\"></drupal-render-placeholder><drupal-render-placeholder callback=\"Drupal\\node\\NodeViewBuilder::renderLinks\" arguments=\"0=264005&amp;1=",
+      "sources": [
+        "The New Humanitarian"
+      ],
+      "type": "story",
+      "minutesAgo": 510683,
+      "location": "wire",
+      "imageUrl": "",
+      "videoUrl": "",
+      "link": "https://www.thenewhumanitarian.org/interactive-storytelling/2025/05/22/lebanon-displacement-diaries",
+      "hasFullText": false
+    },
+    {
+      "id": "myanmar-in-depth-slow-earthquake-response-underlines-need-to-overhaul-long-flawe",
+      "tier": 5,
+      "cats": [
+        "developing"
+      ],
+      "title": "Myanmar in-depth: Slow earthquake response underlines need to overhaul long-flawed international aid efforts",
+      "body": "<span>Myanmar in-depth: Slow earthquake response underlines need to overhaul long-flawed international aid efforts</span> <span><span>sofia</span></span> <span><time datetime=\"2025-05-16T19:00:00+01:00\" title=\"Friday, May 16, 2025 - 19:00\">Fri, 05/16/2025 - 19:00</time> </span> <drupal-render-placeholder callback=\"flag.link_builder:build\" arguments=\"0=node&amp;1=263997&amp;2=member_bookmarks&amp;3=rss\" token=\"vV657iDUKtZbqA8tuv_CJzzdj8r7F68WzO32vcNPM7M\"></drupal-render-placeholder><drupal-render-placeholder callbac",
+      "summary": "<span>Myanmar in-depth: Slow earthquake response underlines need to overhaul long-flawed international aid efforts</span> <span><span>sofia</span></span> <span><time datetime=\"2025-05-16T19:00:00+01:00\" title=\"Friday, May 16, 2025 - 19:00\">Fri, 05/16/2025 - 19:00</time> </span> <drupal-render-placeholder callback=\"flag.link_builder:build\" arguments=\"0=node&amp;1=263997&amp;2=member_bookmarks&amp;3=rss\" token=\"vV657iDUKtZbqA8tuv_CJzzdj8r7F68WzO32vcNPM7M\"></drupal-render-placeholder><drupal-render-placeholder callbac",
+      "sources": [
+        "The New Humanitarian"
+      ],
+      "type": "story",
+      "minutesAgo": 518663,
+      "location": "wire",
+      "imageUrl": "",
+      "videoUrl": "",
+      "link": "https://www.thenewhumanitarian.org/analysis/2025/05/15/myanmar-depth-slow-earthquake-response-underlines-need-overhaul-long-flawed",
+      "hasFullText": false
+    },
+    {
+      "id": "as-sudan-army-gains-drive-mass-returns-mutual-aid-groups-begin-to-rebuild",
+      "tier": 5,
+      "cats": [
+        "developing"
+      ],
+      "title": "As Sudan army gains drive mass returns, mutual aid groups begin to rebuild",
+      "body": "<span>As Sudan army gains drive mass returns, mutual aid groups begin to rebuild</span> <span><span>sofia</span></span> <span><time datetime=\"2025-04-30T11:14:15+01:00\" title=\"Wednesday, April 30, 2025 - 11:14\">Wed, 04/30/2025 - 11:14</time> </span> <drupal-render-placeholder callback=\"flag.link_builder:build\" arguments=\"0=node&amp;1=263975&amp;2=member_bookmarks&amp;3=rss\" token=\"5j0rOhlxfzW993Kh2BlMCnUusTzQHGtsuuevEWFqkdk\"></drupal-render-placeholder><drupal-render-placeholder callback=\"Drupal\\node\\NodeViewBuilde",
+      "summary": "<span>As Sudan army gains drive mass returns, mutual aid groups begin to rebuild</span> <span><span>sofia</span></span> <span><time datetime=\"2025-04-30T11:14:15+01:00\" title=\"Wednesday, April 30, 2025 - 11:14\">Wed, 04/30/2025 - 11:14</time> </span> <drupal-render-placeholder callback=\"flag.link_builder:build\" arguments=\"0=node&amp;1=263975&amp;2=member_bookmarks&amp;3=rss\" token=\"5j0rOhlxfzW993Kh2BlMCnUusTzQHGtsuuevEWFqkdk\"></drupal-render-placeholder><drupal-render-placeholder callback=\"Drupal\\node\\NodeViewBuilde",
+      "sources": [
+        "The New Humanitarian"
+      ],
+      "type": "story",
+      "minutesAgo": 542168,
+      "location": "wire",
+      "imageUrl": "",
+      "videoUrl": "",
+      "link": "https://www.thenewhumanitarian.org/news-feature/2025/04/30/sudan-army-gains-drive-mass-returns-mutual-aid-groups-begin-rebuild",
+      "hasFullText": false
+    },
+    {
+      "id": "topics",
+      "tier": 5,
+      "cats": [
+        "developing"
+      ],
+      "title": "Topics",
+      "body": "<span>Topics</span> <span><span lang about=\"https://www.ohchr.org/en/user/764\" typeof=\"schema:Person\" property=\"schema:name\" datatype>deepti.naik</span></span> <span><time datetime=\"2021-10-21T14:49:30+02:00\" title=\"Thursday, October 21, 2021 - 14:49\">Thu, 10/21/2021 - 14:49</time> </span> <div class=\"field field--name-field-sub-title field--type-string field--label-above\"> <div>Subtitle</div> <div class=\"field__item\">Learn about each human rights topic, see who's involved, and find the latest news, reports, events",
+      "summary": "<span>Topics</span> <span><span lang about=\"https://www.ohchr.org/en/user/764\" typeof=\"schema:Person\" property=\"schema:name\" datatype>deepti.naik</span></span> <span><time datetime=\"2021-10-21T14:49:30+02:00\" title=\"Thursday, October 21, 2021 - 14:49\">Thu, 10/21/2021 - 14:49</time> </span> <div class=\"field field--name-field-sub-title field--type-string field--label-above\"> <div>Subtitle</div> <div class=\"field__item\">Learn about each human rights topic, see who's involved, and find the latest news, reports, events",
+      "sources": [
+        "OHCHR"
+      ],
+      "type": "story",
+      "minutesAgo": 2395293,
+      "location": "wire",
+      "imageUrl": "",
+      "videoUrl": "",
+      "link": "https://www.ohchr.org/en/topics",
+      "hasFullText": false
+    },
+    {
+      "id": "civic-space-and-human-rights-defenders",
+      "tier": 5,
+      "cats": [
+        "developing"
+      ],
+      "title": "Civic space and human rights defenders",
+      "body": "<span>Civic space and human rights defenders</span> <span><span lang about=\"https://www.ohchr.org/en/user/1\" typeof=\"schema:Person\" property=\"schema:name\" datatype>admin</span></span> <span><time datetime=\"2021-09-27T09:27:15+02:00\" title=\"Monday, September 27, 2021 - 09:27\">Mon, 09/27/2021 - 09:27</time> </span> <div class=\"wysiwyg-content field field--name-body field--type-text-with-summary field--label-hidden field__item\"><p><a class=\"link-item link-item--with-arrow-white-blue-underline\" data-entity-substitution",
+      "summary": "<span>Civic space and human rights defenders</span> <span><span lang about=\"https://www.ohchr.org/en/user/1\" typeof=\"schema:Person\" property=\"schema:name\" datatype>admin</span></span> <span><time datetime=\"2021-09-27T09:27:15+02:00\" title=\"Monday, September 27, 2021 - 09:27\">Mon, 09/27/2021 - 09:27</time> </span> <div class=\"wysiwyg-content field field--name-body field--type-text-with-summary field--label-hidden field__item\"><p><a class=\"link-item link-item--with-arrow-white-blue-underline\" data-entity-substitution",
+      "sources": [
+        "OHCHR"
+      ],
+      "type": "story",
+      "minutesAgo": 2430175,
+      "location": "wire",
+      "imageUrl": "",
+      "videoUrl": "",
+      "link": "https://www.ohchr.org/en/topic/civic-space-and-human-rights-defenders",
+      "hasFullText": false
+    },
+    {
+      "id": "humanitarian-emergencies-and-conflict-situations",
+      "tier": 5,
+      "cats": [
+        "developing"
+      ],
+      "title": "Humanitarian emergencies and conflict situations",
+      "body": "Published Time: Mon, 11 May 2026 22:22:20 GMT\n\n# Humanitarian emergencies and conflict situations | OHCHR\n[Skip to main content](https://www.ohchr.org/en/topic/humanitarian-emergencies-and-conflict-situations#main-content)\n\n[![Image 1: Home](https://www.ohchr.org/themes/custom/ohchr/dist/svg/icon-house.svg) Welcome to the United Nations](https://www.un.org/)\n\n## Resources\n\n*   [Resources](https://www.ohchr.org/en)\n    *   [For](javascript:void(0);)\n        *   [Civil society](https://www.ohchr.org/en/resources/civil-society)\n        *   [Educators](https://www.ohchr.org/en/resources/educators/human-rights-education-training)\n        *   [Journalists](https://www.ohchr.org/en/media-centre)\n        *   [Members States](https://www.ohchr.org/en/resources/member-states)\n        *   [National institutions and regional mechanisms](https://www.ohchr.org/en/countries/nhri)\n\n    *   [More](javascript:void(0);)\n        *   [Knowledge Gateway](https://knowledgegateway.ohchr.org/)\n        *   [Databases](https://www.ohchr.org/en/resources/databases)\n        *   [Library](https://www.ohchr.org/en/library)\n        *   [Publications](https://www.ohchr.org/en/publications)\n\nEnglish\n\n*   [العربية](https://www.ohchr.org/ar/topic/humanitarian-emergencies-and-conflict-situations)\n*   [中文](https://www.ohchr.org/zh/topic/humanitarian-emergencies-and-conflict-situations)\n*   [English](https://www.ohchr.org/en/topic/humanitarian-emergencies-and-conflict-situations)\n*   [Français](https://www.ohchr.org/fr/topic/humanitarian-emergencies-and-conflict-situations)\n*   [русский](https://www.ohchr.org/ru/topic/humanitarian-emergencies-and-conflict-situations)\n*   [Español](https://www.ohchr.org/es/topic/humanitarian-emergencies-and-conflict-situations)\n\n[More +](https://www.ohchr.org/search?more_languages=TRUE)\n\n\n\n[![Image 3: OHCHR Logo](https://www.ohchr.org/themes/custom/ohchr/logo.svg) OHCHR](https://www.ohchr.org/en \"OHCHR\")\n\n[Donate](https://www.ohchr.org/en/donation)[![Image 4: search](https://www.ohchr.org/themes/custom/ohchr/dist/svg/magnify.svg)![Image 5: search](https://www.ohchr.org/themes/custom/ohchr/dist/svg/magnify-blue.svg)](https://www.ohchr.org/en/topic/humanitarian-emergencies-and-conflict-situations#)[](https://www.ohchr.org/en/topic/humanitarian-emergencies-and-conflict-situations#)\n\n Search input field \n\n![Image 6: search](https://www.ohchr.org/themes/custom/ohchr/dist/svg/magnify.svg)\n\n## Main Navigation OHCHR\n\n*   [What are human rights?](https://www.ohchr.org/en/what-are-human-rights)\n\nRussian - Main Navigation OHCHR\n\n    *   [Human rights overview](https://www.ohchr.org/en/what-are-human-rights)  \n    *   [Human Rights 75 Initiative](https://www.ohchr.org/en/human-rights-75)  \n    *   [Universal Declaration of Human Rights](https://www.ohchr.org/en/universal-declaration-of-human-rights)  \n    *   [Human rights day](https://www.ohchr.org/en/about-us/human-rights-day)  \n    *   [Human rights education and training](https://www.ohchr.org/en/resources/educators/human-rights-education-training)  \n\nStand up for Human Rights. Join us and make a difference.\n\n[Get Involved](https://www.ohchr.org/en/get-involved)\n\n*   [Topics](https://www.ohchr.org/en/topics)Human rights Topics The UN Human Rights Office and the mechanisms we support work on a wide range of human rights topics. Learn more about each topic, see who's involved, and find the latest news, reports, events and more. [View all topics](https://www.ohchr.org/en/topics)    Go directly to a topic\n\nSearch Form        \n*   [Countries](https://www.ohchr.org/en/countries)\n\nRussian - Main Navigation OHCHR\n\n    *   [All countries and territories](https://www.ohchr.org/en/countries)  \n    *   [Technical cooperation](https://www.ohchr.org/en/countries/technical-cooperation)  \n    *   [UN Human Rights and NHRIs](https://www.ohchr.org/en/countries/nhri)  \n\nGo to a country or territory\n\nSearch Form \n\n*   [Instruments & mechanisms](https://www.ohchr.org/en/instruments-and-mechanisms)\n\nRussian - Main Navigation OHCHR\n\n    *   [About mechanisms & instruments](https://www.ohchr.org/en/instruments-and-mechanisms)  \n    *   [Human rights law](https://www.ohchr.org/en/instruments-and-mechanisms/inte",
+      "summary": "<span>Humanitarian emergencies and conflict situations</span> <span><span lang about=\"https://www.ohchr.org/en/user/277\" typeof=\"schema:Person\" property=\"schema:name\" datatype>Andrea</span></span> <span><time datetime=\"2021-07-20T22:35:14+02:00\" title=\"Tuesday, July 20, 2021 - 22:35\">Tue, 07/20/2021 - 22:35</time> </span> <div class=\"wysiwyg-content field field--name-body field--type-text-with-summary field--label-hidden field__item\"><p><a class=\"link-item link-item--with-arrow-white-blue-underline\" data-entity-sub",
+      "sources": [
+        "OHCHR"
+      ],
+      "type": "story",
+      "minutesAgo": 2528747,
+      "location": "wire",
+      "imageUrl": "",
+      "videoUrl": "",
+      "link": "https://www.ohchr.org/en/topic/humanitarian-emergencies-and-conflict-situations",
+      "hasFullText": true
+    },
+    {
+      "id": "digital-space-and-human-rights",
+      "tier": 5,
+      "cats": [
+        "developing"
+      ],
+      "title": "Digital space and human rights",
+      "body": "Published Time: Mon, 11 May 2026 22:00:28 GMT\n\n# Digital space and human rights | OHCHR\n[Skip to main content](https://www.ohchr.org/en/topic/digital-space-and-human-rights#main-content)\n\n[![Image 1: Home](https://www.ohchr.org/themes/custom/ohchr/dist/svg/icon-house.svg) Welcome to the United Nations](https://www.un.org/)\n\n## Resources\n\n*   [Resources](javascript:void(0);)\n    *   [For](javascript:void(0);)\n        *   [Civil society](https://www.ohchr.org/en/resources/civil-society)\n        *   [Educators](https://www.ohchr.org/en/resources/educators/human-rights-education-training)\n        *   [Journalists](https://www.ohchr.org/en/media-centre)\n        *   [Members States](https://www.ohchr.org/en/resources/member-states)\n        *   [National institutions and regional mechanisms](https://www.ohchr.org/en/countries/nhri)\n\n    *   [More](javascript:void(0);)\n        *   [Knowledge Gateway](https://knowledgegateway.ohchr.org/)\n        *   [Databases](https://www.ohchr.org/en/resources/databases)\n        *   [Library](https://www.ohchr.org/en/library)\n        *   [Publications](https://www.ohchr.org/en/publications)\n\nEnglish\n\n*   [العربية](https://www.ohchr.org/ar/topic/digital-space-and-human-rights)\n*   [中文](https://www.ohchr.org/zh/topic/digital-space-and-human-rights)\n*   [English](https://www.ohchr.org/en/topic/digital-space-and-human-rights)\n*   [Français](https://www.ohchr.org/fr/topic/digital-space-and-human-rights)\n*   [русский](https://www.ohchr.org/ru/topic/digital-space-and-human-rights)\n*   [Español](https://www.ohchr.org/es/topic/digital-space-and-human-rights)\n\n[More +](https://www.ohchr.org/search?more_languages=TRUE)\n\n\n\n[![Image 3: OHCHR Logo](https://www.ohchr.org/themes/custom/ohchr/logo.svg) OHCHR](https://www.ohchr.org/en \"OHCHR\")\n\n[Donate](https://www.ohchr.org/en/donation)[![Image 4: search](https://www.ohchr.org/themes/custom/ohchr/dist/svg/magnify.svg)![Image 5: search](https://www.ohchr.org/themes/custom/ohchr/dist/svg/magnify-blue.svg)](https://www.ohchr.org/en/topic/digital-space-and-human-rights#)[](https://www.ohchr.org/en/topic/digital-space-and-human-rights#)\n\n Search input field \n\n![Image 6: search](https://www.ohchr.org/themes/custom/ohchr/dist/svg/magnify.svg)\n\n## Main Navigation OHCHR\n\n*   [What are human rights?](javascript:void(0);)\n\nRussian - Main Navigation OHCHR\n\n    *   [Human rights overview](https://www.ohchr.org/en/what-are-human-rights)  \n    *   [Human Rights 75 Initiative](https://www.ohchr.org/en/human-rights-75)  \n    *   [Universal Declaration of Human Rights](https://www.ohchr.org/en/universal-declaration-of-human-rights)  \n    *   [Human rights day](https://www.ohchr.org/en/about-us/human-rights-day)  \n    *   [Human rights education and training](https://www.ohchr.org/en/resources/educators/human-rights-education-training)  \n\nStand up for Human Rights. Join us and make a difference.\n\n[Get Involved](https://www.ohchr.org/en/get-involved)\n\n*   [Topics](javascript:void(0);)Human rights Topics The UN Human Rights Office and the mechanisms we support work on a wide range of human rights topics. Learn more about each topic, see who's involved, and find the latest news, reports, events and more. [View all topics](https://www.ohchr.org/en/topics)    Go directly to a topic\n\nSearch Form        \n*   [Countries](javascript:void(0);)\n\nRussian - Main Navigation OHCHR\n\n    *   [All countries and territories](https://www.ohchr.org/en/countries)  \n    *   [Technical cooperation](https://www.ohchr.org/en/countries/technical-cooperation)  \n    *   [UN Human Rights and NHRIs](https://www.ohchr.org/en/countries/nhri)  \n\nGo to a country or territory\n\nSearch Form \n\n*   [Instruments & mechanisms](javascript:void(0);)\n\nRussian - Main Navigation OHCHR\n\n    *   [About mechanisms & instruments](https://www.ohchr.org/en/instruments-and-mechanisms)  \n    *   [Human rights law](https://www.ohchr.org/en/instruments-and-mechanisms/international-human-rights-law)  \n    *   [Legal instruments](https://www.ohchr.org/en/instruments-listings)  \n    *   [Human Rights Council](https://www.ohchr.org/en/hrbodies/hrc/home)  \n    *   [Universal Periodic Review](https://www.ohchr.org/en/hr-bodies/upr/upr-home)  \n",
+      "summary": "<span>Digital space and human rights</span> <span><span lang about=\"https://www.ohchr.org/en/user/277\" typeof=\"schema:Person\" property=\"schema:name\" datatype>Andrea</span></span> <span><time datetime=\"2021-07-20T18:35:28+02:00\" title=\"Tuesday, July 20, 2021 - 18:35\">Tue, 07/20/2021 - 18:35</time> </span> <div class=\"wysiwyg-content field field--name-body field--type-text-with-summary field--label-hidden field__item\"><p><a class=\"link-item link-item--with-arrow-white-blue-underline\" data-entity-substitution=\"canonic",
+      "sources": [
+        "OHCHR"
+      ],
+      "type": "story",
+      "minutesAgo": 2528987,
+      "location": "wire",
+      "imageUrl": "",
+      "videoUrl": "",
+      "link": "https://www.ohchr.org/en/topic/digital-space-and-human-rights",
+      "hasFullText": true
+    },
+    {
+      "id": "gender-equality-and-women-s-rights",
+      "tier": 5,
+      "cats": [
+        "developing"
+      ],
+      "title": "Gender equality and women’s rights",
+      "body": "<span>Gender equality and women’s rights</span> <span><span lang about=\"https://www.ohchr.org/en/user/277\" typeof=\"schema:Person\" property=\"schema:name\" datatype>Andrea</span></span> <span><time datetime=\"2021-07-20T18:01:26+02:00\" title=\"Tuesday, July 20, 2021 - 18:01\">Tue, 07/20/2021 - 18:01</time> </span> <div class=\"wysiwyg-content field field--name-body field--type-text-with-summary field--label-hidden field__item\"><p><a class=\"link-item link-item--with-arrow-white-blue-underline\" data-entity-substitution=\"can",
+      "summary": "<span>Gender equality and women’s rights</span> <span><span lang about=\"https://www.ohchr.org/en/user/277\" typeof=\"schema:Person\" property=\"schema:name\" datatype>Andrea</span></span> <span><time datetime=\"2021-07-20T18:01:26+02:00\" title=\"Tuesday, July 20, 2021 - 18:01\">Tue, 07/20/2021 - 18:01</time> </span> <div class=\"wysiwyg-content field field--name-body field--type-text-with-summary field--label-hidden field__item\"><p><a class=\"link-item link-item--with-arrow-white-blue-underline\" data-entity-substitution=\"can",
+      "sources": [
+        "OHCHR"
+      ],
+      "type": "story",
+      "minutesAgo": 2529021,
+      "location": "wire",
+      "imageUrl": "",
+      "videoUrl": "",
+      "link": "https://www.ohchr.org/en/topic/gender-equality-and-womens-rights",
+      "hasFullText": false
+    },
+    {
+      "id": "angola-flood-survivors-living-in-precarious-conditions",
+      "tier": 4,
+      "cats": [
+        "new",
+        "developing",
+        "docs"
+      ],
+      "title": "Angola: Flood Survivors Living in Precarious Conditions",
+      "body": "Published Time: 2026-05-11T18:00:00-0400\n\n# Angola: Flood Survivors Living in Precarious Conditions | Human Rights Watch\n\n[Skip to cookie privacy notice](https://www.hrw.org/news/2026/05/11/angola-flood-survivors-living-in-precarious-conditions#hrw-cookie-dialog)[Skip to main content](https://www.hrw.org/news/2026/05/11/angola-flood-survivors-living-in-precarious-conditions#main-content)\n\n[](https://www.hrw.org/)\n\n*   [العربية](https://www.hrw.org/ar \"Arabic\")\n*   [简中](https://www.hrw.org/zh-hans \"Chinese Simplified\")\n*   [繁中](https://www.hrw.org/zh-hant \"Chinese Traditional\")\n*    English \n*   [Français](https://www.hrw.org/fr \"French\")\n*   [Deutsch](https://www.hrw.org/de \"German\")\n*   [日本語](https://www.hrw.org/ja \"Japanese\")\n*   [Português](https://www.hrw.org/pt \"Portugese\")\n*   [Русский](https://www.hrw.org/ru \"Russian\")\n*   [Español](https://www.hrw.org/es \"Spanish\")\n*   [More languages](https://www.hrw.org/languages?language=en \"More\")\n\nSearch \n\n[Donate Now](https://donate.hrw.org/page/107245/donate/1?ea.tracking.id=EP2022EVpgdonate&promo_id=1000)\n\n*    Countries  \n*    Topics  \n*   [Reports](https://www.hrw.org/publications) \n*   [Video & Photos](https://www.hrw.org/video-photos) \n*   [Impact](https://www.hrw.org/impact) \n*    Join Us  \n*    About  \n*    Give Now  \n\n## //\n\n*   [Countries](https://www.hrw.org/news/2026/05/11/angola-flood-survivors-living-in-precarious-conditions#) \n*   [Topics](https://www.hrw.org/news/2026/05/11/angola-flood-survivors-living-in-precarious-conditions#) \n*   [Reports](https://www.hrw.org/publications) \n*   [Video & Photos](https://www.hrw.org/video-photos) \n*   [Impact](https://www.hrw.org/impact) \n*   [Join Us](https://www.hrw.org/news/2026/05/11/angola-flood-survivors-living-in-precarious-conditions#) \n*   [About](https://www.hrw.org/news/2026/05/11/angola-flood-survivors-living-in-precarious-conditions#) \n*   [Give Now](https://www.hrw.org/news/2026/05/11/angola-flood-survivors-living-in-precarious-conditions#) \n\n[](https://www.hrw.org/)\n\nClose\n\nSearch Search\n\n## Primary navigation\n\nCountries\n\nAfrica\n\n[All Africa](https://www.hrw.org/africa)\n\n[African Union](https://www.hrw.org/africa/african-union)\n\n[Angola](https://www.hrw.org/africa/angola)\n\n[Burkina Faso](https://www.hrw.org/africa/burkina-faso)\n\n[Burundi](https://www.hrw.org/africa/burundi)\n\n[Cameroon](https://www.hrw.org/africa/cameroon)\n\n[Central African Republic](https://www.hrw.org/africa/central-african-republic)\n\n[Chad](https://www.hrw.org/africa/chad)\n\n[Côte d'Ivoire](https://www.hrw.org/africa/cote-divoire)\n\n[Democratic Republic of Congo](https://www.hrw.org/africa/democratic-republic-congo)\n\n[Equatorial Guinea](https://www.hrw.org/africa/equatorial-guinea)\n\n[Eritrea](https://www.hrw.org/africa/eritrea)\n\n[Eswatini (formerly Swaziland)](https://www.hrw.org/africa/eswatini)\n\n[Ethiopia](https://www.hrw.org/africa/ethiopia)\n\n[Gambia](https://www.hrw.org/africa/gambia)\n\n[Ghana](https://www.hrw.org/africa/ghana)\n\n[Guinea](https://www.hrw.org/africa/guinea)\n\n[Kenya](https://www.hrw.org/africa/kenya)\n\n[Liberia](https://www.hrw.org/africa/liberia)\n\n[Malawi](https://www.hrw.org/africa/malawi)\n\n[Mali](https://www.hrw.org/africa/mali)\n\n[Mauritius](https://www.hrw.org/africa/mauritius)\n\n[Mozambique](https://www.hrw.org/africa/mozambique)\n\n[Niger](https://www.hrw.org/africa/niger)\n\n[Nigeria](https://www.hrw.org/africa/nigeria)\n\n[Rwanda](https://www.hrw.org/africa/rwanda)\n\n[Senegal](https://www.hrw.org/africa/senegal)\n\n[Sierra Leone](https://www.hrw.org/africa/sierra-leone)\n\n[Somalia](https://www.hrw.org/africa/somalia)\n\n[South Africa](https://www.hrw.org/africa/south-africa)\n\n[South Sudan](https://www.hrw.org/africa/south-sudan)\n\n[Sudan](https://www.hrw.org/africa/sudan)\n\n[Tanzania](https://www.hrw.org/africa/tanzania)\n\n[Uganda](https://www.hrw.org/africa/uganda)\n\n[Zambia](https://www.hrw.org/africa/zambia)\n\n[Zimbabwe](https://www.hrw.org/africa/zimbabwe)\n\nAmericas\n\n[All Americas](https://www.hrw.org/americas)\n\n[Argentina](https://www.hrw.org/americas/argentina)\n\n[Bolivia](https://www.hrw.org/americas/bolivia)\n\n[Brazil](https://www.hrw.org/americas/brazil)\n\n[Canada](https://www.hrw.org/americas/canada)\n\n[Chile](https://www.hrw.org/",
+      "summary": "<p>(Johannesburg) – Angolan authorities should carry out an independent and credible investigation into the Cavaco River dike collapse and ensure that internally displaced communities receive immediate, adequate, and transparent assistance, Human Rights Watch said today.</p><p>Official figures indicate that heavy rainfall and the collapse of the Cavaco River dike on April 12, 2026, triggered devastating floods in Angola’s western Benguela province, killing at least 19 people, leaving 31 missing, and affecting more ",
+      "sources": [
+        "Human Rights Watch"
+      ],
+      "type": "document",
+      "minutesAgo": 23,
+      "location": "wire",
+      "imageUrl": "",
+      "videoUrl": "",
+      "link": "https://www.hrw.org/news/2026/05/11/angola-flood-survivors-living-in-precarious-conditions",
+      "hasFullText": true
+    },
+    {
+      "id": "hundreds-displaced-medical-services-suspended-amid-gang-violence-in-haiti",
+      "tier": 4,
+      "cats": [
+        "new",
+        "developing"
+      ],
+      "title": "Hundreds displaced, medical services suspended amid gang violence in Haiti",
+      "body": "Aid group Doctors Without Borders suspends hospital operations because of safety concerns following gunfire.",
+      "summary": "Aid group Doctors Without Borders suspends hospital operations because of safety concerns following gunfire.",
       "sources": [
         "Al Jazeera"
       ],
       "type": "story",
-      "minutesAgo": 44,
+      "minutesAgo": 74,
       "location": "wire",
       "imageUrl": "",
       "videoUrl": "",
-      "link": "https://www.aljazeera.com/news/2026/4/26/trump-his-administration-likely-targets-at-media-dinner-us-official?traffic_source=rss",
+      "link": "https://www.aljazeera.com/news/2026/5/11/hundreds-displaced-medical-services-suspended-amid-gang-violence-in-haiti?traffic_source=rss",
       "hasFullText": false
     },
     {
-      "tier": 5,
+      "id": "can-democrats-unite-on-gaza-thetake-shorts-podcast",
+      "tier": 4,
       "cats": [
         "new",
-        "viral"
+        "developing",
+        "video"
       ],
-      "title": "Gaza area votes in first municipal election since 2006 amid war devastation",
-      "body": "",
-      "summary": "",
+      "title": "Can Democrats unite on Gaza? #TheTake #Shorts #Podcast",
+      "body": "Support for Israel was once untouchable in US politics. Now Democrats are divided. Is this a turning point for the party? 🎧 #TheTake's Malika Bilal hears from political analyst Omar Baddar.",
+      "summary": "Support for Israel was once untouchable in US politics. Now Democrats are divided. Is this a turning point for the party? 🎧 #TheTake's Malika Bilal hears from political analyst Omar Baddar.",
       "sources": [
-        "Al Jazeera (video)"
-      ],
-      "type": "video",
-      "minutesAgo": 46,
-      "location": "wire",
-      "imageUrl": "https://i4.ytimg.com/vi/Wm1y07FbLr0/hqdefault.jpg",
-      "videoUrl": "https://www.youtube.com/watch?v=Wm1y07FbLr0",
-      "link": "https://www.youtube.com/watch?v=Wm1y07FbLr0",
-      "hasFullText": false
-    },
-    {
-      "tier": 4,
-      "cats": [
-        "new"
-      ],
-      "title": "The mayor’s psychologist | DW News",
-      "body": "",
-      "summary": "",
-      "sources": [
-        "DW (video)"
-      ],
-      "type": "video",
-      "minutesAgo": 46,
-      "location": "wire",
-      "imageUrl": "https://i4.ytimg.com/vi/ohnNZTDj1Uc/hqdefault.jpg",
-      "videoUrl": "https://www.youtube.com/shorts/ohnNZTDj1Uc",
-      "link": "https://www.youtube.com/shorts/ohnNZTDj1Uc",
-      "hasFullText": false
-    },
-    {
-      "tier": 4,
-      "cats": [
-        "new"
-      ],
-      "title": "How did a shooter get so close to Trump again?",
-      "body": "",
-      "summary": "",
-      "sources": [
-        "DW (video)"
-      ],
-      "type": "video",
-      "minutesAgo": 47,
-      "location": "wire",
-      "imageUrl": "https://i3.ytimg.com/vi/VhodqpzK60k/hqdefault.jpg",
-      "videoUrl": "https://www.youtube.com/shorts/VhodqpzK60k",
-      "link": "https://www.youtube.com/shorts/VhodqpzK60k",
-      "hasFullText": false
-    },
-    {
-      "tier": 5,
-      "cats": [
-        "new"
-      ],
-      "title": "Israel’s President, Putting Off Decision on Pardon for Netanyahu, Will Push for Plea Deal",
-      "body": "President Isaac Herzog of Israel has decided not to issue a pardon to Prime Minister Benjamin Netanyahu in his corruption case at this time, and instead will seek mediation, officials say.",
-      "summary": "President Isaac Herzog of Israel has decided not to issue a pardon to Prime Minister Benjamin Netanyahu in his corruption case at this time, and instead will seek mediation, officials say.",
-      "sources": [
-        "NYT World"
-      ],
-      "type": "image",
-      "minutesAgo": 50,
-      "location": "wire",
-      "imageUrl": "https://static01.nyt.com/images/2026/04/26/multimedia/26int-israel-pardon-wfjv/26int-israel-pardon-wfjv-mediumSquareAt3X.jpg",
-      "videoUrl": "",
-      "link": "https://www.nytimes.com/2026/04/26/world/middleeast/israel-netanyahu-pardon-herzog.html",
-      "hasFullText": false
-    },
-    {
-      "tier": 5,
-      "cats": [
-        "new"
-      ],
-      "title": "First trial of Assad-era Syrian official starts in Damascus",
-      "body": "Syria begun its first public trial of former Assad-era officials, with ex-security chief Atef Najib appearing in court.",
-      "summary": "Syria begun its first public trial of former Assad-era officials, with ex-security chief Atef Najib appearing in court.",
-      "sources": [
-        "Al Jazeera"
-      ],
-      "type": "story",
-      "minutesAgo": 57,
-      "location": "wire",
-      "imageUrl": "",
-      "videoUrl": "",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/4/26/first-trial-of-assad-era-syrian-official-starts-in-damascus?traffic_source=rss",
-      "hasFullText": false
-    },
-    {
-      "tier": 5,
-      "cats": [
-        "new"
-      ],
-      "title": "First trial of Assad-era Syrian official starts in Damascus | AJ#shorts",
-      "body": "",
-      "summary": "",
-      "sources": [
-        "Al Jazeera (video)"
-      ],
-      "type": "video",
-      "minutesAgo": 60,
-      "location": "wire",
-      "imageUrl": "https://i3.ytimg.com/vi/BysFW1KL_pA/hqdefault.jpg",
-      "videoUrl": "https://www.youtube.com/shorts/BysFW1KL_pA",
-      "link": "https://www.youtube.com/shorts/BysFW1KL_pA",
-      "hasFullText": false
-    },
-    {
-      "tier": 5,
-      "cats": [
-        "new"
-      ],
-      "title": "Transcript: Sam Vinograd and AT Smith on \"Face the Nation with Margaret Brennan,\" April 26, 2026",
-      "body": "The following is the transcript of the interview with CBS News national security contributor Sam Vinograd and CBS News law enforcement analyst AT Smith that aired on \"Face the Nation with Margaret Brennan\" on April 26, 2026.",
-      "summary": "The following is the transcript of the interview with CBS News national security contributor Sam Vinograd and CBS News law enforcement analyst AT Smith that aired on \"Face the Nation with Margaret Brennan\" on April 26, 2026.",
-      "sources": [
-        "CBS News"
-      ],
-      "type": "story",
-      "minutesAgo": 60,
-      "location": "wire",
-      "imageUrl": "",
-      "videoUrl": "",
-      "link": "https://www.cbsnews.com/news/sam-vinograd-at-smith-face-the-nation-transcript-04-26-2026/",
-      "hasFullText": false
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "Weijia Jiang on \"Face the Nation with Margaret Brennan,\" April 26, 2026",
-      "body": "The following is the transcript of the interview with White House Correspondents' Association President and senior CBS News correspondent Weijia Jiang that aired on \"Face the Nation with Margaret Brennan\" on April 26, 2026.",
-      "summary": "The following is the transcript of the interview with White House Correspondents' Association President and senior CBS News correspondent Weijia Jiang that aired on \"Face the Nation with Margaret Brennan\" on April 26, 2026.",
-      "sources": [
-        "CBS News"
-      ],
-      "type": "story",
-      "minutesAgo": 61,
-      "location": "wire",
-      "imageUrl": "",
-      "videoUrl": "",
-      "link": "https://www.cbsnews.com/news/weijia-jiang-on-face-the-nation-with-margaret-brennan-april-26-2026/",
-      "hasFullText": false
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "What's driving attacks against govt and Russian forces in Mali? | Inside Story",
-      "body": "",
-      "summary": "",
-      "sources": [
-        "Al Jazeera (video)"
-      ],
-      "type": "video",
-      "minutesAgo": 62,
-      "location": "wire",
-      "imageUrl": "https://i3.ytimg.com/vi/6rnmMcwhIuc/hqdefault.jpg",
-      "videoUrl": "https://www.youtube.com/watch?v=6rnmMcwhIuc",
-      "link": "https://www.youtube.com/watch?v=6rnmMcwhIuc",
-      "hasFullText": false
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "Transcript: Sir Christian Turner, U.K. ambassador to the U.S., on \"Face the Nation with Margaret Brennan,\" April 26, 2026",
-      "body": "The following is the transcript of the interview with Sir Christian Turner, U.K. ambassador to the U.S., that aired on \"Face the Nation with Margaret Brennan\" on April 26, 2026.",
-      "summary": "The following is the transcript of the interview with Sir Christian Turner, U.K. ambassador to the U.S., that aired on \"Face the Nation with Margaret Brennan\" on April 26, 2026.",
-      "sources": [
-        "CBS News"
-      ],
-      "type": "story",
-      "minutesAgo": 62,
-      "location": "wire",
-      "imageUrl": "",
-      "videoUrl": "",
-      "link": "https://www.cbsnews.com/news/christian-turner-british-ambassador-to-the-us-face-the-nation-transcript-04-26-2026/",
-      "hasFullText": false
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "Transcript: Chevron CEO Mike Wirth on \"Face the Nation with Margaret Brennan,\" April 26, 2026",
-      "body": "The following is the transcript of the interview with Chevron CEO Mike Wirth that aired on \"Face the Nation with Margaret Brennan\" on April 26, 2026.",
-      "summary": "The following is the transcript of the interview with Chevron CEO Mike Wirth that aired on \"Face the Nation with Margaret Brennan\" on April 26, 2026.",
-      "sources": [
-        "CBS News"
-      ],
-      "type": "story",
-      "minutesAgo": 65,
-      "location": "wire",
-      "imageUrl": "",
-      "videoUrl": "",
-      "link": "https://www.cbsnews.com/news/mike-wirth-chevron-ceo-face-the-nation-transcript-04-26-2026/",
-      "hasFullText": false
-    },
-    {
-      "tier": 5,
-      "cats": [
-        "viral"
-      ],
-      "title": "Iran and U.S. Sink Into Awkward Limbo of ‘No War, No Peace’",
-      "body": "Each side is betting it can last longer than the other, analysts say. But there are risks in a stalemate without a deal.",
-      "summary": "Each side is betting it can last longer than the other, analysts say. But there are risks in a stalemate without a deal.",
-      "sources": [
-        "NYT World"
-      ],
-      "type": "image",
-      "minutesAgo": 66,
-      "location": "wire",
-      "imageUrl": "https://static01.nyt.com/images/2026/04/26/multimedia/26int-iran-strategy-assess-01-qwjh/26int-iran-strategy-assess-01-qwjh-mediumSquareAt3X.jpg",
-      "videoUrl": "",
-      "link": "https://www.nytimes.com/2026/04/26/world/middleeast/iran-united-states-israel-war-truce.html",
-      "hasFullText": false
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "Transcript: Rep. Jamie Raskin on \"Face the Nation with Margaret Brennan,\" April 26, 2026",
-      "body": "The following is the transcript of the interview with Rep. Jamie Raskin, Democrat of Maryland, that aired on \"Face the Nation with Margaret Brennan\" on April 26, 2026.",
-      "summary": "The following is the transcript of the interview with Rep. Jamie Raskin, Democrat of Maryland, that aired on \"Face the Nation with Margaret Brennan\" on April 26, 2026.",
-      "sources": [
-        "CBS News"
-      ],
-      "type": "story",
-      "minutesAgo": 67,
-      "location": "wire",
-      "imageUrl": "",
-      "videoUrl": "",
-      "link": "https://www.cbsnews.com/news/jamie-raskin-maryland-democrat-face-the-nation-transcript-04-26-2026/",
-      "hasFullText": false
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "Thai police arrest Indonesian wanted for $10m cyberfraud",
-      "body": "The 33-year-old Indonesian taken into custody at luxury resort on island of Phuket after FBI tip-off.",
-      "summary": "The 33-year-old Indonesian taken into custody at luxury resort on island of Phuket after FBI tip-off.",
-      "sources": [
-        "Al Jazeera"
-      ],
-      "type": "story",
-      "minutesAgo": 69,
-      "location": "wire",
-      "imageUrl": "",
-      "videoUrl": "",
-      "link": "https://www.aljazeera.com/news/2026/4/26/thai-police-arrest-indonesian-wanted-for-10m-cyberfraud?traffic_source=rss",
-      "hasFullText": false
-    },
-    {
-      "tier": 4,
-      "cats": [],
-      "title": "A young widow’s ‘surprising’ experience with grief",
-      "body": "",
-      "summary": "",
-      "sources": [
-        "CNN (video)"
-      ],
-      "type": "video",
-      "minutesAgo": 75,
-      "location": "wire",
-      "imageUrl": "https://i2.ytimg.com/vi/yNhQiKGwvCo/hqdefault.jpg",
-      "videoUrl": "https://www.youtube.com/shorts/yNhQiKGwvCo",
-      "link": "https://www.youtube.com/shorts/yNhQiKGwvCo",
-      "hasFullText": false
-    },
-    {
-      "tier": 4,
-      "cats": [],
-      "title": "How EU is pivoting away from ‘toxic’ Trump & closer to China | Fareed's Take",
-      "body": "",
-      "summary": "",
-      "sources": [
-        "CNN (video)"
-      ],
-      "type": "video",
-      "minutesAgo": 75,
-      "location": "wire",
-      "imageUrl": "https://i2.ytimg.com/vi/YWZACdqdFcc/hqdefault.jpg",
-      "videoUrl": "https://www.youtube.com/watch?v=YWZACdqdFcc",
-      "link": "https://www.youtube.com/watch?v=YWZACdqdFcc",
-      "hasFullText": false
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "'You fight your way to the negotiating table': Analyst on US-Iran diplomacy",
-      "body": "",
-      "summary": "",
-      "sources": [
-        "Al Jazeera (video)"
-      ],
-      "type": "video",
-      "minutesAgo": 78,
-      "location": "wire",
-      "imageUrl": "https://i4.ytimg.com/vi/O8t97Bp9GUo/hqdefault.jpg",
-      "videoUrl": "https://www.youtube.com/watch?v=O8t97Bp9GUo",
-      "link": "https://www.youtube.com/watch?v=O8t97Bp9GUo",
-      "hasFullText": false
-    },
-    {
-      "tier": 4,
-      "cats": [],
-      "title": "Gazans mourn after weekend of Israeli attacks",
-      "body": "",
-      "summary": "",
-      "sources": [
-        "DW (video)"
+        "Al Jazeera English (video)"
       ],
       "type": "video",
       "minutesAgo": 79,
       "location": "wire",
-      "imageUrl": "https://i2.ytimg.com/vi/I8fnsOhXFBs/hqdefault.jpg",
-      "videoUrl": "https://www.youtube.com/shorts/I8fnsOhXFBs",
-      "link": "https://www.youtube.com/shorts/I8fnsOhXFBs",
+      "imageUrl": "https://i3.ytimg.com/vi/RvjdLXdLsSw/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/shorts/RvjdLXdLsSw",
+      "link": "https://www.youtube.com/shorts/RvjdLXdLsSw",
       "hasFullText": false
     },
     {
-      "tier": 5,
+      "id": "video-un-car",
+      "tier": 4,
       "cats": [
-        "viral"
+        "new",
+        "video",
+        "developing"
       ],
-      "title": "Law enforcement respond after shooting incident at White House Correspondents' dinner",
-      "body": "",
-      "summary": "",
+      "title": "UN field briefing: Central African Republic remains fragile but hopeful",
+      "body": "Reliable video fallback from the United Nations channel.",
+      "summary": "UN field briefing source video.",
+      "sources": [
+        "United Nations video"
+      ],
+      "type": "video",
+      "minutesAgo": 90,
+      "location": "UN video",
+      "imageUrl": "https://img.youtube.com/vi/MleE9I3rjGUo/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/watch?v=MleE9I3rjGUo",
+      "link": "https://www.youtube.com/watch?v=MleE9I3rjGUo",
+      "hasFullText": false
+    },
+    {
+      "id": "why-many-adopted-kids-end-up-in-residential-treatment-centers-an-ap-investigatio",
+      "tier": 4,
+      "cats": [
+        "new",
+        "developing",
+        "docs",
+        "video"
+      ],
+      "title": "Why many adopted kids end up in residential treatment centers, an AP investigation",
+      "body": "An Associated Press investigation finds a business known for tough-love boarding schools for rebellious teenagers has set its sights on a different demographic: adopted kids. Adoptees account for an estimated 25-40% of those in residential treatment.",
+      "summary": "An Associated Press investigation finds a business known for tough-love boarding schools for rebellious teenagers has set its sights on a different demographic: adopted kids. Adoptees account for an estimated 25-40% of those in residential treatment.",
       "sources": [
         "AP (video)"
       ],
       "type": "video",
-      "minutesAgo": 87,
+      "minutesAgo": 90,
       "location": "wire",
-      "imageUrl": "https://i4.ytimg.com/vi/7mXMJgn2UrM/hqdefault.jpg",
-      "videoUrl": "https://www.youtube.com/shorts/7mXMJgn2UrM",
-      "link": "https://www.youtube.com/shorts/7mXMJgn2UrM",
+      "imageUrl": "https://i3.ytimg.com/vi/ZCfGj10OPHo/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/shorts/ZCfGj10OPHo",
+      "link": "https://www.youtube.com/shorts/ZCfGj10OPHo",
       "hasFullText": false
     },
     {
-      "tier": 4,
-      "cats": [],
-      "title": "'It was textbook from the moment you hear the shots' says ex-agent on secret service's response",
-      "body": "",
-      "summary": "",
-      "sources": [
-        "Sky News (video)"
-      ],
-      "type": "video",
-      "minutesAgo": 98,
-      "location": "wire",
-      "imageUrl": "https://i1.ytimg.com/vi/dNC4kHyiRDA/hqdefault.jpg",
-      "videoUrl": "https://www.youtube.com/watch?v=dNC4kHyiRDA",
-      "link": "https://www.youtube.com/watch?v=dNC4kHyiRDA",
-      "hasFullText": false
-    },
-    {
+      "id": "what-tree-rings-reveal-about-climate-change-in-the-amazon",
       "tier": 4,
       "cats": [
-        "viral"
+        "new",
+        "developing"
       ],
-      "title": "Performer close to Trump during shooting describes what happened",
-      "body": "",
-      "summary": "",
+      "title": "What tree rings reveal about climate change in the Amazon",
+      "body": "In 2024, the Amazon region felt the effects of one of the worst droughts in its recorded history — if not the worst. At the port of Manaus, the largest city along the course of the Amazon River, the water level reached 12.68 meters (41.60 feet), the lowest level since measurements began there in 1902. […]",
+      "summary": "In 2024, the Amazon region felt the effects of one of the worst droughts in its recorded history — if not the worst. At the port of Manaus, the largest city along the course of the Amazon River, the water level reached 12.68 meters (41.60 feet), the lowest level since measurements began there in 1902. […]",
       "sources": [
-        "CNN (video)"
-      ],
-      "type": "video",
-      "minutesAgo": 102,
-      "location": "wire",
-      "imageUrl": "https://i1.ytimg.com/vi/Dwo9hLk-CJ0/hqdefault.jpg",
-      "videoUrl": "https://www.youtube.com/shorts/Dwo9hLk-CJ0",
-      "link": "https://www.youtube.com/shorts/Dwo9hLk-CJ0",
-      "hasFullText": false
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "Hope in Gaza as 300 couples get married at one time. #BBCNews",
-      "body": "",
-      "summary": "",
-      "sources": [
-        "BBC News (video)"
-      ],
-      "type": "video",
-      "minutesAgo": 106,
-      "location": "wire",
-      "imageUrl": "https://i4.ytimg.com/vi/gNDk6HDf_Hs/hqdefault.jpg",
-      "videoUrl": "https://www.youtube.com/shorts/gNDk6HDf_Hs",
-      "link": "https://www.youtube.com/shorts/gNDk6HDf_Hs",
-      "hasFullText": false
-    },
-    {
-      "tier": 5,
-      "cats": [
-        "viral"
-      ],
-      "title": "Iran shifts economic focus to essentials during war uncertainty",
-      "body": "The government is partly reversing a currency decision for basic items and tapping into the country's sovereign fund.",
-      "summary": "The government is partly reversing a currency decision for basic items and tapping into the country's sovereign fund.",
-      "sources": [
-        "Al Jazeera"
-      ],
-      "type": "story",
-      "minutesAgo": 107,
-      "location": "wire",
-      "imageUrl": "",
-      "videoUrl": "",
-      "link": "https://www.aljazeera.com/news/2026/4/26/iran-shifts-economic-focus-to-essentials-amid-war-uncertainty?traffic_source=rss",
-      "hasFullText": false
-    },
-    {
-      "tier": 5,
-      "cats": [
-        "viral"
-      ],
-      "title": "War on Iran: How the Strait of Hormuz crisis boosts Russia’s economic leverage",
-      "body": "",
-      "summary": "",
-      "sources": [
-        "Al Jazeera (video)"
-      ],
-      "type": "video",
-      "minutesAgo": 109,
-      "location": "wire",
-      "imageUrl": "https://i2.ytimg.com/vi/iEFUiodr7dk/hqdefault.jpg",
-      "videoUrl": "https://www.youtube.com/watch?v=iEFUiodr7dk",
-      "link": "https://www.youtube.com/watch?v=iEFUiodr7dk",
-      "hasFullText": false
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "Abbas loyalists sweep Palestinian elections, including some seats in Gaza",
-      "body": "Voter turnout in Gaza remained low due to the ongoing impact of the genocide.",
-      "summary": "Voter turnout in Gaza remained low due to the ongoing impact of the genocide.",
-      "sources": [
-        "Al Jazeera"
-      ],
-      "type": "story",
-      "minutesAgo": 116,
-      "location": "wire",
-      "imageUrl": "",
-      "videoUrl": "",
-      "link": "https://www.aljazeera.com/news/2026/4/26/abbas-loyalists-sweep-palestine-elections-in-occupied-west-bank-gaza-city?traffic_source=rss",
-      "hasFullText": false
-    },
-    {
-      "tier": 5,
-      "cats": [
-        "viral"
-      ],
-      "title": "White House Correspondents' Dinner shooting: What we know so far | BBC News",
-      "body": "",
-      "summary": "",
-      "sources": [
-        "BBC News (video)"
-      ],
-      "type": "video",
-      "minutesAgo": 122,
-      "location": "wire",
-      "imageUrl": "https://i1.ytimg.com/vi/Pu-0xly1l8w/hqdefault.jpg",
-      "videoUrl": "https://www.youtube.com/watch?v=Pu-0xly1l8w",
-      "link": "https://www.youtube.com/watch?v=Pu-0xly1l8w",
-      "hasFullText": false
-    },
-    {
-      "tier": 4,
-      "cats": [],
-      "title": "Canadian Province of Manitoba Says It Will Ban Social Media, AI For Youth",
-      "body": "The Canadian province of Manitoba plans to prohibit young people from accessing social media and artificial intelligence chatbots, its leader said.",
-      "summary": "The Canadian province of Manitoba plans to prohibit young people from accessing social media and artificial intelligence chatbots, its leader said.",
-      "sources": [
-        "Bloomberg Tech"
+        "Mongabay"
       ],
       "type": "image",
-      "minutesAgo": 128,
+      "minutesAgo": 101,
       "location": "wire",
-      "imageUrl": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iUdwIsdOoAZw/v0/1200x-1.jpg",
+      "imageUrl": "https://imgs.mongabay.com/wp-content/uploads/sites/20/2026/05/11203908/3e9d00bd-2908-45d2-adc1-d7519aea0a7c-e1778532089593-768x512.png",
       "videoUrl": "",
-      "link": "https://www.bloomberg.com/news/articles/2026-04-26/canadian-province-of-manitoba-says-it-will-ban-social-media-ai-for-youth",
+      "link": "https://news.mongabay.com/2026/05/what-tree-rings-reveal-about-climate-change-in-the-amazon/",
       "hasFullText": false
     },
     {
-      "tier": 5,
-      "cats": [],
-      "title": "North Korea's Kim Jong Un meets with speaker of Russian state duma",
-      "body": "",
-      "summary": "",
-      "sources": [
-        "AP (video)"
-      ],
-      "type": "video",
-      "minutesAgo": 132,
-      "location": "wire",
-      "imageUrl": "https://i2.ytimg.com/vi/E97ZKLAw_8c/hqdefault.jpg",
-      "videoUrl": "https://www.youtube.com/watch?v=E97ZKLAw_8c",
-      "link": "https://www.youtube.com/watch?v=E97ZKLAw_8c",
-      "hasFullText": false
-    },
-    {
-      "tier": 5,
-      "cats": [
-        "viral"
-      ],
-      "title": "'No one checked my ID', says BBC correspondent at DC hotel shooting. #BBCNews",
-      "body": "",
-      "summary": "",
-      "sources": [
-        "BBC News (video)"
-      ],
-      "type": "video",
-      "minutesAgo": 166,
-      "location": "wire",
-      "imageUrl": "https://i4.ytimg.com/vi/wZpd5y6PVpI/hqdefault.jpg",
-      "videoUrl": "https://www.youtube.com/shorts/wZpd5y6PVpI",
-      "link": "https://www.youtube.com/shorts/wZpd5y6PVpI",
-      "hasFullText": false
-    },
-    {
+      "id": "new-congo-oil-find-highlights-africa-s-energy-paradox-amid-hormuz-crisis",
       "tier": 4,
-      "cats": [],
-      "title": "Italy Decides to Extradite Chinese Man Wanted by US for Hacking",
-      "body": "The Italian government decided to extradite a Chinese man wanted by the US on hacking charges, people familiar with the matter said on Sunday.",
-      "summary": "The Italian government decided to extradite a Chinese man wanted by the US on hacking charges, people familiar with the matter said on Sunday.",
+      "cats": [
+        "new",
+        "developing"
+      ],
+      "title": "New Congo oil find highlights Africa’s energy paradox amid Hormuz crisis",
+      "body": "On April 13, 2026, TotalEnergies EP Congo announced it had discovered hydrocarbons on the Moho permit, offshore of the Republic of Congo. The company estimates the find could amount to nearly 100 million barrels of recoverable resources, though observers warn that the windfall won’t likely reach many Congolese citizens, roughly a third of whom live […]",
+      "summary": "On April 13, 2026, TotalEnergies EP Congo announced it had discovered hydrocarbons on the Moho permit, offshore of the Republic of Congo. The company estimates the find could amount to nearly 100 million barrels of recoverable resources, though observers warn that the windfall won’t likely reach many Congolese citizens, roughly a third of whom live […]",
       "sources": [
-        "Bloomberg Tech"
+        "Mongabay"
       ],
       "type": "image",
-      "minutesAgo": 167,
+      "minutesAgo": 101,
       "location": "wire",
-      "imageUrl": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i5cOuOcodPoY/v1/1200x-1.jpg",
+      "imageUrl": "https://imgs.mongabay.com/wp-content/uploads/sites/20/2026/05/11203833/ajs1980518-sea-4841142-768x512.jpg",
       "videoUrl": "",
-      "link": "https://www.bloomberg.com/news/articles/2026-04-26/italy-decides-to-extradite-chinese-man-wanted-by-us-for-hacking",
+      "link": "https://news.mongabay.com/short-article/2026/05/new-congo-oil-find-highlights-africas-energy-paradox-amid-hormuz-crisis/",
       "hasFullText": false
     },
     {
-      "tier": 5,
-      "cats": [],
-      "title": "Sultan of Oman meets with Iran's Foreign Minister Abbas Araghchi",
-      "body": "",
-      "summary": "",
-      "sources": [
-        "AP (video)"
-      ],
-      "type": "video",
-      "minutesAgo": 167,
-      "location": "wire",
-      "imageUrl": "https://i2.ytimg.com/vi/ui8e9SxoMes/hqdefault.jpg",
-      "videoUrl": "https://www.youtube.com/watch?v=ui8e9SxoMes",
-      "link": "https://www.youtube.com/watch?v=ui8e9SxoMes",
-      "hasFullText": false
-    },
-    {
-      "tier": 5,
+      "id": "palestinians-mark-78-years-since-nakba-amid-ongoing-displacement",
+      "tier": 4,
       "cats": [
-        "viral"
+        "new",
+        "developing"
       ],
-      "title": "DC mayor says 'no reason to believe' anyone else involved in dinner shooting incident",
-      "body": "",
-      "summary": "",
-      "sources": [
-        "AP (video)"
-      ],
-      "type": "video",
-      "minutesAgo": 176,
-      "location": "wire",
-      "imageUrl": "https://i3.ytimg.com/vi/VDbyUbTymXU/hqdefault.jpg",
-      "videoUrl": "https://www.youtube.com/shorts/VDbyUbTymXU",
-      "link": "https://www.youtube.com/shorts/VDbyUbTymXU",
-      "hasFullText": false
-    },
-    {
-      "tier": 5,
-      "cats": [
-        "viral"
-      ],
-      "title": "How the US-Israel war, sanctions and blockade are pushing Iran’s economy to the brink",
-      "body": "",
-      "summary": "",
-      "sources": [
-        "Al Jazeera (video)"
-      ],
-      "type": "video",
-      "minutesAgo": 177,
-      "location": "wire",
-      "imageUrl": "https://i2.ytimg.com/vi/IztQJIkIiak/hqdefault.jpg",
-      "videoUrl": "https://www.youtube.com/watch?v=IztQJIkIiak",
-      "link": "https://www.youtube.com/watch?v=IztQJIkIiak",
-      "hasFullText": false
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "New footage shows moment of deadly bus bombing in Colombia",
-      "body": "Newly released dashcam video shows the moment that a bomb-laden bus exploded in Colombia.",
-      "summary": "Newly released dashcam video shows the moment that a bomb-laden bus exploded in Colombia.",
-      "sources": [
-        "Al Jazeera"
-      ],
-      "type": "video",
-      "minutesAgo": 189,
-      "location": "wire",
-      "imageUrl": "",
-      "videoUrl": "",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/4/26/new-footage-shows-moment-of-deadly-bus-bombing-in-colombia?traffic_source=rss",
-      "hasFullText": false
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "New footage shows moment of deadly bus bombing in Colombia | AJ #shorts",
-      "body": "",
-      "summary": "",
-      "sources": [
-        "Al Jazeera (video)"
-      ],
-      "type": "video",
-      "minutesAgo": 192,
-      "location": "wire",
-      "imageUrl": "https://i4.ytimg.com/vi/ghyxF88SwxU/hqdefault.jpg",
-      "videoUrl": "https://www.youtube.com/shorts/ghyxF88SwxU",
-      "link": "https://www.youtube.com/shorts/ghyxF88SwxU",
-      "hasFullText": false
-    },
-    {
-      "tier": 5,
-      "cats": [
-        "viral"
-      ],
-      "title": "‘State of war’: Why Israel has escalated attacks in Gaza",
-      "body": "Israel escalates attacks and expands control in Gaza Strip, sidelining the new US-backed technocratic administration.",
-      "summary": "Israel escalates attacks and expands control in Gaza Strip, sidelining the new US-backed technocratic administration.",
+      "title": "Palestinians mark 78 years since Nakba amid ongoing displacement",
+      "body": "78 years of memory: Palestinians rally in Khan Yunis to mark the Nakba.",
+      "summary": "78 years of memory: Palestinians rally in Khan Yunis to mark the Nakba.",
       "sources": [
         "Al Jazeera"
       ],
       "type": "story",
-      "minutesAgo": 195,
+      "minutesAgo": 136,
       "location": "wire",
       "imageUrl": "",
       "videoUrl": "",
-      "link": "https://www.aljazeera.com/news/2026/4/26/state-of-war-why-israel-has-escalated-attacks-in-gaza?traffic_source=rss",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/5/11/palestinians-mark-78-years-since-nakba-amid-ongoing-displacement?traffic_source=rss",
       "hasFullText": false
     },
     {
-      "tier": 5,
-      "cats": [],
-      "title": "4/26: Face The Nation",
-      "body": "This week on \"Face the Nation with Margaret Brennan,\" acting Attorney General Todd Blanche and White House Correspondents' Association President and CBS News correspondent Weijia Jiang join after gunshots rang out at the annual dinner. Plus, U.K. Ambassador to the U.K., Sir Christian Turner, joins.",
-      "summary": "This week on \"Face the Nation with Margaret Brennan,\" acting Attorney General Todd Blanche and White House Correspondents' Association President and CBS News correspondent Weijia Jiang join after gunshots rang out at the annual dinner. Plus, U.K. Ambassador to the U.K., Sir Christian Turner, joins.",
-      "sources": [
-        "CBS News"
-      ],
-      "type": "story",
-      "minutesAgo": 197,
-      "location": "wire",
-      "imageUrl": "",
-      "videoUrl": "",
-      "link": "https://www.cbsnews.com/video/042626-face-the-nation/",
-      "hasFullText": false
-    },
-    {
+      "id": "palestinians-mark-78-years-since-nakba-amid-ongoing-displacement",
       "tier": 4,
       "cats": [
-        "viral"
+        "new",
+        "developing",
+        "video"
       ],
-      "title": "WHCD shooting: What the person closest to Trump saw",
-      "body": "",
-      "summary": "",
+      "title": "Palestinians mark 78 years since Nakba amid ongoing displacement",
+      "body": "78 years of memory: Palestinians rally in Khan Yunis to mark the Nakba. Subscribe to our channel: http://bit.ly/AJSubscribe Follow us on X : https://twitter.com/AJEnglish Find us on Facebook: https://www.facebook.com/aljazeera Check our website: http://www.aljazeera.com/ Check out our Instagram page: https://www.instagram.com/aljazeeraenglish/ Download AJE Mobile App: https://aje.news/AJEMobile",
+      "summary": "78 years of memory: Palestinians rally in Khan Yunis to mark the Nakba. Subscribe to our channel: http://bit.ly/AJSubscribe Follow us on X : https://twitter.com/AJEnglish Find us on Facebook: https://www.facebook.com/aljazeera Check our website: http://www.aljazeera.com/ Check out our Instagram page: https://www.instagram.com/aljazeeraenglish/ Download AJE Mobile App: https://aje.news/AJEMobile",
       "sources": [
-        "CNN (video)"
+        "Al Jazeera English (video)"
       ],
       "type": "video",
-      "minutesAgo": 202,
+      "minutesAgo": 143,
       "location": "wire",
-      "imageUrl": "https://i1.ytimg.com/vi/pZEAhzaqh5Y/hqdefault.jpg",
-      "videoUrl": "https://www.youtube.com/watch?v=pZEAhzaqh5Y",
-      "link": "https://www.youtube.com/watch?v=pZEAhzaqh5Y",
+      "imageUrl": "https://i2.ytimg.com/vi/mhsolOj7YyE/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/shorts/mhsolOj7YyE",
+      "link": "https://www.youtube.com/shorts/mhsolOj7YyE",
       "hasFullText": false
     },
     {
-      "tier": 5,
-      "cats": [],
-      "title": "Will Yamal, Salah and Ekitike miss the World Cup 2026 due to injury?",
-      "body": "From Spanish prodigy Lamine Yamal to Egypt's Mohamed Salah and Brazil's trio, these 10 players could be out of action.",
-      "summary": "From Spanish prodigy Lamine Yamal to Egypt's Mohamed Salah and Brazil's trio, these 10 players could be out of action.",
+      "id": "could-the-latest-violence-in-dr-congo-undermine-truce-efforts",
+      "tier": 4,
+      "cats": [
+        "developing"
+      ],
+      "title": "Could the latest violence in DR Congo undermine truce efforts?",
+      "body": "Lesser-known armed groups have carried out a spate of attacks in the country's northeast.",
+      "summary": "Lesser-known armed groups have carried out a spate of attacks in the country's northeast.",
       "sources": [
         "Al Jazeera"
       ],
       "type": "story",
-      "minutesAgo": 207,
+      "minutesAgo": 184,
       "location": "wire",
       "imageUrl": "",
       "videoUrl": "",
-      "link": "https://www.aljazeera.com/sports/2026/4/26/will-yamal-salah-and-ekitike-miss-the-world-cup-2026-due-to-injury?traffic_source=rss",
+      "link": "https://www.aljazeera.com/video/inside-story/2026/5/11/could-the-latest-violence-in-dr-congo-undermine-truce-efforts?traffic_source=rss",
       "hasFullText": false
     },
     {
-      "tier": 5,
-      "cats": [],
-      "title": "Trump says being president a 'dangerous profession'",
-      "body": "",
-      "summary": "",
-      "sources": [
-        "AP (video)"
-      ],
-      "type": "video",
-      "minutesAgo": 210,
-      "location": "wire",
-      "imageUrl": "https://i3.ytimg.com/vi/vtR7r1c3g3I/hqdefault.jpg",
-      "videoUrl": "https://www.youtube.com/shorts/vtR7r1c3g3I",
-      "link": "https://www.youtube.com/shorts/vtR7r1c3g3I",
-      "hasFullText": false
-    },
-    {
-      "tier": 5,
-      "cats": [
-        "viral"
-      ],
-      "title": "Philippines’ ‘sea nomads’ navigate fuel price surge driven by the war on Iran",
-      "body": "",
-      "summary": "",
-      "sources": [
-        "Al Jazeera (video)"
-      ],
-      "type": "video",
-      "minutesAgo": 213,
-      "location": "wire",
-      "imageUrl": "https://i1.ytimg.com/vi/XfWJXRt3Ffg/hqdefault.jpg",
-      "videoUrl": "https://www.youtube.com/watch?v=XfWJXRt3Ffg",
-      "link": "https://www.youtube.com/watch?v=XfWJXRt3Ffg",
-      "hasFullText": false
-    },
-    {
-      "tier": 4,
-      "cats": [],
-      "title": "World Penguin Day: tracking a 12,000 km migration | DW News",
-      "body": "",
-      "summary": "",
-      "sources": [
-        "DW (video)"
-      ],
-      "type": "video",
-      "minutesAgo": 227,
-      "location": "wire",
-      "imageUrl": "https://i3.ytimg.com/vi/2Xk8pdyB-Q0/hqdefault.jpg",
-      "videoUrl": "https://www.youtube.com/shorts/2Xk8pdyB-Q0",
-      "link": "https://www.youtube.com/shorts/2Xk8pdyB-Q0",
-      "hasFullText": false
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "AP bureau chief describes what happened at the White House Correspondents' dinner",
-      "body": "",
-      "summary": "",
-      "sources": [
-        "AP (video)"
-      ],
-      "type": "video",
-      "minutesAgo": 234,
-      "location": "wire",
-      "imageUrl": "https://i4.ytimg.com/vi/WJm8uWgLqRU/hqdefault.jpg",
-      "videoUrl": "https://www.youtube.com/shorts/WJm8uWgLqRU",
-      "link": "https://www.youtube.com/shorts/WJm8uWgLqRU",
-      "hasFullText": false
-    },
-    {
+      "id": "some-climate-shocks-can-increase-the-likelihood-of-war",
       "tier": 4,
       "cats": [
-        "viral"
+        "developing",
+        "docs"
       ],
-      "title": "Trump says shooting would 'never have happened' if ballroom was built",
-      "body": "",
-      "summary": "",
+      "title": "Some Climate Shocks Can Increase the Likelihood of War",
+      "body": "Published Time: 2026-05-11T19:00:00+00:00\n\n# Some Climate Shocks Can Increase the Likelihood of War - Inside Climate News\n\n[Skip to content](https://insideclimatenews.org/news/11052026/climate-change-role-in-war/#content)\n\n*   [Science](https://insideclimatenews.org/category/science/)\n*   [Politics](https://insideclimatenews.org/category/politics-policy/)\n*   [Justice & Health](https://insideclimatenews.org/category/justice/)\n*   [Fossil Fuels](https://insideclimatenews.org/category/fossil-fuels/)\n*   [Clean Energy](https://insideclimatenews.org/category/clean-energy/)\n\n*   [ICN Local](https://insideclimatenews.org/icn-local/)\n*   [Projects](https://insideclimatenews.org/projects/)\n*   [Impact](https://insideclimatenews.org/tags/impact/)\n*   [About Us](https://insideclimatenews.org/about/)\n\nOpen Menu\n\n\n\n Pulitzer Prize-winning, nonpartisan reporting on the biggest crisis facing our planet. \n\n[Donate](https://insideclimate.fundjournalism.org/donate/?amount=15&campaign=7013a000002DS1nAAG&frequency=monthly)\n\n[Trump 2.0: The Reckoning](https://insideclimatenews.org/project/trump-second-term-the-reckoning/)\n\n\n\n[Donate](https://insideclimate.fundjournalism.org/donate/?amount=15&campaign=7013a000002DS1nAAG&frequency=monthly)\n\nOpen Menu\n\nClose Menu\n### Search\n\nSearch for: \n\n*   [Science](https://insideclimatenews.org/category/science/)\n*   [Politics](https://insideclimatenews.org/category/politics-policy/)\n*   [Justice & Health](https://insideclimatenews.org/category/justice/)\n*   [Fossil Fuels](https://insideclimatenews.org/category/fossil-fuels/)\n*   [Clean Energy](https://insideclimatenews.org/category/clean-energy/)\n\n*   [ICN Local](https://insideclimatenews.org/icn-local/)\n*   [Projects](https://insideclimatenews.org/projects/)\n*   [Impact](https://insideclimatenews.org/tags/impact/)\n*   [About Us](https://insideclimatenews.org/about/)\n*   [Newsletters](https://insideclimatenews.org/newsletter/)\n*   [ICN Sunday Morning](https://insideclimatenews.org/icn-sunday-morning/)\n*   [Contact Us](https://insideclimatenews.org/contact/)\n\n### Topics\n\n*   [A.I. & Data Centers](https://insideclimatenews.org/topic/ai-data-centers/)\n*   [Activism](https://insideclimatenews.org/topic/activism/)\n*   [Arctic](https://insideclimatenews.org/topic/arctic/)\n*   [Biodiversity & Conservation](https://insideclimatenews.org/topic/biodiversity-conservation/)\n*   [Business & Finance](https://insideclimatenews.org/topic/business-finance/)\n*   [Climate Law & Liability](https://insideclimatenews.org/topic/climate-law-liability/)\n*   [Climate Treaties](https://insideclimatenews.org/topic/climate-treaties/)\n*   [Denial & Misinformation](https://insideclimatenews.org/topic/denial-misinformation/)\n*   [Environment & Health](https://insideclimatenews.org/topic/environment-health/)\n*   [Extreme Weather](https://insideclimatenews.org/topic/extreme-weather/)\n*   [Food & Agriculture](https://insideclimatenews.org/topic/food-agriculture/)\n*   [Fracking](https://insideclimatenews.org/topic/fracking/)\n*   [Nuclear](https://insideclimatenews.org/topic/nuclear/)\n*   [Pipelines](https://insideclimatenews.org/topic/pipelines/)\n*   [Plastics](https://insideclimatenews.org/topic/plastics/)\n*   [Public Lands](https://insideclimatenews.org/topic/public-lands/)\n*   [Regulation](https://insideclimatenews.org/topic/regulation/)\n*   [Super-Pollutants](https://insideclimatenews.org/topic/super-climate-pollutants/)\n*   [Water/Drought](https://insideclimatenews.org/topic/water-drought/)\n*   [Wildfires](https://insideclimatenews.org/topic/wildfires/)\n\n### Information\n\n*   [About](https://insideclimatenews.org/about/)\n*   [Job Openings](https://insideclimatenews.org/about/jobs/)\n*   [Reporting Network](https://insideclimatenews.org/icn-local/)\n*   [Whistleblowers](https://insideclimatenews.org/whistleblowers/)\n*   [Memberships](https://insideclimatenews.org/about/membership/)\n*   [Ways to Give](https://insideclimatenews.org/ways-to-give/)\n*   [Fellows & Fellowships](https://insideclimatenews.org/about/fellows/)\n\n### Publications\n\n*   [E-Books](https://insideclimatenews.org/ebooks/)\n*   [Documents](https://insideclimatenews.org/documents/)\n\n### [Justice & Health](https://insideclimatene",
+      "summary": "New research reinforces scientific evidence that climate extremes can raise the risk of armed conflict, especially when drought conditions pass critical thresholds in vulnerable regions, including parts of Africa and Southeast Asia. The study, published today in the Proceedings of the National Academy of Sciences, analyzed detailed climate and armed-conflict data from 1950 to 2023. […]",
       "sources": [
-        "Sky News (video)"
+        "Inside Climate News"
       ],
-      "type": "video",
-      "minutesAgo": 249,
+      "type": "document",
+      "minutesAgo": 203,
       "location": "wire",
-      "imageUrl": "https://i4.ytimg.com/vi/kRJFRNC5Em8/hqdefault.jpg",
-      "videoUrl": "https://www.youtube.com/watch?v=kRJFRNC5Em8",
-      "link": "https://www.youtube.com/watch?v=kRJFRNC5Em8",
-      "hasFullText": false
+      "imageUrl": "",
+      "videoUrl": "",
+      "link": "https://insideclimatenews.org/news/11052026/climate-change-role-in-war/",
+      "hasFullText": true
     },
     {
+      "id": "un-official-would-reject-us-funds-with-discriminatory-conditions",
       "tier": 4,
       "cats": [
-        "viral"
+        "developing"
       ],
-      "title": "Ro Khanna believes Trump won't secure congressional authorization for Iran war: Full interview",
-      "body": "",
-      "summary": "",
+      "title": "UN Official Would Reject US Funds with Discriminatory Conditions",
+      "body": "Click to expand Image Tom Fletcher, UN Under-Secretary-General for Humanitarian Affairs and Emergency Relief Coordinator, during a press conference in Geneva, August 22, 2025. © 2025 Salvatore Di Nolfi/Keystone via AP Photo <p>The senior United Nations humanitarian official said he would refuse US government financial contributions that would require recipients to comply with discriminatory US policies that undermine human rights. </p><p>“The question is, should we take money under those conditions, knowing that it",
+      "summary": "Click to expand Image Tom Fletcher, UN Under-Secretary-General for Humanitarian Affairs and Emergency Relief Coordinator, during a press conference in Geneva, August 22, 2025. © 2025 Salvatore Di Nolfi/Keystone via AP Photo <p>The senior United Nations humanitarian official said he would refuse US government financial contributions that would require recipients to comply with discriminatory US policies that undermine human rights. </p><p>“The question is, should we take money under those conditions, knowing that it",
       "sources": [
-        "NBC News (video)"
+        "Human Rights Watch"
       ],
-      "type": "video",
-      "minutesAgo": 273,
+      "type": "story",
+      "minutesAgo": 243,
       "location": "wire",
-      "imageUrl": "https://i3.ytimg.com/vi/vb_2iS6yhus/hqdefault.jpg",
-      "videoUrl": "https://www.youtube.com/watch?v=vb_2iS6yhus",
-      "link": "https://www.youtube.com/watch?v=vb_2iS6yhus",
+      "imageUrl": "",
+      "videoUrl": "",
+      "link": "https://www.hrw.org/news/2026/05/11/un-official-would-reject-us-funds-with-discriminatory-conditions",
       "hasFullText": false
     },
     {
+      "id": "tragedy-at-sea-mv-hondius-captain-praises-unity-amid-hantavirus-outbreak",
       "tier": 4,
-      "cats": [],
-      "title": "Blanche says it appears suspect was targeting Trump admin. members",
-      "body": "",
-      "summary": "",
+      "cats": [
+        "developing",
+        "video"
+      ],
+      "title": "Tragedy at sea: MV Hondius captain praises unity amid hantavirus outbreak.",
+      "body": "For unity and strength, a thank you message from the captain of hantavirus-stricken ship. Subscribe to our channel: http://bit.ly/AJSubscribe Follow us on X : https://twitter.com/AJEnglish Find us on Facebook: https://www.facebook.com/aljazeera Check our website: http://www.aljazeera.com/ Check out our Instagram page: https://www.instagram.com/aljazeeraenglish/ Download AJE Mobile App: https://aje.news/AJEMobile",
+      "summary": "For unity and strength, a thank you message from the captain of hantavirus-stricken ship. Subscribe to our channel: http://bit.ly/AJSubscribe Follow us on X : https://twitter.com/AJEnglish Find us on Facebook: https://www.facebook.com/aljazeera Check our website: http://www.aljazeera.com/ Check out our Instagram page: https://www.instagram.com/aljazeeraenglish/ Download AJE Mobile App: https://aje.news/AJEMobile",
       "sources": [
-        "CNN (video)"
+        "Al Jazeera English (video)"
       ],
       "type": "video",
-      "minutesAgo": 284,
+      "minutesAgo": 289,
       "location": "wire",
-      "imageUrl": "https://i2.ytimg.com/vi/EXjp6ujckaA/hqdefault.jpg",
-      "videoUrl": "https://www.youtube.com/shorts/EXjp6ujckaA",
-      "link": "https://www.youtube.com/shorts/EXjp6ujckaA",
+      "imageUrl": "https://i3.ytimg.com/vi/zFbZKzH44Lg/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/shorts/zFbZKzH44Lg",
+      "link": "https://www.youtube.com/shorts/zFbZKzH44Lg",
       "hasFullText": false
     },
     {
+      "id": "a-law-to-help-bolivian-farmers-may-actually-increase-land-grabbing-critics-warn",
       "tier": 4,
-      "cats": [],
-      "title": "How Baltic volunteers are preparing for a conflict with Russia | Focus on europe",
-      "body": "",
-      "summary": "",
-      "sources": [
-        "DW (video)"
+      "cats": [
+        "developing"
       ],
-      "type": "video",
-      "minutesAgo": 286,
+      "title": "A law to help Bolivian farmers may actually increase land grabbing, critics warn",
+      "body": "A new land reform push in Bolivia meant to expand small farmers’ economic opportunities has sparked protests, with critics warning the law could put rural and Indigenous families at risk of eviction and accelerate the expansion of large-scale agribusiness. The law, passed in April, lets farmers reclassify their land so that it can be used […]",
+      "summary": "A new land reform push in Bolivia meant to expand small farmers’ economic opportunities has sparked protests, with critics warning the law could put rural and Indigenous families at risk of eviction and accelerate the expansion of large-scale agribusiness. The law, passed in April, lets farmers reclassify their land so that it can be used […]",
+      "sources": [
+        "Mongabay"
+      ],
+      "type": "image",
+      "minutesAgo": 343,
       "location": "wire",
-      "imageUrl": "https://i1.ytimg.com/vi/lseVbN_KSCc/hqdefault.jpg",
-      "videoUrl": "https://www.youtube.com/watch?v=lseVbN_KSCc",
-      "link": "https://www.youtube.com/watch?v=lseVbN_KSCc",
+      "imageUrl": "https://imgs.mongabay.com/wp-content/uploads/sites/20/2026/05/11162445/AP26124736616291-768x512.jpg",
+      "videoUrl": "",
+      "link": "https://news.mongabay.com/2026/05/a-law-to-help-bolivian-farmers-may-actually-increase-land-grabbing-critics-warn/",
       "hasFullText": false
     },
     {
+      "id": "fossil-fuel-transition-summit-seeks-progress-beyond-stalled-cop-talks",
       "tier": 4,
-      "cats": [],
-      "title": "Chernobyl flashback?",
-      "body": "",
-      "summary": "",
-      "sources": [
-        "DW (video)"
+      "cats": [
+        "developing"
       ],
-      "type": "video",
-      "minutesAgo": 286,
+      "title": "Fossil fuel transition summit seeks progress beyond stalled COP talks",
+      "body": "The First Conference on Transitioning Away from Fossil Fuels in Santa Marta, Colombia, was viewed by many as a historic achievement and a momentous step toward ending fossil fuel dependency. After more than 30 years of U.N. Climate Change Conferences, or COPs, where the topic has been repeatedly blocked by states and lobbyists resistant to […]",
+      "summary": "The First Conference on Transitioning Away from Fossil Fuels in Santa Marta, Colombia, was viewed by many as a historic achievement and a momentous step toward ending fossil fuel dependency. After more than 30 years of U.N. Climate Change Conferences, or COPs, where the topic has been repeatedly blocked by states and lobbyists resistant to […]",
+      "sources": [
+        "Mongabay"
+      ],
+      "type": "image",
+      "minutesAgo": 369,
       "location": "wire",
-      "imageUrl": "https://i3.ytimg.com/vi/ZknJSjcZvfY/hqdefault.jpg",
-      "videoUrl": "https://www.youtube.com/shorts/ZknJSjcZvfY",
-      "link": "https://www.youtube.com/shorts/ZknJSjcZvfY",
+      "imageUrl": "https://imgs.mongabay.com/wp-content/uploads/sites/20/2026/05/11160224/AP26118020222261-768x512.jpg",
+      "videoUrl": "",
+      "link": "https://news.mongabay.com/2026/05/fossil-fuel-transition-summit-seeks-progress-beyond-stalled-cop-talks/",
       "hasFullText": false
     },
     {
-      "tier": 5,
-      "cats": [],
-      "title": "AP sees inside Chernobyl Nuclear Power Plant 40 years after disaster",
-      "body": "",
-      "summary": "",
+      "id": "unearthing-a-colombian-politician-s-connections-to-neo-nazi-active-club-group",
+      "tier": 4,
+      "cats": [
+        "developing",
+        "docs"
+      ],
+      "title": "Unearthing a Colombian Politician’s Connections to Neo-Nazi Active Club Group",
+      "body": "This investigation is a collaboration between Bellingcat and Colombian media outlet Cerosetenta. You can read Cerosetenta’s piece in Spanish here. A video posted on Feb. 26 shows several men painting over graffiti in Restrepo, a neighbourhood in Bogota, Colombia, and replacing them with images of their own: a logo used by Colombian political candidate and […] The post Unearthing a Colombian Politician’s Connections to Neo-Nazi Active Club Group appeared first on bellingcat.",
+      "summary": "This investigation is a collaboration between Bellingcat and Colombian media outlet Cerosetenta. You can read Cerosetenta’s piece in Spanish here. A video posted on Feb. 26 shows several men painting over graffiti in Restrepo, a neighbourhood in Bogota, Colombia, and replacing them with images of their own: a logo used by Colombian political candidate and […] The post Unearthing a Colombian Politician’s Connections to Neo-Nazi Active Club Group appeared first on bellingcat.",
       "sources": [
-        "AP (video)"
+        "Bellingcat"
+      ],
+      "type": "document",
+      "minutesAgo": 476,
+      "location": "wire",
+      "imageUrl": "https://www.bellingcat.com/app/uploads/2026/05/1.-graffiti-675x1200.jpg",
+      "videoUrl": "",
+      "link": "https://www.bellingcat.com/news/2026/05/11/active-club-colombia-politics/",
+      "hasFullText": false
+    },
+    {
+      "id": "crime-affects-32-of-amazon-indigenous-areas-says-study",
+      "tier": 4,
+      "cats": [
+        "developing",
+        "docs"
+      ],
+      "title": "Crime affects 32% of Amazon Indigenous areas, says study",
+      "body": "A report by advocacy group Amazon Watch highlights how deeply criminal activity and the militarized state responses that they’ve triggered have impacted Indigenous communities across much of the Amazon Rainforest. “The Amazon Under Siege: How Crime and Militarization Threaten Indigenous Peoples” looks at seven case studies in five countries: Colombia, Ecuador, Peru, Brazil and Venezuela. […]",
+      "summary": "A report by advocacy group Amazon Watch highlights how deeply criminal activity and the militarized state responses that they’ve triggered have impacted Indigenous communities across much of the Amazon Rainforest. “The Amazon Under Siege: How Crime and Militarization Threaten Indigenous Peoples” looks at seven case studies in five countries: Colombia, Ecuador, Peru, Brazil and Venezuela. […]",
+      "sources": [
+        "Mongabay"
+      ],
+      "type": "document",
+      "minutesAgo": 562,
+      "location": "wire",
+      "imageUrl": "https://imgs.mongabay.com/wp-content/uploads/sites/20/2026/05/11120818/Indigenous-communities-face-changes-to-their-ways-of-life-768x512.jpg",
+      "videoUrl": "",
+      "link": "https://news.mongabay.com/2026/05/crime-affects-32-of-amazon-indigenous-areas-says-study/",
+      "hasFullText": false
+    },
+    {
+      "id": "tunisia-end-abusive-prosecution-of-refugee-aid-workers",
+      "tier": 4,
+      "cats": [
+        "developing"
+      ],
+      "title": "Tunisia: End Abusive Prosecution of Refugee Aid Workers",
+      "body": "Click to expand Image Mustapha Djemali. © Private <p>(Beirut) – Five employees of the Tunisian Council for Refugees will stand trial on May 13, 2026, after appealing criminal sentences for their work assisting asylum seekers and refugees, Human Rights Watch said today. The Tunisian authorities should end the abusive prosecution of the employees, compensate them for their unlawful detention, and stop the widespread crackdown on civil society groups. </p><p>Tunisian authorities shut down the Tunisian Council for Refu",
+      "summary": "Click to expand Image Mustapha Djemali. © Private <p>(Beirut) – Five employees of the Tunisian Council for Refugees will stand trial on May 13, 2026, after appealing criminal sentences for their work assisting asylum seekers and refugees, Human Rights Watch said today. The Tunisian authorities should end the abusive prosecution of the employees, compensate them for their unlawful detention, and stop the widespread crackdown on civil society groups. </p><p>Tunisian authorities shut down the Tunisian Council for Refu",
+      "sources": [
+        "Human Rights Watch"
+      ],
+      "type": "story",
+      "minutesAgo": 743,
+      "location": "wire",
+      "imageUrl": "",
+      "videoUrl": "",
+      "link": "https://www.hrw.org/news/2026/05/11/tunisia-end-abusive-prosecution-of-refugee-aid-workers",
+      "hasFullText": false
+    },
+    {
+      "id": "wild-blueberry-farms-across-maine-suffer-as-climate-change-upends-growing-season",
+      "tier": 4,
+      "cats": [
+        "developing"
+      ],
+      "title": "Wild Blueberry Farms Across Maine Suffer as Climate Change Upends Growing Seasons",
+      "body": "Last summer, the wild blueberry fields at Crystal Spring Farm turned red too soon. Severe drought had gripped most of the state of Maine. At his farm near the town of Brunswick, Seth Kroeck knew the leaves were changing color prematurely because the blueberry plants were stressed. Berries shriveled before they could ripen. The farm’s […]",
+      "summary": "Last summer, the wild blueberry fields at Crystal Spring Farm turned red too soon. Severe drought had gripped most of the state of Maine. At his farm near the town of Brunswick, Seth Kroeck knew the leaves were changing color prematurely because the blueberry plants were stressed. Berries shriveled before they could ripen. The farm’s […]",
+      "sources": [
+        "Inside Climate News"
+      ],
+      "type": "story",
+      "minutesAgo": 803,
+      "location": "wire",
+      "imageUrl": "",
+      "videoUrl": "",
+      "link": "https://insideclimatenews.org/news/11052026/maine-wild-blueberry-farms-climate-change/",
+      "hasFullText": false
+    },
+    {
+      "id": "drought-and-displacement-push-millions-to-the-brink-in-somalia-and-ethiopia",
+      "tier": 4,
+      "cats": [
+        "developing"
+      ],
+      "title": "Drought and displacement push millions to the brink in Somalia and Ethiopia",
+      "body": "Millions of people face acute food insecurity and displacement due to a drought in Somalia and Ethiopia's Somali Region, after consecutive failed rainy seasons.",
+      "summary": "Millions of people face acute food insecurity and displacement due to a drought in Somalia and Ethiopia's Somali Region, after consecutive failed rainy seasons.",
+      "sources": [
+        "MSF"
+      ],
+      "type": "story",
+      "minutesAgo": 844,
+      "location": "wire",
+      "imageUrl": "",
+      "videoUrl": "",
+      "link": "https://www.msf.org/drought-and-displacement-push-millions-brink-somalia-and-ethiopia",
+      "hasFullText": false
+    },
+    {
+      "id": "it-s-like-we-went-bankrupt-overnight-poorest-somalis-suffer-as-piles-of-worthles",
+      "tier": 4,
+      "cats": [
+        "developing"
+      ],
+      "title": "‘It’s like we went bankrupt overnight’: poorest Somalis suffer as piles of worthless shillings mount up",
+      "body": "<p>Banknotes are now so tattered that even buses refuse to accept them, as a dollarised economy and mobile phone payments push up the cost of essentials</p><p>As US troops withdrew from Somalia in the spring of 1994, a teenaged Muse Omar Jama began working as an exchange trader in Mogadishu’s Bakara market. More than three decades later, he still does the same job, but wonders for how much longer.</p><p>Jama, 49, sits in a plastic chair in the one-room office he shares with other traders. The auto-rickshaws speed b",
+      "summary": "<p>Banknotes are now so tattered that even buses refuse to accept them, as a dollarised economy and mobile phone payments push up the cost of essentials</p><p>As US troops withdrew from Somalia in the spring of 1994, a teenaged Muse Omar Jama began working as an exchange trader in Mogadishu’s Bakara market. More than three decades later, he still does the same job, but wonders for how much longer.</p><p>Jama, 49, sits in a plastic chair in the one-room office he shares with other traders. The auto-rickshaws speed b",
+      "sources": [
+        "Guardian Global Development"
+      ],
+      "type": "image",
+      "minutesAgo": 1042,
+      "location": "wire",
+      "imageUrl": "https://i.guim.co.uk/img/media/8f9531818be518f8e40c36816c7242b7dae9465c/0_0_1406_1125/master/1406.jpg?width=140&quality=85&auto=format&fit=max&s=bb994af4a464bacf4dddf2a0deefb74d",
+      "videoUrl": "",
+      "link": "https://www.theguardian.com/world/2026/may/11/poorest-somalis-hit-hardest-currency-shillings-mobile-money",
+      "hasFullText": false
+    },
+    {
+      "id": "inside-the-indigenous-fight-to-save-alaska-s-bristol-bay",
+      "tier": 4,
+      "cats": [
+        "developing"
+      ],
+      "title": "Inside the Indigenous Fight to Save Alaska’s Bristol Bay",
+      "body": "From our collaborating partner “Living on Earth,” public radio’s environmental news magazine, an interview by host Steve Curwood with Alannah Hurley, executive director of the United Tribes of Bristol Bay. In 2001, a Canadian mining company proposed a massive gold and copper mine at the headwaters of Bristol Bay, a pristine water system on the […]",
+      "summary": "From our collaborating partner “Living on Earth,” public radio’s environmental news magazine, an interview by host Steve Curwood with Alannah Hurley, executive director of the United Tribes of Bristol Bay. In 2001, a Canadian mining company proposed a massive gold and copper mine at the headwaters of Bristol Bay, a pristine water system on the […]",
+      "sources": [
+        "Inside Climate News"
+      ],
+      "type": "story",
+      "minutesAgo": 3693,
+      "location": "wire",
+      "imageUrl": "",
+      "videoUrl": "",
+      "link": "https://insideclimatenews.org/news/09052026/alaska-tribes-fight-to-save-bristol-bay-from-mining/",
+      "hasFullText": false
+    },
+    {
+      "id": "australia-3-alleged-isis-linked-women-face-serious-charges",
+      "tier": 4,
+      "cats": [
+        "developing"
+      ],
+      "title": "Australia: 3 Alleged ISIS-Linked Women Face Serious Charges",
+      "body": "Click to expand Image A police van with one of the Australian women allegedly linked to the Islamic State at the Mascot Police Station in Sydney on May 7, 2026. © 2026 Izhar Khan/Getty Images <p>(Sydney) – Australian authorities should ensure that criminal proceedings against three Australian women who were charged on May 7 and 8, 2026, with serious alleged crimes linked to the Islamic State (ISIS) fully respect due process rights, Human Rights Watch said today. The accused are among thirteen Australians—four women",
+      "summary": "Click to expand Image A police van with one of the Australian women allegedly linked to the Islamic State at the Mascot Police Station in Sydney on May 7, 2026. © 2026 Izhar Khan/Getty Images <p>(Sydney) – Australian authorities should ensure that criminal proceedings against three Australian women who were charged on May 7 and 8, 2026, with serious alleged crimes linked to the Islamic State (ISIS) fully respect due process rights, Human Rights Watch said today. The accused are among thirteen Australians—four women",
+      "sources": [
+        "Human Rights Watch"
+      ],
+      "type": "story",
+      "minutesAgo": 4283,
+      "location": "wire",
+      "imageUrl": "",
+      "videoUrl": "",
+      "link": "https://www.hrw.org/news/2026/05/08/australia-3-alleged-isis-linked-women-face-serious-charges",
+      "hasFullText": false
+    },
+    {
+      "id": "as-a-colorado-aquifer-runs-low-dangerous-heavy-metals-threaten-rural-communities",
+      "tier": 4,
+      "cats": [
+        "developing"
+      ],
+      "title": "As a Colorado Aquifer Runs Low, Dangerous Heavy Metals Threaten Rural Communities’ Drinking Water",
+      "body": "Julie Zahringer hears a common refrain at her environmental laboratory in Alamosa, Colorado: A customer has been drinking well water on family land where they’ve lived for years, but recently noticed it has changed. They want to know why. “All of a sudden it looks different, tastes different, there’s odor, there’s color,” said Zahringer. Zahringer’s […]",
+      "summary": "Julie Zahringer hears a common refrain at her environmental laboratory in Alamosa, Colorado: A customer has been drinking well water on family land where they’ve lived for years, but recently noticed it has changed. They want to know why. “All of a sudden it looks different, tastes different, there’s odor, there’s color,” said Zahringer. Zahringer’s […]",
+      "sources": [
+        "Inside Climate News"
+      ],
+      "type": "story",
+      "minutesAgo": 4600,
+      "location": "wire",
+      "imageUrl": "",
+      "videoUrl": "",
+      "link": "https://insideclimatenews.org/news/08052026/colorado-drought-threatens-rural-drinking-water/",
+      "hasFullText": false
+    },
+    {
+      "id": "east-drc-msf-staff-safely-return-to-bukavu-following-security-incident-in-mwenga",
+      "tier": 4,
+      "cats": [
+        "developing"
+      ],
+      "title": "East DRC: MSF staff safely return to Bukavu following security incident in Mwenga",
+      "body": "Following a security incident in Mwenga territory, South Kivu province, in the Democratic Republic of Congo, all involved MSF staff have safely returned to Bukavu.",
+      "summary": "Following a security incident in Mwenga territory, South Kivu province, in the Democratic Republic of Congo, all involved MSF staff have safely returned to Bukavu.",
+      "sources": [
+        "MSF"
+      ],
+      "type": "story",
+      "minutesAgo": 4781,
+      "location": "wire",
+      "imageUrl": "",
+      "videoUrl": "",
+      "link": "https://www.msf.org/east-drc-msf-staff-safely-return-bukavu-following-security-incident-mwenga",
+      "hasFullText": false
+    },
+    {
+      "id": "how-climate-change-makes-your-allergies-worse",
+      "tier": 4,
+      "cats": [
+        "developing"
+      ],
+      "title": "How Climate Change Makes Your Allergies Worse",
+      "body": "It’s not in your head. Climate change is contributing to longer and more severe pollen seasons across the Northern Hemisphere. Dr. Neelima Tummala, an ear, nose and throat doctor at NYU Langone Health, said her patients tell her every year that their allergies are the worst they’ve ever been—and they might be right. About a […]",
+      "summary": "It’s not in your head. Climate change is contributing to longer and more severe pollen seasons across the Northern Hemisphere. Dr. Neelima Tummala, an ear, nose and throat doctor at NYU Langone Health, said her patients tell her every year that their allergies are the worst they’ve ever been—and they might be right. About a […]",
+      "sources": [
+        "Inside Climate News"
+      ],
+      "type": "story",
+      "minutesAgo": 5123,
+      "location": "wire",
+      "imageUrl": "",
+      "videoUrl": "",
+      "link": "https://insideclimatenews.org/news/08052026/pollen-allergies-climate-change/",
+      "hasFullText": false
+    },
+    {
+      "id": "eastern-drc-minova-is-on-the-brink-of-a-healthcare-crisis",
+      "tier": 4,
+      "cats": [
+        "developing"
+      ],
+      "title": "Eastern DRC: Minova is on the brink of a healthcare crisis",
+      "body": "Obstetric care has become inaccessible to women in South Kivu, Democratic Republic of Congo, as donor organisations have recently withdrawn from the area.",
+      "summary": "Obstetric care has become inaccessible to women in South Kivu, Democratic Republic of Congo, as donor organisations have recently withdrawn from the area.",
+      "sources": [
+        "MSF"
+      ],
+      "type": "story",
+      "minutesAgo": 5226,
+      "location": "wire",
+      "imageUrl": "",
+      "videoUrl": "",
+      "link": "https://www.msf.org/eastern-drc-minova-brink-healthcare-crisis",
+      "hasFullText": false
+    },
+    {
+      "id": "rwanda-critic-dies-in-prison-on-release-day",
+      "tier": 4,
+      "cats": [
+        "developing",
+        "docs"
+      ],
+      "title": "Rwanda: Critic Dies in Prison on Release Day",
+      "body": "Click to expand Image Aimable Karasira. © Private <p>(Nairobi) – Rwandan authorities should conduct an effective, independent, and transparent investigation into the death in custody of Aimable Karasira, a Rwandan academic and outspoken government critic, on the day he was set to be released from prison, Human Rights Watch said today.</p><p>Karasira’s prosecution and imprisonment are emblematic of Rwanda’s crackdown on dissent and free expression. His death adds to the list of disappearances and suspicious deaths o",
+      "summary": "Click to expand Image Aimable Karasira. © Private <p>(Nairobi) – Rwandan authorities should conduct an effective, independent, and transparent investigation into the death in custody of Aimable Karasira, a Rwandan academic and outspoken government critic, on the day he was set to be released from prison, Human Rights Watch said today.</p><p>Karasira’s prosecution and imprisonment are emblematic of Rwanda’s crackdown on dissent and free expression. His death adds to the list of disappearances and suspicious deaths o",
+      "sources": [
+        "Human Rights Watch"
+      ],
+      "type": "document",
+      "minutesAgo": 5423,
+      "location": "wire",
+      "imageUrl": "",
+      "videoUrl": "",
+      "link": "https://www.hrw.org/news/2026/05/08/rwanda-critic-dies-in-prison-on-release-day",
+      "hasFullText": false
+    },
+    {
+      "id": "eu-protect-integrity-of-anti-deforestation-law",
+      "tier": 4,
+      "cats": [
+        "developing"
+      ],
+      "title": "EU: Protect Integrity of Anti-Deforestation Law",
+      "body": "Click to expand Image Cattle walk along an illegally deforested area in an extractive reserve near Jaci-Parana, Rondonia state, Brazil, July 12, 2023. © 2023 Andre Penner/AP Photo <p>(Brussels) – The European Commission’s announcement that it would not initiate a process to further amend the text of its milestone anti-deforestation regulation paves the way for it to be implemented by the end of 2026, Human Rights Watch said today. However, at the same time, the Commission has proposed to exclude leather from the li",
+      "summary": "Click to expand Image Cattle walk along an illegally deforested area in an extractive reserve near Jaci-Parana, Rondonia state, Brazil, July 12, 2023. © 2023 Andre Penner/AP Photo <p>(Brussels) – The European Commission’s announcement that it would not initiate a process to further amend the text of its milestone anti-deforestation regulation paves the way for it to be implemented by the end of 2026, Human Rights Watch said today. However, at the same time, the Commission has proposed to exclude leather from the li",
+      "sources": [
+        "Human Rights Watch"
+      ],
+      "type": "story",
+      "minutesAgo": 6443,
+      "location": "wire",
+      "imageUrl": "",
+      "videoUrl": "",
+      "link": "https://www.hrw.org/news/2026/05/07/eu-protect-integrity-of-anti-deforestation-law",
+      "hasFullText": false
+    },
+    {
+      "id": "deliberate-restriction-of-food-and-aid-led-to-alarming-malnutrition-in-gaza",
+      "tier": 4,
+      "cats": [
+        "developing"
+      ],
+      "title": "Deliberate restriction of food and aid led to alarming malnutrition in Gaza",
+      "body": "Israel’s manufactured malnutrition crisis in Gaza, Palestine, had devastating impacts on pregnant women and their newborns.",
+      "summary": "Israel’s manufactured malnutrition crisis in Gaza, Palestine, had devastating impacts on pregnant women and their newborns.",
+      "sources": [
+        "MSF"
+      ],
+      "type": "story",
+      "minutesAgo": 6631,
+      "location": "wire",
+      "imageUrl": "",
+      "videoUrl": "",
+      "link": "https://www.msf.org/deliberate-restriction-food-and-aid-led-alarming-malnutrition-gaza",
+      "hasFullText": false
+    },
+    {
+      "id": "burkina-faso-s-junta-escalates-attack-on-information",
+      "tier": 4,
+      "cats": [
+        "developing"
+      ],
+      "title": "Burkina Faso’s Junta Escalates Attack on Information",
+      "body": "Click to expand Image News studio of TV5Monde in Paris, April 9, 2015. © 2015 Geoffroy Van der Hasselt/Anadolu Agency/Getty Images <p>The military authorities in Burkina Faso are tightening their grip on what people can see, hear, and know.</p><p>On May 5, Burkina Faso’s media regulator ordered the suspension of French broadcaster TV5Monde, accusing it of “disinformation” and “apology of terrorism” in its reporting on Islamist armed groups in Burkina Faso and neighboring Mali. The action is the latest targeting the",
+      "summary": "Click to expand Image News studio of TV5Monde in Paris, April 9, 2015. © 2015 Geoffroy Van der Hasselt/Anadolu Agency/Getty Images <p>The military authorities in Burkina Faso are tightening their grip on what people can see, hear, and know.</p><p>On May 5, Burkina Faso’s media regulator ordered the suspension of French broadcaster TV5Monde, accusing it of “disinformation” and “apology of terrorism” in its reporting on Islamist armed groups in Burkina Faso and neighboring Mali. The action is the latest targeting the",
+      "sources": [
+        "Human Rights Watch"
+      ],
+      "type": "story",
+      "minutesAgo": 7519,
+      "location": "wire",
+      "imageUrl": "",
+      "videoUrl": "",
+      "link": "https://www.hrw.org/news/2026/05/06/burkina-fasos-junta-escalates-attack-on-information",
+      "hasFullText": false
+    },
+    {
+      "id": "people-are-still-being-killed-by-israeli-forces-in-southern-lebanon",
+      "tier": 4,
+      "cats": [
+        "developing"
+      ],
+      "title": "People are still being killed by Israeli forces in southern Lebanon",
+      "body": "MSF teams in southern Lebanon are working in hospitals, alongside the Ministry of Public Health, treating people who have been wounded during the ceasefire.",
+      "summary": "MSF teams in southern Lebanon are working in hospitals, alongside the Ministry of Public Health, treating people who have been wounded during the ceasefire.",
+      "sources": [
+        "MSF"
+      ],
+      "type": "story",
+      "minutesAgo": 7625,
+      "location": "wire",
+      "imageUrl": "",
+      "videoUrl": "",
+      "link": "https://www.msf.org/people-are-still-being-killed-israeli-forces-southern-lebanon",
+      "hasFullText": false
+    },
+    {
+      "id": "cut-borrowing-costs-for-poorer-countries-to-free-up-900bn-for-development-report",
+      "tier": 4,
+      "cats": [
+        "developing",
+        "docs"
+      ],
+      "title": "Cut borrowing costs for poorer countries to free up $900bn for development – report",
+      "body": "<p>G77 nations spend $8tn a year servicing debts, but analysis shows how comprehensive relief could benefit social spending</p><p>Cutting debt servicing costs for the world’s poorest countries could free up $900bn (£660bn) a year for development, <a href=\"https://www.development-finance.org/en/news/894-5-may-oslo-debt-relief-could-allow-g77-to-double-social-climate-nature-spending\">a new report to the UN secretary general</a> has claimed.</p><p>Prepared by advocacy group Development Finance International (DFI) and ",
+      "summary": "<p>G77 nations spend $8tn a year servicing debts, but analysis shows how comprehensive relief could benefit social spending</p><p>Cutting debt servicing costs for the world’s poorest countries could free up $900bn (£660bn) a year for development, <a href=\"https://www.development-finance.org/en/news/894-5-may-oslo-debt-relief-could-allow-g77-to-double-social-climate-nature-spending\">a new report to the UN secretary general</a> has claimed.</p><p>Prepared by advocacy group Development Finance International (DFI) and ",
+      "sources": [
+        "Guardian Global Development"
+      ],
+      "type": "document",
+      "minutesAgo": 7872,
+      "location": "wire",
+      "imageUrl": "https://i.guim.co.uk/img/media/be9adbbbbc7bcbb13728c42be30c3ba2421accd4/469_0_3933_3148/master/3933.jpg?width=140&quality=85&auto=format&fit=max&s=937236c17808a722336621389cde3a1e",
+      "videoUrl": "",
+      "link": "https://www.theguardian.com/global-development/2026/may/06/cut-borrowing-costs-for-poorer-countries-to-free-up-900bn-for-development-report",
+      "hasFullText": false
+    },
+    {
+      "id": "civilians-starving-in-south-sudan-s-conflict-areas",
+      "tier": 4,
+      "cats": [
+        "developing",
+        "docs"
+      ],
+      "title": "Civilians Starving in South Sudan’s Conflict Areas",
+      "body": "Click to expand Image A worker sits atop sacks of food aid in a hangar where supplies are piling up because deliveries have halted because of the conflict at a World Food Programme (WFP) warehouse in Bor, Jonglei State, on February 13, 2026. © 2026 Luis Tato/AFP via Getty Images <p>The latest Integrated Food Security Phase Classification report on South Sudan offers a damning indictment of the immense suffering to civilians caused by the country’s warring parties. The report, issued on April 28, warns that the situ",
+      "summary": "Click to expand Image A worker sits atop sacks of food aid in a hangar where supplies are piling up because deliveries have halted because of the conflict at a World Food Programme (WFP) warehouse in Bor, Jonglei State, on February 13, 2026. © 2026 Luis Tato/AFP via Getty Images <p>The latest Integrated Food Security Phase Classification report on South Sudan offers a damning indictment of the immense suffering to civilians caused by the country’s warring parties. The report, issued on April 28, warns that the situ",
+      "sources": [
+        "Human Rights Watch"
+      ],
+      "type": "document",
+      "minutesAgo": 7951,
+      "location": "wire",
+      "imageUrl": "",
+      "videoUrl": "",
+      "link": "https://www.hrw.org/news/2026/05/06/civilians-starving-in-south-sudans-conflict-areas",
+      "hasFullText": false
+    },
+    {
+      "id": "flaws-in-kenya-s-ai-driven-health-reforms-driving-up-costs-for-the-poorest",
+      "tier": 4,
+      "cats": [
+        "developing",
+        "docs"
+      ],
+      "title": "Flaws in Kenya’s AI-driven health reforms driving up costs for the poorest",
+      "body": "<p><strong>Exclusive</strong>: amid unrest, President William Ruto promised to give all Kenyans access to healthcare. But the algorithm favours the rich, an investigation has found</p><p>An AI system used to predict how much Kenyans can afford to pay for access to healthcare, has systemically driven up costs for the poor, an investigation has found.</p><p>The healthcare system being rolled out across the country, a key electoral promise of President William Ruto, was launched in October 2024 and intended to replace",
+      "summary": "<p><strong>Exclusive</strong>: amid unrest, President William Ruto promised to give all Kenyans access to healthcare. But the algorithm favours the rich, an investigation has found</p><p>An AI system used to predict how much Kenyans can afford to pay for access to healthcare, has systemically driven up costs for the poor, an investigation has found.</p><p>The healthcare system being rolled out across the country, a key electoral promise of President William Ruto, was launched in October 2024 and intended to replace",
+      "sources": [
+        "Guardian Global Development"
+      ],
+      "type": "document",
+      "minutesAgo": 11062,
+      "location": "wire",
+      "imageUrl": "https://i.guim.co.uk/img/media/2f67d40cd03693e44b4894f64d22fe9ee81cb5fa/301_0_4806_3845/master/4806.jpg?width=140&quality=85&auto=format&fit=max&s=578b17a54f4acc3afb06b05b302491b3",
+      "videoUrl": "",
+      "link": "https://www.theguardian.com/global-development/2026/may/04/kenya-ai-healthcare-reforms-driving-up-costs-for-poor",
+      "hasFullText": false
+    },
+    {
+      "id": "former-co-owner-of-panama-papers-law-firm-convicted-of-aiding-and-abetting-tax-e",
+      "tier": 4,
+      "cats": [
+        "developing",
+        "docs"
+      ],
+      "title": "Former co-owner of Panama Papers law firm convicted of aiding and abetting tax evasion",
+      "body": "Over a decade after the ICIJ investigation, a German court found the Swiss lawyer guilty of enabling a tax loss of about $15 million.",
+      "summary": "Over a decade after the ICIJ investigation, a German court found the Swiss lawyer guilty of enabling a tax loss of about $15 million.",
+      "sources": [
+        "ICIJ"
+      ],
+      "type": "document",
+      "minutesAgo": 24575,
+      "location": "wire",
+      "imageUrl": "https://media.icij.org/uploads/2023/08/Mossack-Fonseca-1920px-scaled.jpg",
+      "videoUrl": "",
+      "link": "https://www.icij.org/investigations/panama-papers/former-co-owner-of-panama-papers-law-firm-convicted-of-aiding-and-abetting-tax-evasion/",
+      "hasFullText": false
+    },
+    {
+      "id": "make-iran-ungovernable-tracking-efforts-to-destroy-iran-s-police-infrastructure",
+      "tier": 4,
+      "cats": [
+        "developing",
+        "video"
+      ],
+      "title": "“Make Iran Ungovernable” – Tracking Efforts To Destroy Iran’s Police Infrastructure",
+      "body": "Bellingcat has identified at least 80 police stations or infrastructure related to law enforcement agencies and the Basij paramilitary group that has been damaged or destroyed in the first three weeks of the United States and Israel’s war against Iran. Experts told Bellingcat that both countries aim to degrade the Iranian regime’s “repressive capacity”. Combined, […] The post “Make Iran Ungovernable” – Tracking Efforts To Destroy Iran’s Police Infrastructure appeared first on bellingcat.",
+      "summary": "Bellingcat has identified at least 80 police stations or infrastructure related to law enforcement agencies and the Basij paramilitary group that has been damaged or destroyed in the first three weeks of the United States and Israel’s war against Iran. Experts told Bellingcat that both countries aim to degrade the Iranian regime’s “repressive capacity”. Combined, […] The post “Make Iran Ungovernable” – Tracking Efforts To Destroy Iran’s Police Infrastructure appeared first on bellingcat.",
+      "sources": [
+        "Bellingcat"
       ],
       "type": "video",
-      "minutesAgo": 286,
+      "minutesAgo": 24966,
       "location": "wire",
-      "imageUrl": "https://i1.ytimg.com/vi/PIWK_ptRL88/hqdefault.jpg",
-      "videoUrl": "https://www.youtube.com/shorts/PIWK_ptRL88",
-      "link": "https://www.youtube.com/shorts/PIWK_ptRL88",
+      "imageUrl": "https://videoidf.azureedge.net/4e56063d-947e-4d40-bf13-9753c6f283c0",
+      "videoUrl": "https://www.youtube.com/watch?v=7V4J313GasM",
+      "link": "https://www.bellingcat.com/news/2026/04/24/make-iran-ungovernable-tracking-efforts-to-destroy-irans-police-infrastructure/",
+      "hasFullText": false
+    },
+    {
+      "id": "unacceptable-lawmakers-react-to-revelations-from-icij-s-cancer-calculus-investig",
+      "tier": 4,
+      "cats": [
+        "developing",
+        "docs"
+      ],
+      "title": "‘Unacceptable’: Lawmakers react to revelations from ICIJ’s Cancer Calculus investigation",
+      "body": "In hearings around the world, politicians and experts called for inquiries into inequities surrounding Merck's anti-cancer drug Keytruda.",
+      "summary": "In hearings around the world, politicians and experts called for inquiries into inequities surrounding Merck's anti-cancer drug Keytruda.",
+      "sources": [
+        "ICIJ"
+      ],
+      "type": "document",
+      "minutesAgo": 26415,
+      "location": "wire",
+      "imageUrl": "https://media.icij.org/uploads/2026/04/Cancer-Calculus-overview-Chelsea-Conrad.jpg",
+      "videoUrl": "",
+      "link": "https://www.icij.org/investigations/cancer-calculus/unacceptable-lawmakers-react-to-revelations-from-icijs-cancer-calculus-investigation/",
+      "hasFullText": false
+    },
+    {
+      "id": "a-burgeoning-black-market-inflated-dosing-and-the-over-judicialization-of-health",
+      "tier": 4,
+      "cats": [
+        "developing",
+        "docs"
+      ],
+      "title": "A ‘burgeoning black market’, inflated dosing and the over-judicialization of health care: reporters around the world tell stories about Keytruda",
+      "body": "In a yearlong investigation led by the International Consortium of Investigative Journalists, reporters from more than 37 countries found the cancer drug’s high price impacts patients and health systems differently.",
+      "summary": "In a yearlong investigation led by the International Consortium of Investigative Journalists, reporters from more than 37 countries found the cancer drug’s high price impacts patients and health systems differently.",
+      "sources": [
+        "ICIJ"
+      ],
+      "type": "document",
+      "minutesAgo": 29586,
+      "location": "wire",
+      "imageUrl": "https://media.icij.org/uploads/2022/12/web_GettyImages-1230372652-1.jpeg",
+      "videoUrl": "",
+      "link": "https://www.icij.org/investigations/cancer-calculus/a-burgeoning-black-market-inflated-dosing-and-the-over-judicialization-of-health-care-reporters-around-the-world-tell-stories-about-keytruda/",
+      "hasFullText": false
+    },
+    {
+      "id": "painkiller-pipeline-300-million-tapentadol-pills-sent-from-india-to-west-africa",
+      "tier": 4,
+      "cats": [
+        "developing",
+        "docs"
+      ],
+      "title": "Painkiller Pipeline: 300 Million Tapentadol Pills Sent from India to West Africa",
+      "body": "This article is the result of a collaboration with Indian media outlet Newslaundry. You can find Newslaundry’s editorially independent coverage here. Indian companies have shipped more than 320 million synthetic opioid pills to West Africa – where they have not been approved by regulators – over the past three years, a Bellingcat investigation has found. […] The post Painkiller Pipeline: 300 Million Tapentadol Pills Sent from India to West Africa appeared first on bellingcat.",
+      "summary": "This article is the result of a collaboration with Indian media outlet Newslaundry. You can find Newslaundry’s editorially independent coverage here. Indian companies have shipped more than 320 million synthetic opioid pills to West Africa – where they have not been approved by regulators – over the past three years, a Bellingcat investigation has found. […] The post Painkiller Pipeline: 300 Million Tapentadol Pills Sent from India to West Africa appeared first on bellingcat.",
+      "sources": [
+        "Bellingcat"
+      ],
+      "type": "document",
+      "minutesAgo": 35108,
+      "location": "wire",
+      "imageUrl": "https://www.bellingcat.com/app/uploads/2026/04/tapentadol-image-1.jpg",
+      "videoUrl": "",
+      "link": "https://www.bellingcat.com/news/2026/04/17/painkiller-pipeline-300-million-tapentadol-pills-sent-from-india-to-west-africa/",
+      "hasFullText": false
+    },
+    {
+      "id": "when-satellite-imagery-goes-dark-new-tool-shows-damage-in-iran-and-the-gulf",
+      "tier": 4,
+      "cats": [
+        "developing",
+        "video"
+      ],
+      "title": "When Satellite Imagery Goes Dark: New Tool Shows Damage in Iran and the Gulf",
+      "body": "Access to open source visuals of the current Iran conflict, which has spread to many parts of the Middle East, continues to be sporadic. Videos and photos from within Iran trickle out on social media as the Iranian internet blackout hinders the flow of digital communication. In past conflicts, satellite imagery has provided a vital […] The post When Satellite Imagery Goes Dark: New Tool Shows Damage in Iran and the Gulf appeared first on bellingcat.",
+      "summary": "Access to open source visuals of the current Iran conflict, which has spread to many parts of the Middle East, continues to be sporadic. Videos and photos from within Iran trickle out on social media as the Iranian internet blackout hinders the flow of digital communication. In past conflicts, satellite imagery has provided a vital […] The post When Satellite Imagery Goes Dark: New Tool Shows Damage in Iran and the Gulf appeared first on bellingcat.",
+      "sources": [
+        "Bellingcat"
+      ],
+      "type": "video",
+      "minutesAgo": 49487,
+      "location": "wire",
+      "imageUrl": "https://www.bellingcat.com/app/uploads/2026/04/graphirantool.jpg",
+      "videoUrl": "https://www.youtube.com/shorts/iOj8Vssogi0",
+      "link": "https://www.bellingcat.com/resources/2026/04/07/tool-damage-assessment-destruction-sentinel-satellite-imagery-iran-us-gulf/",
       "hasFullText": false
     }
   ]
