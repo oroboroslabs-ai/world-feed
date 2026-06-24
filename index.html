@@ -461,43 +461,29 @@
             position: fixed;
             bottom: 22px;
             right: 22px;
-            width: 64px;
-            height: 64px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
-            background: rgba(0,0,0,0.85);
-            border: 1px solid rgba(255,255,255,0.3);
-            box-shadow:
-                0 10px 36px rgba(0,0,0,0.5),
-                inset 0 1px 0 rgba(255,255,255,0.1);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
+            background: #D97757;
+            border: none;
+            box-shadow: 0 4px 12px rgba(217,119,87,0.4);
             z-index: 200;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: transform .28s cubic-bezier(.2,.8,.2,1), box-shadow .28s ease, border-color .28s ease;
+            transition: transform .28s ease, box-shadow .28s ease;
             text-decoration: none;
+            cursor: pointer;
         }
         .kaiju-fab svg {
-            width: 40px;
-            height: 40px;
-            filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
-            transition: transform .4s ease;
+            width: 30px;
+            height: 30px;
+            filter: drop-shadow(0 0 4px rgba(255,255,255,0.3));
         }
-        .kaiju-fab::before {
-            content: '';
-            position: absolute;
-            inset: -4px;
-            border-radius: 50%;
-            background: conic-gradient(from 0deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1), rgba(255,255,255,0.3));
-            z-index: -1;
-            opacity: 0;
-            filter: blur(10px);
-            transition: opacity .3s ease;
+        .kaiju-fab:hover {
+            transform: scale(1.08);
+            box-shadow: 0 6px 20px rgba(217,119,87,0.6);
         }
-        .kaiju-fab:hover { transform: scale(1.08); border-color: rgba(255,255,255,0.6); box-shadow: 0 14px 44px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.2); }
-        .kaiju-fab:hover svg { transform: rotate(8deg) scale(1.05); }
-        .kaiju-fab:hover::before { opacity: 0.6; }
         .kaiju-fab::after {
             content: '5S4';
             position: absolute;
@@ -1352,13 +1338,10 @@
     </div>
 </div>
 
-<!-- Floating 5S4 -->
+<!-- Floating Chat Button -->
 <a class="kaiju-fab" href="kaiju.html" title="5S4" aria-label="5S4">
-    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" style="filter: drop-shadow(0 0 10px rgba(255,255,255,0.6))">
-        <!-- Outer rounded square -->
-        <rect x="2" y="2" width="20" height="20" rx="3" ry="3"/>
-        <!-- Inner message balloon -->
-        <path d="M7 7h10c.6 0 1 .4 1 1v6c0 .6-.4 1-1 1h-2l-2 2v-2h-6c-.6 0-1-.4-1-1v-6c0-.6.4-1 1-1z"/>
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
     </svg>
 </a>
 
