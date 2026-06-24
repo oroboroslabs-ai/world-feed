@@ -34,7 +34,7 @@
         }
         .app {
             max-width: 1300px !important;
-            grid-template-columns: 275px 600px 1fr !important;
+            grid-template-columns: 275px 640px 1fr !important;
             gap: 0 !important;
             padding-top: 0 !important;
             margin: 0 auto !important;
@@ -54,6 +54,12 @@
             padding: 18px 16px !important;
             position: relative !important;
             font-weight: 400 !important;
+        }
+        #feedTitle {
+            font-size: 20px !important;
+            font-weight: 400 !important;
+            letter-spacing: 0 !important;
+            color: #ffffff !important;
         }
         .nav-item svg {
             flex-shrink: 0 !important;
@@ -467,7 +473,7 @@
             border-radius: 50%;
             background: #D97757;
             border: none;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.6), 0 0 30px rgba(217,119,87,0.5), 0 0 60px rgba(255,255,255,0.2);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.6), 0 0 20px rgba(255,255,255,0.15);
             z-index: 200;
             display: flex;
             align-items: center;
@@ -483,7 +489,7 @@
         }
         .kaiju-fab:hover {
             transform: scale(1.08);
-            box-shadow: 0 12px 32px rgba(0,0,0,0.7), 0 0 40px rgba(217,119,87,0.7), 0 0 80px rgba(255,255,255,0.3);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.7), 0 0 30px rgba(255,255,255,0.2);
         }
         .kaiju-fab::after {
             content: '5S4';
@@ -1246,7 +1252,7 @@
             <div class="item">Source video: energy dependency and infrastructure risk<div class="item-meta">Al Jazeera English · verified</div></div>
         </div>
 
-        <div class="rail-card">
+        <div class="rail-card" style="margin-top: 16px;">
             <h3>Underreported Watch</h3>
             <div id="watchList">
                 <div class="item">Sudan health system collapse<div class="item-meta">verified sources - live watch</div></div>
