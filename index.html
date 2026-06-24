@@ -147,10 +147,10 @@
             box-shadow: 0 0 12px rgba(255, 255, 255, 0.6) !important;
         }
         .submit-cta {
-            background: #ffffff !important;
+            background: linear-gradient(90deg, rgba(255,255,255,0.85), #ffffff, rgba(255,255,255,0.85)) !important;
             color: #000000 !important;
             text-align: center !important;
-            font-weight: 700 !important;
+            font-weight: 400 !important;
             text-transform: none !important;
             border: none !important;
             padding: 15px !important;
@@ -161,14 +161,11 @@
             display: block !important;
             width: calc(100% - 24px) !important;
             font-family: inherit !important;
-            box-shadow: 0 4px 12px rgba(255,255,255,0.3), 0 2px 4px rgba(0,0,0,0.1) !important;
             transition: all 0.2s ease !important;
         }
         .submit-cta:hover {
             background: #ffffff !important;
             color: #000000 !important;
-            transform: translateY(-1px) !important;
-            box-shadow: 0 6px 20px rgba(255,255,255,0.4), 0 3px 6px rgba(0,0,0,0.15) !important;
         }
         .btn-primary {
             background: #ffffff !important;
@@ -1132,13 +1129,13 @@
     <aside class="side">
         <div class="nav-item nav-logo" style="padding: 12px 16px;">
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <!-- Rounded cube -->
-                <path d="M16 3L4 9v14l12 6 12-6V9L16 3z"/>
-                <path d="M4 9l12 6"/>
-                <path d="M28 9l-12 6"/>
-                <path d="M16 15v14"/>
+                <!-- Rounded cube outline -->
+                <path d="M16 4L5 10v12l11 6 11-6V10L16 4z"/>
+                <path d="M5 10l11 6"/>
+                <path d="M27 10l-11 6"/>
+                <path d="M16 16v12"/>
                 <!-- Chat balloon inside cube -->
-                <path d="M11 11h10c1.1 0 2 .9 2 2v5c0 1.1-.9 2-2 2h-2l-3 3v-3h-5c-1.1 0-2-.9-2-2v-5c0-1.1.9-2 2-2z"/>
+                <path d="M10 12h12c.6 0 1 .4 1 1v4c0 .6-.4 1-1 1h-2l-2 2v-2h-8c-.6 0-1-.4-1-1v-4c0-.6.4-1 1-1z"/>
             </svg>
         </div>
         <div class="nav-item active" data-view="latest">
@@ -1191,6 +1188,7 @@
             <span>5S4</span>
             <span class="orange-dot"></span>
         </div>
+        <button class="submit-cta" id="submitBtn">Post</button>
         <div class="account-badge" id="accountBadge"></div>
         <div class="side-foot">
             No algorithm.<br>No tracking.<br>No shadowbans.<br><br>
