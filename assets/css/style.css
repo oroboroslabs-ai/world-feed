@@ -135,7 +135,7 @@ a:hover { color: var(--hi); }
 .submit-cta {
     margin: 18px 12px;
     padding: 15px;
-    background: var(--hi);
+    background: #ffffff;
     color: #000;
     border: none;
     border-radius: 100px;
@@ -147,6 +147,9 @@ a:hover { color: var(--hi); }
     transition: all .25s ease;
     position: relative;
     overflow: hidden;
+    text-align: center;
+    display: block;
+    width: calc(100% - 24px);
 }
 .submit-cta::after {
     content: "";
