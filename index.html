@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Twitter+Chirp:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
-        /* === X.com exact font stack === */
+        /* X.com exact font stack */
         :root {
             --font-chirp: 'Twitter Chirp', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica Neue, Arial, sans-serif;
             --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica Neue, Arial, sans-serif;
@@ -25,15 +25,20 @@
             font-family: var(--font-chirp);
         }
         
-        /* X.com layout - narrow center column */
+        /* X.com layout - no top bar, all in sidebar */
+        .z-top {
+            display: none !important;
+        }
         .app {
             max-width: 1300px !important;
             grid-template-columns: 275px 600px 1fr !important;
             gap: 20px !important;
+            padding-top: 0 !important;
         }
         .side {
             min-width: 275px !important;
             max-width: 275px !important;
+            padding-top: 20px !important;
         }
         .main {
             max-width: 600px !important;
