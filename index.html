@@ -52,16 +52,49 @@
             align-items: center !important;
             gap: 12px !important;
             padding: 13px 16px !important;
+            position: relative !important;
+        }
+        .nav-item::after {
+            content: '' !important;
+            position: absolute !important;
+            bottom: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 2px !important;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent) !important;
+            opacity: 0 !important;
+            transition: opacity 0.3s ease !important;
+        }
+        .nav-item:hover::after {
+            opacity: 1 !important;
+        }
+        .nav-item:hover {
+            background: transparent !important;
         }
         .nav-item svg {
             flex-shrink: 0 !important;
         }
         .nav-item.active {
-            background: rgba(255, 255, 255, 0.1) !important;
+            background: transparent !important;
             color: #ffffff !important;
+            font-weight: 700 !important;
         }
-        .nav-item:hover {
-            background: rgba(255, 255, 255, 0.05) !important;
+        .nav-item.active::after {
+            opacity: 0 !important;
+        }
+        .orange-dot {
+            width: 6px !important;
+            height: 6px !important;
+            background: #ff6b35 !important;
+            border-radius: 50% !important;
+            display: inline-block !important;
+            margin-left: auto !important;
+        }
+        .nav-logo {
+            cursor: pointer !important;
+        }
+        .nav-logo:hover {
+            background: transparent !important;
         }
         .nav-link-out img {
             filter: brightness(0) invert(1) !important;
@@ -1079,9 +1112,13 @@
 
     <!-- LEFT SIDEBAR -->
     <aside class="side">
+        <div class="nav-item nav-logo" style="padding: 12px 16px;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M12 2L2 22h4l1.5-3h9l1.5 3h4L12 2zm0 5.5l3 6.5H9l3-6.5z"/></svg>
+        </div>
         <div class="nav-item active" data-view="latest">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
             <span>Home</span>
+            <span class="orange-dot"></span>
         </div>
         <div class="nav-item" data-view="explore">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
@@ -1122,6 +1159,11 @@
         <div class="nav-item" data-view="about">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
             <span>About</span>
+        </div>
+        <div class="nav-item" onclick="window.location.href='kaiju.html'" style="cursor:pointer;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            <span>5S4</span>
+            <span class="orange-dot"></span>
         </div>
         <button class="submit-cta" id="submitBtn">Post</button>
         <div class="account-badge" id="accountBadge"></div>
