@@ -412,7 +412,7 @@
         .account-badge .acc-logout:hover { color: #f87171; }
         .account-badge .acc-login-trigger {
             background: transparent;
-            border: 1px dashed rgba(34,211,238,0.4);
+            border: none;
             color: #ffffff;
             font-family: 'Archivo', sans-serif;
             font-weight: 700;
@@ -420,12 +420,16 @@
             letter-spacing: 2px;
             text-transform: uppercase;
             padding: 7px 12px;
-            border-radius: 4px;
+            border-radius: 0;
             cursor: pointer;
             width: 100%;
-            transition: background .2s ease;
+            transition: all .2s ease;
         }
-        .account-badge .acc-login-trigger:hover { background: rgba(34,211,238,0.08); }
+        .account-badge .acc-login-trigger:hover { 
+            background: transparent;
+            color: #ffffff;
+            text-decoration: underline;
+        }
 
         /* image upload field in modal */
         .modal input[type="file"] {

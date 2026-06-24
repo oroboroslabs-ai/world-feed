@@ -667,16 +667,20 @@ a:hover { color: var(--hi); }
 .btn-secondary {
     padding: 12px 22px;
     background: transparent;
-    border: 1px solid var(--border-strong);
+    border: none;
     color: var(--fg);
-    border-radius: 100px;
+    border-radius: 0;
     font-weight: 600;
     font-size: 13px;
     cursor: pointer;
     font-family: inherit;
     transition: all .2s ease;
 }
-.btn-secondary:hover { background: var(--overlay-hover); }
+.btn-secondary:hover { 
+    background: transparent;
+    color: var(--fg);
+    text-decoration: underline;
+}
 .btn-primary {
     padding: 12px 24px;
     background: var(--hi);
