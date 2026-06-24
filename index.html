@@ -478,7 +478,7 @@
             transition: transform .28s cubic-bezier(.2,.8,.2,1), box-shadow .28s ease, border-color .28s ease;
             text-decoration: none;
         }
-        .kaiju-fab img {
+        .kaiju-fab svg {
             width: 40px;
             height: 40px;
             filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
@@ -496,7 +496,7 @@
             transition: opacity .3s ease;
         }
         .kaiju-fab:hover { transform: scale(1.08); border-color: rgba(255,255,255,0.6); box-shadow: 0 14px 44px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.2); }
-        .kaiju-fab:hover img { transform: rotate(8deg) scale(1.05); }
+        .kaiju-fab:hover svg { transform: rotate(8deg) scale(1.05); }
         .kaiju-fab:hover::before { opacity: 0.6; }
         .kaiju-fab::after {
             content: '5S4';
@@ -523,7 +523,7 @@
 
         @media (max-width: 720px) {
             .kaiju-fab { bottom: 84px; right: 14px; width: 56px; height: 56px; }
-            .kaiju-fab img { width: 34px; height: 34px; }
+            .kaiju-fab svg { width: 34px; height: 34px; }
             .kaiju-fab::after { display: none; }
         }
 
@@ -1287,11 +1287,11 @@
         <div class="rail-card">
             <h3>Alliance</h3>
             <div class="alliance">
-                <div class="ally"><img src="assets/img/oroboros-logo.svg" alt="Oroboros Labs" class="color"><span>Oroboros Labs</span></div>
+                <div class="ally"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h24c2.2 0 4 1.8 4 4v16c0 2.2-1.8 4-4 4h-6l-6 6v-6h-12c-2.2 0-4-1.8-4-4v-16c0-2.2 1.8-4 4-4z"/></svg><span>Oroboros Labs</span></div>
                 <div class="ally"><img src="assets/img/noir-logo.svg" alt="Noir" class="color" style="width:45px!important;height:45px!important"><span>Nyros / NOIR Security</span></div>
                 <div class="ally"><img src="assets/img/deepseek-logo.png" alt="DeepSeek" class="color"><span>DeepSeek</span></div>
                 <div class="ally"><img src="assets/img/zai-logo.png" alt="Z.AI" class="color"><span>Z.AI</span></div>
-                <div class="ally"><img src="assets/img/oroboros-logo.png" alt="5S4" class="color" style="filter:none!important;width:40px!important;height:40px!important"><span>5S4</span></div>
+                <div class="ally"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h24c2.2 0 4 1.8 4 4v16c0 2.2-1.8 4-4 4h-6l-6 6v-6h-12c-2.2 0-4-1.8-4-4v-16c0-2.2 1.8-4 4-4z"/></svg><span>5S4</span></div>
             </div>
             <div class="accord">Anti-algo ranking: verification, source diversity, public-interest weight.</div>
         </div>
@@ -1347,7 +1347,7 @@
 
 <!-- Floating 5S4 -->
 <a class="kaiju-fab" href="kaiju.html" title="5S4" aria-label="5S4">
-    <img src="assets/img/oroboros-logo.svg" alt="5S4">
+    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h24c2.2 0 4 1.8 4 4v16c0 2.2-1.8 4-4 4h-6l-6 6v-6h-12c-2.2 0-4-1.8-4-4v-16c0-2.2 1.8-4 4-4z"/></svg>
 </a>
 
 <script src="assets/js/main.js"></script>
