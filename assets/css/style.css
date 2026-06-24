@@ -136,7 +136,7 @@ a:hover { color: var(--hi); }
     margin: 18px 12px;
     padding: 15px;
     background: #ffffff;
-    color: #000;
+    color: #000000;
     border: none;
     border-radius: 100px;
     font-weight: 700;
@@ -150,6 +150,12 @@ a:hover { color: var(--hi); }
     text-align: center;
     display: block;
     width: calc(100% - 24px);
+}
+.submit-cta:hover {
+    background: #ffffff;
+    color: #000000;
+    transform: translateY(-2px);
+    box-shadow: 0 18px 40px rgba(255,255,255,0.18);
 }
 .submit-cta::after {
     content: "";
