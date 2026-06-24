@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <style>
+      .outline { fill: none; stroke: white; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    </style>
+  </defs>
+  <!-- Rounded cube -->
+  <path class="outline" d="M16 3L4 9v14l12 6 12-6V9L16 3z"/>
+  <path class="outline" d="M4 9l12 6"/>
+  <path class="outline" d="M28 9l-12 6"/>
+  <path class="outline" d="M16 15v14"/>
+  <!-- Chat balloon inside cube -->
+  <path class="outline" d="M11 11h10c1.1 0 2 .9 2 2v5c0 1.1-.9 2-2 2h-2l-3 3v-3h-5c-1.1 0-2-.9-2-2v-5c0-1.1.9-2 2-2z"/>
+</svg>
