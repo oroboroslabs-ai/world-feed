@@ -146,24 +146,43 @@
             background: #ffffff !important;
             box-shadow: 0 0 12px rgba(255, 255, 255, 0.6) !important;
         }
-        .submit-cta {
-            background: linear-gradient(90deg, rgba(255,255,255,0.85), #ffffff, rgba(255,255,255,0.85)) !important;
+        /* Brand new Post button - white with glowing ends */
+        .new-post-btn {
+            background: linear-gradient(90deg, 
+                rgba(255,255,255,0.7) 0%, 
+                #ffffff 15%, 
+                #ffffff 85%, 
+                rgba(255,255,255,0.7) 100%) !important;
             color: #000000 !important;
             text-align: center !important;
             font-weight: 400 !important;
-            text-transform: none !important;
             border: none !important;
-            padding: 15px !important;
-            margin: 18px 12px !important;
-            border-radius: 100px !important;
+            padding: 14px 32px !important;
+            margin: 20px auto !important;
+            border-radius: 9999px !important;
             font-size: 17px !important;
             cursor: pointer !important;
             display: block !important;
-            width: calc(100% - 24px) !important;
+            width: fit-content !important;
             font-family: inherit !important;
             transition: all 0.2s ease !important;
+            box-shadow: none !important;
+            position: relative !important;
         }
-        .submit-cta:hover {
+        .new-post-btn::before {
+            content: '' !important;
+            position: absolute !important;
+            inset: -2px !important;
+            border-radius: 9999px !important;
+            background: linear-gradient(90deg, 
+                rgba(255,255,255,0.4) 0%, 
+                transparent 20%, 
+                transparent 80%, 
+                rgba(255,255,255,0.4) 100%) !important;
+            z-index: -1 !important;
+            filter: blur(8px) !important;
+        }
+        .new-post-btn:hover {
             background: #ffffff !important;
             color: #000000 !important;
         }
@@ -1188,7 +1207,7 @@
             <span>5S4</span>
             <span class="orange-dot"></span>
         </div>
-        <button class="submit-cta" id="submitBtn">Post</button>
+        <button class="new-post-btn" id="newPostBtn">Post</button>
         <div class="account-badge" id="accountBadge"></div>
         <div class="side-foot">
             No algorithm.<br>No tracking.<br>No shadowbans.<br><br>

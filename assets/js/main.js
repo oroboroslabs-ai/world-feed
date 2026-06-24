@@ -519,7 +519,7 @@
 
     const modal = document.getElementById('submitModal');
     const loginModal = document.getElementById('loginModal');
-    const submitBtn = document.getElementById('submitBtn');
+    const newPostBtn = document.getElementById('newPostBtn');
     const accountBadge = document.getElementById('accountBadge');
 
     function refreshAccountUI() {
@@ -540,7 +540,7 @@
 
     refreshAccountUI();
 
-    submitBtn?.addEventListener('click', () => {
+    newPostBtn?.addEventListener('click', () => {
         if (!isLoggedIn() && loginModal) {
             loginModal.classList.add('show');
             return;
