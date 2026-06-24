@@ -25,6 +25,22 @@
             font-family: var(--font-chirp);
         }
         
+        /* Narrow layout like X.com */
+        .app {
+            max-width: 600px !important;
+            grid-template-columns: 1fr !important;
+            gap: 0 !important;
+            padding: 0 !important;
+        }
+        .side {
+            display: none !important;
+        }
+        .main {
+            max-width: 600px !important;
+            mask-image: none !important;
+            -webkit-mask-image: none !important;
+        }
+        
         /* === Oroboros futuristic layer — additive, style.css untouched === */
 
         /* glass: more transparency, deeper blur */
@@ -807,14 +823,14 @@
             text-transform: uppercase;
             flex-shrink: 0;
             padding-left: 18px;
-            border-left: 1px solid rgba(255,255,255,0.1);
+            border-left: 1px solid rgba(255,255,255,0.3);
         }
         .z-live-tag::before {
             content: '';
             width: 6px; height: 6px;
             border-radius: 50%;
-            background: #22d3ee;
-            box-shadow: 0 0 10px rgba(34,211,238,0.7);
+            background: #ffffff;
+            box-shadow: 0 0 10px rgba(255,255,255,0.7);
             animation: pulse 1.6s ease-in-out infinite;
         }
 
@@ -926,7 +942,7 @@
 <div class="z-top">
     <div class="z-top-inner">
         <a class="z-mark" href="./">
-            <span class="z-sub">ANTI-ALGO</span>
+            <span class="z-sub">WorldFeed</span>
         </a>
         <div class="z-nav-links">
             <a class="z-nav-link active" href="#">World</a>
