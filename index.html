@@ -266,11 +266,10 @@
             width: 64px;
             height: 64px;
             border-radius: 50%;
-            background: radial-gradient(circle at 30% 30%, rgba(34,211,238,0.15), rgba(0,0,0,0.85) 65%);
-            border: 1px solid rgba(34,211,238,0.45);
+            background: rgba(0,0,0,0.85);
+            border: 1px solid rgba(255,255,255,0.3);
             box-shadow:
-                0 10px 36px rgba(34,211,238,0.22),
-                0 2px 8px rgba(239,68,68,0.18),
+                0 10px 36px rgba(0,0,0,0.5),
                 inset 0 1px 0 rgba(255,255,255,0.1);
             backdrop-filter: blur(14px);
             -webkit-backdrop-filter: blur(14px);
@@ -284,7 +283,7 @@
         .kaiju-fab img {
             width: 40px;
             height: 40px;
-            filter: drop-shadow(0 0 10px rgba(34,211,238,0.45));
+            filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
             transition: transform .4s ease;
         }
         .kaiju-fab::before {
@@ -292,13 +291,13 @@
             position: absolute;
             inset: -4px;
             border-radius: 50%;
-            background: conic-gradient(from 0deg, rgba(34,211,238,0.5), rgba(239,68,68,0.5), rgba(34,211,238,0.5));
+            background: conic-gradient(from 0deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1), rgba(255,255,255,0.3));
             z-index: -1;
             opacity: 0;
             filter: blur(10px);
             transition: opacity .3s ease;
         }
-        .kaiju-fab:hover { transform: scale(1.08); border-color: rgba(34,211,238,0.8); box-shadow: 0 14px 44px rgba(34,211,238,0.4), inset 0 1px 0 rgba(255,255,255,0.15); }
+        .kaiju-fab:hover { transform: scale(1.08); border-color: rgba(255,255,255,0.6); box-shadow: 0 14px 44px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.2); }
         .kaiju-fab:hover img { transform: rotate(8deg) scale(1.05); }
         .kaiju-fab:hover::before { opacity: 0.6; }
         .kaiju-fab::after {
@@ -311,9 +310,9 @@
             font-size: 10px;
             font-weight: 800;
             letter-spacing: 2.5px;
-            color: rgba(255,255,255,0.85);
+            color: #ffffff;
             background: rgba(0,0,0,0.7);
-            border: 1px solid rgba(34,211,238,0.4);
+            border: 1px solid rgba(255,255,255,0.3);
             padding: 6px 10px;
             border-radius: 4px;
             white-space: nowrap;
@@ -703,7 +702,7 @@
             gap: 18px;
         }
         .z-top-inner {
-            max-width: 1400px;
+            max-width: 600px;
             margin: 0 auto;
             width: 100%;
             display: flex;
@@ -743,13 +742,8 @@
             font-weight: 600;
             font-size: 11px;
             letter-spacing: 2px;
-            color: transparent;
-            margin-left: 2px;
-            background: linear-gradient(90deg, #555555 0%, #ffffff 30%, #ffffff 50%, #ffffff 70%, #555555 100%);
-            background-size: 300% 100%;
-            -webkit-background-clip: text;
-            background-clip: text;
-            animation: z-luminate 5s ease-in-out infinite;
+            color: #ffffff;
+            margin-left: 0;
         }
         @keyframes z-luminate {
             0%   { background-position: 0% 0; }
@@ -765,8 +759,6 @@
             color: #ffffff;
             flex-shrink: 0;
             padding: 0 12px;
-            text-shadow: 0 0 12px rgba(34,211,238,0.5), 0 0 30px rgba(34,211,238,0.2);
-            animation: z-glow-pulse 6s ease-in-out infinite;
         }
         @keyframes z-glow-pulse {
             0%   { text-shadow: 0 0 8px rgba(34,211,238,0.3), 0 0 20px rgba(34,211,238,0.1); }
@@ -934,7 +926,6 @@
 <div class="z-top">
     <div class="z-top-inner">
         <a class="z-mark" href="./">
-            <span class="z-highlight">Anti-Algo</span>
             <span class="z-sub">ANTI-ALGO</span>
         </a>
         <div class="z-nav-links">
@@ -969,7 +960,7 @@
         <div class="nav-item" data-view="federation">Federation</div>
         <div class="nav-item" data-view="saved">Saved</div>
         <div class="nav-item" data-view="about">About</div>
-        <button class="submit-cta" id="submitBtn">+ Signal Anti-Algo</button>
+        <button class="submit-cta" id="submitBtn">Post</button>
         <div class="account-badge" id="accountBadge"></div>
         <div class="side-foot">
             No algorithm.<br>No tracking.<br>No shadowbans.<br><br>
@@ -1109,7 +1100,7 @@
 
 <!-- Floating 5S4 -->
 <a class="kaiju-fab" href="kaiju.html" title="5S4" aria-label="5S4">
-    <img src="assets/img/oroboros-logo.png" alt="5S4">
+    <img src="assets/img/oroboros-logo.svg" alt="5S4">
 </a>
 
 <script src="assets/js/main.js"></script>
