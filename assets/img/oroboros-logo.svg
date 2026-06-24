@@ -58,7 +58,7 @@
 <circle cx="368" cy="368" r="340" fill="#0a0a0f" stroke="url(#anthropicOrangeFull)" stroke-width="3"/>
 
 <!-- Oroboros Snake with Anthropic Orange gradient and glow -->
-<g filter="url(#glow)">
+<g filter="url(#glow)" transform="translate(368, 368) scale(1.15) translate(-368, -368)">
 <path fill="url(#anthropicOrangeFull)" opacity="1.000000" stroke="#a05a2c" stroke-width="2" stroke-opacity="0.7"
 	d="
 M261.413513,638.699951
