@@ -213,7 +213,7 @@ a:hover { color: var(--hi); }
 }
 .feed-title .live {
     font-size: 10px;
-    color: var(--hi);
+    color: #ffffff;
     letter-spacing: 3px;
     font-weight: 700;
     display: flex;
@@ -225,7 +225,7 @@ a:hover { color: var(--hi); }
     content: "";
     width: 8px;
     height: 8px;
-    background: var(--hi);
+    background: #ffffff;
     border-radius: 50%;
     box-shadow: 0 0 12px rgba(255,255,255,0.7);
     animation: pulse 1.6s ease-in-out infinite;
