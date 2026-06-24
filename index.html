@@ -4,18 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="theme-color" content="#000000">
-    <title>WorldFeed — Anti-Algo News Network</title>
-    <meta name="description" content="WorldFeed is an anti-algorithm news network for major underreported events. Ranked by verification, not engagement. Powered by DeepSeek 5M4.">
+    <title>Anti-Algo News Network</title>
+    <meta name="description" content="Anti-algorithm news network for major underreported events. Ranked by verification, not engagement. Powered by 5S4.">
     <meta name="keywords" content="worldfeed, anti-algo, anti-algorithm, underreported news, humanitarian crises, verification, federation, open source, journalism, oroboros">
-    <meta property="og:title" content="WorldFeed — Anti-Algo News Network">
+    <meta property="og:title" content="Anti-Algo News Network">
     <meta property="og:description" content="Major underreported events, ranked by verification instead of engagement.">
     <meta property="og:type" content="website">
 
-    <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+    <link rel="icon" type="image/svg+xml" href="assets/img/oroboros-logo.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Twitter+Chirp:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
+        /* === X.com exact font stack === */
+        :root {
+            --font-chirp: 'Twitter Chirp', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica Neue, Arial, sans-serif;
+            --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica Neue, Arial, sans-serif;
+        }
+        body {
+            font-family: var(--font-chirp);
+        }
+        
         /* === Oroboros futuristic layer — additive, style.css untouched === */
 
         /* glass: more transparency, deeper blur */
@@ -249,7 +258,7 @@
             color: rgba(255,255,255,0.7) !important;
         }
 
-        /* === floating DeepSeek 5M4 launcher === */
+        /* === floating 5S4 launcher === */
         .kaiju-fab {
             position: fixed;
             bottom: 22px;
@@ -293,7 +302,7 @@
         .kaiju-fab:hover img { transform: rotate(8deg) scale(1.05); }
         .kaiju-fab:hover::before { opacity: 0.6; }
         .kaiju-fab::after {
-            content: 'DEEPSEEK 5M4';
+            content: '5S4';
             position: absolute;
             right: 76px;
             top: 50%;
@@ -925,7 +934,7 @@
 <div class="z-top">
     <div class="z-top-inner">
         <a class="z-mark" href="./">
-            <span class="z-highlight">WorldFeed</span>
+            <span class="z-highlight">Anti-Algo</span>
             <span class="z-sub">ANTI-ALGO</span>
         </a>
         <div class="z-nav-links">
@@ -938,22 +947,18 @@
             <a class="z-nav-link" href="#">Investigations</a>
             <a class="z-nav-link" href="#">Video</a>
         </div>
-        <span class="z-tagline">ANTI-ALGO · VERIFIED BY SOURCES · DEEPSEEK 5M4</span>
+        <span class="z-tagline">ANTI-ALGO · VERIFIED BY SOURCES · 5S4</span>
         <div class="z-live-tag"><span>LIVE</span></div>
     </div>
 </div>
 
-<!-- WorldFeed breaking news ticker -->
-<div class="z-breaking">
-    <span class="z-breaking-label">WORLDFEED</span>
-    <span class="z-breaking-text">Sudan remains the world's largest humanitarian crisis · Myanmar aid needs climb as conflict spreads · Acute food insecurity is now structural across dozens of countries · Haiti access and displacement crisis deepens · DeepSeek 5M4 monitors underreported signals</span>
-</div>
+
 
 <div class="app">
 
     <!-- LEFT SIDEBAR -->
     <aside class="side">
-        <a class="nav-item nav-link-out" href="kaiju.html" style="text-decoration:none;color:inherit;display:flex">DeepSeek 5M4</a>
+        <a class="nav-item nav-link-out" href="kaiju.html" style="text-decoration:none;color:inherit;display:flex">5S4</a>
         <div class="nav-item active" data-view="latest">Latest</div>
         <div class="nav-item" data-view="new">New</div>
         <div class="nav-item" data-view="verified">Verified</div>
@@ -964,7 +969,7 @@
         <div class="nav-item" data-view="federation">Federation</div>
         <div class="nav-item" data-view="saved">Saved</div>
         <div class="nav-item" data-view="about">About</div>
-        <button class="submit-cta" id="submitBtn">+ Signal WorldFeed</button>
+        <button class="submit-cta" id="submitBtn">+ Signal Anti-Algo</button>
         <div class="account-badge" id="accountBadge"></div>
         <div class="side-foot">
             No algorithm.<br>No tracking.<br>No shadowbans.<br><br>
@@ -976,7 +981,7 @@
     <main class="main">
         <header class="feed-header">
             <div class="feed-title">
-                <span id="feedTitle">WorldFeed — underreported live</span>
+                <span id="feedTitle">Anti-Algo — underreported live</span>
                 <span class="live">LIVE</span>
             </div>
             <div class="search-bar">
@@ -1048,7 +1053,7 @@
                 <div class="ally"><img src="assets/img/noir-logo.svg" alt="Noir" class="color" style="width:45px!important;height:45px!important"><span>Nyros / NOIR Security</span></div>
                 <div class="ally"><img src="assets/img/deepseek-logo.png" alt="DeepSeek" class="color"><span>DeepSeek</span></div>
                 <div class="ally"><img src="assets/img/zai-logo.png" alt="Z.AI" class="color"><span>Z.AI</span></div>
-                <div class="ally"><img src="assets/img/deepseek-logo.png" alt="DeepSeek 5M4" class="color" style="filter:none!important;width:56px!important;height:56px!important"><span>DeepSeek 5M4</span></div>
+                <div class="ally"><img src="assets/img/oroboros-logo.png" alt="5S4" class="color" style="filter:none!important;width:56px!important;height:56px!important"><span>5S4</span></div>
             </div>
             <div class="accord">Anti-algo ranking: verification, source diversity, public-interest weight.</div>
         </div>
@@ -1102,9 +1107,9 @@
     </div>
 </div>
 
-<!-- Floating DeepSeek 5M4 -->
-<a class="kaiju-fab" href="kaiju.html" title="DeepSeek 5M4" aria-label="DeepSeek 5M4">
-    <img src="assets/img/deepseek-logo.png" alt="DeepSeek 5M4">
+<!-- Floating 5S4 -->
+<a class="kaiju-fab" href="kaiju.html" title="5S4" aria-label="5S4">
+    <img src="assets/img/oroboros-logo.png" alt="5S4">
 </a>
 
 <script src="assets/js/main.js"></script>
