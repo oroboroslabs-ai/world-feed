@@ -25,16 +25,19 @@
             font-family: var(--font-chirp);
         }
         
-        /* Narrow layout like X.com */
+        /* X.com layout - narrow center column */
         .app {
-            max-width: 1000px !important;
+            max-width: 1300px !important;
+            grid-template-columns: 275px 600px 1fr !important;
+            gap: 20px !important;
         }
         .side {
-            min-width: 200px !important;
-            max-width: 240px !important;
+            min-width: 275px !important;
+            max-width: 275px !important;
         }
         .main {
             max-width: 600px !important;
+            min-width: 600px !important;
         }
         
         /* === Oroboros futuristic layer — additive, style.css untouched === */
