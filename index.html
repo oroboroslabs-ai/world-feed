@@ -120,14 +120,14 @@
         .main {
             max-width: 600px !important;
             min-width: 600px !important;
-            border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+            border-right: 1px solid rgba(192, 192, 192, 0.3) !important;
         }
         .rail {
             position: sticky !important;
             top: 0 !important;
             height: 100vh !important;
             overflow-y: auto !important;
-            border-left: 1px solid rgba(255, 255, 255, 0.1) !important;
+            border-left: none !important;
         }
         .rail-card {
             position: sticky !important;
@@ -240,7 +240,11 @@
             backdrop-filter: blur(22px) saturate(1.2) !important;
             -webkit-backdrop-filter: blur(22px) saturate(1.2) !important;
         }
-        .main { background: transparent !important; mask-image: linear-gradient(90deg, transparent 0%, #000 30px, #000 97%, transparent 100%); -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 30px, #000 97%, transparent 100%); }
+        .main { 
+            background: transparent !important; 
+            mask-image: linear-gradient(90deg, transparent 0%, #000 30px, #000 97%, transparent 100%); 
+            -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 30px, #000 97%, transparent 100%); 
+        }
         .search-bar input { background: rgba(10, 12, 18, 0.45) !important; }
         .chip { background: rgba(10, 12, 18, 0.45) !important; backdrop-filter: blur(10px) saturate(1.2) !important; -webkit-backdrop-filter: blur(10px) saturate(1.2) !important; }
         .modal { background: rgba(10, 12, 18, 0.70) !important; backdrop-filter: blur(28px) saturate(1.4) !important; -webkit-backdrop-filter: blur(28px) saturate(1.4) !important; }
@@ -852,7 +856,11 @@
             transform: none !important;
         }
 
-        .search-bar input { border-radius: 0 !important; }
+        .search-bar input { 
+            border-radius: 0 !important; 
+            width: 100% !important;
+            max-width: 100% !important;
+        }
 
         /* link-style action buttons under each post */
         .post-action {
