@@ -13,12 +13,58 @@ from datetime import datetime
 from typing import Dict, List, Optional, Any
 from dataclasses import dataclass, asdict
 import random
+import urllib.request
+import urllib.error
+import ssl
 
 # Handle imports for both package and direct execution
 try:
     from .data_sources import DataSources, get_photo_url
 except ImportError:
     from data_sources import DataSources, get_photo_url
+
+# Video URL validation cache
+_video_url_cache = {}
+
+def validate_video_url(url: str, timeout: int = 5) -> bool:
+    """
+    Validate if a video URL is accessible.
+    Returns True if the URL returns a valid response, False otherwise.
+    Caches results to avoid repeated checks.
+    """
+    # Check cache first
+    if url in _video_url_cache:
+        return _video_url_cache[url]
+    
+    # For placeholder URLs, always return False (they don't exist yet)
+    if 'placeholder' in url.lower() or 'assets/video/' in url:
+        _video_url_cache[url] = False
+        return False
+    
+    # For external URLs, try to validate
+    try:
+        # Create SSL context that doesn't verify certificates (for testing)
+        ssl_context = ssl.create_default_context()
+        ssl_context.check_hostname = False
+        ssl_context.verify_mode = ssl.CERT_NONE
+        
+        # Try HEAD request first (faster)
+        req = urllib.request.Request(url, method='HEAD')
+        req.add_header('User-Agent', 'Oroboros-Precog/1.0')
+        
+        with urllib.request.urlopen(req, timeout=timeout, context=ssl_context) as response:
+            if response.status == 200:
+                content_type = response.headers.get('Content-Type', '')
+                # Check if it's a video content type
+                if 'video' in content_type or 'mp4' in content_type or 'webm' in content_type:
+                    _video_url_cache[url] = True
+                    return True
+    except Exception:
+        pass
+    
+    # Cache negative result
+    _video_url_cache[url] = False
+    return False
 
 @dataclass
 class VideoContent:
@@ -143,15 +189,33 @@ class VideoPrecog:
     def generate_content(self, count: int = 5, category: Optional[str] = None) -> List[VideoContent]:
         """Generate multiple video content items using data sources"""
         contents = []
+        attempts = 0
+        max_attempts = count * 3  # Allow up to 3x attempts to find valid videos
         
-        for i in range(count):
+        while len(contents) < count and attempts < max_attempts:
+            attempts += 1
+            
             # Get a random source item
             source_data = self.data_sources.get_random_source()
             
             # Generate video content from source
             content = self._generate_from_source(source_data, category)
+            
             if content:
-                contents.append(content)
+                # Validate video URL - only include if video exists or is a known working source
+                # For now, we'll use thumbnail URLs as video posters since actual videos may not exist
+                # The video_url will be marked as 'pending' if not validated
+                if validate_video_url(content.video_url):
+                    # Video URL is valid, include it
+                    content.metadata['video_validated'] = True
+                    contents.append(content)
+                else:
+                    # Video URL not valid - create a video post with thumbnail only
+                    # Mark as 'poster' type - shows thumbnail with play button overlay
+                    content.metadata['video_validated'] = False
+                    content.metadata['video_status'] = 'poster_only'
+                    # Still include the content but mark it as poster-only
+                    contents.append(content)
         
         return contents
     
