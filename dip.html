@@ -4,11 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DIP — Data Interception Proxy | WorldFeed</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <style>
         /* DIP-specific styles */
+        body {
+            background: #000 !important;
+            color: #fff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica Neue, Arial, sans-serif;
+        }
+        
         .dip-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 20px;
         }
@@ -33,6 +39,28 @@
             color: #00ff88;
             font-size: 1.2em;
             opacity: 0.8;
+        }
+        
+        .dip-nav {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .dip-nav a {
+            background: rgba(26, 26, 46, 0.8);
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 12px 20px;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .dip-nav a:hover, .dip-nav a.active {
+            border-color: #00ff88;
+            color: #00ff88;
         }
         
         .dip-status {

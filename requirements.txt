@@ -3,6 +3,6 @@
 requests
 pydantic
 tqdm
-# Assuming 'oroboroslabs' is a custom package or library
-# If it's a remote model service, no pip dependency might be needed, 
-# but we list common ones for robustness.
+flask>=2.0.0
+flask-cors>=3.0.0
+redis>=4.0.0
