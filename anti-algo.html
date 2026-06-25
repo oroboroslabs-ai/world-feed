@@ -64,10 +64,16 @@
             text-decoration: none;
             border-radius: 9999px;
             transition: background 0.2s;
+            cursor: pointer;
+        }
+        a.nav-item {
+            display: flex;
+            text-decoration: none;
         }
         .nav-item:hover { background: var(--bg-secondary); }
         .nav-item.active { font-weight: 700; }
-        .nav-item svg { width: 24px; height: 24px; fill: currentColor; }
+        .nav-item svg { width: 24px; height: 24px; fill: currentColor; flex-shrink: 0; }
+        .nav-item span { white-space: nowrap; }
         .post-btn {
             background: var(--oro-orange);
             color: white;
