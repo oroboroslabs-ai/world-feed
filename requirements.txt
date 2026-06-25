@@ -1,0 +1,8 @@
+# Dependencies for the Three-AI Engine
+# Add any required libraries for API calls, data processing, etc.
+requests
+pydantic
+tqdm
+# Assuming 'oroboroslabs' is a custom package or library
+# If it's a remote model service, no pip dependency might be needed, 
+# but we list common ones for robustness.
