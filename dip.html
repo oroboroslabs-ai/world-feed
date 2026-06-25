@@ -309,7 +309,7 @@
                     </div>
                     <div class="status-card">
                         <div class="label">Cache</div>
-                        <div class="value">Redis</div>
+                        <div class="value">Memory</div>
                     </div>
                 </div>
                 
@@ -318,9 +318,9 @@
                     <div class="arch-flow">
                         <div class="arch-box">Mastodon API</div>
                         <span class="arch-arrow">→</span>
-                        <div class="arch-box">DIP (Go)</div>
+                        <div class="arch-box">DIP (Python)</div>
                         <span class="arch-arrow">→</span>
-                        <div class="arch-box">Redis Cache</div>
+                        <div class="arch-box">Memory Cache</div>
                         <span class="arch-arrow">→</span>
                         <div class="arch-box">Control Component</div>
                         <span class="arch-arrow">→</span>
@@ -414,17 +414,17 @@
                     <h3>🔧 Quick Start</h3>
                     <div class="code-block">
                         <code>
-                            <span class="comment"># Start Redis (required for caching)</span><br>
-                            redis-server<br><br>
+                            <span class="comment"># Start DIP Server (Python - no dependencies required)</span><br>
+                            cd dip && python server.py<br><br>
                             
-                            <span class="comment"># Start Control Component (Python)</span><br>
-                            python dip/control_component.py<br><br>
+                            <span class="comment"># Server runs on port 8081</span><br>
+                            <span class="comment"># Access locally: http://localhost:8080/dip.html</span><br><br>
                             
-                            <span class="comment"># Start DIP (Go)</span><br>
-                            cd dip && go run dip.go<br><br>
-                            
-                            <span class="comment"># Access the feed</span><br>
-                            curl http://localhost:8081/api/oroboros/feed/user_123
+                            <span class="comment"># API Endpoints:</span><br>
+                            GET  /api/oroboros/health<br>
+                            GET  /api/oroboros/strata<br>
+                            GET  /api/oroboros/feed/{user_id}<br>
+                            POST /process
                         </code>
                     </div>
                 </div>
@@ -508,24 +508,93 @@
         
         // Initialize DIP client
         document.addEventListener('DOMContentLoaded', async () => {
-            const dipEndpoint = window.DIP_ENDPOINT || 'http://localhost:8081';
-            const client = new DIPClient({ endpoint: dipEndpoint });
+            // Check if running locally or on GitHub Pages
+            const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+            const dipEndpoint = window.DIP_ENDPOINT || (isLocal ? 'http://localhost:8081' : null);
+            const client = new DIPClient({ endpoint: dipEndpoint || 'http://localhost:8081' });
             
-            // Check DIP health
+            const statusEl = document.getElementById('dip-status');
+            const connectionEl = document.getElementById('connection-status');
+            const cacheEl = document.getElementById('cache-status');
+            
+            // If on GitHub Pages, show setup instructions
+            if (!isLocal) {
+                statusEl.textContent = 'Remote Mode';
+                statusEl.style.color = '#ffa500';
+                connectionEl.textContent = 'Local Required';
+                cacheEl.textContent = 'Memory';
+                
+                // Show setup message in feed
+                const feedContainer = document.querySelector('#oroboros-feed');
+                if (feedContainer) {
+                    feedContainer.innerHTML = `
+                        <div class="oroboros-post" style="border-color: #ffa500;">
+                            <div class="post-header">
+                                <span class="post-author">@system</span>
+                                <span class="post-strata" style="background: rgba(255,165,0,0.2);">INFO</span>
+                                <span class="post-confidence">100%</span>
+                            </div>
+                            <div class="post-content">
+                                <strong>DIP Server Required</strong><br><br>
+                                The DIP system runs locally. To connect:<br><br>
+                                <code style="background:#1a1a2e;padding:2px 6px;border-radius:4px;">
+                                    cd dip && python server.py
+                                </code><br><br>
+                                Then access: <code style="background:#1a1a2e;padding:2px 6px;border-radius:4px;">
+                                    http://localhost:8080/dip.html
+                                </code>
+                            </div>
+                            <div class="post-footer">
+                                <time class="post-timestamp">${new Date().toLocaleString()}</time>
+                                <span class="post-resonance">1272 Hz</span>
+                            </div>
+                        </div>
+                    `;
+                }
+                return;
+            }
+            
+            // Check DIP health (local mode)
             try {
                 const health = await client.getHealth();
-                const statusEl = document.getElementById('dip-status');
                 if (health.status === 'operational') {
                     statusEl.textContent = 'Operational';
                     statusEl.style.color = '#00ff88';
-                    document.getElementById('connection-status').textContent = 'Connected';
+                    connectionEl.textContent = 'Connected';
+                    cacheEl.textContent = health.cache || 'Memory';
                 } else {
                     throw new Error('Not operational');
                 }
             } catch (error) {
-                document.getElementById('dip-status').textContent = 'Offline';
-                document.getElementById('dip-status').style.color = '#ff4444';
-                document.getElementById('connection-status').textContent = 'Disconnected';
+                statusEl.textContent = 'Offline';
+                statusEl.style.color = '#ff4444';
+                connectionEl.textContent = 'Disconnected';
+                
+                // Show offline message
+                const feedContainer = document.querySelector('#oroboros-feed');
+                if (feedContainer) {
+                    feedContainer.innerHTML = `
+                        <div class="oroboros-post" style="border-color: #ff4444;">
+                            <div class="post-header">
+                                <span class="post-author">@system</span>
+                                <span class="post-strata" style="background: rgba(255,68,68,0.2);">ERROR</span>
+                                <span class="post-confidence">0%</span>
+                            </div>
+                            <div class="post-content">
+                                <strong>DIP Server Offline</strong><br><br>
+                                Start the server with:<br>
+                                <code style="background:#1a1a2e;padding:2px 6px;border-radius:4px;">
+                                    cd dip && python server.py
+                                </code>
+                            </div>
+                            <div class="post-footer">
+                                <time class="post-timestamp">${new Date().toLocaleString()}</time>
+                                <span class="post-resonance">1272 Hz</span>
+                            </div>
+                        </div>
+                    `;
+                }
+                return;
             }
             
             // Fetch and render feed
