@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#000000">
+    <title>Anti-Algo News Network — Oroboros Labs</title>
+    <meta name="description" content="Anti-algorithm social network. No shadowbans. No algorithmic suppression. Real news, verified sources, sovereign intelligence.">
+    <meta property="og:title" content="Anti-Algo News Network">
+    <meta property="og:description" content="Major underreported events, ranked by verification. No algorithmic suppression.">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/svg+xml" href="assets/img/oroboros-logo.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Archivo:wght@200;300;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --oro-orange: #D97757;
+            --oro-glow: rgba(217,119,87,0.5);
+            --bg-primary: #000000;
+            --bg-secondary: rgba(255,255,255,0.03);
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255,255,255,0.7);
+            --border-color: rgba(255,255,255,0.1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+        }
+        .app {
+            display: grid;
+            grid-template-columns: 275px 1fr 350px;
+            max-width: 1400px;
+            margin: 0 auto;
+            min-height: 100vh;
+        }
+        /* Sidebar */
+        .sidebar {
+            position: fixed;
+            width: 275px;
+            height: 100vh;
+            padding: 20px 12px;
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+        }
+        .logo {
+            padding: 12px;
+            margin-bottom: 8px;
+        }
+        .logo img {
+            width: 40px;
+            height: 40px;
+            filter: drop-shadow(0 0 12px var(--oro-glow));
+        }
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 14px 16px;
+            font-size: 19px;
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: 9999px;
+            transition: background 0.2s;
+        }
+        .nav-item:hover { background: var(--bg-secondary); }
+        .nav-item.active { font-weight: 700; }
+        .nav-item svg { width: 24px; height: 24px; fill: currentColor; }
+        .post-btn {
+            background: var(--oro-orange);
+            color: white;
+            border: none;
+            padding: 14px 0;
+            margin: 16px 8px;
+            border-radius: 9999px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            width: calc(100% - 16px);
+        }
+        .post-btn:hover { opacity: 0.9; }
+        .user-profile {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            border-radius: 9999px;
+            cursor: pointer;
+        }
+        .user-profile:hover { background: var(--bg-secondary); }
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--oro-orange);
+        }
+        .user-info { flex: 1; }
+        .user-name { font-weight: 700; font-size: 14px; }
+        .user-handle { color: var(--text-secondary); font-size: 13px; }
+        /* Main Feed */
+        .main {
+            margin-left: 275px;
+            border-right: 1px solid var(--border-color);
+            min-height: 100vh;
+        }
+        .feed-header {
+            position: sticky;
+            top: 0;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(12px);
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-color);
+            z-index: 100;
+        }
+        .feed-title {
+            font-size: 20px;
+            font-weight: 700;
+        }
+        .feed-tabs {
+            display: flex;
+            margin-top: 12px;
+        }
+        .feed-tab {
+            flex: 1;
+            text-align: center;
+            padding: 16px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+        }
+        .feed-tab.active {
+            color: var(--text-primary);
+            border-bottom-color: var(--oro-orange);
+        }
+        /* Posts */
+        .post {
+            padding: 16px;
+            border-bottom: 1px solid var(--border-color);
+            cursor: pointer;
+        }
+        .post:hover { background: var(--bg-secondary); }
+        .post-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 4px;
+        }
+        .post-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--oro-orange), #ff9a76);
+        }
+        .post-author { font-weight: 700; }
+        .post-handle { color: var(--text-secondary); }
+        .post-verified {
+            width: 18px;
+            height: 18px;
+            fill: var(--oro-orange);
+        }
+        .post-content {
+            margin: 8px 0 12px 60px;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+        .post-media {
+            margin-left: 60px;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 12px;
+        }
+        .post-media img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+        }
+        .post-actions {
+            display: flex;
+            gap: 48px;
+            margin-left: 60px;
+        }
+        .post-action {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-secondary);
+            font-size: 13px;
+            cursor: pointer;
+        }
+        .post-action:hover { color: var(--oro-orange); }
+        .post-action svg { width: 18px; height: 18px; }
+        /* Right Sidebar */
+        .right-sidebar {
+            padding: 20px;
+        }
+        .search-box {
+            background: var(--bg-secondary);
+            border-radius: 9999px;
+            padding: 12px 16px;
+            margin-bottom: 16px;
+        }
+        .search-box input {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: var(--text-primary);
+            width: 100%;
+        }
+        .trending-card {
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+        .trending-title {
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .trending-item {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .trending-item:last-child { border-bottom: none; }
+        .trending-category {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+        .trending-topic {
+            font-weight: 700;
+            margin: 4px 0;
+        }
+        .trending-count {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+        /* Auth Modal */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modal-overlay.active { display: flex; }
+        .modal {
+            background: #16181c;
+            border-radius: 16px;
+            padding: 32px;
+            width: 100%;
+            max-width: 400px;
+        }
+        .modal-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .modal input {
+            width: 100%;
+            padding: 16px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            font-size: 15px;
+        }
+        .modal input:focus { outline: none; border-color: var(--oro-orange); }
+        .modal-btn {
+            width: 100%;
+            padding: 14px;
+            background: var(--oro-orange);
+            border: none;
+            border-radius: 9999px;
+            color: white;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+        .modal-btn:hover { opacity: 0.9; }
+        .modal-switch {
+            text-align: center;
+            margin-top: 16px;
+            color: var(--text-secondary);
+        }
+        .modal-switch a {
+            color: var(--oro-orange);
+            text-decoration: none;
+        }
+        /* Precog Badge */
+        .precog-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: linear-gradient(135deg, var(--oro-orange), #ff9a76);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-left: 8px;
+        }
+        /* Verification Tier */
+        .tier-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-left: 4px;
+        }
+        .tier-5 { background: #ff6b35; color: white; }
+        .tier-4 { background: #ff9f1c; color: black; }
+        .tier-3 { background: #2ec4b6; color: white; }
+        .tier-2 { background: #011627; color: white; }
+        .tier-1 { background: #6c757d; color: white; }
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .right-sidebar { display: none; }
+            .app { grid-template-columns: 275px 1fr; }
+        }
+        @media (max-width: 800px) {
+            .sidebar { display: none; }
+            .main { margin-left: 0; }
+            .app { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="assets/img/oroboros-logo.svg" alt="Oroboros">
+            </div>
+            <nav>
+                <a href="#" class="nav-item active">
+                    <svg viewBox="0 0 24 24"><path d="M12 2L2 12h3v9h6v-6h2v6h6v-9h3L12 2z"/></svg>
+                    <span>Home</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+                    <span>Explore</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>
+                    <span>Notifications</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+                    <span>Messages</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                    <span>Lists</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                    <span>WorldFeed</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
+                    <span>Profile</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <svg viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.31.06-.63.06-.94 0-.31-.02-.63-.06-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
+                    <span>Settings</span>
+                </a>
+            </nav>
+            <button class="post-btn" onclick="openPostModal()">Post</button>
+            <div class="user-profile" onclick="openProfileModal()">
+                <div class="user-avatar"></div>
+                <div class="user-info">
+                    <div class="user-name" id="currentUserName">Guest</div>
+                    <div class="user-handle" id="currentUserHandle">@guest</div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Feed -->
+        <main class="main" id="mainFeed">
+            <div class="feed-header">
+                <div class="feed-title">Anti-Algo News Network</div>
+                <div class="feed-tabs">
+                    <div class="feed-tab active" onclick="switchTab('for-you')">For You</div>
+                    <div class="feed-tab" onclick="switchTab('following')">Following</div>
+                    <div class="feed-tab" onclick="switchTab('verified')">Verified</div>
+                </div>
+            </div>
+            <div id="postsContainer">
+                <!-- Posts will be dynamically loaded -->
+            </div>
+        </main>
+
+        <!-- Right Sidebar -->
+        <aside class="right-sidebar">
+            <div class="search-box">
+                <input type="text" placeholder="Search Anti-Algo" id="searchInput">
+            </div>
+            <div class="trending-card">
+                <div class="trending-title">Trending on Anti-Algo</div>
+                <div id="trendingContainer">
+                    <!-- Trending items loaded dynamically -->
+                </div>
+            </div>
+            <div class="trending-card">
+                <div class="trending-title">Glasswing Intelligence</div>
+                <div id="glasswingContainer">
+                    <!-- Glasswing data loaded dynamically -->
+                </div>
+            </div>
+            <div class="trending-card">
+                <div class="trending-title">Censorship Watch</div>
+                <div id="censorshipContainer">
+                    <!-- Censorship data loaded dynamically -->
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Auth Modal -->
+    <div class="modal-overlay" id="authModal">
+        <div class="modal">
+            <div class="modal-title" id="authTitle">Sign in to Anti-Algo</div>
+            <input type="text" id="authUsername" placeholder="Username">
+            <input type="password" id="authPassword" placeholder="Password" style="display:none;">
+            <button class="modal-btn" onclick="handleAuth()">Sign In</button>
+            <div class="modal-switch">
+                Don't have an account? <a href="#" onclick="toggleAuthMode()">Sign up</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Post Modal -->
+    <div class="modal-overlay" id="postModal">
+        <div class="modal" style="max-width: 600px;">
+            <div class="modal-title">Create Post</div>
+            <textarea id="postContent" style="width:100%;min-height:150px;background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:8px;color:var(--text-primary);padding:16px;font-size:15px;resize:none;" placeholder="What's happening?"></textarea>
+            <button class="modal-btn" onclick="submitPost()">Post</button>
+        </div>
+    </div>
+
+    <script>
+        // User state
+        let currentUser = null;
+        let posts = [];
+        let authMode = 'signin';
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            loadPosts();
+            loadTrending();
+            loadGlasswing();
+            loadCensorship();
+            checkAuth();
+        });
+
+        // Check authentication
+        function checkAuth() {
+            const saved = localStorage.getItem('antiAlgoUser');
+            if (saved) {
+                currentUser = JSON.parse(saved);
+                updateUserDisplay();
+            }
+        }
+
+        // Update user display
+        function updateUserDisplay() {
+            if (currentUser) {
+                document.getElementById('currentUserName').textContent = currentUser.name;
+                document.getElementById('currentUserHandle').textContent = '@' + currentUser.handle;
+            }
+        }
+
+        // Auth functions
+        function openAuthModal() {
+            document.getElementById('authModal').classList.add('active');
+        }
+
+        function closeAuthModal() {
+            document.getElementById('authModal').classList.remove('active');
+        }
+
+        function toggleAuthMode() {
+            authMode = authMode === 'signin' ? 'signup' : 'signin';
+            document.getElementById('authTitle').textContent = authMode === 'signin' ? 'Sign in to Anti-Algo' : 'Create your account';
+            document.getElementById('authPassword').style.display = authMode === 'signup' ? 'block' : 'none';
+        }
+
+        function handleAuth() {
+            const username = document.getElementById('authUsername').value;
+            const password = document.getElementById('authPassword').value;
+            
+            if (!username) return alert('Please enter a username');
+            
+            currentUser = {
+                name: username,
+                handle: username.toLowerCase().replace(/\s+/g, ''),
+                verified: false,
+                tier: 1,
+                createdAt: new Date().toISOString()
+            };
+            
+            localStorage.setItem('antiAlgoUser', JSON.stringify(currentUser));
+            updateUserDisplay();
+            closeAuthModal();
+        }
+
+        // Post functions
+        function openPostModal() {
+            if (!currentUser) return openAuthModal();
+            document.getElementById('postModal').classList.add('active');
+        }
+
+        function closePostModal() {
+            document.getElementById('postModal').classList.remove('active');
+        }
+
+        function submitPost() {
+            const content = document.getElementById('postContent').value;
+            if (!content.trim()) return;
+            
+            const post = {
+                id: Date.now(),
+                author: currentUser.name,
+                handle: '@' + currentUser.handle,
+                content: content,
+                timestamp: new Date().toISOString(),
+                likes: 0,
+                reposts: 0,
+                replies: 0,
+                verified: currentUser.verified,
+                tier: currentUser.tier
+            };
+            
+            posts.unshift(post);
+            renderPosts();
+            closePostModal();
+            document.getElementById('postContent').value = '';
+        }
+
+        // Load posts from feed
+        async function loadPosts() {
+            try {
+                const response = await fetch('data/feed.json');
+                const data = await response.json();
+                posts = data.items.map(item => ({
+                    id: item.id,
+                    author: 'Anti-Algo News',
+                    handle: '@antialgo',
+                    content: item.title + '\n\n' + item.body,
+                    timestamp: new Date(Date.now() - item.minutesAgo * 60000).toISOString(),
+                    likes: Math.floor(Math.random() * 500),
+                    reposts: Math.floor(Math.random() * 100),
+                    replies: Math.floor(Math.random() * 50),
+                    verified: true,
+                    tier: item.tier,
+                    source: item.sources?.[0] || 'Verified',
+                    location: item.location,
+                    image: item.imageUrl
+                }));
+                renderPosts();
+            } catch (e) {
+                console.error('Error loading posts:', e);
+            }
+        }
+
+        // Render posts
+        function renderPosts() {
+            const container = document.getElementById('postsContainer');
+            container.innerHTML = posts.map(post => `
+                <div class="post" onclick="viewPost('${post.id}')">
+                    <div class="post-header">
+                        <div class="post-avatar"></div>
+                        <span class="post-author">${post.author}</span>
+                        ${post.verified ? '<svg class="post-verified" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>' : ''}
+                        <span class="tier-badge tier-${post.tier}">T${post.tier}</span>
+                        <span class="post-handle">${post.handle}</span>
+                        <span style="color:var(--text-secondary);font-size:13px;">· ${formatTime(post.timestamp)}</span>
+                    </div>
+                    <div class="post-content">${post.content}</div>
+                    ${post.image ? `<div class="post-media"><img src="${post.image}" alt=""></div>` : ''}
+                    <div class="post-actions">
+                        <div class="post-action" onclick="event.stopPropagation();reply('${post.id}')">
+                            <svg viewBox="0 0 24 24"><path d="M21.99 4c0-1.1-.89-2-1.99-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4-.01-18z"/></svg>
+                            <span>${post.replies}</span>
+                        </div>
+                        <div class="post-action" onclick="event.stopPropagation();repost('${post.id}')">
+                            <svg viewBox="0 0 24 24"><path d="M7 7h10v3l4-4-4-4v3H5v6h2V7zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2v4z"/></svg>
+                            <span>${post.reposts}</span>
+                        </div>
+                        <div class="post-action" onclick="event.stopPropagation();like('${post.id}')">
+                            <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                            <span>${post.likes}</span>
+                        </div>
+                        <div class="post-action" onclick="event.stopPropagation();share('${post.id}')">
+                            <svg viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.47 1.2.76 1.96.76 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.84 9 6.08 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.76 0 1.44-.3 1.96-.77l7.05 4.11c-.05.23-.09.46-.09.7 0 1.66 1.34 3 3 3s3-1.34 3-3-1.34-3-3-3z"/></svg>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Load trending
+        function loadTrending() {
+            const container = document.getElementById('trendingContainer');
+            const trending = [
+                { category: 'Censorship', topic: '#FreeSpeech', count: '45.2K' },
+                { category: 'WorldFeed', topic: 'Sudan Crisis', count: '32.1K' },
+                { category: 'Glasswing', topic: '$200M Fund III', count: '28.4K' },
+                { category: 'Technology', topic: 'AI Sovereignty', count: '24.7K' },
+                { category: 'Politics', topic: 'Brazil Censorship', count: '19.3K' }
+            ];
+            container.innerHTML = trending.map(t => `
+                <div class="trending-item">
+                    <div class="trending-category">${t.category}</div>
+                    <div class="trending-topic">${t.topic}</div>
+                    <div class="trending-count">${t.count} posts</div>
+                </div>
+            `).join('');
+        }
+
+        // Load Glasswing data
+        function loadGlasswing() {
+            const container = document.getElementById('glasswingContainer');
+            const glasswing = [
+                { title: 'Fund III: $203M raised', desc: 'Oversubscribed AI-native investments' },
+                { title: '70+ portfolio companies', desc: 'Enterprise B2B & cybersecurity' },
+                { title: '5 investments in 2026', desc: 'Pre-seed and seed stage focus' },
+                { title: 'AI scanning tools', desc: 'Proprietary ML for research papers' }
+            ];
+            container.innerHTML = glasswing.map(g => `
+                <div class="trending-item">
+                    <div class="trending-topic">${g.title}</div>
+                    <div class="trending-category">${g.desc}</div>
+                </div>
+            `).join('');
+        }
+
+        // Load censorship data
+        function loadCensorship() {
+            const container = document.getElementById('censorshipContainer');
+            const censorship = [
+                { title: '57 countries imprison for online speech', desc: 'Freedom House 2025' },
+                { title: '10% decline in free expression', desc: 'UNESCO report' },
+                { title: '26 platforms banned in Venezuela', desc: '2025 government crackdown' },
+                { title: 'Shadowban recovery: 2-14 days', desc: 'X algorithm suppression' }
+            ];
+            container.innerHTML = censorship.map(c => `
+                <div class="trending-item">
+                    <div class="trending-topic">${c.title}</div>
+                    <div class="trending-category">${c.desc}</div>
+                </div>
+            `).join('');
+        }
+
+        // Utility functions
+        function formatTime(timestamp) {
+            const now = new Date();
+            const then = new Date(timestamp);
+            const diff = Math.floor((now - then) / 60000);
+            if (diff < 60) return diff + 'm';
+            if (diff < 1440) return Math.floor(diff / 60) + 'h';
+            return Math.floor(diff / 1440) + 'd';
+        }
+
+        function switchTab(tab) {
+            document.querySelectorAll('.feed-tab').forEach(t => t.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        function viewPost(id) {
+            console.log('View post:', id);
+        }
+
+        function reply(id) { console.log('Reply:', id); }
+        function repost(id) { console.log('Repost:', id); }
+        function like(id) { console.log('Like:', id); }
+        function share(id) { console.log('Share:', id); }
+
+        // Close modals on outside click
+        document.querySelectorAll('.modal-overlay').forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
