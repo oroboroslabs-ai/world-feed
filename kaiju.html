@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="theme-color" content="#000000">
-    <title>DeepSeek 5M4 — WorldFeed Intelligence</title>
-    <meta name="description" content="DeepSeek 5M4 — WorldFeed intelligence layer for research, verification, drafting, and analysis.">
-    <meta property="og:title" content="DeepSeek 5M4 — WorldFeed Intelligence">
-    <meta property="og:description" content="WorldFeed intelligence frontend powered by DeepSeek 5M4.">
+    <title>Oroboros Intelligence — WorldFeed</title>
+    <meta name="description" content="Oroboros Intelligence — WorldFeed sovereign AI layer powered by Mythos, Opus, Fable, and DeepSeek.">
+    <meta property="og:title" content="Oroboros Intelligence — WorldFeed">
+    <meta property="og:description" content="WorldFeed sovereign intelligence powered by Oroboros — Mythos, Opus, Fable, and DeepSeek.">
     <meta property="og:type" content="website">
 
-    <link rel="icon" type="image/png" href="assets/img/deepseek-logo.png">
+    <link rel="icon" type="image/svg+xml" href="assets/img/oroboros-logo.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Archivo:wght@200;300;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
-        /* === DeepSeek 5M4 — additive layer, style.css untouched === */
+        /* === Oroboros Intelligence — additive layer, style.css untouched === */
 
         /* glass + transparency on existing layout */
         .rail-card {
@@ -63,7 +63,7 @@
             100% { transform: translate3d(-26px, 18px, 0); opacity: 1; }
         }
 
-        /* brand: DeepSeek logo + 5M4 wordmark */
+        /* brand: Oroboros logo + wordmark */
         .brand-stack {
             display: flex;
             flex-direction: column;
@@ -73,7 +73,7 @@
         }
         .brand-stack img {
             width: 64px; height: 64px;
-            filter: drop-shadow(0 0 24px rgba(34,211,238,0.25));
+            filter: drop-shadow(0 0 24px rgba(217,119,87,0.5));
         }
         .brand-name {
             font-family: 'Archivo', sans-serif;
@@ -402,10 +402,10 @@
     <aside class="side">
         <a class="brand" href="./">
             <div class="brand-stack">
-                <img src="assets/img/deepseek-logo.png" alt="DeepSeek 5M4">
-                <div class="brand-name">5M4</div>
+                <img src="assets/img/oroboros-logo.svg" alt="Oroboros Intelligence">
+                <div class="brand-name">OROBOROS</div>
             </div>
-            <div class="brand-tag">WORLDFEED · DEEPSEEK INTELLIGENCE</div>
+            <div class="brand-tag">WORLDFEED · SOVEREIGN INTELLIGENCE</div>
         </a>
         <div class="nav-item active"><span class="nav-icon">◈</span> Chat</div>
         <div class="nav-item" id="navHistory"><span class="nav-icon">⌘</span> History</div>
@@ -413,7 +413,7 @@
         <div class="nav-item"><a href="./" style="color:inherit;text-decoration:none;display:contents"><span class="nav-icon">⌬</span> WorldFeed</a></div>
         <button class="submit-cta" id="newChatBtn">+ New Chat</button>
         <div class="side-foot">
-            Powered by DeepSeek 5M4.<br>
+            Powered by Oroboros Intelligence.<br>
             Routed through the private WorldFeed model bridge.<br><br>
             <a href="./">WorldFeed</a> · <a href="LICENSE">MIT</a>
         </div>
@@ -423,16 +423,16 @@
     <main class="main">
         <div class="chat-wrap">
             <header class="chat-header">
-                <div class="chat-title"><span class="pulse"></span> DEEPSEEK 5M4 · ONLINE</div>
-                <div class="chat-model-badge"><span class="dot"></span><span>5M4 · WORLDFEED</span></div>
+                <div class="chat-title"><span class="pulse"></span> OROBOROS · ONLINE</div>
+                <div class="chat-model-badge"><span class="dot"></span><span id="chatBadge">OROBOROS · WORLDFEED</span></div>
             </header>
 
             <div class="chat-stream" id="chatStream">
                 <div class="msg assistant">
-                    <div class="msg-avatar"><img src="assets/img/deepseek-logo.png" alt=""></div>
+                    <div class="msg-avatar"><img src="assets/img/oroboros-logo.svg" alt=""></div>
                     <div>
-                        <div class="msg-meta">DEEPSEEK 5M4</div>
-                        <div class="msg-bubble">Hi — I'm DeepSeek 5M4, the WorldFeed intelligence layer.
+                        <div class="msg-meta">OROBOROS</div>
+                        <div class="msg-bubble">Hi — I'm Oroboros Intelligence, the WorldFeed sovereign AI layer.
 
 Ask me for research, verification, drafting, coding, source analysis, or a clean summary of what the feed is tracking.</div>
                     </div>
@@ -441,10 +441,10 @@ Ask me for research, verification, drafting, coding, source analysis, or a clean
 
             <div class="chat-input-wrap">
                 <div class="chat-input-row">
-                    <textarea class="chat-input" id="chatInput" placeholder="Message DeepSeek 5M4...  (Shift+Enter for newline)" rows="1"></textarea>
+                    <textarea class="chat-input" id="chatInput" placeholder="Message Oroboros...  (Shift+Enter for newline)" rows="1"></textarea>
                     <button class="chat-send" id="sendBtn">Send</button>
                 </div>
-                <div class="chat-hint">Powered by DeepSeek 5M4 · No public model picker · No tracking</div>
+                <div class="chat-hint">Powered by Oroboros · Mythos · Opus · Fable · DeepSeek · No tracking</div>
             </div>
         </div>
     </main>
@@ -463,6 +463,9 @@ Ask me for research, verification, drafting, coding, source analysis, or a clean
             <h3>Basic</h3>
             <label style="display:block;font-size:10px;letter-spacing:2px;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-bottom:6px;">Mode</label>
             <select class="kj-model-select" id="modelSelect">
+                <option value="mythos" selected>Mythos</option>
+                <option value="opus">Opus</option>
+                <option value="fable">Fable</option>
                 <option value="flash">5M4 Fast</option>
                 <option value="deep">5M4 Deep</option>
             </select>
@@ -472,7 +475,7 @@ Ask me for research, verification, drafting, coding, source analysis, or a clean
         <div class="rail-card">
             <h3>About</h3>
             <div style="font-size:12px; color:rgba(255,255,255,0.65); line-height:1.6;">
-                DeepSeek 5M4 is the WorldFeed intelligence layer for source review, research synthesis, coding, and verification support.
+                Oroboros Intelligence is the WorldFeed sovereign AI layer for source review, research synthesis, coding, and verification support.
             </div>
         </div>
     </aside>
@@ -483,14 +486,30 @@ Ask me for research, verification, drafting, coding, source analysis, or a clean
 (function () {
     'use strict';
 
-    // DeepSeek 5M4 through the same private model bridge used by the chat portal.
+    // Oroboros Intelligence through the private model bridge.
     const DEEPSEEK_ENDPOINT = 'https://deepseek-research-chat.vercel.app/api/chat';
     const MODE_TO_MODEL = {
+        mythos: 'claude-mythos:latest',
+        opus: 'claude-opus:latest',
+        fable: 'claude-fable:latest',
         flash: 'deepseek-v4-pro-5M4:latest',
         deep:  'deepseek-v4-pro-5M4:latest'
     };
-    const MODE_STORE = 'deepseek5m4.mode';
-    const MODE_LABEL = { flash: '5M4 Fast', deep: '5M4 Deep' };
+    const MODE_STORE = 'oroboros.mode';
+    const MODE_LABEL = { 
+        mythos: 'Mythos', 
+        opus: 'Opus', 
+        fable: 'Fable',
+        flash: '5M4 Fast', 
+        deep: '5M4 Deep' 
+    };
+    const MODE_COLOR = {
+        mythos: '#D97757',
+        opus: '#D97757',
+        fable: '#D97757',
+        flash: '#22d3ee',
+        deep: '#22d3ee'
+    };
 
     const stream = document.getElementById('chatStream');
     const input = document.getElementById('chatInput');
@@ -499,12 +518,14 @@ Ask me for research, verification, drafting, coding, source analysis, or a clean
     const clearBtn = document.getElementById('clearBtn');
     const railModel = document.getElementById('railModel');
     const railStatus = document.getElementById('railStatus');
+    const chatBadge = document.getElementById('chatBadge');
     const newChatBtn = document.getElementById('newChatBtn');
 
     let history = [];
-    let mode = localStorage.getItem(MODE_STORE) || 'flash';
+    let mode = localStorage.getItem(MODE_STORE) || 'mythos';
     modelSelect.value = mode;
-    railModel.textContent = MODE_LABEL[mode] || '5M4 Fast';
+    railModel.textContent = MODE_LABEL[mode] || 'Mythos';
+    chatBadge.textContent = MODE_LABEL[mode].toUpperCase() + ' · WORLDFEED';
 
     function escapeHtml(s) {
         const d = document.createElement('div');
@@ -532,9 +553,9 @@ Ask me for research, verification, drafting, coding, source analysis, or a clean
         const wrap = document.createElement('div');
         wrap.className = 'msg ' + role + (opts.thinking ? ' thinking' : '');
         const avatar = role === 'assistant'
-            ? '<div class="msg-avatar"><img src="assets/img/deepseek-logo.png" alt=""></div>'
+            ? '<div class="msg-avatar"><img src="assets/img/oroboros-logo.svg" alt=""></div>'
             : '<div class="msg-avatar">YOU</div>';
-        const meta = role === 'assistant' ? 'DEEPSEEK 5M4' : 'YOU';
+        const meta = role === 'assistant' ? 'OROBOROS' : 'YOU';
         const body = opts.thinking
             ? '<div class="msg-bubble"><span></span><span></span><span></span></div>'
             : '<div class="msg-bubble">' + renderMd(content) + '</div>';
@@ -553,13 +574,14 @@ Ask me for research, verification, drafting, coding, source analysis, or a clean
     modelSelect.addEventListener('change', () => {
         mode = modelSelect.value;
         localStorage.setItem(MODE_STORE, mode);
-        railModel.textContent = MODE_LABEL[mode] || '5M4 Fast';
+        railModel.textContent = MODE_LABEL[mode] || 'Mythos';
+        chatBadge.textContent = MODE_LABEL[mode].toUpperCase() + ' · WORLDFEED';
     });
 
     clearBtn.addEventListener('click', () => {
         history = [];
         stream.innerHTML = '';
-        appendMsg('assistant', 'Fresh DeepSeek 5M4 thread. What should we look at?');
+        appendMsg('assistant', 'Fresh Oroboros thread. What should we look at?');
     });
     newChatBtn.addEventListener('click', () => clearBtn.click());
 
@@ -587,7 +609,7 @@ Ask me for research, verification, drafting, coding, source analysis, or a clean
                         temperature: mode === 'deep' ? 0.35 : 0.25
                     },
                     messages: [
-                        { role: 'system', content: 'You are DeepSeek 5M4, the WorldFeed intelligence layer. Be direct, useful, source-aware, and concise unless the user asks for depth. For news or research, separate verified facts from inference. Reply in clean markdown when helpful.' },
+                        { role: 'system', content: 'You are Oroboros Intelligence, the WorldFeed sovereign AI layer. Be direct, useful, source-aware, and concise unless the user asks for depth. For news or research, separate verified facts from inference. Reply in clean markdown when helpful.' },
                         ...history
                     ]
                 })
@@ -613,7 +635,7 @@ Ask me for research, verification, drafting, coding, source analysis, or a clean
             updateBubble(thinkingNode, reply);
             railStatus.textContent = 'idle';
         } catch (e) {
-            updateBubble(thinkingNode, 'Unable to reach DeepSeek 5M4 right now: ' + e.message + '\n\nTry again, or switch mode in the right rail.');
+            updateBubble(thinkingNode, 'Unable to reach Oroboros right now: ' + e.message + '\n\nTry again, or switch model in the right rail.');
             railStatus.textContent = 'error';
         } finally {
             sendBtn.disabled = false;
