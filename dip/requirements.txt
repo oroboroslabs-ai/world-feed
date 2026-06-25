@@ -1,0 +1,3 @@
+# DIP Control Component Requirements
+flask>=2.0.0
+redis>=4.0.0
