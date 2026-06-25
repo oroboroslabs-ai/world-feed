@@ -37,7 +37,7 @@
             max-width: 1300px !important;
             grid-template-columns: 275px 640px 1fr !important;
             gap: 0 !important;
-            padding-top: 0 !important;
+            padding-top: 53px !important;
             margin: 0 auto !important;
         }
         .side {
@@ -1155,6 +1155,12 @@
 
 
 <div class="app">
+    <!-- TOP BAR -->
+    <div style="position: fixed; top: 0; left: 0; right: 0; height: 53px; background: #000; border-bottom: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; padding-left: 20px; z-index: 1000;">
+        <div style="transform: scaleX(-1);">
+            <svg width="32" height="32" viewBox="0 0 940 655" fill="white"><path d="m679 1.3l260 653.6h-142.5l-260-653.6zm-419.4-0.8h149.2l259.6 653.6h-145.2l-53.1-137.2h-271.8l-53.1 137.2h-145.2zm-14.5 394.9h178.1l-89-229.7z"/></svg>
+        </div>
+    </div>
 
     <!-- LEFT SIDEBAR -->
     <aside class="side">
