@@ -532,21 +532,40 @@
             </div>
             
             <div class="sidebar-card">
+                <h2>Mastodon Federation</h2>
+                <div class="trending-item" style="cursor: pointer;" onclick="window.open('https://mastodon.social/@oroboroslabs', '_blank')">
+                    <div class="trending-category">Instance</div>
+                    <div class="trending-topic">mastodon.social</div>
+                    <div class="trending-count">Primary</div>
+                </div>
+                <div class="trending-item" style="cursor: pointer;" onclick="window.open('https://fosstodon.org/@oroboroslabs', '_blank')">
+                    <div class="trending-category">Instance</div>
+                    <div class="trending-topic">fosstodon.org</div>
+                    <div class="trending-count">Tech</div>
+                </div>
+                <div class="trending-item" style="cursor: pointer;" onclick="window.open('https://mastodon.online/@oroboroslabs', '_blank')">
+                    <div class="trending-category">Instance</div>
+                    <div class="trending-topic">mastodon.online</div>
+                    <div class="trending-count">Backup</div>
+                </div>
+            </div>
+            
+            <div class="sidebar-card">
                 <h2>Oroboros Resources</h2>
-                <div class="trending-item">
-                    <div class="trending-category">Network</div>
-                    <div class="trending-topic">Hermes Agent</div>
-                    <div class="trending-count">Active</div>
-                </div>
-                <div class="trending-item">
-                    <div class="trending-category">Vision</div>
-                    <div class="trending-topic">WorldFeed News</div>
-                    <div class="trending-count">Live</div>
-                </div>
-                <div class="trending-item">
+                <div class="trending-item" style="cursor: pointer;" onclick="window.open('kaiju.html', '_self')">
                     <div class="trending-category">System</div>
                     <div class="trending-topic">5S4 AI Chat</div>
                     <div class="trending-count">Online</div>
+                </div>
+                <div class="trending-item" style="cursor: pointer;" onclick="window.open('admin.html', '_self')">
+                    <div class="trending-category">Admin</div>
+                    <div class="trending-topic">Precog Admin</div>
+                    <div class="trending-count">Dashboard</div>
+                </div>
+                <div class="trending-item" style="cursor: pointer;" onclick="window.open('index.html', '_self')">
+                    <div class="trending-category">Public</div>
+                    <div class="trending-topic">WorldFeed News</div>
+                    <div class="trending-count">Live</div>
                 </div>
                 <div class="trending-item">
                     <div class="trending-category">Resource</div>
@@ -570,14 +589,23 @@
     <script>
         // Precog API Client
         const PRECOG_API = 'http://localhost:8083';
+        const MASTODON_INSTANCE = 'https://mastodon.social';
         let currentTab = 'all';
         let feedData = [];
+        let autoRefreshInterval;
         
         // Initialize
         document.addEventListener('DOMContentLoaded', async () => {
             await loadFeed();
             setupTabs();
+            startAutoRefresh();
+            log('[DIP] Connected to Precog Pipeline at 1272 Hz');
         });
+        
+        // Auto-refresh every 30 seconds
+        function startAutoRefresh() {
+            autoRefreshInterval = setInterval(loadFeed, 30000);
+        }
         
         // Load feed from Precog API
         async function loadFeed() {
@@ -762,6 +790,19 @@
             }
             
             feedEl.innerHTML = filtered.map(item => createPostHTML(item)).join('');
+            
+            // Log feed update
+            log(`[DIP] Rendered ${filtered.length} items`);
+        }
+        
+        // Console log helper
+        function log(message) {
+            console.log(message);
+            const statusEl = document.getElementById('pipeline-status');
+            if (statusEl && message.includes('Active')) {
+                statusEl.textContent = 'Precog Pipeline Active';
+                statusEl.style.color = '#00ff88';
+            }
         }
         
         // Create post HTML
