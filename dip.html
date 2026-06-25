@@ -432,34 +432,111 @@
         </main>
     </div>
     
-    <script src="dip/oroboros.js"></script>
     <script>
+        // DIP Frontend Client (inline for simplicity)
+        class DIPClient {
+            constructor(config = {}) {
+                this.endpoint = config.endpoint || 'http://localhost:8081';
+                this.resonanceHz = config.resonanceHz || 1272;
+            }
+            
+            async getHealth() {
+                try {
+                    const response = await fetch(`${this.endpoint}/api/oroboros/health`);
+                    return await response.json();
+                } catch (error) {
+                    return { status: 'error', error: error.message };
+                }
+            }
+            
+            async getFeed(userId = 'default') {
+                try {
+                    const response = await fetch(`${this.endpoint}/api/oroboros/feed/${userId}`);
+                    return await response.json();
+                } catch (error) {
+                    return { posts: [], error: error.message };
+                }
+            }
+            
+            async getStrata() {
+                try {
+                    const response = await fetch(`${this.endpoint}/api/oroboros/strata`);
+                    return await response.json();
+                } catch (error) {
+                    return { error: error.message };
+                }
+            }
+            
+            renderFeed(container, posts) {
+                if (typeof container === 'string') {
+                    container = document.querySelector(container);
+                }
+                if (!container) return;
+                
+                container.innerHTML = '';
+                
+                if (!posts || posts.length === 0) {
+                    container.innerHTML = '<div class="oroboros-post"><div class="post-content">No posts available. DIP server may be offline.</div></div>';
+                    return;
+                }
+                
+                posts.forEach(post => {
+                    const article = document.createElement('article');
+                    article.className = 'oroboros-post';
+                    article.innerHTML = `
+                        <div class="post-header">
+                            <span class="post-author">@${post.author || 'unknown'}</span>
+                            <span class="post-strata">${post.strata || 'S1'}</span>
+                            <span class="post-confidence">${((post.confidence || 0.99) * 100).toFixed(0)}%</span>
+                        </div>
+                        <div class="post-content">${this.escapeHtml(post.content || '')}</div>
+                        <div class="post-footer">
+                            <time class="post-timestamp">${new Date(post.timestamp || Date.now()).toLocaleString()}</time>
+                            <span class="post-resonance">${this.resonanceHz} Hz</span>
+                        </div>
+                    `;
+                    container.appendChild(article);
+                });
+            }
+            
+            escapeHtml(text) {
+                const div = document.createElement('div');
+                div.textContent = text;
+                return div.innerHTML;
+            }
+        }
+        
         // Initialize DIP client
         document.addEventListener('DOMContentLoaded', async () => {
             const dipEndpoint = window.DIP_ENDPOINT || 'http://localhost:8081';
+            const client = new DIPClient({ endpoint: dipEndpoint });
             
             // Check DIP health
             try {
-                const response = await fetch(`${dipEndpoint}/api/oroboros/health`);
-                const health = await response.json();
-                document.getElementById('dip-status').textContent = health.status || 'Operational';
-                document.getElementById('dip-status').style.color = '#00ff88';
+                const health = await client.getHealth();
+                const statusEl = document.getElementById('dip-status');
+                if (health.status === 'operational') {
+                    statusEl.textContent = 'Operational';
+                    statusEl.style.color = '#00ff88';
+                    document.getElementById('connection-status').textContent = 'Connected';
+                } else {
+                    throw new Error('Not operational');
+                }
             } catch (error) {
                 document.getElementById('dip-status').textContent = 'Offline';
                 document.getElementById('dip-status').style.color = '#ff4444';
                 document.getElementById('connection-status').textContent = 'Disconnected';
             }
             
-            // Initialize Oroboros client
-            if (typeof OroborosClient !== 'undefined') {
-                window.oroborosClient = new OroborosClient({
-                    dipEndpoint: dipEndpoint,
-                    resonanceHz: 1272
-                }).initialize({
-                    container: '#oroboros-feed',
-                    refreshInterval: 30000
-                });
-            }
+            // Fetch and render feed
+            const feedData = await client.getFeed('worldfeed_user');
+            client.renderFeed('#oroboros-feed', feedData.posts);
+            
+            // Auto-refresh every 30 seconds
+            setInterval(async () => {
+                const data = await client.getFeed('worldfeed_user');
+                client.renderFeed('#oroboros-feed', data.posts);
+            }, 30000);
         });
     </script>
 </body>
