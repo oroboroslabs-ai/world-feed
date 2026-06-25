@@ -13,7 +13,10 @@ from flask_cors import CORS
 from typing import Dict, List, Optional
 
 # Import precog pipeline
-from precogs import PrecogPipeline
+try:
+    from pipeline import PrecogPipeline
+except ImportError:
+    from .pipeline import PrecogPipeline
 
 app = Flask(__name__)
 CORS(app)
@@ -273,4 +276,4 @@ if __name__ == '__main__':
     print(f"  - GET/POST /api/user/preferences")
     print(f"  - GET/POST/DELETE /api/user/bookmarks")
     
-    app.run(host='0.0.0.0', port=8082, debug=False)
+    app.run(host='127.0.0.1', port=8083, debug=False)

@@ -12,9 +12,15 @@ from datetime import datetime
 from typing import Dict, List, Optional, Any
 from dataclasses import dataclass, asdict
 
-from .writing_precog import WritingPrecog, WrittenContent
-from .video_precog import VideoPrecog, VideoContent
-from .image_precog import ImagePrecog, ImageContent
+# Handle imports for both package and direct execution
+try:
+    from .writing_precog import WritingPrecog, WrittenContent
+    from .video_precog import VideoPrecog, VideoContent
+    from .image_precog import ImagePrecog, ImageContent
+except ImportError:
+    from writing_precog import WritingPrecog, WrittenContent
+    from video_precog import VideoPrecog, VideoContent
+    from image_precog import ImagePrecog, ImageContent
 
 @dataclass
 class UnifiedFeedItem:

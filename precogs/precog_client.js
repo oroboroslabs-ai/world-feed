@@ -4,7 +4,7 @@
 
 class PrecogClient {
     constructor(config = {}) {
-        this.precogEndpoint = config.precogEndpoint || 'http://localhost:8082';
+        this.precogEndpoint = config.precogEndpoint || 'http://localhost:8083';
         this.resonanceHz = config.resonanceHz || 1272;
         this.strata = config.strata || 'S1-S12';
         this.userID = config.userID || this.generateUserID();

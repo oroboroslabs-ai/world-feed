@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Video Precog - Video Generation Engine
-A\ 1272 Hz
+A\\ 1272 Hz
 Generates video content metadata and placeholders for the DIP feed
 Integrates Anthropic PDFs, Glasswing, X Profile, Breaking News
 """
@@ -14,7 +14,11 @@ from typing import Dict, List, Optional, Any
 from dataclasses import dataclass, asdict
 import random
 
-from .data_sources import DataSources, get_photo_url
+# Handle imports for both package and direct execution
+try:
+    from .data_sources import DataSources, get_photo_url
+except ImportError:
+    from data_sources import DataSources, get_photo_url
 
 @dataclass
 class VideoContent:
