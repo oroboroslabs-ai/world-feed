@@ -104,6 +104,7 @@
         }
         .nav-logo {
             cursor: pointer !important;
+            transform: scaleX(-1) !important;
         }
         .nav-logo:hover {
             background: transparent !important;
@@ -1156,7 +1157,7 @@
     <!-- LEFT SIDEBAR -->
     <aside class="side">
         <div class="nav-item nav-logo" style="padding: 12px 16px;">
-            <svg width="32" height="32" viewBox="0 0 940 655" fill="white" transform="scale(-1,1) translate(-940,0)"><path d="m679 1.3l260 653.6h-142.5l-260-653.6zm-419.4-0.8h149.2l259.6 653.6h-145.2l-53.1-137.2h-271.8l-53.1 137.2h-145.2zm-14.5 394.9h178.1l-89-229.7z"/></svg>
+            <svg width="32" height="32" viewBox="0 0 940 655" fill="white"><path d="m679 1.3l260 653.6h-142.5l-260-653.6zm-419.4-0.8h149.2l259.6 653.6h-145.2l-53.1-137.2h-271.8l-53.1 137.2h-145.2zm-14.5 394.9h178.1l-89-229.7z"/></svg>
         </div>
         <div class="nav-item active" data-view="latest">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
@@ -1296,24 +1297,12 @@
         </div>
 
         <div class="rail-card">
-            <h3>Alliance</h3>
-            <div class="alliance">
-                <div class="ally"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" style="filter: drop-shadow(0 0 6px rgba(255,255,255,0.5))">
-                    <!-- Outer rounded square -->
-                    <rect x="2" y="2" width="20" height="20" rx="3" ry="3"/>
-                    <!-- Inner message balloon -->
-                    <path d="M7 7h10c.6 0 1 .4 1 1v6c0 .6-.4 1-1 1h-2l-2 2v-2h-6c-.6 0-1-.4-1-1v-6c0-.6.4-1 1-1z"/>
-                </svg><span>Oroboros Labs</span></div>
-                <div class="ally"><img src="assets/img/noir-logo.svg" alt="Noir" class="color" style="width:45px!important;height:45px!important"><span>Nyros / NOIR Security</span></div>
-                <div class="ally"><img src="assets/img/deepseek-logo.png" alt="DeepSeek" class="color"><span>DeepSeek</span></div>
-                <div class="ally"><img src="assets/img/zai-logo.png" alt="Z.AI" class="color"><span>Z.AI</span></div>
-                <div class="ally"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" style="filter: drop-shadow(0 0 6px rgba(255,255,255,0.5))">
-                    <!-- Outer rounded square -->
-                    <rect x="2" y="2" width="20" height="20" rx="3" ry="3"/>
-                    <!-- Inner message balloon -->
-                    <path d="M7 7h10c.6 0 1 .4 1 1v6c0 .6-.4 1-1 1h-2l-2 2v-2h-6c-.6 0-1-.4-1-1v-6c0-.6.4-1 1-1z"/>
-                </svg><span>5S4</span></div>
-            </div>
+            <h3>Relevant Feeds</h3>
+            <div class="item"><a href="https://oroboroslabs-ai.github.io" style="text-decoration:none;color:inherit;">Oroboros Labs Portal</a><div class="item-meta">oroboroslabs-ai.github.io</div></div>
+            <div class="item"><a href="https://github.com/oroboroslabs-ai" style="text-decoration:none;color:inherit;">GitHub Organization</a><div class="item-meta">github.com/oroboroslabs-ai</div></div>
+            <div class="item"><a href="https://deepseek.com" style="text-decoration:none;color:inherit;">DeepSeek Research</a><div class="item-meta">deepseek.com</div></div>
+            <div class="item"><a href="https://anthropic.com" style="text-decoration:none;color:inherit;">Anthropic Claude</a><div class="item-meta">anthropic.com</div></div>
+            <div class="item"><a href="kaiju.html" style="text-decoration:none;color:inherit;">5S4 AI Assistant</a><div class="item-meta">Local AI Interface</div></div>
             <div class="accord">Anti-algo ranking: verification, source diversity, public-interest weight.</div>
         </div>
     </aside>
