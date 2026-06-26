@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos — WorldFeed</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Twitter+Chirp:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        :root {
+            --font-chirp: 'Twitter Chirp', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica Neue, Arial, sans-serif;
+        }
+        body {
+            background: #000 !important;
+            color: #fff;
+            font-family: var(--font-chirp);
+            margin: 0;
+            padding: 0;
+        }
+        
+        .app-container {
+            display: grid;
+            grid-template-columns: 275px 640px 1fr;
+            max-width: 1300px;
+            margin: 0 auto;
+            min-height: 100vh;
+        }
+        
+        @media (max-width: 1195px) {
+            .app-container {
+                grid-template-columns: 275px 1fr;
+            }
+            .right-sidebar {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 800px) {
+            .app-container {
+                grid-template-columns: 1fr;
+            }
+            .left-sidebar {
+                display: none;
+            }
+        }
+        
+        .left-sidebar {
+            min-width: 275px;
+            max-width: 275px;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+        }
+        
+        .nav-item {
+            font-size: 20px;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 18px 16px;
+            position: relative;
+            font-weight: 400;
+            text-decoration: none;
+            cursor: pointer;
+            border-radius: 9999px;
+            border: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+        
+        a.nav-item {
+            display: flex;
+            text-decoration: none;
+        }
+        
+        a.nav-item:hover {
+            background: rgba(255,255,255,0.03);
+            border-color: rgba(255,255,255,0.1);
+        }
+        
+        .nav-item.active {
+            font-weight: 700;
+        }
+        
+        .nav-item svg {
+            width: 26px;
+            height: 26px;
+            fill: currentColor;
+        }
+        
+        .post-btn {
+            background: linear-gradient(90deg, 
+                rgba(255,255,255,0.7) 0%, 
+                #ffffff 15%, 
+                #ffffff 85%, 
+                rgba(255,255,255,0.7) 100%) !important;
+            color: #000000 !important;
+            text-align: center !important;
+            font-weight: 400 !important;
+            border: none !important;
+            padding: 14px 0 !important;
+            margin: 20px 12px !important;
+            border-radius: 9999px !important;
+            font-size: 17px !important;
+            cursor: pointer !important;
+            display: block !important;
+            width: calc(100% - 24px) !important;
+            font-family: inherit !important;
+            transition: all 0.2s ease !important;
+        }
+        
+        .post-btn:hover {
+            background: #ffffff !important;
+            color: #000000 !important;
+        }
+        
+        .main-content {
+            border-right: 1px solid #2f3336;
+            min-height: 100vh;
+        }
+        
+        .feed-header {
+            padding: 16px;
+            border-bottom: 1px solid #2f3336;
+            font-size: 20px;
+            font-weight: 700;
+        }
+        
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 16px;
+            padding: 16px;
+        }
+        
+        .video-card {
+            background: #16181c;
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .video-card:hover {
+            transform: scale(1.02);
+        }
+        
+        .video-thumbnail {
+            width: 100%;
+            height: 180px;
+            background: #2f3336;
+            position: relative;
+        }
+        
+        .video-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .video-duration {
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+        
+        .video-info {
+            padding: 12px;
+        }
+        
+        .video-title {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+        
+        .video-meta {
+            color: #71767b;
+            font-size: 13px;
+        }
+        
+        .right-sidebar {
+            padding: 12px 16px;
+        }
+        
+        .search-box {
+            background: #202327;
+            border-radius: 9999px;
+            padding: 8px 16px;
+            margin-bottom: 16px;
+        }
+        
+        .search-box input {
+            background: transparent;
+            border: none;
+            color: #fff;
+            width: 100%;
+            outline: none;
+            font-size: 15px;
+        }
+        
+        .trending-card {
+            background: #16181c;
+            border-radius: 12px;
+            padding: 12px;
+            margin-bottom: 12px;
+        }
+        
+        .trending-title {
+            font-weight: 700;
+            font-size: 19px;
+            margin-bottom: 12px;
+        }
+        
+        .trending-item {
+            padding: 12px 0;
+            cursor: pointer;
+            border-bottom: 1px solid #2f3336;
+        }
+        
+        .trending-item:last-child {
+            border-bottom: none;
+        }
+        
+        .trending-item:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+        
+        .trending-item-title {
+            font-weight: 700;
+            font-size: 15px;
+            margin-bottom: 2px;
+        }
+        
+        .trending-item-meta {
+            color: #71767b;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Left Sidebar - Navigation -->
+        <div class="left-sidebar">
+            <div style="padding: 12px 0 12px 0; display: flex; align-items: center;">
+                <svg width="32" height="32" viewBox="0 0 940 655" fill="white" style="transform: scaleX(-1);"><path d="m679 1.3l260 653.6h-142.5l-260-653.6zm-419.4-0.8h149.2l259.6 653.6h-145.2l-53.1-137.2h-271.8l-53.1 137.2h-145.2zm-14.5 394.9h178.1l-89-229.7z"/></svg>
+            </div>
+            
+            <nav>
+                <a href="index.html" class="nav-item">
+                    <svg viewBox="0 0 24 24" width="26" height="26"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" fill="none" stroke="white" stroke-width="2"/></svg>
+                    <span>Home</span>
+                </a>
+                <a href="explore.html" class="nav-item">
+                    <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                    <span>Explore</span>
+                </a>
+                <a href="videos.html" class="nav-item active">
+                    <svg viewBox="0 0 24 24"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg>
+                    <span>Videos</span>
+                </a>
+                <a href="articles.html" class="nav-item">
+                    <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg>
+                    <span>Articles</span>
+                </a>
+                <a href="messages.html" class="nav-item">
+                    <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
+                    <span>Messages</span>
+                </a>
+                <a href="profile.html" class="nav-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                    <span>Profile</span>
+                </a>
+            </nav>
+            
+            <button class="post-btn" onclick="window.location.href='index.html'">Post</button>
+        </div>
+        
+        <!-- Main Content - Videos -->
+        <div class="main-content">
+            <div class="feed-header">Videos</div>
+            <div id="videoGrid" class="video-grid">
+                <!-- Videos will be loaded here -->
+            </div>
+        </div>
+        
+        <!-- Right Sidebar -->
+        <div class="right-sidebar">
+            <div class="search-box">
+                <input type="text" placeholder="Search videos">
+            </div>
+            
+            <div class="trending-card">
+                <div class="trending-title">Trending Videos</div>
+                <div class="trending-item">
+                    <div class="trending-item-title">#WorldFeed</div>
+                    <div class="trending-item-meta">2.3K videos</div>
+                </div>
+                <div class="trending-item">
+                    <div class="trending-item-title">#AntiAlgo</div>
+                    <div class="trending-item-meta">1.8K videos</div>
+                </div>
+                <div class="trending-item">
+                    <div class="trending-item-title">#PrecogAI</div>
+                    <div class="trending-item-meta">956 videos</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Load videos from API
+        document.addEventListener('DOMContentLoaded', function() {
+            loadVideos();
+        });
+        
+        function loadVideos() {
+            fetch('http://localhost:8083/api/precog/feed?video=20')
+                .then(response => response.json())
+                .then(data => {
+                    if (data && data.data && data.data.feed) {
+                        displayVideos(data.data.feed);
+                    }
+                })
+                .catch(error => {
+                    console.log('Using offline data');
+                    displayOfflineVideos();
+                });
+        }
+        
+        function displayVideos(videos) {
+            const grid = document.getElementById('videoGrid');
+            videos.forEach(video => {
+                const content = video.content || video;
+                const div = document.createElement('div');
+                div.className = 'video-card';
+                div.innerHTML = `
+                    <div class="video-thumbnail">
+                        <img src="${content.thumbnail_url || 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800'}" alt="${content.title || 'Video'}">
+                        <div class="video-duration">${formatDuration(content.duration || 120)}</div>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-title">${content.title || 'Video Content'}</div>
+                        <div class="video-meta">${content.source || 'Precog Pipeline'} • ${formatViews(content.views || Math.floor(Math.random() * 10000))}</div>
+                    </div>
+                `;
+                grid.appendChild(div);
+            });
+        }
+        
+        function displayOfflineVideos() {
+            const grid = document.getElementById('videoGrid');
+            for (let i = 0; i < 12; i++) {
+                const div = document.createElement('div');
+                div.className = 'video-card';
+                div.innerHTML = `
+                    <div class="video-thumbnail">
+                        <img src="https://images.unsplash.com/photo-${1451187580459 + i}-43490279c0fa?w=800" alt="Video">
+                        <div class="video-duration">${formatDuration(Math.floor(Math.random() * 600) + 60)}</div>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-title">Video ${i + 1}</div>
+                        <div class="video-meta">Precog Pipeline • ${formatViews(Math.floor(Math.random() * 10000))}</div>
+                    </div>
+                `;
+                grid.appendChild(div);
+            }
+        }
+        
+        function formatDuration(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            return `${mins}:${secs.toString().padStart(2, '0')}`;
+        }
+        
+        function formatViews(views) {
+            if (views >= 1000000) return (views / 1000000).toFixed(1) + 'M views';
+            if (views >= 1000) return (views / 1000).toFixed(1) + 'K views';
+            return views + ' views';
+        }
+    </script>
+</body>
+</html>
