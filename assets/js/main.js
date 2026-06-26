@@ -768,3 +768,80 @@
     loadLiveFeed(true);
     scheduleHourlyRefresh();
 })();
+
+// === Precog API Integration (Anti-Algo) ===
+// Global functions for all pages
+
+function loadPrecogFeed(filter) {
+    console.log('[Anti-Algo] Loading precog feed...');
+    const feedEl = document.getElementById('wf-feed');
+    const loader = document.getElementById('wf-loader');
+    
+    if (!feedEl) return;
+    
+    const filterParam = filter || '5';
+    const url = '/api/precog/feed?writing=10&video=5&image=5&filter=' + filterParam;
+
+    fetch(url)
+        .then(response => {
+            if (!response.ok) throw new Error('API not available');
+            return response.json();
+        })
+        .then(data => {
+            console.log('[Anti-Algo] Precog feed loaded:', data);
+            if (data && data.data && data.data.feed) {
+                displayFeed(data.data.feed, feedEl);
+                if (loader) loader.style.display = 'none';
+            }
+        })
+        .catch(error => {
+            console.log('[Anti-Algo] Using offline data - API not available');
+            if (loader) loader.textContent = 'Connect Precog API to load live feed.';
+        });
+}
+
+function displayFeed(items, container) {
+    if (!container) return;
+    container.innerHTML = '';
+    
+    items.forEach(item => {
+        const c = item.content || item;
+        const type = item.type || 'written';
+        const author = (c.author || 'precog').replace(/_/g, ' ');
+        const title = c.title || '';
+        const desc = c.description || c.content || c.body || '';
+        const img = c.image_url || c.thumbnail_url || c.photo_url || '';
+        const hz = item.resonance || c.resonance || 1272;
+        const initial = author.charAt(0).toUpperCase();
+        
+        let mediaHtml = '';
+        if (type === 'video' && c.video_url) {
+            mediaHtml = '<div class="wf-status-media"><video src="' + c.video_url + '" poster="' + img + '" controls></video></div>';
+        } else if (img) {
+            mediaHtml = '<div class="wf-status-media"><img src="' + img + '" alt="' + title + '" loading="lazy"></div>';
+        }
+        
+        const article = document.createElement('article');
+        article.className = 'wf-status';
+        article.setAttribute('role', 'article');
+        article.innerHTML =
+            '<div class="wf-status-avatar">' + initial + '</div>' +
+            '<div class="wf-status-body">' +
+                '<div class="wf-status-header">' +
+                    '<span class="wf-status-name">' + author + '</span>' +
+                    '<span class="wf-status-handle">@precog · ' + hz + ' Hz</span>' +
+                '</div>' +
+                (title ? '<div class="wf-status-title">' + title + '</div>' : '') +
+                '<div class="wf-status-content">' + desc.substring(0, 280) + (desc.length > 280 ? '…' : '') + '</div>' +
+                mediaHtml +
+                '<div class="wf-status-actions">' +
+                    '<span class="wf-action">💬 <span>Reply</span></span>' +
+                    '<span class="wf-action">🔁 <span>Boost</span></span>' +
+                    '<span class="wf-action">❤ <span>Like</span></span>' +
+                    '<span class="wf-action">📤 <span>Share</span></span>' +
+                '</div>' +
+            '</div>';
+        
+        container.appendChild(article);
+    });
+}

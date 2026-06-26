@@ -2,456 +2,71 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#000000">
     <title>Messages — WorldFeed</title>
+    <meta name="description" content="Direct messages and conversations on WorldFeed. Anti-algorithm news network.">
+    <link rel="icon" type="image/svg+xml" href="assets/img/cube-chat-logo.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Twitter+Chirp:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <style>
-        :root {
-            --font-chirp: 'Twitter Chirp', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica Neue, Arial, sans-serif;
-        }
-        body {
-            background: #000 !important;
-            color: #fff;
-            font-family: var(--font-chirp);
-            margin: 0;
-            padding: 0;
-        }
-        
-        .app-container {
-            display: grid;
-            grid-template-columns: 275px 640px 1fr;
-            max-width: 1300px;
-            margin: 0 auto;
-            min-height: 100vh;
-        }
-        
-        @media (max-width: 1195px) {
-            .app-container {
-                grid-template-columns: 275px 1fr;
-            }
-            .right-sidebar {
-                display: none;
-            }
-        }
-        
-        @media (max-width: 800px) {
-            .app-container {
-                grid-template-columns: 1fr;
-            }
-            .left-sidebar {
-                display: none;
-            }
-        }
-        
-        .left-sidebar {
-            min-width: 275px;
-            max-width: 275px;
-            border-right: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 20px;
-            position: sticky;
-            top: 0;
-            height: 100vh;
-            overflow-y: auto;
-        }
-        
-        .nav-item {
-            font-size: 20px;
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            padding: 18px 16px;
-            position: relative;
-            font-weight: 400;
-            text-decoration: none;
-            cursor: pointer;
-            border-radius: 9999px;
-            border: 1px solid transparent;
-            transition: all 0.2s ease;
-        }
-        
-        a.nav-item {
-            display: flex;
-            text-decoration: none;
-        }
-        
-        a.nav-item:hover {
-            background: rgba(255,255,255,0.03);
-            border-color: rgba(255,255,255,0.1);
-        }
-        
-        .nav-item.active {
-            font-weight: 700;
-        }
-        
-        .nav-item svg {
-            width: 26px;
-            height: 26px;
-            fill: currentColor;
-        }
-        
-        .post-btn {
-            background: linear-gradient(90deg, 
-                rgba(255,255,255,0.7) 0%, 
-                #ffffff 15%, 
-                #ffffff 85%, 
-                rgba(255,255,255,0.7) 100%) !important;
-            color: #000000 !important;
-            text-align: center !important;
-            font-weight: 400 !important;
-            border: none !important;
-            padding: 14px 0 !important;
-            margin: 20px 12px !important;
-            border-radius: 9999px !important;
-            font-size: 17px !important;
-            cursor: pointer !important;
-            display: block !important;
-            width: calc(100% - 24px) !important;
-            font-family: inherit !important;
-            transition: all 0.2s ease !important;
-        }
-        
-        .post-btn:hover {
-            background: #ffffff !important;
-            color: #000000 !important;
-        }
-        
-        .main-content {
-            border-right: 1px solid #2f3336;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .messages-header {
-            padding: 16px;
-            border-bottom: 1px solid #2f3336;
-            font-size: 20px;
-            font-weight: 700;
-        }
-        
-        .messages-container {
-            display: flex;
-            flex: 1;
-            overflow: hidden;
-        }
-        
-        .conversations-list {
-            width: 350px;
-            border-right: 1px solid #2f3336;
-            overflow-y: auto;
-        }
-        
-        .conversation-item {
-            padding: 16px;
-            border-bottom: 1px solid #2f3336;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-        
-        .conversation-item:hover {
-            background: rgba(255, 255, 255, 0.03);
-        }
-        
-        .conversation-item.active {
-            background: rgba(0, 255, 136, 0.1);
-        }
-        
-        .conversation-avatar {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 12px;
-            vertical-align: middle;
-        }
-        
-        .conversation-info {
-            display: inline-block;
-            vertical-align: middle;
-        }
-        
-        .conversation-name {
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
-        
-        .conversation-preview {
-            color: #71767b;
-            font-size: 14px;
-        }
-        
-        .chat-area {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .chat-header {
-            padding: 16px;
-            border-bottom: 1px solid #2f3336;
-            font-weight: 700;
-        }
-        
-        .chat-messages {
-            flex: 1;
-            overflow-y: auto;
-            padding: 16px;
-        }
-        
-        .message {
-            margin-bottom: 16px;
-            max-width: 70%;
-        }
-        
-        .message.received {
-            margin-right: auto;
-        }
-        
-        .message.sent {
-            margin-left: auto;
-        }
-        
-        .message-bubble {
-            padding: 12px 16px;
-            border-radius: 20px;
-            display: inline-block;
-        }
-        
-        .message.received .message-bubble {
-            background: #2f3336;
-        }
-        
-        .message.sent .message-bubble {
-            background: #ffffff;
-            color: #000;
-        }
-        
-        .message-time {
-            font-size: 12px;
-            color: #71767b;
-            margin-top: 4px;
-        }
-        
-        .chat-input {
-            padding: 16px;
-            border-top: 1px solid #2f3336;
-            display: flex;
-            gap: 12px;
-        }
-        
-        .chat-input input {
-            flex: 1;
-            background: #202327;
-            border: none;
-            border-radius: 9999px;
-            padding: 12px 16px;
-            color: #fff;
-            outline: none;
-        }
-        
-        .chat-input button {
-            background: #ffffff;
-            color: #000;
-            border: none;
-            border-radius: 9999px;
-            padding: 12px 24px;
-            font-weight: 700;
-            cursor: pointer;
-        }
-        
-        .right-sidebar {
-            padding: 12px 16px;
-        }
-        
-        .search-box {
-            background: #202327;
-            border-radius: 9999px;
-            padding: 8px 16px;
-            margin-bottom: 16px;
-        }
-        
-        .search-box input {
-            background: transparent;
-            border: none;
-            color: #fff;
-            width: 100%;
-            outline: none;
-            font-size: 15px;
-        }
-        
-        .trending-card {
-            background: #16181c;
-            border-radius: 12px;
-            padding: 12px;
-            margin-bottom: 12px;
-        }
-        
-        .trending-title {
-            font-weight: 700;
-            font-size: 19px;
-            margin-bottom: 12px;
-        }
-        
-        .trending-item {
-            padding: 12px 0;
-            cursor: pointer;
-            border-bottom: 1px solid #2f3336;
-        }
-        
-        .trending-item:last-child {
-            border-bottom: none;
-        }
-        
-        .trending-item:hover {
-            background: rgba(255, 255, 255, 0.03);
-        }
-        
-        .trending-item-title {
-            font-weight: 700;
-            font-size: 15px;
-            margin-bottom: 2px;
-        }
-        
-        .trending-item-meta {
-            color: #71767b;
-            font-size: 13px;
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/worldfeed-layout.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=20260626d">
 </head>
-<body>
-    <div class="app-container">
-        <!-- Left Sidebar - Navigation -->
-        <div class="left-sidebar">
-            <div style="padding: 12px 0 12px 0; display: flex; align-items: center;">
-                <svg width="32" height="32" viewBox="0 0 940 655" fill="white" style="transform: scaleX(-1);"><path d="m679 1.3l260 653.6h-142.5l-260-653.6zm-419.4-0.8h149.2l259.6 653.6h-145.2l-53.1-137.2h-271.8l-53.1 137.2h-145.2zm-14.5 394.9h178.1l-89-229.7z"/></svg>
-            </div>
-            
-            <nav>
-                <a href="index.html" class="nav-item">
-                    <svg viewBox="0 0 24 24" width="26" height="26"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" fill="none" stroke="white" stroke-width="2"/></svg>
-                    <span>Home</span>
-                </a>
-                <a href="explore.html" class="nav-item">
-                    <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-                    <span>Explore</span>
-                </a>
-                <a href="videos.html" class="nav-item">
-                    <svg viewBox="0 0 24 24"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg>
-                    <span>Videos</span>
-                </a>
-                <a href="articles.html" class="nav-item">
-                    <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg>
-                    <span>Articles</span>
-                </a>
-                <a href="messages.html" class="nav-item active">
-                    <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
-                    <span>Messages</span>
-                </a>
-                <a href="profile.html" class="nav-item">
-                    <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-                    <span>Profile</span>
-                </a>
-            </nav>
-            
-            <button class="post-btn" onclick="window.location.href='index.html'">Post</button>
+<body class="wf-body">
+<div class="wf-app">
+    <aside class="wf-nav" aria-label="Navigation">
+        <div class="wf-nav-logo" onclick="window.location='index.html'">
+            <svg width="32" height="32" viewBox="0 0 940 655" fill="white" aria-hidden="true">
+                <path d="m679 1.3l260 653.6h-142.5l-260-653.6zm-419.4-0.8h149.2l259.6 653.6h-145.2l-53.1-137.2h-271.8l-53.1 137.2h-145.2zm-14.5 394.9h178.1l-89-229.7z"/>
+            </svg>
         </div>
-        
-        <!-- Main Content - Messages -->
-        <div class="main-content">
-            <div class="messages-header">Messages</div>
-            <div class="messages-container">
-                <div class="conversations-list">
-                    <div class="conversation-item active">
-                        <div class="conversation-avatar">
-                            <svg viewBox="0 0 24 24" width="24" height="24" fill="#666">
-                                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                            </svg>
-                        </div>
-                        <div class="conversation-info">
-                            <div class="conversation-name">WorldFeed</div>
-                            <div class="conversation-preview">Welcome to WorldFeed!</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="chat-area">
-                    <div class="chat-header">WorldFeed</div>
-                    <div class="chat-messages" id="chatMessages">
-                        <div class="message received">
-                            <div class="message-bubble">Welcome to WorldFeed! This is your messaging center.</div>
-                            <div class="message-time">2:30 PM</div>
-                        </div>
-                        <div class="message received">
-                            <div class="message-bubble">Messages are synced with the backend API at localhost:8083</div>
-                            <div class="message-time">2:31 PM</div>
-                        </div>
-                    </div>
-                    <div class="chat-input">
-                        <input type="text" id="messageInput" placeholder="Type a message..." onkeypress="if(event.key==='Enter')sendMessage()">
-                        <button onclick="sendMessage()">Send</button>
-                    </div>
-                </div>
+        <nav>
+            <a href="index.html" class="wf-nav-link"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="white" stroke-width="2"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg><span>Home</span></a>
+            <a href="explore.html" class="wf-nav-link"><svg viewBox="0 0 24 24" width="26" height="26" fill="white"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg><span>Explore</span></a>
+            <a href="videos.html" class="wf-nav-link"><svg viewBox="0 0 24 24" width="26" height="26" fill="white"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg><span>Videos</span></a>
+            <a href="articles.html" class="wf-nav-link"><svg viewBox="0 0 24 24" width="26" height="26" fill="white"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg><span>Articles</span></a>
+            <a href="messages.html" class="wf-nav-link active"><svg viewBox="0 0 24 24" width="26" height="26" fill="white"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg><span>Messages</span></a>
+            <a href="profile.html" class="wf-nav-link"><svg viewBox="0 0 24 24" width="26" height="26" fill="white"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg><span>Profile</span></a>
+            <a href="kaiju.html" class="wf-nav-link"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="white" stroke-width="1.5" style="filter: drop-shadow(0 0 6px rgba(255,255,255,0.5))"><circle cx="12" cy="12" r="3" fill="white"/><circle cx="12" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><circle cx="5" cy="12" r="2"/><circle cx="19" cy="12" r="2"/><line x1="12" y1="9" x2="12" y2="7"/><line x1="12" y1="17" x2="12" y2="15"/><line x1="9" y1="12" x2="7" y2="12"/><line x1="17" y1="12" x2="15" y2="12"/></svg><span>5S4</span><span class="wf-signal-dot"></span></a>
+        </nav>
+        <button class="wf-post-btn" onclick="document.getElementById('wf-submit-modal').classList.add('open')">Post</button>
+        <div class="wf-account-badge" onclick="document.getElementById('wf-login-modal').classList.add('open')" style="cursor:pointer;">
+            <div class="wf-account-avatar"><svg viewBox="0 0 24 24" width="20" height="20" fill="rgba(255,255,255,0.4)"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
+            <div class="wf-account-info"><div class="wf-account-name">Sign in</div><div class="wf-account-handle">@guest</div></div>
+        </div>
+        <div class="wf-nav-foot">No algorithm.<br>No tracking.<br>No shadowbans.<br><br><a href="docs/WORLD_FEED_SPEC.txt">Spec</a> · <a href="#">About</a> · <a href="LICENSE">MIT</a></div>
+    </aside>
+    <main class="wf-feed" id="main-content" role="main">
+        <header class="wf-feed-header">
+            <div class="wf-feed-title-row"><span class="wf-feed-title">Messages</span></div>
+            <div class="wf-search-wrap"><input class="wf-search" type="search" id="wf-search-input" placeholder="Search messages" aria-label="Search"></div>
+        </header>
+        <div id="wf-feed" style="padding: 20px;">
+            <div style="text-align: center; padding: 60px 20px; color: var(--c-muted);">
+                <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" style="opacity: 0.5; margin-bottom: 16px;">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+                <div style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">Your Messages</div>
+                <div style="font-size: 15px; margin-bottom: 24px;">Send private messages to other WorldFeed users</div>
+                <button class="wf-btn-primary" onclick="document.getElementById('wf-login-modal').classList.add('open')">Start a conversation</button>
             </div>
         </div>
-        
-        <!-- Right Sidebar -->
-        <div class="right-sidebar">
-            <div class="search-box">
-                <input type="text" placeholder="Search messages">
-            </div>
-            
-            <div class="trending-card">
-                <div class="trending-title">Active Conversations</div>
-                <div class="trending-item">
-                    <div class="trending-item-title">#WorldFeed</div>
-                    <div class="trending-item-meta">2.3K active</div>
-                </div>
-                <div class="trending-item">
-                    <div class="trending-item-title">#AntiAlgo</div>
-                    <div class="trending-item-meta">1.8K active</div>
-                </div>
-            </div>
+    </main>
+    <aside class="wf-rail" aria-label="Trending and links">
+        <div class="wf-rail-card">
+            <h3>Conversations</h3>
+            <div class="wf-rail-item" style="color: var(--c-muted);">Sign in to view your messages</div>
         </div>
-    </div>
-    
-    <script>
-        // Message functionality
-        function sendMessage() {
-            const input = document.getElementById('messageInput');
-            const message = input.value.trim();
-            
-            if (message) {
-                const chatMessages = document.getElementById('chatMessages');
-                const div = document.createElement('div');
-                div.className = 'message sent';
-                div.innerHTML = `
-                    <div class="message-bubble">${escapeHtml(message)}</div>
-                    <div class="message-time">${new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</div>
-                `;
-                chatMessages.appendChild(div);
-                input.value = '';
-                chatMessages.scrollTop = chatMessages.scrollHeight;
-                
-                // Send to backend
-                fetch('http://localhost:8083/api/social/post', {
-                    method: 'POST',
-                    headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify({content: message, visibility: 'direct'})
-                }).catch(() => {});
-            }
-        }
-        
-        function escapeHtml(text) {
-            const div = document.createElement('div');
-            div.textContent = text;
-            return div.innerHTML;
-        }
-    </script>
+        <div class="wf-rail-card">
+            <h3>Promise</h3>
+            <div class="wf-principle"><span class="wf-principle-mark">+</span> End-to-end encrypted</div>
+            <div class="wf-principle"><span class="wf-principle-mark">+</span> No message scanning</div>
+            <div class="wf-principle"><span class="wf-principle-mark">+</span> Self-destructing messages</div>
+        </div>
+    </aside>
+</div>
+<a href="kaiju.html" class="wf-fab" title="5S4 AI" aria-label="Open 5S4 AI assistant"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></a>
+<div class="wf-modal-back" id="wf-login-modal"><div class="wf-modal" style="max-width:440px;"><h2>Sign in to WorldFeed</h2><p>Free account. Required to send messages.</p><label for="wf-login-username">Username</label><input type="text" id="wf-login-username" placeholder="@yourhandle" autocomplete="username"><label for="wf-login-email">Email <span style="text-transform:none;letter-spacing:0;color:rgba(255,255,255,0.35);font-weight:400;font-size:13px;">— optional</span></label><input type="email" id="wf-login-email" placeholder="you@example.com" autocomplete="email"><div class="wf-modal-actions"><button class="wf-btn-secondary" onclick="document.getElementById('wf-login-modal').classList.remove('open')">Cancel</button><button class="wf-btn-primary" id="wf-confirm-login">Sign in</button></div></div></div>
+<script src="assets/js/main.js"></script>
 </body>
 </html>

@@ -2,461 +2,87 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#000000">
     <title>Profile — WorldFeed</title>
+    <meta name="description" content="User profile on WorldFeed. Anti-algorithm news network.">
+    <link rel="icon" type="image/svg+xml" href="assets/img/cube-chat-logo.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Twitter+Chirp:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <style>
-        :root {
-            --font-chirp: 'Twitter Chirp', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica Neue, Arial, sans-serif;
-        }
-        body {
-            background: #000 !important;
-            font-family: var(--font-chirp) !important;
-            margin: 0 !important;
-            padding: 0 !important;
-        }
-        
-        .app-container {
-            display: grid !important;
-            max-width: 1300px !important;
-            grid-template-columns: 275px 640px 1fr !important;
-            gap: 0 !important;
-            margin: 0 auto !important;
-            min-height: 100vh;
-        }
-        
-        @media (max-width: 1195px) {
-            .app-container {
-                grid-template-columns: 275px 1fr !important;
-            }
-            .right-sidebar {
-                display: none;
-            }
-        }
-        
-        @media (max-width: 800px) {
-            .app-container {
-                grid-template-columns: 1fr !important;
-            }
-            .left-sidebar {
-                display: none;
-            }
-        }
-        
-        .left-sidebar {
-            min-width: 275px !important;
-            max-width: 275px !important;
-            padding-top: 20px !important;
-            border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
-            position: sticky !important;
-            top: 0 !important;
-            height: 100vh !important;
-            overflow-y: auto !important;
-        }
-        
-        .nav-item {
-            font-size: 20px !important;
-            color: #ffffff !important;
-            display: flex !important;
-            align-items: center !important;
-            gap: 20px !important;
-            padding: 18px 16px !important;
-            position: relative !important;
-            font-weight: 400 !important;
-            text-decoration: none !important;
-            cursor: pointer !important;
-            border-radius: 9999px !important;
-            border: 1px solid transparent !important;
-            transition: all 0.2s ease !important;
-        }
-        
-        a.nav-item {
-            display: flex !important;
-            text-decoration: none !important;
-        }
-        
-        a.nav-item:hover {
-            background: rgba(255,255,255,0.03) !important;
-            border-color: rgba(255,255,255,0.1) !important;
-        }
-        
-        .nav-item.active {
-            font-weight: 400 !important;
-        }
-        
-        .nav-item svg {
-            flex-shrink: 0 !important;
-            width: 26px !important;
-            height: 26px !important;
-        }
-        
-        .post-btn {
-            background: linear-gradient(90deg, 
-                rgba(255,255,255,0.7) 0%, 
-                #ffffff 15%, 
-                #ffffff 85%, 
-                rgba(255,255,255,0.7) 100%) !important;
-            color: #000000 !important;
-            text-align: center !important;
-            font-weight: 400 !important;
-            border: none !important;
-            padding: 14px 0 !important;
-            margin: 20px 12px !important;
-            border-radius: 9999px !important;
-            font-size: 17px !important;
-            cursor: pointer !important;
-            display: block !important;
-            width: calc(100% - 24px) !important;
-            font-family: inherit !important;
-            transition: all 0.2s ease !important;
-        }
-        
-        .post-btn:hover {
-            background: #ffffff !important;
-            color: #000000 !important;
-        }
-        
-        .main-content {
-            border-right: 1px solid #2f3336;
-            min-height: 100vh;
-        }
-        
-        /* Profile styles */
-        .profile-banner {
-            height: 200px;
-            background: #000;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .profile-banner::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80px;
-            height: 80px;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z'/%3E%3C/svg%3E");
-            background-size: contain;
-            background-repeat: no-repeat;
-            opacity: 0.3;
-        }
-        
-        .profile-avatar-container {
-            position: relative;
-            margin-top: -80px;
-            margin-left: 20px;
-            display: inline-block;
-        }
-        
-        .profile-avatar {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            border: 4px solid #000;
-            background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 80px;
-            color: #666;
-        }
-        
-        .profile-info {
-            padding: 20px;
-            border-bottom: 1px solid #2f3336;
-        }
-        
-        .profile-name {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-        
-        .profile-handle {
-            color: #71767b;
-            font-size: 15px;
-            margin-bottom: 10px;
-        }
-        
-        .profile-bio {
-            font-size: 15px;
-            line-height: 1.5;
-            margin-bottom: 15px;
-        }
-        
-        .profile-stats {
-            display: flex;
-            gap: 20px;
-            color: #71767b;
-            font-size: 14px;
-        }
-        
-        .profile-stats span {
-            color: #fff;
-            font-weight: 700;
-        }
-        
-        .profile-tabs {
-            display: flex;
-            border-bottom: 1px solid #2f3336;
-        }
-        
-        .profile-tab {
-            flex: 1;
-            padding: 16px;
-            text-align: center;
-            color: #71767b;
-            text-decoration: none;
-            font-weight: 500;
-            border-bottom: 2px solid transparent;
-            transition: all 0.2s;
-        }
-        
-        .profile-tab:hover {
-            background: rgba(255, 255, 255, 0.03);
-            color: #fff;
-        }
-        
-        .profile-tab.active {
-            color: #fff;
-            border-bottom-color: #00ff88;
-        }
-        
-        .feed-item {
-            padding: 16px;
-            border-bottom: 1px solid #2f3336;
-        }
-        
-        .feed-item:hover {
-            background: rgba(255, 255, 255, 0.03);
-        }
-        
-        .right-sidebar {
-            padding: 12px 16px;
-        }
-        
-        .search-box {
-            background: #202327;
-            border-radius: 9999px;
-            padding: 8px 16px;
-            margin-bottom: 16px;
-        }
-        
-        .search-box input {
-            background: transparent;
-            border: none;
-            color: #fff;
-            width: 100%;
-            outline: none;
-            font-size: 15px;
-        }
-        
-        .trending-card {
-            background: #16181c;
-            border-radius: 12px;
-            padding: 12px;
-            margin-bottom: 12px;
-        }
-        
-        .trending-title {
-            font-weight: 700;
-            font-size: 19px;
-            margin-bottom: 12px;
-        }
-        
-        .trending-item {
-            padding: 12px 0;
-            cursor: pointer;
-            border-bottom: 1px solid #2f3336;
-        }
-        
-        .trending-item:last-child {
-            border-bottom: none;
-        }
-        
-        .trending-item:hover {
-            background: rgba(255, 255, 255, 0.03);
-        }
-        
-        .trending-item-title {
-            font-weight: 700;
-            font-size: 15px;
-            margin-bottom: 2px;
-        }
-        
-        .trending-item-meta {
-            color: #71767b;
-            font-size: 13px;
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/worldfeed-layout.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=20260626d">
 </head>
-<body>
-    <div class="app-container">
-        <!-- Left Sidebar - Navigation -->
-        <div class="left-sidebar">
-            <div style="padding: 12px 0 12px 0; display: flex; align-items: center;">
-                <svg width="32" height="32" viewBox="0 0 940 655" fill="white" style="transform: scaleX(-1);"><path d="m679 1.3l260 653.6h-142.5l-260-653.6zm-419.4-0.8h149.2l259.6 653.6h-145.2l-53.1-137.2h-271.8l-53.1 137.2h-145.2zm-14.5 394.9h178.1l-89-229.7z"/></svg>
-            </div>
-            
-            <nav>
-                <a href="index.html" class="nav-item">
-                    <svg viewBox="0 0 24 24" width="26" height="26"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" fill="none" stroke="white" stroke-width="2"/></svg>
-                    <span>Home</span>
-                </a>
-                <a href="explore.html" class="nav-item">
-                    <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-                    <span>Explore</span>
-                </a>
-                <a href="videos.html" class="nav-item">
-                    <svg viewBox="0 0 24 24"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg>
-                    <span>Videos</span>
-                </a>
-                <a href="articles.html" class="nav-item">
-                    <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg>
-                    <span>Articles</span>
-                </a>
-                <a href="messages.html" class="nav-item">
-                    <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
-                    <span>Messages</span>
-                </a>
-                <a href="profile.html" class="nav-item active">
-                    <svg viewBox="0 0 24 24" width="26" height="26"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="white"/></svg>
-                    <span>Profile</span>
-                </a>
-                <a href="kaiju.html" class="nav-item">
-                    <svg viewBox="0 0 24 24" width="26" height="26"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" fill="white"/></svg>
-                    <span>5S4</span>
-                </a>
-            </nav>
-            
-            <button class="post-btn" onclick="window.location.href='index.html'">Post</button>
+<body class="wf-body">
+<div class="wf-app">
+    <aside class="wf-nav" aria-label="Navigation">
+        <div class="wf-nav-logo" onclick="window.location='index.html'">
+            <svg width="32" height="32" viewBox="0 0 940 655" fill="white" aria-hidden="true">
+                <path d="m679 1.3l260 653.6h-142.5l-260-653.6zm-419.4-0.8h149.2l259.6 653.6h-145.2l-53.1-137.2h-271.8l-53.1 137.2h-145.2zm-14.5 394.9h178.1l-89-229.7z"/>
+            </svg>
         </div>
-        
-        <!-- Main Content - Profile -->
-        <div class="main-content">
-            <div class="profile-banner">
-                <!-- Stars background with CSS -->
-            </div>
-            
-            <div class="profile-avatar-container">
-                <div class="profile-avatar">
-                    <svg viewBox="0 0 24 24" width="80" height="80" fill="#666">
-                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                    </svg>
-                </div>
-            </div>
-            
-            <div class="profile-info">
-                <div class="profile-name">WorldFeed User</div>
-                <div class="profile-handle">@worldfeed_user</div>
-                <div class="profile-bio">
-                    Anti-algorithm news network. Ranked by verification, not engagement. 
-                    Powered by 3-Precog AI pipeline for content generation.
-                </div>
-                <div class="profile-stats">
-                    <div><span>127</span> Following</div>
-                    <div><span>1,284</span> Followers</div>
-                    <div><span>42</span> Posts</div>
-                </div>
-            </div>
-            
-            <div class="profile-tabs">
-                <a href="#" class="profile-tab active">Posts</a>
-                <a href="#" class="profile-tab">Replies</a>
-                <a href="#" class="profile-tab">Media</a>
-                <a href="#" class="profile-tab">Likes</a>
-            </div>
-            
-            <div id="profileFeed">
-                <!-- Feed items will be loaded here -->
-            </div>
+        <nav>
+            <a href="index.html" class="wf-nav-link"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="white" stroke-width="2"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg><span>Home</span></a>
+            <a href="explore.html" class="wf-nav-link"><svg viewBox="0 0 24 24" width="26" height="26" fill="white"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg><span>Explore</span></a>
+            <a href="videos.html" class="wf-nav-link"><svg viewBox="0 0 24 24" width="26" height="26" fill="white"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg><span>Videos</span></a>
+            <a href="articles.html" class="wf-nav-link"><svg viewBox="0 0 24 24" width="26" height="26" fill="white"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg><span>Articles</span></a>
+            <a href="messages.html" class="wf-nav-link"><svg viewBox="0 0 24 24" width="26" height="26" fill="white"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg><span>Messages</span></a>
+            <a href="profile.html" class="wf-nav-link active"><svg viewBox="0 0 24 24" width="26" height="26" fill="white"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg><span>Profile</span></a>
+            <a href="kaiju.html" class="wf-nav-link"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="white" stroke-width="1.5" style="filter: drop-shadow(0 0 6px rgba(255,255,255,0.5))"><circle cx="12" cy="12" r="3" fill="white"/><circle cx="12" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><circle cx="5" cy="12" r="2"/><circle cx="19" cy="12" r="2"/><line x1="12" y1="9" x2="12" y2="7"/><line x1="12" y1="17" x2="12" y2="15"/><line x1="9" y1="12" x2="7" y2="12"/><line x1="17" y1="12" x2="15" y2="12"/></svg><span>5S4</span><span class="wf-signal-dot"></span></a>
+        </nav>
+        <button class="wf-post-btn" onclick="document.getElementById('wf-submit-modal').classList.add('open')">Post</button>
+        <div class="wf-account-badge" onclick="document.getElementById('wf-login-modal').classList.add('open')" style="cursor:pointer;">
+            <div class="wf-account-avatar"><svg viewBox="0 0 24 24" width="20" height="20" fill="rgba(255,255,255,0.4)"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
+            <div class="wf-account-info"><div class="wf-account-name">Sign in</div><div class="wf-account-handle">@guest</div></div>
         </div>
-        
-        <!-- Right Sidebar -->
-        <div class="right-sidebar">
-            <div class="search-box">
-                <input type="text" placeholder="Search">
-            </div>
-            
-            <div class="trending-card">
-                <div class="trending-title">Trending</div>
-                <div class="trending-item">
-                    <div class="trending-item-title">#WorldFeed</div>
-                    <div class="trending-item-meta">2.3K posts</div>
-                </div>
-                <div class="trending-item">
-                    <div class="trending-item-title">#AntiAlgo</div>
-                    <div class="trending-item-meta">1.8K posts</div>
-                </div>
-                <div class="trending-item">
-                    <div class="trending-item-title">#PrecogAI</div>
-                    <div class="trending-item-meta">956 posts</div>
-                </div>
-                <div class="trending-item">
-                    <div class="trending-item-title">#Decentralized</div>
-                    <div class="trending-item-meta">743 posts</div>
+        <div class="wf-nav-foot">No algorithm.<br>No tracking.<br>No shadowbans.<br><br><a href="docs/WORLD_FEED_SPEC.txt">Spec</a> · <a href="#">About</a> · <a href="LICENSE">MIT</a></div>
+    </aside>
+    <main class="wf-feed" id="main-content" role="main">
+        <header class="wf-feed-header">
+            <div class="wf-feed-title-row"><span class="wf-feed-title">Profile</span></div>
+        </header>
+        <div id="wf-feed">
+            <div style="height:200px;background:#000;position:relative;border-bottom:1px solid rgba(255,255,255,0.1);"></div>
+            <div style="position:relative;margin-top:-80px;margin-left:20px;display:inline-block;">
+                <div style="width:160px;height:160px;border-radius:50%;border:4px solid #000;background:linear-gradient(135deg,#2c2c2c,#1a1a1a);display:flex;align-items:center;justify-content:center;font-size:80px;">
+                    <svg viewBox="0 0 24 24" width="80" height="80" fill="#666"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
                 </div>
             </div>
-            
-            <div class="trending-card">
-                <div class="trending-title">Links</div>
-                <div class="trending-item">
-                    <div class="trending-item-title">Oroboros Labs</div>
-                    <div class="trending-item-meta">oroboroslabs-ai.github.io</div>
-                </div>
-                <div class="trending-item">
-                    <div class="trending-item-title">5S4 AI Assistant</div>
-                    <div class="trending-item-meta">kaiju.html</div>
+            <div style="padding:20px;border-bottom:1px solid #2f3336;">
+                <div style="font-size:20px;font-weight:700;margin-bottom:4px;">Guest User</div>
+                <div style="color:#71767b;font-size:15px;margin-bottom:10px;">@guest</div>
+                <div style="font-size:15px;line-height:1.5;margin-bottom:16px;">Anti-algorithm news network. Ranked by verification, not engagement. Powered by 3-Precog AI pipeline for content generation.</div>
+                <div style="display:flex;gap:24px;font-size:15px;">
+                    <span style="font-weight:700;">127 <span style="color:#71767b;font-weight:400;">Following</span></span>
+                    <span style="font-weight:700;">1,284 <span style="color:#71767b;font-weight:400;">Followers</span></span>
+                    <span style="font-weight:700;">42 <span style="color:#71767b;font-weight:400;">Posts</span></span>
                 </div>
             </div>
+            <div class="wf-tabs">
+                <a class="wf-tab active" href="#">Posts</a>
+                <a class="wf-tab" href="#">Replies</a>
+                <a class="wf-tab" href="#">Media</a>
+                <a class="wf-tab" href="#">Likes</a>
+            </div>
+            <div id="wf-profile-feed"></div>
         </div>
-    </div>
-    
-    <script>
-        // Load user posts from API
-        document.addEventListener('DOMContentLoaded', function() {
-            loadUserPosts();
-        });
-        
-        function loadUserPosts() {
-            fetch('http://localhost:8083/api/precog/feed?writing=10')
-                .then(response => response.json())
-                .then(data => {
-                    if (data && data.data && data.data.feed) {
-                        displayUserPosts(data.data.feed);
-                    }
-                })
-                .catch(error => {
-                    console.log('Using offline data');
-                });
-        }
-        
-        function displayUserPosts(posts) {
-            const feed = document.getElementById('profileFeed');
-            posts.forEach(post => {
-                const content = post.content || post;
-                const div = document.createElement('div');
-                div.className = 'feed-item';
-                div.innerHTML = `
-                    <div style="color: #71767b; font-size: 13px; margin-bottom: 8px;">${content.source || 'WorldFeed'}</div>
-                    <div style="font-size: 15px; font-weight: 700; margin-bottom: 8px;">${content.title || 'Post'}</div>
-                    <div style="color: #e7e9ea; margin-bottom: 12px;">${(content.content || content.body || '').substring(0, 280)}...</div>
-                    <div style="display: flex; gap: 60px; color: #71767b;">
-                        <span>💬 ${content.replies_count || 0}</span>
-                        <span>🔁 ${content.reblogs_count || 0}</span>
-                        <span>❤️ ${content.favourites_count || 0}</span>
-                    </div>
-                `;
-                feed.appendChild(div);
-            });
-        }
-    </script>
+    </main>
+    <aside class="wf-rail" aria-label="Trending and links">
+        <div class="wf-rail-card">
+            <h3>Account</h3>
+            <div class="wf-rail-item">Edit profile<div class="wf-rail-meta">settings</div></div>
+            <div class="wf-rail-item">Security<div class="wf-rail-meta">password, 2FA</div></div>
+            <div class="wf-rail-item">Privacy<div class="wf-rail-meta">visibility</div></div>
+        </div>
+        <div class="wf-rail-card">
+            <h3>Promise</h3>
+            <div class="wf-principle"><span class="wf-principle-mark">+</span> Your data, your control</div>
+            <div class="wf-principle"><span class="wf-principle-mark">+</span> No tracking, no profiling</div>
+            <div class="wf-principle"><span class="wf-principle-mark">+</span> Export anytime</div>
+        </div>
+    </aside>
+</div>
+<a href="kaiju.html" class="wf-fab" title="5S4 AI" aria-label="Open 5S4 AI assistant"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></a>
+<div class="wf-modal-back" id="wf-login-modal"><div class="wf-modal" style="max-width:440px;"><h2>Sign in to WorldFeed</h2><p>Free account. Required to view profiles.</p><label for="wf-login-username">Username</label><input type="text" id="wf-login-username" placeholder="@yourhandle" autocomplete="username"><label for="wf-login-email">Email <span style="text-transform:none;letter-spacing:0;color:rgba(255,255,255,0.35);font-weight:400;font-size:13px;">— optional</span></label><input type="email" id="wf-login-email" placeholder="you@example.com" autocomplete="email"><div class="wf-modal-actions"><button class="wf-btn-secondary" onclick="document.getElementById('wf-login-modal').classList.remove('open')">Cancel</button><button class="wf-btn-primary" id="wf-confirm-login">Sign in</button></div></div></div>
+<script src="assets/js/main.js"></script>
 </body>
 </html>

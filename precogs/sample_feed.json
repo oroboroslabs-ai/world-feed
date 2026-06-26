@@ -1,0 +1,40 @@
+{
+  "cached": true,
+  "datafeed": [
+    {
+      "confidence": 0.99,
+      "content": {
+        "author": "precog_video_breaking_news",
+        "category": "documentary",
+        "confidence": 0.99,
+        "description": "Video coverage: International Space Station Celebrates 25 Years. ISS marks quarter century of continuous human presence in space. Anniversary highlights international cooperation.",
+        "duration": 1799,
+        "id": "5de8b7265127",
+        "metadata": {
+          "format": "mp4",
+          "generator": "video_precog",
+          "key_points": [
+            "25 years of continuous habitation",
+            "International cooperation celebrated",
+            "Scientific achievements documented",
+            "Future missions planned"
+          ],
+          "resolution": "1080p",
+          "source_type": "breaking_news",
+          "uee_standard": "UEE-2024",
+          "version": "1.0.0"
+        },
+        "resonance": 1272.0,
+        "strata": "S12",
+        "thumbnail_url": "https://images.unsplash.com/photo-1532094349884-543bc11b234a?w=800",
+        "timestamp": "2026-06-26T10:26:52.586436",
+        "title": "Video: International Space Station Celebrates 25 Years",
+        "video_url": "https://oroboroslabs-ai.github.io/world-feed/assets/video/5de8b7265127.mp4"
+      },
+      "id": "5de8b7265127",
+      "resonance": 1272.0,
+      "source": "video_precog",
+      "strata": "S12"
+    }
+  ]
+}
