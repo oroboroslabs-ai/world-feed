@@ -14,7 +14,8 @@
     "word_count": {
       "standard": 1200,
       "anthropic_pdf": 2000,
-      "min": 800,
+      "breaking_news": 1200,
+      "min": 1000,
       "max": 2500
     },
     "categories": [
@@ -27,28 +28,37 @@
       "health",
       "governance",
       "verification",
-      "systems"
+      "systems",
+      "breaking_news",
+      "current_events"
     ],
     "sources": {
       "anthropic_pdf": {
         "enabled": true,
         "word_count": 2000,
-        "weight": 0.3
-      },
-      "glasswing": {
-        "enabled": true,
-        "word_count": 1200,
-        "weight": 0.25
-      },
-      "x_profile": {
-        "enabled": true,
-        "word_count": 1200,
-        "weight": 0.2
+        "weight": 0.3,
+        "description": "Stories from Anthropic PDFs - 2000 words minimum"
       },
       "breaking_news": {
         "enabled": true,
         "word_count": 1200,
-        "weight": 0.25
+        "weight": 0.25,
+        "description": "Breaking news and current events - 1200 words"
+      },
+      "glasswing": {
+        "enabled": true,
+        "word_count": 1200,
+        "weight": 0.2
+      },
+      "x_profile": {
+        "enabled": true,
+        "word_count": 1200,
+        "weight": 0.15
+      },
+      "world_events": {
+        "enabled": true,
+        "word_count": 1200,
+        "weight": 0.1
       }
     }
   },
@@ -60,6 +70,8 @@
       "default": 15
     },
     "max_per_day": 10,
+    "quality": "highest",
+    "resolution": "1080p",
     "categories": [
       "breaking_news",
       "documentary",
@@ -68,7 +80,8 @@
       "update"
     ],
     "support_role": true,
-    "thumbnail_required": true
+    "thumbnail_required": true,
+    "description": "Videos 10-30 seconds, highest quality, support stories"
   },
   
   "image": {
@@ -100,5 +113,11 @@
       "image": "/api/precog/image",
       "status": "/api/precog/status"
     }
+  },
+  
+  "frontend": {
+    "url": "https://oroboroslabs-ai.github.io/world-feed/",
+    "local_path": "Q:\\oroboros-core\\WORLDFEED-NEWS",
+    "api_endpoint": "/api/precog/feed"
   }
 }

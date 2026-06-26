@@ -7,6 +7,7 @@ Integrates Anthropic PDFs, Glasswing, X Profile, Breaking News
 """
 
 import json
+import os
 import time
 import hashlib
 from datetime import datetime

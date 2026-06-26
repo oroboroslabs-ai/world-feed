@@ -771,6 +771,11 @@
 
 // === Precog API Integration (Anti-Algo) ===
 // Global functions for all pages
+// API endpoint: Local server for development, relative for production
+
+const PRECOG_API_BASE = window.location.hostname === 'oroboroslabs-ai.github.io' 
+    ? 'https://oroboroslabs-ai.github.io/world-feed/api'  // Production fallback
+    : 'http://localhost:8083/api';  // Local development
 
 function loadPrecogFeed(filter) {
     console.log('[Anti-Algo] Loading precog feed...');
@@ -780,7 +785,7 @@ function loadPrecogFeed(filter) {
     if (!feedEl) return;
     
     const filterParam = filter || '5';
-    const url = '/api/precog/feed?writing=10&video=5&image=5&filter=' + filterParam;
+    const url = PRECOG_API_BASE + '/precog/feed?writing=10&video=5&image=5&filter=' + filterParam;
 
     fetch(url)
         .then(response => {
@@ -795,7 +800,7 @@ function loadPrecogFeed(filter) {
             }
         })
         .catch(error => {
-            console.log('[Anti-Algo] Using offline data - API not available');
+            console.log('[Anti-Algo] Using offline data - API not available:', error);
             if (loader) loader.textContent = 'Connect Precog API to load live feed.';
         });
 }
