@@ -13,23 +13,23 @@
         }
         body {
             background: #000 !important;
-            color: #fff;
             font-family: var(--font-chirp);
             margin: 0;
             padding: 0;
         }
         
         .app-container {
-            display: grid;
-            grid-template-columns: 275px 640px 1fr;
-            max-width: 1300px;
-            margin: 0 auto;
+            display: grid !important;
+            max-width: 1300px !important;
+            grid-template-columns: 275px 640px 1fr !important;
+            gap: 0 !important;
+            margin: 0 auto !important;
             min-height: 100vh;
         }
         
         @media (max-width: 1195px) {
             .app-container {
-                grid-template-columns: 275px 1fr;
+                grid-template-columns: 275px 1fr !important;
             }
             .right-sidebar {
                 display: none;
@@ -38,7 +38,7 @@
         
         @media (max-width: 800px) {
             .app-container {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr !important;
             }
             .left-sidebar {
                 display: none;
@@ -46,10 +46,10 @@
         }
         
         .left-sidebar {
-            min-width: 275px;
-            max-width: 275px;
-            border-right: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 20px;
+            min-width: 275px !important;
+            max-width: 275px !important;
+            padding-top: 20px !important;
+            border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
             position: sticky;
             top: 0;
             height: 100vh;
@@ -57,39 +57,39 @@
         }
         
         .nav-item {
-            font-size: 20px;
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            padding: 18px 16px;
-            position: relative;
-            font-weight: 400;
-            text-decoration: none;
-            cursor: pointer;
-            border-radius: 9999px;
-            border: 1px solid transparent;
-            transition: all 0.2s ease;
+            font-size: 20px !important;
+            color: #ffffff !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 20px !important;
+            padding: 18px 16px !important;
+            position: relative !important;
+            font-weight: 400 !important;
+            text-decoration: none !important;
+            cursor: pointer !important;
+            border-radius: 9999px !important;
+            border: 1px solid transparent !important;
+            transition: all 0.2s ease !important;
         }
         
         a.nav-item {
-            display: flex;
-            text-decoration: none;
+            display: flex !important;
+            text-decoration: none !important;
         }
         
         a.nav-item:hover {
-            background: rgba(255,255,255,0.03);
-            border-color: rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.03) !important;
+            border-color: rgba(255,255,255,0.1) !important;
         }
         
         .nav-item.active {
-            font-weight: 700;
+            font-weight: 400 !important;
         }
         
         .nav-item svg {
-            width: 26px;
-            height: 26px;
-            fill: currentColor;
+            flex-shrink: 0 !important;
+            width: 26px !important;
+            height: 26px !important;
         }
         
         .post-btn {
