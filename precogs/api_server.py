@@ -9,7 +9,7 @@ import json
 import time
 import os
 from datetime import datetime
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify, send_from_directory, send_file
 from flask_cors import CORS
 from typing import Dict, List, Optional
 
@@ -19,15 +19,18 @@ try:
 except ImportError:
     from .pipeline import PrecogPipeline
 
-app = Flask(__name__)
+# Get the parent directory for static files
+# Use absolute path to work from any directory
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+PARENT_DIR = os.path.dirname(SCRIPT_DIR)
+
+# Create Flask app with static folder pointing to parent directory
+app = Flask(__name__, static_folder=PARENT_DIR, static_url_path='')
 CORS(app)
 
 # Constants
 RESONANCE_HZ = 1272.0
 UEE_STANDARD = "UEE-2024"
-
-# Get the parent directory for static files
-PARENT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Initialize pipeline
 pipeline = PrecogPipeline()
@@ -39,21 +42,26 @@ content_cache = {
     'ttl': 30  # seconds
 }
 
-# Serve static files from parent directory
+# Note: Static files are served automatically by Flask's static_folder
+# The following routes are for explicit file serving if needed
+
 @app.route('/')
 def serve_index():
     """Serve the main DIP page"""
-    return send_from_directory(PARENT_DIR, 'dip.html')
-
-@app.route('/dip.html')
-def serve_dip():
-    """Serve the DIP page"""
-    return send_from_directory(PARENT_DIR, 'dip.html')
+    try:
+        return send_file(os.path.join(PARENT_DIR, 'dip.html'))
+    except Exception as e:
+        print(f"[ERROR] Failed to serve dip.html: {e}")
+        return f"Error: {e}", 404
 
 @app.route('/admin.html')
 def serve_admin():
     """Serve the admin page"""
-    return send_from_directory(PARENT_DIR, 'admin.html')
+    try:
+        return send_file(os.path.join(PARENT_DIR, 'admin.html'))
+    except Exception as e:
+        print(f"[ERROR] Failed to serve admin.html: {e}")
+        return f"Error: {e}", 404
 
 @app.route('/index.html')
 def serve_public():
