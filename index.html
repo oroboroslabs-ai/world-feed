@@ -152,39 +152,31 @@
 
     <!-- ── RIGHT RAIL (flex remainder, sticky) ─────────────────── -->
     <aside class="wf-rail" aria-label="Trending and links">
-        <div class="wf-rail-card" style="border-color: rgba(34,211,238,0.15);">
+        <div class="wf-rail-card" id="tor-feed-card" style="border-color: rgba(34,211,238,0.15);">
             <h3>Tor Feed</h3>
-            <div class="wf-rail-item">
-                UN field briefing: Central African Republic remains fragile
-                <div class="wf-rail-meta">United Nations · verified</div>
-            </div>
-            <div class="wf-rail-item">
-                UN daily briefing: overlooked field updates
-                <div class="wf-rail-meta">United Nations · verified</div>
-            </div>
-            <div class="wf-rail-item">
-                Source video: energy dependency and infrastructure risk
-                <div class="wf-rail-meta">Al Jazeera English · verified</div>
+            <div id="tor-feed-items">
+                <!-- Populated by Precog API -->
             </div>
         </div>
 
-        <div class="wf-rail-card">
+        <div class="wf-rail-card" id="underreported-card">
             <h3>Underreported Watch</h3>
-            <div class="wf-rail-item">
-                Sudan health system collapse
-                <div class="wf-rail-meta">verified sources · live watch</div>
+            <div id="underreported-items">
+                <!-- Populated by Precog API -->
             </div>
-            <div class="wf-rail-item">
-                Myanmar hunger and displacement
-                <div class="wf-rail-meta">verified sources · live watch</div>
+        </div>
+
+        <div class="wf-rail-card" id="breaking-news-card">
+            <h3>Breaking News</h3>
+            <div id="breaking-news-items">
+                <!-- Populated by Precog API -->
             </div>
-            <div class="wf-rail-item">
-                Global acute food insecurity
-                <div class="wf-rail-meta">verified sources · live watch</div>
-            </div>
-            <div class="wf-rail-item">
-                Haiti aid access crisis
-                <div class="wf-rail-meta">verified sources · live watch</div>
+        </div>
+
+        <div class="wf-rail-card" id="video-highlights-card">
+            <h3>Video Highlights</h3>
+            <div id="video-highlights-items">
+                <!-- Populated by Precog API -->
             </div>
         </div>
 

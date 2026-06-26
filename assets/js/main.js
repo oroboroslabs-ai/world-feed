@@ -850,3 +850,88 @@ function displayFeed(items, container) {
         container.appendChild(article);
     });
 }
+
+// === Right Rail Panel Population ===
+function loadRailPanels() {
+    console.log('[Anti-Algo] Loading rail panels...');
+    
+    // Load Tor Feed (videos)
+    fetch(PRECOG_API_BASE + '/precog/video?count=3')
+        .then(r => r.json())
+        .then(data => {
+            if (data && data.data) {
+                displayRailItems('tor-feed-items', data.data, 'video');
+            }
+        })
+        .catch(e => console.log('[Anti-Algo] Tor feed unavailable:', e));
+    
+    // Load Underreported Watch (humanitarian stories)
+    fetch(PRECOG_API_BASE + '/precog/writing?count=4&category=humanitarian')
+        .then(r => r.json())
+        .then(data => {
+            if (data && data.data) {
+                displayRailItems('underreported-items', data.data, 'humanitarian');
+            }
+        })
+        .catch(e => console.log('[Anti-Algo] Underreported feed unavailable:', e));
+    
+    // Load Breaking News
+    fetch(PRECOG_API_BASE + '/precog/writing?count=4&category=breaking_news')
+        .then(r => r.json())
+        .then(data => {
+            if (data && data.data) {
+                displayRailItems('breaking-news-items', data.data, 'breaking');
+            }
+        })
+        .catch(e => console.log('[Anti-Algo] Breaking news unavailable:', e));
+    
+    // Load Video Highlights
+    fetch(PRECOG_API_BASE + '/precog/video?count=3')
+        .then(r => r.json())
+        .then(data => {
+            if (data && data.data) {
+                displayRailItems('video-highlights-items', data.data, 'highlight');
+            }
+        })
+        .catch(e => console.log('[Anti-Algo] Video highlights unavailable:', e));
+}
+
+function displayRailItems(containerId, items, type) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    
+    container.innerHTML = '';
+    
+    items.forEach(item => {
+        const c = item.content || item;
+        const title = c.title || 'Untitled';
+        const author = (c.author || 'precog').replace(/_/g, ' ');
+        const confidence = item.confidence || c.confidence || 0.95;
+        const strata = item.strata || c.strata || 'S12';
+        
+        const meta = type === 'video' 
+            ? `${author} · ${c.duration || 15}s · ${strata}`
+            : `${author} · ${Math.round(confidence * 100)}% verified`;
+        
+        const div = document.createElement('div');
+        div.className = 'wf-rail-item';
+        div.innerHTML = `
+            ${title.substring(0, 60)}${title.length > 60 ? '…' : ''}
+            <div class="wf-rail-meta">${meta}</div>
+        `;
+        div.style.cursor = 'pointer';
+        div.onclick = () => {
+            // Scroll to main feed and highlight this story
+            const feedEl = document.getElementById('wf-feed');
+            if (feedEl) feedEl.scrollIntoView({ behavior: 'smooth' });
+        };
+        container.appendChild(div);
+    });
+}
+
+// Initialize rail panels on page load
+document.addEventListener('DOMContentLoaded', function() {
+    loadRailPanels();
+    // Refresh rail panels every 5 minutes
+    setInterval(loadRailPanels, 300000);
+});

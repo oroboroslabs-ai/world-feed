@@ -129,13 +129,26 @@ def get_writing():
         count = request.args.get('count', 10, type=int)
         category = request.args.get('category', None, type=str)
         
-        items = pipeline.generate_by_type('written', count)
-        result = pipeline.to_json(items)
+        # Generate content with category filter
+        items = pipeline.writing_precog.generate_content(count, category)
+        result = pipeline.to_json([
+            UnifiedFeedItem(
+                id=item.id,
+                type='written',
+                content=pipeline.writing_precog.to_json(item),
+                confidence=item.confidence,
+                resonance=item.resonance,
+                strata=item.strata,
+                timestamp=item.timestamp,
+                source='writing_precog'
+            ) for item in items
+        ])
         
         return jsonify({
             'status': 'success',
             'type': 'written',
             'count': len(items),
+            'category': category,
             'data': result
         })
         
