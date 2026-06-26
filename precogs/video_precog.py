@@ -4,6 +4,7 @@ Video Precog - Video Generation Engine
 A\\ 1272 Hz
 Generates video content metadata and placeholders for the DIP feed
 Integrates Anthropic PDFs, Glasswing, X Profile, Breaking News
+Now integrates with Q:\video-production-pipeline for AI video generation
 """
 
 import json
@@ -22,6 +23,17 @@ try:
     from .data_sources import DataSources, get_photo_url
 except ImportError:
     from data_sources import DataSources, get_photo_url
+
+# Import video diffusion pipeline
+try:
+    from .video_diffusion_pipeline import VideoDiffusionPipeline, generate_video_content
+    VIDEO_PIPELINE_AVAILABLE = True
+except ImportError:
+    try:
+        from video_diffusion_pipeline import VideoDiffusionPipeline, generate_video_content
+        VIDEO_PIPELINE_AVAILABLE = True
+    except ImportError:
+        VIDEO_PIPELINE_AVAILABLE = False
 
 # Video URL validation cache
 _video_url_cache = {}
@@ -185,6 +197,15 @@ class VideoPrecog:
             'feature': (300, 900),
             'update': (60, 180)
         }
+        
+        # Initialize video diffusion pipeline if available
+        self.video_pipeline = None
+        if VIDEO_PIPELINE_AVAILABLE:
+            try:
+                self.video_pipeline = VideoDiffusionPipeline(config)
+                print("[VideoPrecog] Video Diffusion Pipeline initialized")
+            except Exception as e:
+                print(f"[VideoPrecog] Warning: Could not initialize video pipeline: {e}")
     
     def generate_content(self, count: int = 5, category: Optional[str] = None) -> List[VideoContent]:
         """Generate multiple video content items using data sources"""
@@ -255,7 +276,44 @@ class VideoPrecog:
         
         video_category = category or category_map.get(source_category, 'report')
         
-        # Generate video ID
+        # Try to use video diffusion pipeline if available
+        if self.video_pipeline:
+            try:
+                # Use the diffusion pipeline to generate video
+                result = self.video_pipeline.generate_from_source(source_data, video_category)
+                if result and len(result) > 0:
+                    video_data = result[0]
+                    
+                    # Convert to VideoContent
+                    return VideoContent(
+                        id=video_data['id'],
+                        title=video_data['title'],
+                        description=video_data['description'],
+                        thumbnail_url=video_data['thumbnail_url'],
+                        video_url=video_data['video_url'],
+                        duration=video_data['duration'],
+                        author=f"precog_video_{source_type}",
+                        category=video_category,
+                        confidence=video_data['confidence'],
+                        resonance=video_data['resonance'],
+                        strata=video_data['strata'],
+                        timestamp=video_data['timestamp'],
+                        metadata={
+                            'generator': 'video_precog_diffusion',
+                            'version': '2.0.0',
+                            'uee_standard': 'UEE-2024',
+                            'format': 'mp4',
+                            'resolution': '1080p',
+                            'source_type': source_type,
+                            'key_points': key_points,
+                            'video_validated': video_data.get('video_validated', False),
+                            'pipeline_status': video_data.get('status', 'unknown')
+                        }
+                    )
+            except Exception as e:
+                print(f"[VideoPrecog] Pipeline error, falling back to placeholder: {e}")
+        
+        # Fallback: Generate placeholder video content
         video_id = hashlib.md5(f"{title}{time.time()}".encode()).hexdigest()[:12]
         
         # Generate description
