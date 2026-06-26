@@ -855,45 +855,36 @@ function displayFeed(items, container) {
 function loadRailPanels() {
     console.log('[Anti-Algo] Loading rail panels...');
     
-    // Load Tor Feed (videos)
-    fetch(PRECOG_API_BASE + '/precog/video?count=3')
+    // Load main feed and distribute to panels
+    fetch(PRECOG_API_BASE + '/precog/feed?writing=10&video=5&image=5')
         .then(r => r.json())
         .then(data => {
-            if (data && data.data) {
-                displayRailItems('tor-feed-items', data.data, 'video');
+            if (data && data.data && data.data.feed) {
+                const items = data.data.feed;
+                
+                // Videos to Tor Feed
+                const videos = items.filter(i => i.type === 'video').slice(0, 3);
+                displayRailItems('tor-feed-items', videos, 'video');
+                
+                // Humanitarian to Underreported Watch
+                const humanitarian = items.filter(i => 
+                    (i.content && i.content.category === 'humanitarian') ||
+                    (i.content && i.content.category === 'world_events')
+                ).slice(0, 4);
+                displayRailItems('underreported-items', humanitarian, 'humanitarian');
+                
+                // Breaking news
+                const breaking = items.filter(i => 
+                    i.content && (i.content.category === 'breaking_news' || i.confidence > 0.95)
+                ).slice(0, 4);
+                displayRailItems('breaking-news-items', breaking, 'breaking');
+                
+                // Video highlights
+                const highlights = items.filter(i => i.type === 'video').slice(0, 3);
+                displayRailItems('video-highlights-items', highlights, 'highlight');
             }
         })
-        .catch(e => console.log('[Anti-Algo] Tor feed unavailable:', e));
-    
-    // Load Underreported Watch (humanitarian stories)
-    fetch(PRECOG_API_BASE + '/precog/writing?count=4&category=humanitarian')
-        .then(r => r.json())
-        .then(data => {
-            if (data && data.data) {
-                displayRailItems('underreported-items', data.data, 'humanitarian');
-            }
-        })
-        .catch(e => console.log('[Anti-Algo] Underreported feed unavailable:', e));
-    
-    // Load Breaking News
-    fetch(PRECOG_API_BASE + '/precog/writing?count=4&category=breaking_news')
-        .then(r => r.json())
-        .then(data => {
-            if (data && data.data) {
-                displayRailItems('breaking-news-items', data.data, 'breaking');
-            }
-        })
-        .catch(e => console.log('[Anti-Algo] Breaking news unavailable:', e));
-    
-    // Load Video Highlights
-    fetch(PRECOG_API_BASE + '/precog/video?count=3')
-        .then(r => r.json())
-        .then(data => {
-            if (data && data.data) {
-                displayRailItems('video-highlights-items', data.data, 'highlight');
-            }
-        })
-        .catch(e => console.log('[Anti-Algo] Video highlights unavailable:', e));
+        .catch(e => console.log('[Anti-Algo] Rail panels unavailable:', e));
 }
 
 function displayRailItems(containerId, items, type) {
@@ -901,6 +892,11 @@ function displayRailItems(containerId, items, type) {
     if (!container) return;
     
     container.innerHTML = '';
+    
+    if (!items || items.length === 0) {
+        container.innerHTML = '<div class="wf-rail-item" style="color:rgba(255,255,255,0.5)">Loading...</div>';
+        return;
+    }
     
     items.forEach(item => {
         const c = item.content || item;
