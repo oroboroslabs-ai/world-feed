@@ -16,6 +16,18 @@ end
 
 Rails.application.routes.draw do
   root 'home#index'
+  
+  # Oroboros Anti-Algo Routes
+  namespace :anti_algo do
+    get '/', to: 'anti_algo#index', as: :home
+    get '/feed', to: 'anti_algo#feed', as: :feed
+    get '/explore', to: 'anti_algo#explore', as: :explore
+    get '/videos', to: 'anti_algo#videos', as: :videos
+    get '/articles', to: 'anti_algo#articles', as: :articles
+    get '/messages', to: 'anti_algo#messages', as: :messages
+    get '/profile', to: 'anti_algo#profile', as: :profile
+    get '/kaiju', to: 'anti_algo#kaiju', as: :kaiju
+  end
 
   mount LetterOpenerWeb::Engine, at: 'letter_opener' if Rails.env.development?
 
