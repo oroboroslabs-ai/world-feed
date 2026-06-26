@@ -51,6 +51,9 @@ body::before {
 a { color: #ffffff; text-decoration: none; }
 a:hover { color: var(--hi); }
 
+/* Paragraph text - white */
+p { color: #ffffff; }
+
 /* Layout: 3 columns, left fixed, right widened */
 .app {
     display: grid !important;
