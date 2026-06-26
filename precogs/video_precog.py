@@ -186,17 +186,22 @@ class VideoPrecog:
             "Innovation Launch", "Research Publication", "Summit Outcomes"
         ]
         
-        # Video durations (in seconds)
+        # Video durations (in seconds) - ALL videos 10-30 seconds for feed support
+        # Videos are short clips to support stories, not standalone content
         self.duration_ranges = {
-            'breaking_news': (30, 120),
-            'documentary': (600, 1800),
-            'analysis': (300, 600),
-            'interview': (600, 1200),
-            'report': (120, 300),
-            'briefing': (60, 180),
-            'feature': (300, 900),
-            'update': (60, 180)
+            'breaking_news': (10, 30),
+            'documentary': (15, 30),  # Short clips only
+            'analysis': (10, 25),
+            'interview': (15, 30),
+            'report': (10, 30),
+            'briefing': (10, 20),
+            'feature': (15, 30),
+            'update': (10, 20)
         }
+        
+        # Max videos per day
+        self.max_per_day = 10
+        self._daily_videos = []
         
         # Initialize video diffusion pipeline if available
         self.video_pipeline = None

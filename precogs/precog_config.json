@@ -1,0 +1,104 @@
+{
+  "version": "1.0.0",
+  "resonance_hz": 1272.0,
+  "uee_standard": "UEE-2024",
+  
+  "content_limits": {
+    "max_items_per_day": 10,
+    "rotation_enabled": true,
+    "rotation_interval_hours": 6,
+    "no_duplicates": true
+  },
+  
+  "writing": {
+    "word_count": {
+      "standard": 1200,
+      "anthropic_pdf": 2000,
+      "min": 800,
+      "max": 2500
+    },
+    "categories": [
+      "world_events",
+      "technology", 
+      "science",
+      "humanitarian",
+      "environment",
+      "economics",
+      "health",
+      "governance",
+      "verification",
+      "systems"
+    ],
+    "sources": {
+      "anthropic_pdf": {
+        "enabled": true,
+        "word_count": 2000,
+        "weight": 0.3
+      },
+      "glasswing": {
+        "enabled": true,
+        "word_count": 1200,
+        "weight": 0.25
+      },
+      "x_profile": {
+        "enabled": true,
+        "word_count": 1200,
+        "weight": 0.2
+      },
+      "breaking_news": {
+        "enabled": true,
+        "word_count": 1200,
+        "weight": 0.25
+      }
+    }
+  },
+  
+  "video": {
+    "duration_seconds": {
+      "min": 10,
+      "max": 30,
+      "default": 15
+    },
+    "max_per_day": 10,
+    "categories": [
+      "breaking_news",
+      "documentary",
+      "analysis",
+      "briefing",
+      "update"
+    ],
+    "support_role": true,
+    "thumbnail_required": true
+  },
+  
+  "image": {
+    "max_per_day": 10,
+    "categories": [
+      "photo",
+      "infographic",
+      "diagram",
+      "map"
+    ]
+  },
+  
+  "display": {
+    "content_wrap": true,
+    "max_display_height": "400px",
+    "truncate_in_feed": true,
+    "truncate_length": 280,
+    "expand_on_click": true
+  },
+  
+  "api": {
+    "port": 8083,
+    "host": "localhost",
+    "cache_ttl_seconds": 30,
+    "endpoints": {
+      "feed": "/api/precog/feed",
+      "writing": "/api/precog/writing",
+      "video": "/api/precog/video",
+      "image": "/api/precog/image",
+      "status": "/api/precog/status"
+    }
+  }
+}
