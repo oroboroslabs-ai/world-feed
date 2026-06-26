@@ -57,22 +57,29 @@
         }
         
         .nav-item {
+            font-size: 20px;
+            color: #ffffff;
             display: flex;
             align-items: center;
             gap: 20px;
             padding: 18px 16px;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 9999px;
-            transition: all 0.2s;
-            font-size: 20px;
+            position: relative;
             font-weight: 400;
+            text-decoration: none;
+            cursor: pointer;
+            border-radius: 9999px;
             border: 1px solid transparent;
+            transition: all 0.2s ease;
         }
         
-        .nav-item:hover {
-            background: rgba(255, 255, 255, 0.03);
-            border-color: rgba(255, 255, 255, 0.1);
+        a.nav-item {
+            display: flex;
+            text-decoration: none;
+        }
+        
+        a.nav-item:hover {
+            background: rgba(255,255,255,0.03);
+            border-color: rgba(255,255,255,0.1);
         }
         
         .nav-item.active {
