@@ -304,6 +304,129 @@ def user_bookmarks():
             'message': 'Bookmark removed'
         })
 
+# Social endpoints - Mastodon integration
+@app.route('/api/social/signin', methods=['GET'])
+def social_signin():
+    """Get Mastodon sign in URL"""
+    instance = request.args.get('instance', 'https://mastodon.social')
+    
+    # Return OAuth URL for Mastodon
+    return jsonify({
+        'status': 'success',
+        'oauth_url': f"{instance}/oauth/authorize?client_id=oroboros_worldfeed&redirect_uri={request.host_url}api/social/callback&response_type=code&scope=read+write+follow+push",
+        'instance': instance,
+        'message': 'Redirect user to oauth_url for authentication'
+    })
+
+@app.route('/api/social/callback', methods=['GET'])
+def social_callback():
+    """OAuth callback from Mastodon"""
+    code = request.args.get('code')
+    
+    # In production, exchange code for access token
+    # For now, return success
+    return jsonify({
+        'status': 'success',
+        'session_id': f'session_{int(time.time())}',
+        'account': {
+            'username': 'oroboroslabs',
+            'instance': 'mastodon.social',
+            'display_name': 'Oroboros Labs',
+            'avatar_url': 'https://mastodon.social/avatars/original/missing.png',
+            'followers_count': 0,
+            'following_count': 0,
+            'statuses_count': 0
+        },
+        'message': 'Authentication successful'
+    })
+
+@app.route('/api/social/signout', methods=['POST'])
+def social_signout():
+    """Sign out"""
+    return jsonify({
+        'status': 'success',
+        'message': 'Signed out successfully'
+    })
+
+@app.route('/api/social/post', methods=['POST'])
+def social_post():
+    """Post to Mastodon"""
+    data = request.get_json()
+    
+    # In production, post to Mastodon via API
+    # For now, return success
+    return jsonify({
+        'status': 'success',
+        'status_id': f'post_{int(time.time())}',
+        'url': f"https://mastodon.social/@oroboroslabs/{int(time.time())}",
+        'message': 'Posted to Mastodon successfully'
+    })
+
+@app.route('/api/social/feed/oroboros', methods=['GET'])
+def social_feed_oroboros():
+    """Get Oroboros Mastodon feed"""
+    limit = request.args.get('limit', 20, type=int)
+    
+    # In production, fetch from Mastodon API
+    # For now, return mock data
+    return jsonify([
+        {
+            'id': f'status_{i}',
+            'type': 'mastodon',
+            'content': f'Oroboros Labs update #{i} - 1272 Hz resonance active',
+            'created_at': datetime.utcnow().isoformat(),
+            'account': {
+                'username': 'oroboroslabs',
+                'display_name': 'Oroboros Labs',
+                'avatar': 'https://mastodon.social/avatars/original/missing.png'
+            },
+            'replies_count': 0,
+            'reblogs_count': 0,
+            'favourites_count': 0,
+            'url': f'https://mastodon.social/@oroboroslabs/{i}',
+            'visibility': 'public'
+        }
+        for i in range(limit)
+    ])
+
+@app.route('/api/social/feed/federated', methods=['GET'])
+def social_feed_federated():
+    """Get federated public timeline"""
+    limit = request.args.get('limit', 20, type=int)
+    
+    # In production, fetch from Mastodon API
+    # For now, return mock data
+    return jsonify([
+        {
+            'id': f'fed_{i}',
+            'type': 'mastodon',
+            'content': f'Federated post #{i} from the fediverse',
+            'created_at': datetime.utcnow().isoformat(),
+            'account': {
+                'username': f'user{i}',
+                'display_name': f'User {i}',
+                'avatar': 'https://mastodon.social/avatars/original/missing.png'
+            },
+            'replies_count': 0,
+            'reblogs_count': 0,
+            'favourites_count': 0,
+            'url': f'https://mastodon.social/@user{i}/{i}',
+            'visibility': 'public'
+        }
+        for i in range(limit)
+    ])
+
+@app.route('/api/social/interact', methods=['POST'])
+def social_interact():
+    """Interact with a status (favourite, reblog)"""
+    data = request.get_json()
+    action = data.get('action', 'favourite')
+    
+    return jsonify({
+        'status': 'success',
+        'message': f'{action.capitalize()} successful'
+    })
+
 if __name__ == '__main__':
     print(f"[Precog API] Starting at {RESONANCE_HZ} Hz resonance")
     print(f"[Precog API] UEE Standard: {UEE_STANDARD}")
@@ -318,5 +441,12 @@ if __name__ == '__main__':
     print(f"  - GET/POST /api/user/profile")
     print(f"  - GET/POST /api/user/preferences")
     print(f"  - GET/POST/DELETE /api/user/bookmarks")
+    print(f"  - GET /api/social/signin")
+    print(f"  - GET /api/social/callback")
+    print(f"  - POST /api/social/signout")
+    print(f"  - POST /api/social/post")
+    print(f"  - GET /api/social/feed/oroboros")
+    print(f"  - GET /api/social/feed/federated")
+    print(f"  - POST /api/social/interact")
     
     app.run(host='127.0.0.1', port=8083, debug=False)

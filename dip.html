@@ -441,6 +441,22 @@
             
             <button class="post-btn" onclick="composePost()">Post</button>
             
+            <div id="account-section" style="margin-top: 20px; padding: 12px; background: #16181c; border-radius: 12px;">
+                <div id="signin-section">
+                    <button id="signin-btn" onclick="signInWithMastodon()" style="width: 100%; background: #6364ff; color: white; border: none; padding: 12px; border-radius: 9999px; cursor: pointer; font-weight: 600;">
+                        🦣 Sign in with Mastodon
+                    </button>
+                </div>
+                <div id="account-badge" style="display: none; align-items: center; gap: 8px;">
+                    <img id="account-avatar" src="" alt="" style="width: 32px; height: 32px; border-radius: 50%;">
+                    <div>
+                        <div id="account-name" style="color: #fff; font-weight: 600;"></div>
+                        <div id="account-handle" style="color: #71767b; font-size: 13px;"></div>
+                    </div>
+                    <button onclick="signOut()" style="margin-left: auto; background: transparent; border: none; color: #71767b; cursor: pointer;">Sign out</button>
+                </div>
+            </div>
+            
             <div class="status-indicator" style="margin-top: 20px;">
                 <span class="status-dot"></span>
                 <span class="status-text" id="pipeline-status">Precog Pipeline Active</span>
@@ -586,6 +602,8 @@
         </aside>
     </div>
     
+    <!-- Social Integration -->
+    <script src="assets/js/social.js"></script>
     <script>
         // Precog API Client
         const PRECOG_API = 'http://localhost:8083';
@@ -593,13 +611,32 @@
         let currentTab = 'all';
         let feedData = [];
         let autoRefreshInterval;
+        let socialClient = null;
+        let socialUI = null;
         
         // Initialize
         document.addEventListener('DOMContentLoaded', async () => {
+            // Initialize social client
+            socialClient = new SocialClient();
+            socialUI = new SocialUI(socialClient);
+            socialUI.init();
+            
+            // Load feed
             await loadFeed();
             setupTabs();
             startAutoRefresh();
+            
+            // Check for OAuth callback
+            const urlParams = new URLSearchParams(window.location.search);
+            const authCode = urlParams.get('code');
+            if (authCode) {
+                await socialClient.completeSignIn(authCode);
+                window.history.replaceState({}, document.title, window.location.pathname);
+                socialUI.updateUI();
+            }
+            
             log('[DIP] Connected to Precog Pipeline at 1272 Hz');
+            log('[DIP] Social services initialized');
         });
         
         // Auto-refresh every 30 seconds
@@ -1530,20 +1567,23 @@
         }
         
         // Submit post
-        function submitPost() {
+        async function submitPost() {
             const input = document.getElementById('compose-input');
             const content = input.value.trim();
             
             if (!content) return;
             
-            // Add to feed
+            // Check if user wants to post to Mastodon
+            const postToMastodonToo = socialClient && socialClient.isAuthenticated();
+            
+            // Add to local feed
             const newPost = {
                 id: 'user-' + Date.now(),
                 type: 'written',
                 content: {
                     title: content.substring(0, 50) + (content.length > 50 ? '...' : ''),
                     content: content,
-                    author: 'user',
+                    author: socialClient?.getAccount()?.display_name || 'user',
                     category: 'user',
                     confidence: 1.0
                 },
@@ -1560,11 +1600,124 @@
             
             // Update counts
             document.getElementById('writing-count').textContent = feedData.filter(i => i.type === 'written').length;
+            
+            // Post to Mastodon if signed in
+            if (postToMastodonToo) {
+                try {
+                    const result = await postToMastodon(content);
+                    if (result) {
+                        log('[DIP] Posted to local feed and Mastodon');
+                    }
+                } catch (error) {
+                    console.error('[DIP] Mastodon post error:', error);
+                }
+            }
         }
         
         // Show settings
         function showSettings() {
             alert('Settings panel coming soon!\n\nCurrent Status:\n- Precog Pipeline: Active\n- Resonance: 1272 Hz\n- Strata: S1-S12\n- Sources: Anthropic, Glasswing, X Profile, Breaking News');
+        }
+        
+        // Social functions - Mastodon integration
+        function signInWithMastodon() {
+            if (socialUI) {
+                socialUI.showSignInModal();
+            } else {
+                console.error('[DIP] Social UI not initialized');
+            }
+        }
+        
+        function signOut() {
+            if (socialClient) {
+                socialClient.signOut();
+                if (socialUI) {
+                    socialUI.updateUI();
+                }
+            }
+        }
+        
+        // Post to Mastodon
+        async function postToMastodon(content, visibility = 'public') {
+            if (!socialClient || !socialClient.isAuthenticated()) {
+                alert('Please sign in with Mastodon first');
+                return null;
+            }
+            
+            try {
+                const result = await socialClient.post(content, visibility);
+                if (result.status === 'success') {
+                    log('[DIP] Posted to Mastodon: ' + result.url);
+                    return result;
+                } else {
+                    throw new Error(result.message);
+                }
+            } catch (error) {
+                console.error('[DIP] Mastodon post error:', error);
+                alert('Failed to post to Mastodon: ' + error.message);
+                return null;
+            }
+        }
+        
+        // Get Mastodon feed
+        async function loadMastodonFeed(limit = 10) {
+            if (!socialClient) return [];
+            
+            try {
+                const feed = await socialClient.getOroborosFeed(limit);
+                return feed;
+            } catch (error) {
+                console.error('[DIP] Mastodon feed error:', error);
+                return [];
+            }
+        }
+        
+        // Favourite a post
+        async function favouritePost(statusId) {
+            if (!socialClient || !socialClient.isAuthenticated()) {
+                alert('Please sign in to interact');
+                return false;
+            }
+            
+            try {
+                const result = await socialClient.favourite(statusId);
+                return result.status === 'success';
+            } catch (error) {
+                console.error('[DIP] Favourite error:', error);
+                return false;
+            }
+        }
+        
+        // Reblog a post
+        async function reblogPost(statusId) {
+            if (!socialClient || !socialClient.isAuthenticated()) {
+                alert('Please sign in to interact');
+                return false;
+            }
+            
+            try {
+                const result = await socialClient.reblog(statusId);
+                return result.status === 'success';
+            } catch (error) {
+                console.error('[DIP] Reblog error:', error);
+                return false;
+            }
+        }
+        
+        // Share post to Mastodon
+        async function shareToMastodon(postId) {
+            const post = feedData.find(p => p.id === postId);
+            if (!post) return;
+            
+            const content = post.content.title || post.content.content?.substring(0, 500) || '';
+            const url = window.location.origin + '/post/' + postId;
+            
+            const fullContent = `${content}\n\n${url}\n\n#WorldFeed #Oroboros #1272Hz`;
+            
+            const result = await postToMastodon(fullContent);
+            if (result) {
+                alert('Shared to Mastodon!');
+            }
         }
         
         // Auto-refresh every 30 seconds
