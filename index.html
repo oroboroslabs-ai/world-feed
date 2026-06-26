@@ -1378,5 +1378,129 @@
 </a>
 
 <script src="assets/js/main.js"></script>
+<script>
+// Navigation handlers - Make all links work
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('[WorldFeed] Initializing navigation...');
+    
+    // Navigation items - map to actual pages
+    const navItems = {
+        'latest': 'index.html',
+        'explore': 'dip.html',
+        'notifications': 'dip.html',
+        'messages': 'dip.html',
+        'verified': 'dip.html',
+        'developing': 'dip.html',
+        'video': 'dip.html',
+        'docs': 'dip.html',
+        'federation': 'dip.html',
+        'saved': 'dip.html',
+        'about': 'dip.html'
+    };
+    
+    // Add click handlers to all nav items
+    document.querySelectorAll('.nav-item').forEach(function(item) {
+        const view = item.getAttribute('data-view');
+        if (view && navItems[view]) {
+            item.style.cursor = 'pointer';
+            item.addEventListener('click', function() {
+                console.log('[WorldFeed] Navigation clicked:', view);
+                window.location.href = navItems[view];
+            });
+        }
+    });
+    
+    // Load precog feed into the page
+    loadPrecogFeed();
+    
+    // Update feed every 30 seconds
+    setInterval(loadPrecogFeed, 30000);
+});
+
+// Load content from precog pipeline
+function loadPrecogFeed() {
+    console.log('[WorldFeed] Loading precog feed...');
+    
+    // Try to fetch from local API
+    fetch('http://localhost:8083/api/precog/feed?writing=10&video=5&image=5')
+        .then(response => {
+            if (!response.ok) throw new Error('API not available');
+            return response.json();
+        })
+        .then(data => {
+            console.log('[WorldFeed] Precog feed loaded:', data);
+            if (data && data.data && data.data.feed) {
+                displayPrecogFeed(data.data.feed);
+            }
+        })
+        .catch(error => {
+            console.log('[WorldFeed] Using offline data - API not available');
+            // Use offline fallback data from main.js
+        });
+}
+
+// Display precog feed items
+function displayPrecogFeed(items) {
+    const feedContainer = document.querySelector('.feed') || document.querySelector('main') || document.body;
+    if (!feedContainer) {
+        console.warn('[WorldFeed] No feed container found');
+        return;
+    }
+    
+    console.log('[WorldFeed] Displaying', items.length, 'items');
+    
+    // Clear existing precog items
+    const existingItems = feedContainer.querySelectorAll('.precog-item');
+    existingItems.forEach(item => item.remove());
+    
+    // Add new items
+    items.forEach(item => {
+        const el = createPrecogItem(item);
+        feedContainer.insertBefore(el, feedContainer.firstChild);
+    });
+}
+
+// Create a feed item element
+function createPrecogItem(item) {
+    const div = document.createElement('div');
+    div.className = 'precog-item';
+    div.style.cssText = 'border: 1px solid #2f3336; border-radius: 16px; padding: 16px; margin-bottom: 16px; background: #16181c;';
+    
+    const content = item.content || item;
+    const type = item.type || 'written';
+    
+    let html = '';
+    
+    if (type === 'video') {
+        html = `
+            <div style="color: #71767b; font-size: 13px; margin-bottom: 8px;">${content.source || 'Precog Pipeline'}</div>
+            <div style="font-size: 15px; font-weight: 700; margin-bottom: 8px;">${content.title || 'Video'}</div>
+            <div style="color: #71767b; margin-bottom: 12px;">${content.description || ''}</div>
+            ${content.thumbnail_url ? `<img src="${content.thumbnail_url}" style="width: 100%; border-radius: 16px; margin-bottom: 12px;">` : ''}
+            <div style="display: flex; gap: 60px; color: #71767b;">
+                <span>💬 ${content.replies_count || 0}</span>
+                <span>🔁 ${content.reblogs_count || 0}</span>
+                <span>❤️ ${content.favourites_count || 0}</span>
+            </div>
+        `;
+    } else if (type === 'image') {
+        html = `
+            <div style="color: #71767b; font-size: 13px; margin-bottom: 8px;">${content.source || 'Precog Pipeline'}</div>
+            <div style="font-size: 15px; font-weight: 700; margin-bottom: 8px;">${content.title || 'Image'}</div>
+            <div style="color: #71767b; margin-bottom: 12px;">${content.description || ''}</div>
+            ${content.image_url ? `<img src="${content.image_url}" style="width: 100%; border-radius: 16px; margin-bottom: 12px;">` : ''}
+        `;
+    } else {
+        html = `
+            <div style="color: #71767b; font-size: 13px; margin-bottom: 8px;">${content.source || 'Precog Pipeline'}</div>
+            <div style="font-size: 15px; font-weight: 700; margin-bottom: 8px;">${content.title || 'Article'}</div>
+            <div style="color: #e7e9ea; margin-bottom: 12px; white-space: pre-wrap;">${(content.content || content.body || '').substring(0, 280)}...</div>
+        `;
+    }
+    
+    div.innerHTML = html;
+    return div;
+}
+</script>
 </body>
 </html>
