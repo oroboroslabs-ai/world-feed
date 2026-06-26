@@ -195,6 +195,15 @@
         .log-info { color: #00ff88; }
         .log-warn { color: #ffa500; }
         .log-error { color: #ff4444; }
+        .log-success { color: #00ff88; font-weight: 600; }
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes slideOut {
+            from { transform: translateX(0); opacity: 1; }
+            to { transform: translateX(100%); opacity: 0; }
+        }
     </style>
 </head>
 <body>
@@ -339,12 +348,23 @@
                 </div>
             </div>
         </div>
+
+        <!-- Published Posts -->
+        <div class="card">
+            <h2>📤 Published Posts</h2>
+            <div id="published-posts" style="max-height: 300px; overflow-y: auto;">
+                <div style="color: #71767b; padding: 20px; text-align: center;">
+                    No posts published yet. Use Quick Actions to generate content and click Publish.
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
         const API_URL = 'http://localhost:8083';
         let stats = { written: 0, video: 0, image: 0 };
         let autoRefreshInterval;
+        let publishedPosts = [];
 
         // Initialize
         document.addEventListener('DOMContentLoaded', () => {
@@ -459,22 +479,103 @@
             const source = document.getElementById('post-source').value;
             
             if (!text.trim()) {
-                log('warn', 'Cannot publish empty post');
+                log('error', 'Cannot publish empty post');
+                showStatus('error', 'Cannot publish empty post');
                 return;
             }
+            
+            // Create post object
+            const post = {
+                id: 'post_' + Date.now(),
+                type: type,
+                source: source,
+                content: text,
+                timestamp: new Date().toISOString(),
+                status: 'published'
+            };
+            
+            // Add to published posts
+            publishedPosts.unshift(post);
             
             // Update stats
             stats[type]++;
             saveStats();
+            updateLastPost();
+            
+            // Add to published posts display
+            addPublishedPost(post);
             
             // Log
-            log('info', `Published ${type} post from ${source}`);
+            log('success', `✅ Published ${type} post from ${source}`);
+            showStatus('success', `Post published successfully! ID: ${post.id}`);
             
             // Clear compose
             document.getElementById('compose-text').value = '';
+        }
+        
+        // Add published post to display
+        function addPublishedPost(post) {
+            const container = document.getElementById('published-posts');
+            const typeEmoji = { written: '✍️', video: '🎬', image: '🖼️' };
+            const sourceLabels = { anthropic: 'Anthropic', glasswing: 'Glasswing', x_profile: 'X Profile', breaking_news: 'Breaking News' };
             
-            // Show success
-            alert('Post published successfully! Check the DIP Feed to view.');
+            const postHtml = `
+                <div class="news-item" style="border-left: 3px solid #00ff88; margin-bottom: 10px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span class="title" style="font-weight: 600;">${typeEmoji[post.type] || '📝'} ${post.content.substring(0, 50)}...</span>
+                        <span style="color: #00ff88; font-size: 12px;">✓ Published</span>
+                    </div>
+                    <div class="meta">
+                        <span class="source source-${post.source}">${sourceLabels[post.source] || post.source}</span>
+                        ${getTimeAgo(new Date(post.timestamp))}
+                    </div>
+                </div>
+            `;
+            
+            // Remove "no posts" message if present
+            if (container.innerHTML.includes('No posts published')) {
+                container.innerHTML = '';
+            }
+            
+            container.insertAdjacentHTML('afterbegin', postHtml);
+        }
+        
+        // Update last post time
+        function updateLastPost() {
+            document.getElementById('last-post').textContent = 'Just now';
+        }
+        
+        // Show status message
+        function showStatus(type, message) {
+            const statusColors = {
+                success: '#00ff88',
+                error: '#ff4444',
+                warning: '#ffa500',
+                info: '#1da1f2'
+            };
+            
+            // Create status popup
+            const popup = document.createElement('div');
+            popup.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: ${statusColors[type] || statusColors.info};
+                color: #000;
+                padding: 15px 25px;
+                border-radius: 8px;
+                font-weight: 600;
+                z-index: 10000;
+                animation: slideIn 0.3s ease;
+            `;
+            popup.textContent = message;
+            document.body.appendChild(popup);
+            
+            // Remove after 3 seconds
+            setTimeout(() => {
+                popup.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => popup.remove(), 300);
+            }, 3000);
         }
 
         // Preview post

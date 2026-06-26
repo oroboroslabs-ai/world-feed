@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
 """
 Precog API Server - Backend for DIP System
-A\ 1272 Hz
+A\\ 1272 Hz
 Serves precog-generated content to the frontend
 """
 
 import json
 import time
+import os
 from datetime import datetime
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 from typing import Dict, List, Optional
 
@@ -25,6 +26,9 @@ CORS(app)
 RESONANCE_HZ = 1272.0
 UEE_STANDARD = "UEE-2024"
 
+# Get the parent directory for static files
+PARENT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 # Initialize pipeline
 pipeline = PrecogPipeline()
 
@@ -34,6 +38,37 @@ content_cache = {
     'timestamp': None,
     'ttl': 30  # seconds
 }
+
+# Serve static files from parent directory
+@app.route('/')
+def serve_index():
+    """Serve the main DIP page"""
+    return send_from_directory(PARENT_DIR, 'dip.html')
+
+@app.route('/dip.html')
+def serve_dip():
+    """Serve the DIP page"""
+    return send_from_directory(PARENT_DIR, 'dip.html')
+
+@app.route('/admin.html')
+def serve_admin():
+    """Serve the admin page"""
+    return send_from_directory(PARENT_DIR, 'admin.html')
+
+@app.route('/index.html')
+def serve_public():
+    """Serve the public page"""
+    return send_from_directory(PARENT_DIR, 'index.html')
+
+@app.route('/kaiju.html')
+def serve_kaiju():
+    """Serve the kaiju page"""
+    return send_from_directory(PARENT_DIR, 'kaiju.html')
+
+@app.route('/assets/<path:filename>')
+def serve_assets(filename):
+    """Serve assets"""
+    return send_from_directory(os.path.join(PARENT_DIR, 'assets'), filename)
 
 @app.route('/api/precog/feed', methods=['GET'])
 def get_feed():
