@@ -16,15 +16,15 @@
         
         .app-container {
             display: grid;
-            grid-template-columns: 275px 1fr 350px;
-            max-width: 1400px;
+            grid-template-columns: 260px 1fr 300px;
+            max-width: 1265px;
             margin: 0 auto;
             min-height: 100vh;
         }
         
-        @media (max-width: 1200px) {
+        @media (max-width: 1195px) {
             .app-container {
-                grid-template-columns: 275px 1fr;
+                grid-template-columns: 260px 1fr;
             }
             .right-sidebar {
                 display: none;
@@ -42,7 +42,7 @@
         
         .left-sidebar {
             border-right: 1px solid #2f3336;
-            padding: 20px;
+            padding: 12px 16px;
             position: sticky;
             top: 0;
             height: 100vh;
@@ -163,14 +163,14 @@
         }
         
         .right-sidebar {
-            padding: 20px;
+            padding: 12px 16px;
         }
         
         .search-box {
             background: #202327;
             border-radius: 9999px;
-            padding: 12px 16px;
-            margin-bottom: 20px;
+            padding: 8px 16px;
+            margin-bottom: 16px;
         }
         
         .search-box input {
@@ -179,6 +179,45 @@
             color: #fff;
             width: 100%;
             outline: none;
+            font-size: 15px;
+        }
+        
+        .trending-card {
+            background: #16181c;
+            border-radius: 12px;
+            padding: 12px;
+            margin-bottom: 12px;
+        }
+        
+        .trending-title {
+            font-weight: 700;
+            font-size: 19px;
+            margin-bottom: 12px;
+        }
+        
+        .trending-item {
+            padding: 12px 0;
+            cursor: pointer;
+            border-bottom: 1px solid #2f3336;
+        }
+        
+        .trending-item:last-child {
+            border-bottom: none;
+        }
+        
+        .trending-item:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+        
+        .trending-item-title {
+            font-weight: 700;
+            font-size: 15px;
+            margin-bottom: 2px;
+        }
+        
+        .trending-item-meta {
+            color: #71767b;
+            font-size: 13px;
         }
     </style>
 </head>
@@ -234,6 +273,22 @@
         <div class="right-sidebar">
             <div class="search-box">
                 <input type="text" placeholder="Search videos">
+            </div>
+            
+            <div class="trending-card">
+                <div class="trending-title">Trending Videos</div>
+                <div class="trending-item">
+                    <div class="trending-item-title">#WorldFeed</div>
+                    <div class="trending-item-meta">2.3K videos</div>
+                </div>
+                <div class="trending-item">
+                    <div class="trending-item-title">#AntiAlgo</div>
+                    <div class="trending-item-meta">1.8K videos</div>
+                </div>
+                <div class="trending-item">
+                    <div class="trending-item-title">#PrecogAI</div>
+                    <div class="trending-item-meta">956 videos</div>
+                </div>
             </div>
         </div>
     </div>
