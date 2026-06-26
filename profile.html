@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile — WorldFeed</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        body {
+            background: #000 !important;
+            color: #fff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica Neue, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .app-container {
+            display: grid;
+            grid-template-columns: 275px 1fr 350px;
+            max-width: 1400px;
+            margin: 0 auto;
+            min-height: 100vh;
+        }
+        
+        @media (max-width: 1200px) {
+            .app-container {
+                grid-template-columns: 275px 1fr;
+            }
+            .right-sidebar {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 800px) {
+            .app-container {
+                grid-template-columns: 1fr;
+            }
+            .left-sidebar {
+                display: none;
+            }
+        }
+        
+        .left-sidebar {
+            border-right: 1px solid #2f3336;
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+        }
+        
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 16px;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 9999px;
+            transition: background 0.2s;
+            font-size: 20px;
+        }
+        
+        .nav-item:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+        
+        .nav-item.active {
+            font-weight: 700;
+        }
+        
+        .nav-item svg {
+            width: 26px;
+            height: 26px;
+            fill: currentColor;
+        }
+        
+        .post-btn {
+            background: #00ff88;
+            color: #000;
+            border: none;
+            border-radius: 9999px;
+            padding: 16px 32px;
+            font-size: 17px;
+            font-weight: 700;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+        }
+        
+        .post-btn:hover {
+            background: #00cc6a;
+        }
+        
+        .main-content {
+            border-right: 1px solid #2f3336;
+            min-height: 100vh;
+        }
+        
+        /* Profile styles */
+        .profile-banner {
+            height: 200px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .profile-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, #ffffff, transparent),
+                radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+                radial-gradient(2px 2px at 50px 160px, #ffffff, transparent),
+                radial-gradient(2px 2px at 90px 40px, rgba(255,255,255,0.6), transparent),
+                radial-gradient(2px 2px at 130px 80px, #ffffff, transparent),
+                radial-gradient(2px 2px at 160px 120px, rgba(255,255,255,0.7), transparent);
+            background-size: 200px 200px;
+            animation: twinkle 4s ease-in-out infinite;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+        
+        .profile-avatar-container {
+            position: relative;
+            margin-top: -80px;
+            margin-left: 20px;
+            display: inline-block;
+        }
+        
+        .profile-avatar {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 4px solid #000;
+            background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            color: #666;
+        }
+        
+        .profile-info {
+            padding: 20px;
+            border-bottom: 1px solid #2f3336;
+        }
+        
+        .profile-name {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .profile-handle {
+            color: #71767b;
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+        
+        .profile-bio {
+            font-size: 15px;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        
+        .profile-stats {
+            display: flex;
+            gap: 20px;
+            color: #71767b;
+            font-size: 14px;
+        }
+        
+        .profile-stats span {
+            color: #fff;
+            font-weight: 700;
+        }
+        
+        .profile-tabs {
+            display: flex;
+            border-bottom: 1px solid #2f3336;
+        }
+        
+        .profile-tab {
+            flex: 1;
+            padding: 16px;
+            text-align: center;
+            color: #71767b;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
+        }
+        
+        .profile-tab:hover {
+            background: rgba(255, 255, 255, 0.03);
+            color: #fff;
+        }
+        
+        .profile-tab.active {
+            color: #fff;
+            border-bottom-color: #00ff88;
+        }
+        
+        .feed-item {
+            padding: 16px;
+            border-bottom: 1px solid #2f3336;
+        }
+        
+        .feed-item:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+        
+        .right-sidebar {
+            padding: 20px;
+        }
+        
+        .search-box {
+            background: #202327;
+            border-radius: 9999px;
+            padding: 12px 16px;
+            margin-bottom: 20px;
+        }
+        
+        .search-box input {
+            background: transparent;
+            border: none;
+            color: #fff;
+            width: 100%;
+            outline: none;
+        }
+        
+        .trending-card {
+            background: #16181c;
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 20px;
+        }
+        
+        .trending-title {
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        
+        .trending-item {
+            padding: 8px 0;
+            cursor: pointer;
+        }
+        
+        .trending-item:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Left Sidebar - Navigation -->
+        <div class="left-sidebar">
+            <div class="logo">
+                <svg viewBox="0 0 24 24" width="40" height="40" fill="#00ff88">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+            </div>
+            
+            <nav>
+                <a href="index.html" class="nav-item">
+                    <svg viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                    <span>Home</span>
+                </a>
+                <a href="explore.html" class="nav-item">
+                    <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                    <span>Explore</span>
+                </a>
+                <a href="videos.html" class="nav-item">
+                    <svg viewBox="0 0 24 24"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg>
+                    <span>Videos</span>
+                </a>
+                <a href="articles.html" class="nav-item">
+                    <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg>
+                    <span>Articles</span>
+                </a>
+                <a href="messages.html" class="nav-item">
+                    <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
+                    <span>Messages</span>
+                </a>
+                <a href="profile.html" class="nav-item active">
+                    <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                    <span>Profile</span>
+                </a>
+            </nav>
+            
+            <button class="post-btn" onclick="window.location.href='index.html'">Post</button>
+        </div>
+        
+        <!-- Main Content - Profile -->
+        <div class="main-content">
+            <div class="profile-banner">
+                <!-- Stars background with CSS -->
+            </div>
+            
+            <div class="profile-avatar-container">
+                <div class="profile-avatar">
+                    <svg viewBox="0 0 24 24" width="80" height="80" fill="#666">
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                    </svg>
+                </div>
+            </div>
+            
+            <div class="profile-info">
+                <div class="profile-name">WorldFeed User</div>
+                <div class="profile-handle">@worldfeed_user</div>
+                <div class="profile-bio">
+                    Anti-algorithm news network. Ranked by verification, not engagement. 
+                    Powered by 3-Precog AI pipeline for content generation.
+                </div>
+                <div class="profile-stats">
+                    <div><span>127</span> Following</div>
+                    <div><span>1,284</span> Followers</div>
+                    <div><span>42</span> Posts</div>
+                </div>
+            </div>
+            
+            <div class="profile-tabs">
+                <a href="#" class="profile-tab active">Posts</a>
+                <a href="#" class="profile-tab">Replies</a>
+                <a href="#" class="profile-tab">Media</a>
+                <a href="#" class="profile-tab">Likes</a>
+            </div>
+            
+            <div id="profileFeed">
+                <!-- Feed items will be loaded here -->
+            </div>
+        </div>
+        
+        <!-- Right Sidebar -->
+        <div class="right-sidebar">
+            <div class="search-box">
+                <input type="text" placeholder="Search">
+            </div>
+            
+            <div class="trending-card">
+                <div class="trending-title">Trending</div>
+                <div class="trending-item">#WorldFeed</div>
+                <div class="trending-item">#AntiAlgo</div>
+                <div class="trending-item">#PrecogAI</div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Load user posts from API
+        document.addEventListener('DOMContentLoaded', function() {
+            loadUserPosts();
+        });
+        
+        function loadUserPosts() {
+            fetch('http://localhost:8083/api/precog/feed?writing=10')
+                .then(response => response.json())
+                .then(data => {
+                    if (data && data.data && data.data.feed) {
+                        displayUserPosts(data.data.feed);
+                    }
+                })
+                .catch(error => {
+                    console.log('Using offline data');
+                });
+        }
+        
+        function displayUserPosts(posts) {
+            const feed = document.getElementById('profileFeed');
+            posts.forEach(post => {
+                const content = post.content || post;
+                const div = document.createElement('div');
+                div.className = 'feed-item';
+                div.innerHTML = `
+                    <div style="color: #71767b; font-size: 13px; margin-bottom: 8px;">${content.source || 'WorldFeed'}</div>
+                    <div style="font-size: 15px; font-weight: 700; margin-bottom: 8px;">${content.title || 'Post'}</div>
+                    <div style="color: #e7e9ea; margin-bottom: 12px;">${(content.content || content.body || '').substring(0, 280)}...</div>
+                    <div style="display: flex; gap: 60px; color: #71767b;">
+                        <span>💬 ${content.replies_count || 0}</span>
+                        <span>🔁 ${content.reblogs_count || 0}</span>
+                        <span>❤️ ${content.favourites_count || 0}</span>
+                    </div>
+                `;
+                feed.appendChild(div);
+            });
+        }
+    </script>
+</body>
+</html>
