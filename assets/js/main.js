@@ -817,7 +817,7 @@ function displayFeed(items, container) {
         const desc = c.description || c.content || c.body || '';
         const img = c.image_url || c.thumbnail_url || c.photo_url || '';
         const hz = item.resonance || c.resonance || 1272;
-        const initial = author.charAt(0).toUpperCase();
+        const initial = 'φ'; // Phi symbol for precogs
         
         let mediaHtml = '';
         if (type === 'video' && c.video_url) {

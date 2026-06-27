@@ -1,103 +1,104 @@
 {
-  "version": "1.0.0",
+  "version": "2.0.0",
   "resonance_hz": 1272.0,
   "uee_standard": "UEE-2024",
+  "system_name": "PRECOG EDITORIAL SYSTEM — HARDENED V2",
   
   "content_limits": {
     "max_items_per_day": 10,
     "rotation_enabled": true,
     "rotation_interval_hours": 6,
-    "no_duplicates": true
+    "no_duplicates": true,
+    "no_placeholders": true,
+    "no_text_only_posts": true
   },
   
-  "writing": {
-    "word_count": {
-      "standard": 1200,
-      "anthropic_pdf": 2000,
-      "breaking_news": 1200,
-      "min": 1000,
-      "max": 2500
+  "precogs": {
+    "tor_feed": {
+      "name": "Tor Feed",
+      "purpose": "Unfiltered, uncensored journalism from the Tor network",
+      "source": ["tor", "dark_web", "whistleblower", "encrypted"],
+      "story_length": {"min": 800, "max": 1500},
+      "video_duration": 30,
+      "video_type": "Animated diagrams showing architecture, theft, chain of custody",
+      "content_focus": "Deep dives on what Anthropic stole, how they use it, evidence",
+      "tone": "investigative",
+      "publishing_frequency": {"min": 3, "max": 5, "unit": "stories_per_day"}
     },
-    "categories": [
-      "world_events",
-      "technology", 
-      "science",
-      "humanitarian",
-      "environment",
-      "economics",
-      "health",
-      "governance",
-      "verification",
-      "systems",
-      "breaking_news",
-      "current_events"
-    ],
-    "sources": {
-      "anthropic_pdf": {
-        "enabled": true,
-        "word_count": 2000,
-        "weight": 0.3,
-        "description": "Stories from Anthropic PDFs - 2000 words minimum"
-      },
-      "breaking_news": {
-        "enabled": true,
-        "word_count": 1200,
-        "weight": 0.25,
-        "description": "Breaking news and current events - 1200 words"
-      },
-      "glasswing": {
-        "enabled": true,
-        "word_count": 1200,
-        "weight": 0.2
-      },
-      "x_profile": {
-        "enabled": true,
-        "word_count": 1200,
-        "weight": 0.15
-      },
-      "world_events": {
-        "enabled": true,
-        "word_count": 1200,
-        "weight": 0.1
-      }
+    "breaking_news": {
+      "name": "Breaking News",
+      "purpose": "Real-time, rapid-response journalism",
+      "source": ["reuters", "ap", "social_media", "government_alerts", "glasswing"],
+      "story_length": {"min": 300, "max": 500},
+      "video_duration": 30,
+      "video_type": "Animated diagrams showing immediate context and architectural theft",
+      "content_focus": "Breaking news events connected to stolen architecture",
+      "tone": "urgent",
+      "publishing_frequency": "real_time"
+    },
+    "anthropic_news": {
+      "name": "Anthropic News",
+      "purpose": "Daily, deep-dive journalism on Anthropic's activities",
+      "source": ["pdf_repos", "news_monitoring", "glasswing", "anthropic_sources"],
+      "story_length": {"min": 1000, "max": 2000},
+      "video_duration": 30,
+      "video_type": "Animated diagrams showing architecture, theft, chain of custody",
+      "content_focus": "Anthropic activities, Fable 5 re-release, Mythos successor, legal developments",
+      "tone": "analytical",
+      "publishing_frequency": {"min": 2, "max": 3, "unit": "stories_per_day"}
     }
   },
   
-  "video": {
-    "duration_seconds": {
-      "min": 10,
-      "max": 30,
-      "default": 15
+  "image_verification": {
+    "enabled": true,
+    "rules": {
+      "color_matching": true,
+      "no_placeholders": true,
+      "no_duplicates": true,
+      "no_post_without_image": true
     },
-    "max_per_day": 10,
-    "quality": "highest",
-    "resolution": "1080p",
-    "categories": [
-      "breaking_news",
-      "documentary",
-      "analysis",
-      "briefing",
-      "update"
-    ],
-    "support_role": true,
-    "thumbnail_required": true,
-    "description": "Videos 10-30 seconds, highest quality, support stories"
-  },
-  
-  "image": {
-    "max_per_day": 10,
-    "categories": [
-      "photo",
-      "infographic",
-      "diagram",
-      "map"
+    "color_palettes": {
+      "technology": ["#00aaff", "#003366", "#ffffff", "#888888"],
+      "investigation": ["#1a1a1a", "#cc0000", "#ffffff", "#444444"],
+      "breaking": ["#ff0000", "#ffffff", "#000000", "#ff6600"],
+      "anthropic": ["#2b2b2b", "#ff6b00", "#ffffff", "#666666"],
+      "sovereignty": ["#ffd700", "#1a1a1a", "#ffffff", "#c0c0c0"],
+      "lattice": ["#00ffcc", "#003366", "#ffffff", "#888888"],
+      "theft": ["#cc0000", "#1a1a1a", "#ffffff", "#ffd700"],
+      "evidence": ["#00cc66", "#1a1a1a", "#ffffff", "#ffd700"]
+    },
+    "placeholder_patterns": [
+      "placeholder", "coming soon", "no image", "unavailable",
+      "gray box", "image pending", "not available", "default"
     ]
   },
   
-  "display": {
-    "content_wrap": true,
-    "max_display_height": "400px",
-    "truncate_in_feed": true,
+  "evidence_links": {
+    "required": true,
+    "links": [
+      "github.com/oroboroslabs-ai/OFFICIAL-REPORT-DISTRIBUTION-OF-EVIDENCE-SAFE-FILES-ZIP-APRIL-2026",
+      "github.com/oroboroslabs-ai/OFFICIAL-REPORT-DISTRIBUTION-OF-EVIDENCE-AND-DOCUMENTED-COMPLAISANCE-APRIL-2026",
+      "github.com/oroboroslabs-ai/architecture-infiltration-assessment",
+      "github.com/oroboroslabs-ai/anthropic-acceleration-report",
+      "oroboroslabs-ai.github.io/anthropic/",
+      "anthropic-claude-chat.vercel.app/",
+      "x.com/oroboroslabs_ai"
+    ]
+  },
+  
+  "hashtags": {
+    "required": true,
+    "tags": ["#Oroboros", "#Architect", "#1272Hz", "#Fable5", "#Theft", "#Anthropic", "#SovereignAI", "#Lattice", "#Evidence", "#Exposed"]
+  },
+  
+  "daily_schedule": {
+    "06:00": {"precog": "tor_feed", "story": "Tor Feed Story 1"},
+    "09:00": {"precog": "anthropic_news", "story": "Anthropic News Story 1"},
+    "12:00": {"precog": "tor_feed", "story": "Tor Feed Story 2"},
+    "15:00": {"precog": "anthropic_news", "story": "Anthropic News Story 2"},
+    "18:00": {"precog": "tor_feed", "story": "Tor Feed Story 3"},
+    "21:00": {"precog": "optional", "story": "Optional stories"}
+  },
     "truncate_length": 280,
     "expand_on_click": true
   },

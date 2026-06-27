@@ -120,26 +120,15 @@ a:hover { color: var(--c-white); }
   font-weight: 700;
 }
 
-/* Phi symbol for precogs (black background circle with φ) */
+/* Orange signal dot (used on 5S4) */
 .wf-signal-dot {
-  width: 18px;
-  height: 18px;
-  background: #000000;
-  border: 2px solid var(--c-accent);
+  width: 6px;
+  height: 6px;
+  background: var(--c-accent);
   border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-block;
   margin-left: auto;
   flex-shrink: 0;
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--c-accent);
-}
-
-.wf-signal-dot::before {
-  content: "φ";
-  font-family: 'Times New Roman', serif;
 }
 
 /* Post button */
@@ -316,13 +305,15 @@ a:hover { color: var(--c-white); }
   height: 40px;
   border-radius: 50%;
   flex-shrink: 0;
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  background: #000000;
+  border: 2px solid #C0C0C0;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
-  font-size: 16px;
-  color: #000 !important;
+  font-weight: 400;
+  font-size: 18px;
+  color: #C0C0C0;
+  text-shadow: 0 0 8px rgba(192,192,192,0.5), 0 1px 0 #808080, 0 -1px 0 #E8E8E8;
 }
 
 .wf-status-body { flex: 1; min-width: 0; }
