@@ -762,10 +762,31 @@
         });
     }
 
+    function loadPrecogFeed() {
+        fetch('data/worldfeed.json')
+            .then(r => r.json())
+            .then(data => {
+                if (data.stories && data.stories.length > 0) {
+                    console.log('Loading Precog stories:', data.stories.length);
+                    // Add Precog stories at the beginning
+                    basePosts = [...data.stories, ...basePosts];
+                    allPosts = mergeFeeds(basePosts);
+                    paint(false);
+                    updateHero();
+                    updateWatchList();
+                    console.log('Precog feed loaded successfully');
+                }
+            })
+            .catch(err => {
+                console.log('No Precog feed available, using seed data');
+            });
+    }
+
     paint(true);
     updateHero();
     updateWatchList();
     loadLiveFeed(true);
+    loadPrecogFeed(); // Load Precog stories
     scheduleHourlyRefresh();
 })();
 
