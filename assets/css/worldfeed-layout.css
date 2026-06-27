@@ -120,15 +120,26 @@ a:hover { color: var(--c-white); }
   font-weight: 700;
 }
 
-/* Orange signal dot (used on 5S4) */
+/* Phi symbol for precogs (black background circle with φ) */
 .wf-signal-dot {
-  width: 6px;
-  height: 6px;
-  background: var(--c-accent);
+  width: 18px;
+  height: 18px;
+  background: #000000;
+  border: 2px solid var(--c-accent);
   border-radius: 50%;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   margin-left: auto;
   flex-shrink: 0;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--c-accent);
+}
+
+.wf-signal-dot::before {
+  content: "φ";
+  font-family: 'Times New Roman', serif;
 }
 
 /* Post button */
