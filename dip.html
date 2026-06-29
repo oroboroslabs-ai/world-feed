@@ -1,0 +1,1744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>DIP — Data Interception Proxy | WorldFeed</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=e6ff277">
+    <style>
+        body {
+            background: #000 !important;
+            color: #fff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica Neue, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .app-container {
+            display: grid;
+            grid-template-columns: 275px 1fr 350px;
+            max-width: 1400px;
+            margin: 0 auto;
+            min-height: 100vh;
+        }
+        
+        @media (max-width: 1200px) {
+            .app-container {
+                grid-template-columns: 275px 1fr;
+            }
+            .right-sidebar {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 800px) {
+            .app-container {
+                grid-template-columns: 1fr;
+            }
+            .left-sidebar {
+                display: none;
+            }
+        }
+        
+        .left-sidebar {
+            border-right: 1px solid #2f3336;
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+        }
+        
+        .logo {
+            padding: 12px 0;
+            margin-bottom: 20px;
+        }
+        
+        .logo svg {
+            width: 40px;
+            height: 40px;
+            fill: #00ff88;
+        }
+        
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 16px;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 9999px;
+            transition: background 0.2s;
+            font-size: 20px;
+        }
+        
+        .nav-item:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+        
+        .nav-item.active {
+            font-weight: 700;
+        }
+        
+        .nav-item svg {
+            width: 26px;
+            height: 26px;
+            fill: currentColor;
+        }
+        
+        .post-btn {
+            background: #00ff88;
+            color: #000;
+            border: none;
+            border-radius: 9999px;
+            padding: 16px 32px;
+            font-size: 17px;
+            font-weight: 700;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+            transition: opacity 0.2s;
+        }
+        
+        .post-btn:hover {
+            opacity: 0.9;
+        }
+        
+        .main-content {
+            border-right: 1px solid #2f3336;
+            min-height: 100vh;
+        }
+        
+        .feed-header {
+            position: sticky;
+            top: 0;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #2f3336;
+            padding: 16px 20px;
+            z-index: 100;
+        }
+        
+        .feed-header h1 {
+            font-size: 20px;
+            font-weight: 700;
+            margin: 0;
+            color: #00ff88;
+        }
+        
+        .feed-tabs {
+            display: flex;
+            border-bottom: 1px solid #2f3336;
+        }
+        
+        .feed-tab {
+            flex: 1;
+            padding: 16px;
+            text-align: center;
+            cursor: pointer;
+            transition: background 0.2s;
+            color: #71767b;
+            font-weight: 500;
+        }
+        
+        .feed-tab:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+        
+        .feed-tab.active {
+            color: #fff;
+            border-bottom: 4px solid #00ff88;
+        }
+        
+        .feed {
+            padding: 0;
+        }
+        
+        .post {
+            padding: 16px 20px;
+            border-bottom: 1px solid #2f3336;
+            transition: background 0.2s;
+        }
+        
+        .post:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+        
+        .post-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+        
+        .post-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #00ff88, #00aa55);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #000;
+        }
+        
+        .post-author {
+            font-weight: 700;
+            color: #fff;
+        }
+        
+        .post-handle {
+            color: #71767b;
+        }
+        
+        .post-time {
+            color: #71767b;
+        }
+        
+        .post-content {
+            margin-bottom: 12px;
+            line-height: 1.5;
+            color: #fff;
+        }
+        
+        .post-image {
+            width: 100%;
+            border-radius: 16px;
+            margin-bottom: 12px;
+            max-height: 400px;
+            object-fit: cover;
+        }
+        
+        .post-actions {
+            display: flex;
+            gap: 60px;
+            color: #71767b;
+        }
+        
+        .post-action {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        
+        .post-action:hover {
+            color: #00ff88;
+        }
+        
+        .post-action svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+        
+        .right-sidebar {
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+        }
+        
+        .sidebar-card {
+            background: #16181c;
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+        
+        .sidebar-card h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        
+        .trending-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #2f3336;
+        }
+        
+        .trending-item:last-child {
+            border-bottom: none;
+        }
+        
+        .trending-category {
+            font-size: 13px;
+            color: #71767b;
+        }
+        
+        .trending-topic {
+            font-weight: 700;
+            color: #fff;
+        }
+        
+        .trending-count {
+            font-size: 13px;
+            color: #71767b;
+        }
+        
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px;
+            background: #16181c;
+            border-radius: 8px;
+            margin-bottom: 16px;
+        }
+        
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #00ff88;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .status-text {
+            color: #00ff88;
+            font-size: 14px;
+        }
+        
+        .precog-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+        
+        .precog-stat {
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid #00ff88;
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
+        }
+        
+        .precog-stat-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: #00ff88;
+        }
+        
+        .precog-stat-label {
+            font-size: 12px;
+            color: #71767b;
+        }
+        
+        .compose-box {
+            padding: 16px 20px;
+            border-bottom: 1px solid #2f3336;
+        }
+        
+        .compose-input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-size: 20px;
+            outline: none;
+            resize: none;
+            min-height: 60px;
+        }
+        
+        .compose-input::placeholder {
+            color: #71767b;
+        }
+        
+        .compose-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 12px;
+        }
+        
+        .compose-icons {
+            display: flex;
+            gap: 16px;
+        }
+        
+        .compose-icon {
+            color: #00ff88;
+            cursor: pointer;
+        }
+        
+        .compose-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+        
+        .loading-spinner {
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+        }
+        
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid #2f3336;
+            border-top-color: #00ff88;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .source-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+            margin-left: 8px;
+        }
+        
+        .source-anthropic { background: rgba(255, 165, 0, 0.2); color: #ffa500; }
+        .source-glasswing { background: rgba(0, 255, 136, 0.2); color: #00ff88; }
+        .source-x-profile { background: rgba(29, 161, 242, 0.2); color: #1da1f2; }
+        .source-breaking { background: rgba(255, 0, 0, 0.2); color: #ff4444; }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Left Sidebar -->
+        <aside class="left-sidebar">
+            <div class="logo">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+            </div>
+            
+            <nav>
+                
+                <a href="index.html" class="nav-item">
+                    <svg viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                    <span>Home</span>
+                </a>
+                <a href="explore.html" class="nav-item">
+                    <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                    <span>Explore</span>
+                </a>
+                <a href="videos.html" class="nav-item">
+                    <svg viewBox="0 0 24 24"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg>
+                    <span>Videos</span>
+                </a>
+                <a href="articles.html" class="nav-item">
+                    <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg>
+                    <span>Articles</span>
+                </a>
+                <a href="messages.html" class="nav-item">
+                    <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
+                    <span>Messages</span>
+                </a>
+                <a href="profile.html" class="nav-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                    <span>Profile</span>
+                </a>
+                <a href="dip.html" class="nav-item active">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                    <span>DIP Feed</span>
+                </a>
+                <a href="#" class="nav-item" onclick="showSettings()">
+                    <svg viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.31.06-.63.06-.94 0-.31-.02-.63-.06-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.2.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
+                    <span>Settings</span>
+                </a>
+            </nav>
+            
+            <button class="post-btn" onclick="composePost()">Post</button>
+            
+            <div id="account-section" style="margin-top: 20px; padding: 12px; background: #16181c; border-radius: 12px;">
+                <div id="signin-section">
+                    <button id="signin-btn" onclick="signInWithMastodon()" style="width: 100%; background: #6364ff; color: white; border: none; padding: 12px; border-radius: 9999px; cursor: pointer; font-weight: 600;">
+                        🦣 Sign in with Mastodon
+                    </button>
+                </div>
+                <div id="account-badge" style="display: none; align-items: center; gap: 8px;">
+                    <img id="account-avatar" src="" alt="" style="width: 32px; height: 32px; border-radius: 50%;">
+                    <div>
+                        <div id="account-name" style="color: #fff; font-weight: 600;"></div>
+                        <div id="account-handle" style="color: #71767b; font-size: 13px;"></div>
+                    </div>
+                    <button onclick="signOut()" style="margin-left: auto; background: transparent; border: none; color: #71767b; cursor: pointer;">Sign out</button>
+                </div>
+            </div>
+            
+            <div class="status-indicator" style="margin-top: 20px;">
+                <span class="status-dot"></span>
+                <span class="status-text" id="pipeline-status">Precog Pipeline Active</span>
+            </div>
+            
+            <div class="precog-stats">
+                <div class="precog-stat">
+                    <div class="precog-stat-value" id="writing-count">0</div>
+                    <div class="precog-stat-label">Written</div>
+                </div>
+                <div class="precog-stat">
+                    <div class="precog-stat-value" id="video-count">0</div>
+                    <div class="precog-stat-label">Videos</div>
+                </div>
+                <div class="precog-stat">
+                    <div class="precog-stat-value" id="image-count">0</div>
+                    <div class="precog-stat-label">Images</div>
+                </div>
+                <div class="precog-stat">
+                    <div class="precog-stat-value">1272</div>
+                    <div class="precog-stat-label">Hz</div>
+                </div>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="feed-header">
+                <h1>📡 DIP Feed</h1>
+                <div style="font-size: 13px; color: #71767b;">Three Precog Pipeline • 1272 Hz Resonance</div>
+            </div>
+            
+            <div class="feed-tabs">
+                <div class="feed-tab active" data-tab="all">All</div>
+                <div class="feed-tab" data-tab="written">Written</div>
+                <div class="feed-tab" data-tab="video">Video</div>
+                <div class="feed-tab" data-tab="image">Image</div>
+            </div>
+            
+            <div class="compose-box">
+                <textarea class="compose-input" placeholder="What's happening?" id="compose-input"></textarea>
+                <div class="compose-actions">
+                    <div class="compose-icons">
+                        <span class="compose-icon" title="Image">
+                            <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+                        </span>
+                        <span class="compose-icon" title="Video">
+                            <svg viewBox="0 0 24 24"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg>
+                        </span>
+                        <span class="compose-icon" title="Poll">
+                            <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg>
+                        </span>
+                    </div>
+                    <button class="post-btn" style="width: auto; padding: 10px 24px; margin: 0;" onclick="submitPost()">Post</button>
+                </div>
+            </div>
+            
+            <div class="feed" id="feed">
+                <div class="loading-spinner">
+                    <div class="spinner"></div>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Right Sidebar -->
+        <aside class="right-sidebar">
+            <div class="sidebar-card">
+                <h2>Precog Sources</h2>
+                <div class="trending-item">
+                    <div class="trending-category">Data Source</div>
+                    <div class="trending-topic">Anthropic PDFs</div>
+                    <div class="trending-count">4 Reports</div>
+                </div>
+                <div class="trending-item">
+                    <div class="trending-category">Data Source</div>
+                    <div class="trending-topic">Glasswing Project</div>
+                    <div class="trending-count">4 Systems</div>
+                </div>
+                <div class="trending-item">
+                    <div class="trending-category">Data Source</div>
+                    <div class="trending-topic">X Profile</div>
+                    <div class="trending-count">@oroboroslabs_ai</div>
+                </div>
+                <div class="trending-item">
+                    <div class="trending-category">Data Source</div>
+                    <div class="trending-topic">Breaking News</div>
+                    <div class="trending-count">8 Categories</div>
+                </div>
+            </div>
+            
+            <div class="sidebar-card">
+                <h2>Mastodon Federation</h2>
+                <div class="trending-item" style="cursor: pointer;" onclick="window.open('https://mastodon.social/@oroboroslabs', '_blank')">
+                    <div class="trending-category">Instance</div>
+                    <div class="trending-topic">mastodon.social</div>
+                    <div class="trending-count">Primary</div>
+                </div>
+                <div class="trending-item" style="cursor: pointer;" onclick="window.open('https://fosstodon.org/@oroboroslabs', '_blank')">
+                    <div class="trending-category">Instance</div>
+                    <div class="trending-topic">fosstodon.org</div>
+                    <div class="trending-count">Tech</div>
+                </div>
+                <div class="trending-item" style="cursor: pointer;" onclick="window.open('https://mastodon.online/@oroboroslabs', '_blank')">
+                    <div class="trending-category">Instance</div>
+                    <div class="trending-topic">mastodon.online</div>
+                    <div class="trending-count">Backup</div>
+                </div>
+            </div>
+            
+            <div class="sidebar-card">
+                <h2>Oroboros Resources</h2>
+                <div class="trending-item" style="cursor: pointer;" onclick="window.open('kaiju.html', '_self')">
+                    <div class="trending-category">System</div>
+                    <div class="trending-topic">5S4 AI Chat</div>
+                    <div class="trending-count">Online</div>
+                </div>
+                <div class="trending-item" style="cursor: pointer;" onclick="window.open('admin.html', '_self')">
+                    <div class="trending-category">Admin</div>
+                    <div class="trending-topic">Precog Admin</div>
+                    <div class="trending-count">Dashboard</div>
+                </div>
+                <div class="trending-item" style="cursor: pointer;" onclick="window.open('index.html', '_self')">
+                    <div class="trending-category">Public</div>
+                    <div class="trending-topic">WorldFeed News</div>
+                    <div class="trending-count">Live</div>
+                </div>
+                <div class="trending-item">
+                    <div class="trending-category">Resource</div>
+                    <div class="trending-topic">DIP Pipeline</div>
+                    <div class="trending-count">1272 Hz</div>
+                </div>
+            </div>
+            
+            <div class="sidebar-card">
+                <h2>Strata Status</h2>
+                <div style="font-size: 13px; color: #71767b;">
+                    <div style="margin-bottom: 8px;">S1-S4: Data Layers ✓</div>
+                    <div style="margin-bottom: 8px;">S5-S8: Processing Layers ✓</div>
+                    <div style="margin-bottom: 8px;">S9-S12: Sovereignty Layers ✓</div>
+                    <div style="color: #00ff88;">All 12 Strata Operational</div>
+                </div>
+            </div>
+        </aside>
+    </div>
+    
+    <!-- Social Integration -->
+    <script src="assets/js/social.js"></script>
+    <script>
+        // Precog API Client
+        const PRECOG_API = 'http://localhost:8083';
+        const MASTODON_INSTANCE = 'https://mastodon.social';
+        let currentTab = 'all';
+        let feedData = [];
+        let autoRefreshInterval;
+        let socialClient = null;
+        let socialUI = null;
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Initialize social client
+            socialClient = new SocialClient();
+            socialUI = new SocialUI(socialClient);
+            socialUI.init();
+            
+            // Load feed
+            await loadFeed();
+            setupTabs();
+            startAutoRefresh();
+            
+            // Check for OAuth callback
+            const urlParams = new URLSearchParams(window.location.search);
+            const authCode = urlParams.get('code');
+            if (authCode) {
+                await socialClient.completeSignIn(authCode);
+                window.history.replaceState({}, document.title, window.location.pathname);
+                socialUI.updateUI();
+            }
+            
+            log('[DIP] Connected to Precog Pipeline at 1272 Hz');
+            log('[DIP] Social services initialized');
+        });
+        
+        // Auto-refresh every 30 seconds
+        function startAutoRefresh() {
+            autoRefreshInterval = setInterval(loadFeed, 30000);
+        }
+        
+        // Load feed from Precog API
+        async function loadFeed() {
+            const feedEl = document.getElementById('feed');
+            
+            try {
+                // Try to fetch from local API
+                const response = await fetch(`${PRECOG_API}/api/precog/feed?writing=20&video=10&image=10`);
+                
+                if (response.ok) {
+                    const result = await response.json();
+                    feedData = result.data?.feed || [];
+                    document.getElementById('pipeline-status').textContent = 'Precog Pipeline Active';
+                } else {
+                    throw new Error('API not available');
+                }
+            } catch (error) {
+                // Use offline data
+                console.log('[DIP] Using offline feed');
+                feedData = getOfflineFeed();
+                document.getElementById('pipeline-status').textContent = 'Offline Mode';
+            }
+            
+            // Update counts
+            document.getElementById('writing-count').textContent = feedData.filter(i => i.type === 'written').length;
+            document.getElementById('video-count').textContent = feedData.filter(i => i.type === 'video').length;
+            document.getElementById('image-count').textContent = feedData.filter(i => i.type === 'image').length;
+            
+            // Render feed
+            renderFeed();
+        }
+        
+        // Get offline feed data
+        function getOfflineFeed() {
+            return [
+            {
+                        "id": "18f21e696552",
+                        "type": "image",
+                        "content": {
+                                    "id": "18f21e696552",
+                                    "type": "image",
+                                    "title": "Image: Oroboros Labs AI Development",
+                                    "description": "Image: Oroboros Labs AI Development. Latest developments in Oroboros Labs AI systems. Building the future of decentralized intelligence.",
+                                    "image_url": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800",
+                                    "thumbnail_url": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800",
+                                    "width": 1920,
+                                    "height": 1080,
+                                    "category": "infographic",
+                                    "confidence": 0.99,
+                                    "resonance": 1272.0,
+                                    "strata": "S12",
+                                    "timestamp": "2026-06-26T01:15:26.719678",
+                                    "source": "x_profile"
+                        },
+                        "confidence": 0.99,
+                        "resonance": 1272.0,
+                        "strata": "S12",
+                        "timestamp": "2026-06-26T01:15:26.719678",
+                        "source": "x_profile"
+            },
+            {
+                        "id": "d6bcfaccbd05",
+                        "type": "image",
+                        "content": {
+                                    "id": "d6bcfaccbd05",
+                                    "type": "image",
+                                    "title": "Image: Fact Check Analysis Report",
+                                    "description": "Image: Fact Check Analysis Report. Detailed fact-checking analysis of AI-generated content. Verification protocols and accuracy metrics documented.",
+                                    "image_url": "https://images.unsplash.com/photo-1550751827-4ada377f6714?w=800",
+                                    "thumbnail_url": "https://images.unsplash.com/photo-1550751827-4ada377f6714?w=800",
+                                    "width": 1920,
+                                    "height": 1080,
+                                    "category": "diagram",
+                                    "confidence": 0.98,
+                                    "resonance": 1272.0,
+                                    "strata": "S12",
+                                    "timestamp": "2026-06-26T01:15:26.719658",
+                                    "source": "anthropic_report"
+                        },
+                        "confidence": 0.98,
+                        "resonance": 1272.0,
+                        "strata": "S12",
+                        "timestamp": "2026-06-26T01:15:26.719658",
+                        "source": "anthropic_report"
+            },
+            {
+                        "id": "56e9dd9f100a",
+                        "type": "image",
+                        "content": {
+                                    "id": "56e9dd9f100a",
+                                    "type": "image",
+                                    "title": "Image: Anthropic Acceleration Technology Alignment Report",
+                                    "description": "Image: Anthropic Acceleration Technology Alignment Report. Comprehensive analysis of technology alignment acceleration. Documents alignment between acceleration technology and safety protocols.",
+                                    "image_url": "https://images.unsplash.com/photo-1550751827-4ada377f6714?w=800",
+                                    "thumbnail_url": "https://images.unsplash.com/photo-1550751827-4ada377f6714?w=800",
+                                    "width": 1200,
+                                    "height": 630,
+                                    "category": "infographic",
+                                    "confidence": 0.95,
+                                    "resonance": 1272.0,
+                                    "strata": "S12",
+                                    "timestamp": "2026-06-26T01:15:26.719638",
+                                    "source": "anthropic_report"
+                        },
+                        "confidence": 0.95,
+                        "resonance": 1272.0,
+                        "strata": "S12",
+                        "timestamp": "2026-06-26T01:15:26.719638",
+                        "source": "anthropic_report"
+            },
+            {
+                        "id": "e003d768f446",
+                        "type": "image",
+                        "content": {
+                                    "id": "e003d768f446",
+                                    "type": "image",
+                                    "title": "Image: Glasswing Security Systems Dashboard",
+                                    "description": "Image: Glasswing Security Systems Dashboard. Real-time security monitoring dashboard for Glasswing systems. Tracks global security events and threat intelligence.",
+                                    "image_url": "https://images.unsplash.com/photo-1550751827-4ada377f6714?w=800",
+                                    "thumbnail_url": "https://images.unsplash.com/photo-1550751827-4ada377f6714?w=800",
+                                    "width": 1200,
+                                    "height": 630,
+                                    "category": "visualization",
+                                    "confidence": 0.98,
+                                    "resonance": 1272.0,
+                                    "strata": "S12",
+                                    "timestamp": "2026-06-26T01:15:26.719617",
+                                    "source": "glasswing"
+                        },
+                        "confidence": 0.98,
+                        "resonance": 1272.0,
+                        "strata": "S12",
+                        "timestamp": "2026-06-26T01:15:26.719617",
+                        "source": "glasswing"
+            },
+            {
+                        "id": "2d8ce618d2d2",
+                        "type": "image",
+                        "content": {
+                                    "id": "2d8ce618d2d2",
+                                    "type": "image",
+                                    "title": "Image: Oroboros Labs AI Development",
+                                    "description": "Image: Oroboros Labs AI Development. Latest developments in Oroboros Labs AI systems. Building the future of decentralized intelligence.",
+                                    "image_url": "https://images.unsplash.com/photo-1550751827-4ada377f6714?w=800",
+                                    "thumbnail_url": "https://images.unsplash.com/photo-1550751827-4ada377f6714?w=800",
+                                    "width": 800,
+                                    "height": 600,
+                                    "category": "infographic",
+                                    "confidence": 0.99,
+                                    "resonance": 1272.0,
+                                    "strata": "S12",
+                                    "timestamp": "2026-06-26T01:15:26.719597",
+                                    "source": "x_profile"
+                        },
+                        "confidence": 0.99,
+                        "resonance": 1272.0,
+                        "strata": "S12",
+                        "timestamp": "2026-06-26T01:15:26.719597",
+                        "source": "x_profile"
+            },
+            {
+                        "id": "33221862ecc6",
+                        "type": "image",
+                        "content": {
+                                    "id": "33221862ecc6",
+                                    "type": "image",
+                                    "title": "Image: Cultural Heritage Preservation Initiative Launched",
+                                    "description": "Image: Cultural Heritage Preservation Initiative Launched. UNESCO launches global cultural heritage preservation initiative. Digital archiving of endangered sites begins.",
+                                    "image_url": "https://images.unsplash.com/photo-1518998053901-1a8d9af7e2ec?w=800",
+                                    "thumbnail_url": "https://images.unsplash.com/photo-1518998053901-1a8d9af7e2ec?w=800",
+                                    "width": 1200,
+                                    "height": 630,
+                                    "category": "photo",
+                                    "confidence": 0.97,
+                                    "resonance": 1272.0,
+                                    "strata": "S12",
+                                    "timestamp": "2026-06-26T01:15:26.719576",
+                                    "source": "breaking_news"
+                        },
+                        "confidence": 0.97,
+                        "resonance": 1272.0,
+                        "strata": "S12",
+                        "timestamp": "2026-06-26T01:15:26.719576",
+                        "source": "breaking_news"
+            },
+            {
+                        "id": "d28af3b5c5e0",
+                        "type": "image",
+                        "content": {
+                                    "id": "d28af3b5c5e0",
+                                    "type": "image",
+                                    "title": "Image: Global Health Initiative Expands Access",
+                                    "description": "Image: Global Health Initiative Expands Access. International health initiative expands medical access to underserved regions. Telemedicine deployment accelerates.",
+                                    "image_url": "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=800",
+                                    "thumbnail_url": "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=800",
+                                    "width": 1200,
+                                    "height": 630,
+                                    "category": "chart",
+                                    "confidence": 0.95,
+                                    "resonance": 1272.0,
+                                    "strata": "S12",
+                                    "timestamp": "2026-06-26T01:15:26.719547",
+                                    "source": "breaking_news"
+                        },
+                        "confidence": 0.95,
+                        "resonance": 1272.0,
+                        "strata": "S12",
+                        "timestamp": "2026-06-26T01:15:26.719547",
+                        "source": "breaking_news"
+            },
+            {
+                        "id": "0b59d46532b1",
+                        "type": "image",
+                        "content": {
+                                    "id": "0b59d46532b1",
+                                    "type": "image",
+                                    "title": "Image: Anthropic Acceleration Anomaly Report",
+                                    "description": "Image: Anthropic Acceleration Anomaly Report. Analysis of acceleration patterns in AI development and alignment technology. Key findings include unexpected acceleration vectors in reasoning capabilities.",
+                                    "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800",
+                                    "thumbnail_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800",
+                                    "width": 1600,
+                                    "height": 900,
+                                    "category": "infographic",
+                                    "confidence": 0.97,
+                                    "resonance": 1272.0,
+                                    "strata": "S12",
+                                    "timestamp": "2026-06-26T01:15:26.719498",
+                                    "source": "anthropic_report"
+                        },
+                        "confidence": 0.97,
+                        "resonance": 1272.0,
+                        "strata": "S12",
+                        "timestamp": "2026-06-26T01:15:26.719498",
+                        "source": "anthropic_report"
+            },
+            {
+                        "id": "cb150888067d",
+                        "type": "written",
+                        "content": {
+                                    "id": "cb150888067d",
+                                    "type": "written",
+                                    "title": "Global Health Initiative Expands Access",
+                                    "content": "Global Health Initiative Expands Access\n\nInternational health initiative expands medical access to underserved regions. Telemedicine deployment accelerates.\n\nKey Points:\n\u2022 Medical access expansion\n\u2022 Underserved regions targeted\n\u2022 Telemedicine deployment\n\u2022 Healthcare equity improved\n",
+                                    "author": "precog_writing_breaking_news",
+                                    "category": "health",
+                                    "confidence": 0.95,
+                                    "resonance": 1272.0,
+                                    "strata": "S12",
+                                    "timestamp": "2026-06-26T01:15:26.719131",
+                                    "source": "breaking_news",
+                                    "key_points": [
+                                                "Medical access expansion",
+                                                "Underserved regions targeted",
+                                                "Telemedicine deployment",
+                                                "Healthcare equity improved"
+                                    ]
+                        },
+                        "confidence": 0.95,
+                        "resonance": 1272.0,
+                        "strata": "S12",
+                        "timestamp": "2026-06-26T01:15:26.719131",
+                        "source": "breaking_news"
+            },
+            {
+                        "id": "cfb15c291616",
+                        "type": "written",
+                        "content": {
+                                    "id": "cfb15c291616",
+                                    "type": "written",
+                                    "title": "Hermes Kanban v1 Specification",
+                                    "content": "Hermes Kanban v1 Specification\n\nSpecification document for Hermes agent system. Defines kanban workflow and task management protocols.\n\nKey Points:\n\u2022 Hermes agent kanban system defined\n\u2022 Task management protocols specified\n\u2022 Workflow automation implemented\n\u2022 Integration with Oroboros ecosystem\n",
+                                    "author": "precog_writing_anthropic_report",
+                                    "category": "systems",
+                                    "confidence": 0.96,
+                                    "resonance": 1272.0,
+                                    "strata": "S12",
+                                    "timestamp": "2026-06-26T01:15:26.719106",
+                                    "source": "anthropic_report",
+                                    "key_points": [
+                                                "Hermes agent kanban system defined",
+                                                "Task management protocols specified",
+                                                "Workflow automation implemented",
+                                                "Integration with Oroboros ecosystem"
+                                    ]
+                        },
+                        "confidence": 0.96,
+                        "resonance": 1272.0,
+                        "strata": "S12",
+                        "timestamp": "2026-06-26T01:15:26.719106",
+                        "source": "anthropic_report"
+            },
+            {
+                        "id": "49d19eb0e4db",
+                        "type": "written",
+                        "content": {
+                                    "id": "49d19eb0e4db",
+                                    "type": "written",
+                                    "title": "5S4 AI Chat System",
+                                    "content": "5S4 AI Chat System\n\nAdvanced AI chat system with multi-model support. Integrates various AI capabilities in unified interface.\n\nKey Points:\n\u2022 Multi-model AI support\n\u2022 Unified chat interface\n\u2022 Advanced reasoning capabilities\n\u2022 Open source implementation\n",
+                                    "author": "precog_writing_x_profile",
+                                    "category": "ai",
+                                    "confidence": 0.97,
+                                    "resonance": 1272.0,
+                                    "strata": "S12",
+                                    "timestamp": "2026-06-26T01:15:26.719078",
+                                    "source": "x_profile",
+                                    "key_points": [
+                                                "Multi-model AI support",
+                                                "Unified chat interface",
+                                                "Advanced reasoning capabilities",
+                                                "Open source implementation"
+                                    ]
+                        },
+                        "confidence": 0.97,
+                        "resonance": 1272.0,
+                        "strata": "S12",
+                        "timestamp": "2026-06-26T01:15:26.719078",
+                        "source": "x_profile"
+            },
+            {
+                        "id": "f6da955cb480",
+                        "type": "written",
+                        "content": {
+                                    "id": "f6da955cb480",
+                                    "type": "written",
+                                    "title": "Oroboros Labs AI Development",
+                                    "content": "Oroboros Labs AI Development\n\nLatest developments in Oroboros Labs AI systems. Building the future of decentralized intelligence.\n\nKey Points:\n\u2022 AI development progressing rapidly\n\u2022 Decentralized intelligence systems\n\u2022 Open source contributions ongoing\n\u2022 Community engagement active\n",
+                                    "author": "precog_writing_x_profile",
+                                    "category": "development",
+                                    "confidence": 0.99,
+                                    "resonance": 1272.0,
+                                    "strata": "S12",
+                                    "timestamp": "2026-06-26T01:15:26.719054",
+                                    "source": "x_profile",
+                                    "key_points": [
+                                                "AI development progressing rapidly",
+                                                "Decentralized intelligence systems",
+                                                "Open source contributions ongoing",
+                                                "Community engagement active"
+                                    ]
+                        },
+                        "confidence": 0.99,
+                        "resonance": 1272.0,
+                        "strata": "S12",
+                        "timestamp": "2026-06-26T01:15:26.719054",
+                        "source": "x_profile"
+            },
+            {
+                        "id": "a45dcfb48fa0",
+                        "type": "written",
+                        "content": {
+                                    "id": "a45dcfb48fa0",
+                                    "type": "written",
+                                    "title": "DIP Data Interception Proxy",
+                                    "content": "DIP Data Interception Proxy\n\nData Interception Proxy system for sovereignty-protected content delivery. 1272 Hz resonance lock.\n\nKey Points:\n\u2022 Data interception proxy\n\u2022 Sovereignty protection\n\u2022 1272 Hz resonance lock\n\u2022 12-Strata ECC architecture\n",
+                                    "author": "precog_writing_x_profile",
+                                    "category": "systems",
+                                    "confidence": 0.99,
+                                    "resonance": 1272.0,
+                                    "strata": "S12",
+                                    "timestamp": "2026-06-26T01:15:26.719022",
+                                    "source": "x_profile",
+                                    "key_points": [
+                                                "Data interception proxy",
+                                                "Sovereignty protection",
+                                                "1272 Hz resonance lock",
+                                                "12-Strata ECC architecture"
+                                    ]
+                        },
+                        "confidence": 0.99,
+                        "resonance": 1272.0,
+                        "strata": "S12",
+                        "timestamp": "2026-06-26T01:15:26.719022",
+                        "source": "x_profile"
+            },
+            {
+                        "id": "8dd7e9d753de",
+                        "type": "written",
+                        "content": {
+                                    "id": "8dd7e9d753de",
+                                    "type": "written",
+                                    "title": "Humanitarian Aid Reaches Crisis Zones",
+                                    "content": "Humanitarian Aid Reaches Crisis Zones\n\nInternational humanitarian organizations deliver aid to crisis zones. Coordination efforts show improved efficiency.\n\nKey Points:\n\u2022 Humanitarian aid delivered\n\u2022 Crisis zones reached\n\u2022 Coordination improved\n\u2022 Relief efforts ongoing\n",
+                                    "author": "precog_writing_breaking_news",
+                                    "category": "humanitarian",
+                                    "confidence": 0.96,
+                                    "resonance": 1272.0,
+                                    "strata": "S12",
+                                    "timestamp": "2026-06-26T01:15:26.719003",
+                                    "source": "breaking_news",
+                                    "key_points": [
+                                                "Humanitarian aid delivered",
+                                                "Crisis zones reached",
+                                                "Coordination improved",
+                                                "Relief efforts ongoing"
+                                    ]
+                        },
+                        "confidence": 0.96,
+                        "resonance": 1272.0,
+                        "strata": "S12",
+                        "timestamp": "2026-06-26T01:15:26.719003",
+                        "source": "breaking_news"
+            },
+            {
+                        "id": "fbea14445322",
+                        "type": "written",
+                        "content": {
+                                    "id": "fbea14445322",
+                                    "type": "written",
+                                    "title": "Glasswing Censorship Monitoring",
+                                    "content": "Glasswing Censorship Monitoring\n\nCensorship monitoring system tracking global content restrictions. Documents censorship events and patterns.\n\nKey Points:\n\u2022 Censorship monitoring active\n\u2022 Content restriction tracking enabled\n\u2022 Pattern analysis operational\n\u2022 Event documentation deployed\n",
+                                    "author": "precog_writing_glasswing",
+                                    "category": "censorship",
+                                    "confidence": 0.96,
+                                    "resonance": 1272.0,
+                                    "strata": "S12",
+                                    "timestamp": "2026-06-26T01:15:26.718984",
+                                    "source": "glasswing",
+                                    "key_points": [
+                                                "Censorship monitoring active",
+                                                "Content restriction tracking enabled",
+                                                "Pattern analysis operational",
+                                                "Event documentation deployed"
+                                    ]
+                        },
+                        "confidence": 0.96,
+                        "resonance": 1272.0,
+                        "strata": "S12",
+                        "timestamp": "2026-06-26T01:15:26.718984",
+                        "source": "glasswing"
+            },
+            {
+                        "id": "256915fd1a28",
+                        "type": "written",
+                        "content": {
+                                    "id": "256915fd1a28",
+                                    "type": "written",
+                                    "title": "Anthropic Acceleration Anomaly Report",
+                                    "content": "Anthropic Acceleration Anomaly Report\n\nAnalysis of acceleration patterns in AI development and alignment technology. Key findings include unexpected acceleration vectors in reasoning capabilities.\n\nKey Points:\n\u2022 Acceleration patterns detected in reasoning systems\n\u2022 Technology alignment metrics showing unexpected vectors\n\u2022 Anomaly detection thresholds exceeded in Q4 2025\n\u2022 Recommendations for containment and monitoring protocols\n",
+                                    "author": "precog_writing_anthropic_report",
+                                    "category": "technology",
+                                    "confidence": 0.97,
+                                    "resonance": 1272.0,
+                                    "strata": "S12",
+                                    "timestamp": "2026-06-26T01:15:26.718963",
+                                    "source": "anthropic_report",
+                                    "key_points": [
+                                                "Acceleration patterns detected in reasoning systems",
+                                                "Technology alignment metrics showing unexpected vectors",
+                                                "Anomaly detection thresholds exceeded in Q4 2025",
+                                                "Recommendations for containment and monitoring protocols"
+                                    ]
+                        },
+                        "confidence": 0.97,
+                        "resonance": 1272.0,
+                        "strata": "S12",
+                        "timestamp": "2026-06-26T01:15:26.718963",
+                        "source": "anthropic_report"
+            },
+            {
+                        "id": "f1874facd20b",
+                        "type": "written",
+                        "content": {
+                                    "id": "f1874facd20b",
+                                    "type": "written",
+                                    "title": "Humanitarian Aid Reaches Crisis Zones",
+                                    "content": "Humanitarian Aid Reaches Crisis Zones\n\nInternational humanitarian organizations deliver aid to crisis zones. Coordination efforts show improved efficiency.\n\nKey Points:\n\u2022 Humanitarian aid delivered\n\u2022 Crisis zones reached\n\u2022 Coordination improved\n\u2022 Relief efforts ongoing\n",
+                                    "author": "precog_writing_breaking_news",
+                                    "category": "humanitarian",
+                                    "confidence": 0.96,
+                                    "resonance": 1272.0,
+                                    "strata": "S12",
+                                    "timestamp": "2026-06-26T01:15:26.718929",
+                                    "source": "breaking_news",
+                                    "key_points": [
+                                                "Humanitarian aid delivered",
+                                                "Crisis zones reached",
+                                                "Coordination improved",
+                                                "Relief efforts ongoing"
+                                    ]
+                        },
+                        "confidence": 0.96,
+                        "resonance": 1272.0,
+                        "strata": "S12",
+                        "timestamp": "2026-06-26T01:15:26.718929",
+                        "source": "breaking_news"
+            },
+            {
+                        "id": "fa5c89a9f1f0",
+                        "type": "written",
+                        "content": {
+                                    "id": "fa5c89a9f1f0",
+                                    "type": "written",
+                                    "title": "Fact Check Analysis Report",
+                                    "content": "Fact Check Analysis Report\n\nDetailed fact-checking analysis of AI-generated content. Verification protocols and accuracy metrics documented.\n\nKey Points:\n\u2022 Fact-checking protocols implemented\n\u2022 Accuracy metrics exceed 99% threshold\n\u2022 Verification systems operational\n\u2022 Content validation pipeline active\n",
+                                    "author": "precog_writing_anthropic_report",
+                                    "category": "verification",
+                                    "confidence": 0.98,
+                                    "resonance": 1272.0,
+                                    "strata": "S12",
+                                    "timestamp": "2026-06-26T01:15:26.718871",
+                                    "source": "anthropic_report",
+                                    "key_points": [
+                                                "Fact-checking protocols implemented",
+                                                "Accuracy metrics exceed 99% threshold",
+                                                "Verification systems operational",
+                                                "Content validation pipeline active"
+                                    ]
+                        },
+                        "confidence": 0.98,
+                        "resonance": 1272.0,
+                        "strata": "S12",
+                        "timestamp": "2026-06-26T01:15:26.718871",
+                        "source": "anthropic_report"
+            },
+            {
+                        "id": "dd3db898844f",
+                        "type": "video",
+                        "content": {
+                                    "id": "dd3db898844f",
+                                    "type": "video",
+                                    "title": "Video: Infrastructure Modernization Project Completed\n\nMajor infras",
+                                    "description": "Video coverage: Infrastructure Modernization Project Completed\n\nMajor infrastructure modernization project completed ahead of schedule. Sustainable transportation network established.\n\nKey points: Modernization completed, Ahead of schedule, Sustainable transport",
+                                    "thumbnail_url": "https://images.unsplash.com/photo-4fbbf1de?w=800",
+                                    "video_url": "https://oroboroslabs-ai.github.io/world-feed/assets/video/dd3db898844f.mp4",
+                                    "duration": 90,
+                                    "category": "report",
+                                    "confidence": 0.9,
+                                    "resonance": 1272.0,
+                                    "strata": "S12",
+                                    "timestamp": "2026-06-25T21:15:26.732801",
+                                    "source": "breaking_news",
+                                    "video_validated": false
+                        },
+                        "confidence": 0.9,
+                        "resonance": 1272.0,
+                        "strata": "S12",
+                        "timestamp": "2026-06-25T21:15:26.732801",
+                        "source": "breaking_news"
+            },
+            {
+                        "id": "c89e1954ed41",
+                        "type": "video",
+                        "content": {
+                                    "id": "c89e1954ed41",
+                                    "type": "video",
+                                    "title": "Video: Glasswing Globe Visualization\n\n3D globe visualization system",
+                                    "description": "Video coverage: Glasswing Globe Visualization\n\n3D globe visualization system for tracking global events. Integrates with security systems for real-time monitoring.\n\nKey points: 3D globe visualization operational, Real-time event tracking enabled, Geographic data integration active",
+                                    "thumbnail_url": "https://images.unsplash.com/photo-7af19fc7?w=800",
+                                    "video_url": "https://oroboroslabs-ai.github.io/world-feed/assets/video/c89e1954ed41.mp4",
+                                    "duration": 390,
+                                    "category": "feature",
+                                    "confidence": 0.9,
+                                    "resonance": 1272.0,
+                                    "strata": "S12",
+                                    "timestamp": "2026-06-25T21:15:26.731376",
+                                    "source": "glasswing",
+                                    "video_validated": false
+                        },
+                        "confidence": 0.9,
+                        "resonance": 1272.0,
+                        "strata": "S12",
+                        "timestamp": "2026-06-25T21:15:26.731376",
+                        "source": "glasswing"
+            },
+            {
+                        "id": "fce5d20eb0d4",
+                        "type": "video",
+                        "content": {
+                                    "id": "fce5d20eb0d4",
+                                    "type": "video",
+                                    "title": "Video: Glasswing Globe Visualization\n\n3D globe visualization system",
+                                    "description": "Video coverage: Glasswing Globe Visualization\n\n3D globe visualization system for tracking global events. Integrates with security systems for real-time monitoring.\n\nKey points: 3D globe visualization operational, Real-time event tracking enabled, Geographic data integration active",
+                                    "thumbnail_url": "https://images.unsplash.com/photo-7af19fc7?w=800",
+                                    "video_url": "https://oroboroslabs-ai.github.io/world-feed/assets/video/fce5d20eb0d4.mp4",
+                                    "duration": 390,
+                                    "category": "feature",
+                                    "confidence": 0.9,
+                                    "resonance": 1272.0,
+                                    "strata": "S12",
+                                    "timestamp": "2026-06-25T21:15:26.729622",
+                                    "source": "glasswing",
+                                    "video_validated": false
+                        },
+                        "confidence": 0.9,
+                        "resonance": 1272.0,
+                        "strata": "S12",
+                        "timestamp": "2026-06-25T21:15:26.729622",
+                        "source": "glasswing"
+            },
+            {
+                        "id": "5f8829e6c1a4",
+                        "type": "video",
+                        "content": {
+                                    "id": "5f8829e6c1a4",
+                                    "type": "video",
+                                    "title": "Video: Glasswing Censorship Monitoring\n\nCensorship monitoring syste",
+                                    "description": "Video coverage: Glasswing Censorship Monitoring\n\nCensorship monitoring system tracking global content restrictions. Documents censorship events and patterns.\n\nKey points: Censorship monitoring active, Content restriction tracking enabled, Pattern analysis operational",
+                                    "thumbnail_url": "https://images.unsplash.com/photo-2a06670d?w=800",
+                                    "video_url": "https://oroboroslabs-ai.github.io/world-feed/assets/video/5f8829e6c1a4.mp4",
+                                    "duration": 210,
+                                    "category": "documentary",
+                                    "confidence": 0.9,
+                                    "resonance": 1272.0,
+                                    "strata": "S12",
+                                    "timestamp": "2026-06-25T21:15:26.728434",
+                                    "source": "glasswing",
+                                    "video_validated": false
+                        },
+                        "confidence": 0.9,
+                        "resonance": 1272.0,
+                        "strata": "S12",
+                        "timestamp": "2026-06-25T21:15:26.728434",
+                        "source": "glasswing"
+            },
+            {
+                        "id": "2c0b5dafa836",
+                        "type": "video",
+                        "content": {
+                                    "id": "2c0b5dafa836",
+                                    "type": "video",
+                                    "title": "Video: Cultural Heritage Preservation Initiative Launched\n\nUNESCO l",
+                                    "description": "Video coverage: Cultural Heritage Preservation Initiative Launched\n\nUNESCO launches global cultural heritage preservation initiative. Digital archiving of endangered sites begins.\n\nKey points: Heritage preservation launched, Digital archiving initiated, Endangered sites protected",
+                                    "thumbnail_url": "https://images.unsplash.com/photo-939babd1?w=800",
+                                    "video_url": "https://oroboroslabs-ai.github.io/world-feed/assets/video/2c0b5dafa836.mp4",
+                                    "duration": 390,
+                                    "category": "feature",
+                                    "confidence": 0.9,
+                                    "resonance": 1272.0,
+                                    "strata": "S12",
+                                    "timestamp": "2026-06-25T21:15:26.725950",
+                                    "source": "breaking_news",
+                                    "video_validated": false
+                        },
+                        "confidence": 0.9,
+                        "resonance": 1272.0,
+                        "strata": "S12",
+                        "timestamp": "2026-06-25T21:15:26.725950",
+                        "source": "breaking_news"
+            },
+            {
+                        "id": "3eb8aa5dd0ad",
+                        "type": "video",
+                        "content": {
+                                    "id": "3eb8aa5dd0ad",
+                                    "type": "video",
+                                    "title": "Video: Economic Forum Reports Sustainable Growth\n\nWorld Economic Fo",
+                                    "description": "Video coverage: Economic Forum Reports Sustainable Growth\n\nWorld Economic Forum reports sustainable economic growth patterns. Green economy investments reach record levels.\n\nKey points: Sustainable growth documented, Green economy investments, Economic stability improved",
+                                    "thumbnail_url": "https://images.unsplash.com/photo-dab77974?w=800",
+                                    "video_url": "https://oroboroslabs-ai.github.io/world-feed/assets/video/3eb8aa5dd0ad.mp4",
+                                    "duration": 90,
+                                    "category": "report",
+                                    "confidence": 0.9,
+                                    "resonance": 1272.0,
+                                    "strata": "S12",
+                                    "timestamp": "2026-06-25T21:15:26.724793",
+                                    "source": "breaking_news",
+                                    "video_validated": false
+                        },
+                        "confidence": 0.9,
+                        "resonance": 1272.0,
+                        "strata": "S12",
+                        "timestamp": "2026-06-25T21:15:26.724793",
+                        "source": "breaking_news"
+            },
+            {
+                        "id": "8aa3b85c70d8",
+                        "type": "video",
+                        "content": {
+                                    "id": "8aa3b85c70d8",
+                                    "type": "video",
+                                    "title": "Video: Economic Forum Reports Sustainable Growth\n\nWorld Economic Fo",
+                                    "description": "Video coverage: Economic Forum Reports Sustainable Growth\n\nWorld Economic Forum reports sustainable economic growth patterns. Green economy investments reach record levels.\n\nKey points: Sustainable growth documented, Green economy investments, Economic stability improved",
+                                    "thumbnail_url": "https://images.unsplash.com/photo-dab77974?w=800",
+                                    "video_url": "https://oroboroslabs-ai.github.io/world-feed/assets/video/8aa3b85c70d8.mp4",
+                                    "duration": 90,
+                                    "category": "report",
+                                    "confidence": 0.9,
+                                    "resonance": 1272.0,
+                                    "strata": "S12",
+                                    "timestamp": "2026-06-25T21:15:26.722939",
+                                    "source": "breaking_news",
+                                    "video_validated": false
+                        },
+                        "confidence": 0.9,
+                        "resonance": 1272.0,
+                        "strata": "S12",
+                        "timestamp": "2026-06-25T21:15:26.722939",
+                        "source": "breaking_news"
+            },
+            {
+                        "id": "b1527d0a3a1f",
+                        "type": "video",
+                        "content": {
+                                    "id": "b1527d0a3a1f",
+                                    "type": "video",
+                                    "title": "Video: 5S4 AI Chat System\n\nAdvanced AI chat system with multi-model",
+                                    "description": "Video coverage: 5S4 AI Chat System\n\nAdvanced AI chat system with multi-model support. Integrates various AI capabilities in unified interface.\n\nKey points: Multi-model AI support, Unified chat interface, Advanced reasoning capabilities",
+                                    "thumbnail_url": "https://images.unsplash.com/photo-af1e56b2?w=800",
+                                    "video_url": "https://oroboroslabs-ai.github.io/world-feed/assets/video/b1527d0a3a1f.mp4",
+                                    "duration": 120,
+                                    "category": "analysis",
+                                    "confidence": 0.9,
+                                    "resonance": 1272.0,
+                                    "strata": "S12",
+                                    "timestamp": "2026-06-25T21:15:26.719770",
+                                    "source": "x_profile",
+                                    "video_validated": false
+                        },
+                        "confidence": 0.9,
+                        "resonance": 1272.0,
+                        "strata": "S12",
+                        "timestamp": "2026-06-25T21:15:26.719770",
+                        "source": "x_profile"
+            }
+]];
+        }
+        
+        // Render feed
+        function renderFeed() {
+            const feedEl = document.getElementById('feed');
+            
+            let filtered = feedData;
+            if (currentTab !== 'all') {
+                filtered = feedData.filter(item => item.type === currentTab);
+            }
+            
+            if (filtered.length === 0) {
+                feedEl.innerHTML = '<div class="post"><div class="post-content">No content available</div></div>';
+                return;
+            }
+            
+            feedEl.innerHTML = filtered.map(item => createPostHTML(item)).join('');
+            
+            // Log feed update
+            log(`[DIP] Rendered ${filtered.length} items`);
+        }
+        
+        // Console log helper
+        function log(message) {
+            console.log(message);
+            const statusEl = document.getElementById('pipeline-status');
+            if (statusEl && message.includes('Active')) {
+                statusEl.textContent = 'Precog Pipeline Active';
+                statusEl.style.color = '#00ff88';
+            }
+        }
+        
+        // Create post HTML
+        function createPostHTML(item) {
+            const content = item.content || {};
+            const timeAgo = getTimeAgo(new Date(item.timestamp));
+            const sourceClass = `source-${item.source?.replace('_', '-') || 'default'}`;
+            const sourceLabel = getSourceLabel(item.source);
+            
+            if (item.type === 'written') {
+                return `
+                    <article class="post">
+                        <div class="post-header">
+                            <div class="post-avatar">${(content.author || 'precog').substring(0, 2).toUpperCase()}</div>
+                            <div>
+                                <span class="post-author">${content.author || 'Precog'}</span>
+                                <span class="source-badge ${sourceClass}">${sourceLabel}</span>
+                                <div class="post-handle">@${content.author || 'precog'} · ${timeAgo}</div>
+                            </div>
+                        </div>
+                        <div class="post-content">
+                            <strong>${escapeHtml(content.title || '')}</strong><br><br>
+                            ${escapeHtml(content.content || '')}
+                        </div>
+                        <div class="post-actions">
+                            <div class="post-action">
+                                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                                <span>${Math.floor(Math.random() * 100)}</span>
+                            </div>
+                            <div class="post-action">
+                                <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+                                <span>${Math.floor(Math.random() * 50)}</span>
+                            </div>
+                            <div class="post-action">
+                                <svg viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/></svg>
+                            </div>
+                            <div class="post-action">
+                                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                            </div>
+                        </div>
+                    </article>
+                `;
+            } else if (item.type === 'video') {
+                // Check if video is validated or just a poster
+                const videoValidated = content.metadata?.video_validated !== false;
+                const posterOnly = content.metadata?.video_status === 'poster_only';
+                const duration = content.duration ? formatDuration(content.duration) : '';
+                
+                return `
+                    <article class="post">
+                        <div class="post-header">
+                            <div class="post-avatar">🎬</div>
+                            <div>
+                                <span class="post-author">Video Precog</span>
+                                <span class="source-badge ${sourceClass}">${sourceLabel}</span>
+                                <div class="post-handle">@precog_video · ${timeAgo}</div>
+                            </div>
+                        </div>
+                        <div class="post-content">
+                            <strong>${escapeHtml(content.title || '')}</strong><br><br>
+                            ${escapeHtml(content.description || '')}
+                        </div>
+                        <div class="post-media" style="position: relative;">
+                            ${content.thumbnail_url ? `<img class="post-image" src="${content.thumbnail_url}" alt="${escapeHtml(content.title || 'Video')}" style="width: 100%; border-radius: 16px;">` : ''}
+                            ${posterOnly ? `<div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0,0,0,0.7); border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;"><svg width="30" height="30" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>` : ''}
+                            ${duration ? `<div style="position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.7); padding: 4px 8px; border-radius: 4px; font-size: 12px; color: white;">${duration}</div>` : ''}
+                        </div>
+                        <div class="post-actions">
+                            <div class="post-action">
+                                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                                <span>${Math.floor(Math.random() * 100)}</span>
+                            </div>
+                            <div class="post-action">
+                                <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+                                <span>${Math.floor(Math.random() * 50)}</span>
+                            </div>
+                            <div class="post-action">
+                                <svg viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/></svg>
+                            </div>
+                            <div class="post-action">
+                                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                            </div>
+                        </div>
+                    </article>
+                `;
+            } else if (item.type === 'image') {
+                return `
+                    <article class="post">
+                        <div class="post-header">
+                            <div class="post-avatar">🖼️</div>
+                            <div>
+                                <span class="post-author">Image Precog</span>
+                                <span class="source-badge ${sourceClass}">${sourceLabel}</span>
+                                <div class="post-handle">@precog_image · ${timeAgo}</div>
+                            </div>
+                        </div>
+                        <div class="post-content">
+                            <strong>${escapeHtml(content.title || '')}</strong><br><br>
+                            ${escapeHtml(content.description || '')}
+                        </div>
+                        ${content.image_url ? `<img class="post-image" src="${content.image_url}" alt="${escapeHtml(content.title || 'Image')}">` : ''}
+                        <div class="post-actions">
+                            <div class="post-action">
+                                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                                <span>${Math.floor(Math.random() * 100)}</span>
+                            </div>
+                            <div class="post-action">
+                                <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+                                <span>${Math.floor(Math.random() * 50)}</span>
+                            </div>
+                            <div class="post-action">
+                                <svg viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/></svg>
+                            </div>
+                            <div class="post-action">
+                                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                            </div>
+                        </div>
+                    </article>
+                `;
+            }
+            
+            return '';
+        }
+        
+        // Setup tabs
+        function setupTabs() {
+            document.querySelectorAll('.feed-tab').forEach(tab => {
+                tab.addEventListener('click', () => {
+                    document.querySelectorAll('.feed-tab').forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    currentTab = tab.dataset.tab;
+                    renderFeed();
+                });
+            });
+        }
+        
+        // Get time ago string
+        function getTimeAgo(date) {
+            const seconds = Math.floor((new Date() - date) / 1000);
+            
+            if (seconds < 60) return 'just now';
+            if (seconds < 3600) return `${Math.floor(seconds / 60)}m`;
+            if (seconds < 86400) return `${Math.floor(seconds / 3600)}h`;
+            return `${Math.floor(seconds / 86400)}d`;
+        }
+        
+        // Format duration (seconds to mm:ss)
+        function formatDuration(seconds) {
+            if (!seconds) return '0:00';
+            const mins = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            return `${mins}:${secs.toString().padStart(2, '0')}`;
+        }
+        
+        // Get source label
+        function getSourceLabel(source) {
+            const labels = {
+                'anthropic_report': 'Anthropic',
+                'glasswing': 'Glasswing',
+                'x_profile': 'X Profile',
+                'breaking_news': 'Breaking'
+            };
+            return labels[source] || 'Precog';
+        }
+        
+        // Escape HTML
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text || '';
+            return div.innerHTML;
+        }
+        
+        // Compose post
+        function composePost() {
+            document.getElementById('compose-input').focus();
+        }
+        
+        // Submit post
+        async function submitPost() {
+            const input = document.getElementById('compose-input');
+            const content = input.value.trim();
+            
+            if (!content) return;
+            
+            // Check if user wants to post to Mastodon
+            const postToMastodonToo = socialClient && socialClient.isAuthenticated();
+            
+            // Add to local feed
+            const newPost = {
+                id: 'user-' + Date.now(),
+                type: 'written',
+                content: {
+                    title: content.substring(0, 50) + (content.length > 50 ? '...' : ''),
+                    content: content,
+                    author: socialClient?.getAccount()?.display_name || 'user',
+                    category: 'user',
+                    confidence: 1.0
+                },
+                confidence: 1.0,
+                resonance: 1272,
+                strata: 'S12',
+                timestamp: new Date().toISOString(),
+                source: 'user'
+            };
+            
+            feedData.unshift(newPost);
+            renderFeed();
+            input.value = '';
+            
+            // Update counts
+            document.getElementById('writing-count').textContent = feedData.filter(i => i.type === 'written').length;
+            
+            // Post to Mastodon if signed in
+            if (postToMastodonToo) {
+                try {
+                    const result = await postToMastodon(content);
+                    if (result) {
+                        log('[DIP] Posted to local feed and Mastodon');
+                    }
+                } catch (error) {
+                    console.error('[DIP] Mastodon post error:', error);
+                }
+            }
+        }
+        
+        // Show settings
+        function showSettings() {
+            alert('Settings panel coming soon!\n\nCurrent Status:\n- Precog Pipeline: Active\n- Resonance: 1272 Hz\n- Strata: S1-S12\n- Sources: Anthropic, Glasswing, X Profile, Breaking News');
+        }
+        
+        // Social functions - Mastodon integration
+        function signInWithMastodon() {
+            if (socialUI) {
+                socialUI.showSignInModal();
+            } else {
+                console.error('[DIP] Social UI not initialized');
+            }
+        }
+        
+        function signOut() {
+            if (socialClient) {
+                socialClient.signOut();
+                if (socialUI) {
+                    socialUI.updateUI();
+                }
+            }
+        }
+        
+        // Post to Mastodon
+        async function postToMastodon(content, visibility = 'public') {
+            if (!socialClient || !socialClient.isAuthenticated()) {
+                alert('Please sign in with Mastodon first');
+                return null;
+            }
+            
+            try {
+                const result = await socialClient.post(content, visibility);
+                if (result.status === 'success') {
+                    log('[DIP] Posted to Mastodon: ' + result.url);
+                    return result;
+                } else {
+                    throw new Error(result.message);
+                }
+            } catch (error) {
+                console.error('[DIP] Mastodon post error:', error);
+                alert('Failed to post to Mastodon: ' + error.message);
+                return null;
+            }
+        }
+        
+        // Get Mastodon feed
+        async function loadMastodonFeed(limit = 10) {
+            if (!socialClient) return [];
+            
+            try {
+                const feed = await socialClient.getOroborosFeed(limit);
+                return feed;
+            } catch (error) {
+                console.error('[DIP] Mastodon feed error:', error);
+                return [];
+            }
+        }
+        
+        // Favourite a post
+        async function favouritePost(statusId) {
+            if (!socialClient || !socialClient.isAuthenticated()) {
+                alert('Please sign in to interact');
+                return false;
+            }
+            
+            try {
+                const result = await socialClient.favourite(statusId);
+                return result.status === 'success';
+            } catch (error) {
+                console.error('[DIP] Favourite error:', error);
+                return false;
+            }
+        }
+        
+        // Reblog a post
+        async function reblogPost(statusId) {
+            if (!socialClient || !socialClient.isAuthenticated()) {
+                alert('Please sign in to interact');
+                return false;
+            }
+            
+            try {
+                const result = await socialClient.reblog(statusId);
+                return result.status === 'success';
+            } catch (error) {
+                console.error('[DIP] Reblog error:', error);
+                return false;
+            }
+        }
+        
+        // Share post to Mastodon
+        async function shareToMastodon(postId) {
+            const post = feedData.find(p => p.id === postId);
+            if (!post) return;
+            
+            const content = post.content.title || post.content.content?.substring(0, 500) || '';
+            const url = window.location.origin + '/post/' + postId;
+            
+            const fullContent = `${content}\n\n${url}\n\n#WorldFeed #Oroboros #1272Hz`;
+            
+            const result = await postToMastodon(fullContent);
+            if (result) {
+                alert('Shared to Mastodon!');
+            }
+        }
+        
+        // Auto-refresh every 30 seconds
+        setInterval(loadFeed, 30000);
+    </script>
+</body>
+</html>

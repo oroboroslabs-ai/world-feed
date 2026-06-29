@@ -1,0 +1,126 @@
+        :root {
+            --font-chirp: 'Twitter Chirp', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica Neue, Arial, sans-serif;
+        }
+        body {
+            background: #000 !important;
+            font-family: var(--font-chirp) !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        
+        .app-container {
+            display: grid !important;
+            max-width: 1300px !important;
+            grid-template-columns: 275px 640px 1fr !important;
+            gap: 0 !important;
+            margin: 0 auto !important;
+            min-height: 100vh !important;
+        }
+        
+        @media (max-width: 1195px) {
+            .app-container {
+                grid-template-columns: 275px 1fr !important;
+            }
+            .right-sidebar {
+                display: none !important;
+            }
+        }
+        
+        @media (max-width: 800px) {
+            .app-container {
+                grid-template-columns: 1fr !important;
+            }
+            .left-sidebar {
+                display: none !important;
+            }
+        }
+        
+        .left-sidebar {
+            min-width: 275px !important;
+            max-width: 275px !important;
+            padding-top: 20px !important;
+            border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+            position: sticky !important;
+            top: 0 !important;
+            height: 100vh !important;
+            overflow-y: auto !important;
+        }
+        
+        .nav-item {
+            font-size: 20px !important;
+            color: #ffffff !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 20px !important;
+            padding: 18px 16px !important;
+            position: relative !important;
+            font-weight: 400 !important;
+            text-decoration: none !important;
+            cursor: pointer !important;
+            border-radius: 9999px !important;
+            border: 1px solid transparent !important;
+            transition: all 0.2s ease !important;
+        }
+        
+        a.nav-item {
+            display: flex !important;
+            text-decoration: none !important;
+        }
+        
+        a.nav-item:hover {
+            background: rgba(255,255,255,0.03) !important;
+            border-color: rgba(255,255,255,0.1) !important;
+        }
+        
+        .nav-item.active {
+            background: transparent !important;
+            color: #ffffff !important;
+            font-weight: 400 !important;
+        }
+        
+        .nav-item svg {
+            flex-shrink: 0 !important;
+            width: 26px !important;
+            height: 26px !important;
+        }
+        
+        .post-btn {
+            background: linear-gradient(90deg, 
+                rgba(255,255,255,0.7) 0%, 
+                #ffffff 15%, 
+                #ffffff 85%, 
+                rgba(255,255,255,0.7) 100%) !important;
+            color: #000000 !important;
+            text-align: center !important;
+            font-weight: 400 !important;
+            border: none !important;
+            padding: 14px 0 !important;
+            margin: 20px 12px !important;
+            border-radius: 9999px !important;
+            font-size: 17px !important;
+            cursor: pointer !important;
+            display: block !important;
+            width: calc(100% - 24px) !important;
+            font-family: inherit !important;
+            transition: all 0.2s ease !important;
+        }
+        
+        .post-btn:hover {
+            background: #ffffff !important;
+            color: #000000 !important;
+        }
+        
+        .main-content {
+            max-width: 600px !important;
+            min-width: 600px !important;
+            border-right: 1px solid rgba(192, 192, 192, 0.3) !important;
+            background: transparent !important;
+        }
+        
+        .right-sidebar {
+            position: sticky !important;
+            top: 0 !important;
+            height: 100vh !important;
+            overflow-y: auto !important;
+            padding: 20px !important;
+        }

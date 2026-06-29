@@ -1,0 +1,8 @@
+# Dependencies for the Three-AI Engine
+# Add any required libraries for API calls, data processing, etc.
+requests
+pydantic
+tqdm
+flask>=2.0.0
+flask-cors>=3.0.0
+redis>=4.0.0

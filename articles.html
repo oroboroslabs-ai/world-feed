@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#000000">
+    <title>Articles — WorldFeed</title>
+    <meta name="description" content="Article feed of underreported news and humanitarian crises. Anti-algorithm news network.">
+    <link rel="icon" type="image/svg+xml" href="assets/img/cube-chat-logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Twitter+Chirp:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/worldfeed-layout.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=20260626d">
+</head>
+<body class="wf-body">
+<div class="wf-app">
+    <aside class="wf-nav" aria-label="Navigation">
+        <div class="wf-nav-logo" onclick="window.location='index.html'">
+            <svg width="32" height="32" viewBox="0 0 940 655" fill="white" aria-hidden="true">
+                <path d="m679 1.3l260 653.6h-142.5l-260-653.6zm-419.4-0.8h149.2l259.6 653.6h-145.2l-53.1-137.2h-271.8l-53.1 137.2h-145.2zm-14.5 394.9h178.1l-89-229.7z"/>
+            </svg>
+        </div>
+        <nav>
+            <a href="index.html" class="wf-nav-link"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="white" stroke-width="2"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg><span>Home</span></a>
+            <a href="explore.html" class="wf-nav-link"><svg viewBox="0 0 24 24" width="26" height="26" fill="white"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg><span>Explore</span></a>
+            <a href="videos.html" class="wf-nav-link"><svg viewBox="0 0 24 24" width="26" height="26" fill="white"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg><span>Videos</span></a>
+            <a href="articles.html" class="wf-nav-link active"><svg viewBox="0 0 24 24" width="26" height="26" fill="white"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg><span>Articles</span></a>
+            <a href="messages.html" class="wf-nav-link"><svg viewBox="0 0 24 24" width="26" height="26" fill="white"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg><span>Messages</span></a>
+            <a href="profile.html" class="wf-nav-link"><svg viewBox="0 0 24 24" width="26" height="26" fill="white"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg><span>Profile</span></a>
+            <a href="kaiju.html" class="wf-nav-link"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="white" stroke-width="1.5" style="filter: drop-shadow(0 0 6px rgba(255,255,255,0.5))"><circle cx="12" cy="12" r="3" fill="white"/><circle cx="12" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><circle cx="5" cy="12" r="2"/><circle cx="19" cy="12" r="2"/><line x1="12" y1="9" x2="12" y2="7"/><line x1="12" y1="17" x2="12" y2="15"/><line x1="9" y1="12" x2="7" y2="12"/><line x1="17" y1="12" x2="15" y2="12"/></svg><span>5S4</span><span class="wf-signal-dot"></span></a>
+        </nav>
+        <button class="wf-post-btn" onclick="document.getElementById('wf-submit-modal').classList.add('open')">Post</button>
+        <div class="wf-account-badge" onclick="document.getElementById('wf-login-modal').classList.add('open')" style="cursor:pointer;">
+            <div class="wf-account-avatar"><svg viewBox="0 0 24 24" width="20" height="20" fill="rgba(255,255,255,0.4)"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
+            <div class="wf-account-info"><div class="wf-account-name">Sign in</div><div class="wf-account-handle">@guest</div></div>
+        </div>
+        <div class="wf-nav-foot">No algorithm.<br>No tracking.<br>No shadowbans.<br><br><a href="docs/WORLD_FEED_SPEC.txt">Spec</a> · <a href="#">About</a> · <a href="LICENSE">MIT</a></div>
+    </aside>
+    <main class="wf-feed" id="main-content" role="main">
+        <header class="wf-feed-header">
+            <div class="wf-feed-title-row"><span class="wf-feed-title">Articles</span><span class="wf-live">live</span></div>
+            <div class="wf-search-wrap"><input class="wf-search" type="search" id="wf-search-input" placeholder="Search articles and reports" aria-label="Search"></div>
+            <div class="wf-filters" id="wf-filters">
+                <button class="wf-filter active" data-filter="latest">latest</button>
+                <button class="wf-filter" data-filter="verified">verified</button>
+                <button class="wf-filter" data-filter="investigation">investigation</button>
+                <button class="wf-filter" data-filter="analysis">analysis</button>
+            </div>
+        </header>
+        <div id="wf-feed"></div>
+        <div class="wf-loader" id="wf-loader">LOADING ARTICLE FEED</div>
+    </main>
+    <aside class="wf-rail" aria-label="Trending and links">
+        <div class="wf-rail-card" style="border-color: rgba(34,211,238,0.15);">
+            <h3>Featured Articles</h3>
+            <div class="wf-rail-item">Sudan: A year of forgotten war<div class="wf-rail-meta">investigation · verified</div></div>
+            <div class="wf-rail-item">Climate migration deepens<div class="wf-rail-meta">analysis · verified</div></div>
+            <div class="wf-rail-item">Food systems under strain<div class="wf-rail-meta">report · verified</div></div>
+        </div>
+        <div class="wf-rail-card">
+            <h3>Article Types</h3>
+            <div class="wf-rail-item">Investigations<div class="wf-rail-meta">deep-dive</div></div>
+            <div class="wf-rail-item">Field Reports<div class="wf-rail-meta">on-ground</div></div>
+            <div class="wf-rail-item">Analysis<div class="wf-rail-meta">expert</div></div>
+            <div class="wf-rail-item">Document Archives<div class="wf-rail-meta">primary</div></div>
+        </div>
+        <div class="wf-rail-card">
+            <h3>Promise</h3>
+            <div class="wf-principle"><span class="wf-principle-mark">+</span> Rank by verification, not engagement</div>
+            <div class="wf-principle"><span class="wf-principle-mark">+</span> Open source, self-hostable</div>
+            <div class="wf-principle"><span class="wf-principle-mark">+</span> Zero tracking, zero profiling</div>
+        </div>
+    </aside>
+</div>
+<a href="kaiju.html" class="wf-fab" title="5S4 AI" aria-label="Open 5S4 AI assistant"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></a>
+<div class="wf-modal-back" id="wf-submit-modal"><div class="wf-modal"><h2>+ Signal WorldFeed</h2><p>Anyone can submit. The 5-star verification system handles ranking.</p><label for="wf-post-type">Type</label><select id="wf-post-type"><option value="story" selected>Story / Article</option><option value="video">Video</option><option value="image">Image / Photo</option><option value="document">Document / PDF</option></select><label for="wf-post-title">Headline</label><input type="text" id="wf-post-title" placeholder="What is this about?" autocomplete="off"><label for="wf-post-body">Body</label><textarea id="wf-post-body" placeholder="Tell the story."></textarea><label for="wf-post-sources">Sources</label><textarea id="wf-post-sources" placeholder="https://example.com/source-1"></textarea><div class="wf-modal-actions"><button class="wf-btn-secondary" onclick="document.getElementById('wf-submit-modal').classList.remove('open')">Cancel</button><button class="wf-btn-primary" id="wf-confirm-submit">Broadcast</button></div></div></div>
+<div class="wf-modal-back" id="wf-login-modal"><div class="wf-modal" style="max-width:440px;"><h2>Sign in to WorldFeed</h2><p>Free account. Required to broadcast.</p><label for="wf-login-username">Username</label><input type="text" id="wf-login-username" placeholder="@yourhandle" autocomplete="username"><label for="wf-login-email">Email <span style="text-transform:none;letter-spacing:0;color:rgba(255,255,255,0.35);font-weight:400;font-size:13px;">— optional</span></label><input type="email" id="wf-login-email" placeholder="you@example.com" autocomplete="email"><div class="wf-modal-actions"><button class="wf-btn-secondary" onclick="document.getElementById('wf-login-modal').classList.remove('open')">Cancel</button><button class="wf-btn-primary" id="wf-confirm-login">Sign in</button></div></div></div>
+<script src="assets/js/main.js"></script>
+<script>document.addEventListener('DOMContentLoaded',function(){loadPrecogFeed('writing');});</script>
+</body>
+</html>

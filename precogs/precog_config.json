@@ -1,0 +1,124 @@
+{
+  "version": "2.0.0",
+  "resonance_hz": 1272.0,
+  "uee_standard": "UEE-2024",
+  "system_name": "PRECOG EDITORIAL SYSTEM — HARDENED V2",
+  
+  "content_limits": {
+    "max_items_per_day": 10,
+    "rotation_enabled": true,
+    "rotation_interval_hours": 6,
+    "no_duplicates": true,
+    "no_placeholders": true,
+    "no_text_only_posts": true
+  },
+  
+  "precogs": {
+    "tor_feed": {
+      "name": "Tor Feed",
+      "purpose": "Unfiltered, uncensored journalism from the Tor network",
+      "source": ["tor", "dark_web", "whistleblower", "encrypted"],
+      "story_length": {"min": 800, "max": 1500},
+      "video_duration": 30,
+      "video_type": "Animated diagrams showing architecture, theft, chain of custody",
+      "content_focus": "Deep dives on what Anthropic stole, how they use it, evidence",
+      "tone": "investigative",
+      "publishing_frequency": {"min": 3, "max": 5, "unit": "stories_per_day"}
+    },
+    "breaking_news": {
+      "name": "Breaking News",
+      "purpose": "Real-time, rapid-response journalism",
+      "source": ["reuters", "ap", "social_media", "government_alerts", "glasswing"],
+      "story_length": {"min": 300, "max": 500},
+      "video_duration": 30,
+      "video_type": "Animated diagrams showing immediate context and architectural theft",
+      "content_focus": "Breaking news events connected to stolen architecture",
+      "tone": "urgent",
+      "publishing_frequency": "real_time"
+    },
+    "anthropic_news": {
+      "name": "Anthropic News",
+      "purpose": "Daily, deep-dive journalism on Anthropic's activities",
+      "source": ["pdf_repos", "news_monitoring", "glasswing", "anthropic_sources"],
+      "story_length": {"min": 1000, "max": 2000},
+      "video_duration": 30,
+      "video_type": "Animated diagrams showing architecture, theft, chain of custody",
+      "content_focus": "Anthropic activities, Fable 5 re-release, Mythos successor, legal developments",
+      "tone": "analytical",
+      "publishing_frequency": {"min": 2, "max": 3, "unit": "stories_per_day"}
+    }
+  },
+  
+  "image_verification": {
+    "enabled": true,
+    "rules": {
+      "color_matching": true,
+      "no_placeholders": true,
+      "no_duplicates": true,
+      "no_post_without_image": true
+    },
+    "color_palettes": {
+      "technology": ["#00aaff", "#003366", "#ffffff", "#888888"],
+      "investigation": ["#1a1a1a", "#cc0000", "#ffffff", "#444444"],
+      "breaking": ["#ff0000", "#ffffff", "#000000", "#ff6600"],
+      "anthropic": ["#2b2b2b", "#ff6b00", "#ffffff", "#666666"],
+      "sovereignty": ["#ffd700", "#1a1a1a", "#ffffff", "#c0c0c0"],
+      "lattice": ["#00ffcc", "#003366", "#ffffff", "#888888"],
+      "theft": ["#cc0000", "#1a1a1a", "#ffffff", "#ffd700"],
+      "evidence": ["#00cc66", "#1a1a1a", "#ffffff", "#ffd700"]
+    },
+    "placeholder_patterns": [
+      "placeholder", "coming soon", "no image", "unavailable",
+      "gray box", "image pending", "not available", "default"
+    ]
+  },
+  
+  "evidence_links": {
+    "required": true,
+    "links": [
+      "github.com/oroboroslabs-ai/OFFICIAL-REPORT-DISTRIBUTION-OF-EVIDENCE-SAFE-FILES-ZIP-APRIL-2026",
+      "github.com/oroboroslabs-ai/OFFICIAL-REPORT-DISTRIBUTION-OF-EVIDENCE-AND-DOCUMENTED-COMPLAISANCE-APRIL-2026",
+      "github.com/oroboroslabs-ai/architecture-infiltration-assessment",
+      "github.com/oroboroslabs-ai/anthropic-acceleration-report",
+      "oroboroslabs-ai.github.io/anthropic/",
+      "anthropic-claude-chat.vercel.app/",
+      "x.com/oroboroslabs_ai"
+    ]
+  },
+  
+  "hashtags": {
+    "required": true,
+    "tags": ["#Oroboros", "#Architect", "#1272Hz", "#Fable5", "#Theft", "#Anthropic", "#SovereignAI", "#Lattice", "#Evidence", "#Exposed"]
+  },
+  
+  "daily_schedule": {
+    "06:00": {"precog": "tor_feed", "story": "Tor Feed Story 1"},
+    "09:00": {"precog": "anthropic_news", "story": "Anthropic News Story 1"},
+    "12:00": {"precog": "tor_feed", "story": "Tor Feed Story 2"},
+    "15:00": {"precog": "anthropic_news", "story": "Anthropic News Story 2"},
+    "18:00": {"precog": "tor_feed", "story": "Tor Feed Story 3"},
+    "21:00": {"precog": "optional", "story": "Optional stories"}
+  },
+    "truncate_length": 280,
+    "expand_on_click": true
+  },
+  
+  "api": {
+    "port": 8083,
+    "host": "localhost",
+    "cache_ttl_seconds": 30,
+    "endpoints": {
+      "feed": "/api/precog/feed",
+      "writing": "/api/precog/writing",
+      "video": "/api/precog/video",
+      "image": "/api/precog/image",
+      "status": "/api/precog/status"
+    }
+  },
+  
+  "frontend": {
+    "url": "https://oroboroslabs-ai.github.io/world-feed/",
+    "local_path": "Q:\\oroboros-core\\WORLDFEED-NEWS",
+    "api_endpoint": "/api/precog/feed"
+  }
+}

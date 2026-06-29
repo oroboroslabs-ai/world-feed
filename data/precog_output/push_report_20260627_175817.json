@@ -1,0 +1,222 @@
+{
+  "push_timestamp": "2026-06-27T17:58:17.367823",
+  "total_stories_pushed": 20,
+  "stories": [
+    {
+      "id": "tor_20260627_005841_0",
+      "title": "EXPOSED: Google stole Lattice Architecture from Whistleblowers",
+      "precog": "TOR_FEED",
+      "tier": 5,
+      "categories": [
+        "new",
+        "verified"
+      ]
+    },
+    {
+      "id": "tor_20260627_012619_0",
+      "title": "EXPOSED: OpenAI stole Sovereignty Framework from Whistleblowers",
+      "precog": "TOR_FEED",
+      "tier": 5,
+      "categories": [
+        "new",
+        "verified"
+      ]
+    },
+    {
+      "id": "tor_20260627_032431_0",
+      "title": "EXPOSED: Google stole Quantum Bridge from Open Source Projects",
+      "precog": "TOR_FEED",
+      "tier": 5,
+      "categories": [
+        "new",
+        "verified"
+      ]
+    },
+    {
+      "id": "tor_20260627_175810_0",
+      "title": "EXPOSED: Meta stole Lattice Architecture from Whistleblowers",
+      "precog": "TOR_FEED",
+      "tier": 5,
+      "categories": [
+        "new",
+        "verified"
+      ]
+    },
+    {
+      "id": "breaking_20260627_005842_0",
+      "title": "BREAKING: Whistleblower comes forward - exposes proprietary theft",
+      "precog": "BREAKING_NEWS",
+      "tier": 5,
+      "categories": [
+        "new",
+        "verified",
+        "breaking"
+      ]
+    },
+    {
+      "id": "breaking_20260627_005843_1",
+      "title": "BREAKING: Data breach exposed - exposes proprietary theft",
+      "precog": "BREAKING_NEWS",
+      "tier": 5,
+      "categories": [
+        "new",
+        "verified",
+        "breaking"
+      ]
+    },
+    {
+      "id": "breaking_20260627_005844_2",
+      "title": "BREAKING: Major tech acquisition announced - reveals chain of custody",
+      "precog": "BREAKING_NEWS",
+      "tier": 5,
+      "categories": [
+        "new",
+        "verified",
+        "breaking"
+      ]
+    },
+    {
+      "id": "breaking_20260627_012619_0",
+      "title": "BREAKING: Data breach exposed - implications for stolen architecture",
+      "precog": "BREAKING_NEWS",
+      "tier": 5,
+      "categories": [
+        "new",
+        "verified",
+        "breaking"
+      ]
+    },
+    {
+      "id": "breaking_20260627_012621_1",
+      "title": "BREAKING: New AI regulation proposed - reveals chain of custody",
+      "precog": "BREAKING_NEWS",
+      "tier": 5,
+      "categories": [
+        "new",
+        "verified",
+        "breaking"
+      ]
+    },
+    {
+      "id": "breaking_20260627_012623_2",
+      "title": "BREAKING: Major tech acquisition announced - demands immediate investigation",
+      "precog": "BREAKING_NEWS",
+      "tier": 5,
+      "categories": [
+        "new",
+        "verified",
+        "breaking"
+      ]
+    },
+    {
+      "id": "breaking_20260627_032431_0",
+      "title": "BREAKING: New AI regulation proposed - reveals chain of custody",
+      "precog": "BREAKING_NEWS",
+      "tier": 5,
+      "categories": [
+        "new",
+        "verified",
+        "breaking"
+      ]
+    },
+    {
+      "id": "breaking_20260627_032432_1",
+      "title": "BREAKING: Major tech acquisition announced - demands immediate investigation",
+      "precog": "BREAKING_NEWS",
+      "tier": 5,
+      "categories": [
+        "new",
+        "verified",
+        "breaking"
+      ]
+    },
+    {
+      "id": "breaking_20260627_032433_2",
+      "title": "BREAKING: Data breach exposed - demands immediate investigation",
+      "precog": "BREAKING_NEWS",
+      "tier": 5,
+      "categories": [
+        "new",
+        "verified",
+        "breaking"
+      ]
+    },
+    {
+      "id": "breaking_20260627_032434_3",
+      "title": "BREAKING: Whistleblower comes forward - implications for stolen architecture",
+      "precog": "BREAKING_NEWS",
+      "tier": 5,
+      "categories": [
+        "new",
+        "verified",
+        "breaking"
+      ]
+    },
+    {
+      "id": "breaking_20260627_175810_0",
+      "title": "BREAKING: Data breach exposed - demands immediate investigation",
+      "precog": "BREAKING_NEWS",
+      "tier": 5,
+      "categories": [
+        "new",
+        "verified",
+        "breaking"
+      ]
+    },
+    {
+      "id": "breaking_20260627_175811_1",
+      "title": "BREAKING: New AI regulation proposed - implications for stolen architecture",
+      "precog": "BREAKING_NEWS",
+      "tier": 5,
+      "categories": [
+        "new",
+        "verified",
+        "breaking"
+      ]
+    },
+    {
+      "id": "anthropic_20260627_005842_0",
+      "title": "DEEP DIVE: New Patent Filings - shows pattern of intellectual property theft",
+      "precog": "ANTHROPIC_NEWS",
+      "tier": 4,
+      "categories": [
+        "new",
+        "verified",
+        "docs"
+      ]
+    },
+    {
+      "id": "anthropic_20260627_012620_0",
+      "title": "DEEP DIVE: Fable 5 Re-release Strategy - reveals continued use of stolen components",
+      "precog": "ANTHROPIC_NEWS",
+      "tier": 4,
+      "categories": [
+        "new",
+        "verified",
+        "docs"
+      ]
+    },
+    {
+      "id": "anthropic_20260627_032431_0",
+      "title": "DEEP DIVE: Partnership Announcements - connects to original architecture theft",
+      "precog": "ANTHROPIC_NEWS",
+      "tier": 4,
+      "categories": [
+        "new",
+        "verified",
+        "docs"
+      ]
+    },
+    {
+      "id": "anthropic_20260627_175810_0",
+      "title": "DEEP DIVE: Legal Battle Developments - raises new legal and ethical questions",
+      "precog": "ANTHROPIC_NEWS",
+      "tier": 4,
+      "categories": [
+        "new",
+        "verified",
+        "docs"
+      ]
+    }
+  ]
+}
