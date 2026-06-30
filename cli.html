@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude-O-CLI — Sovereign Terminal AI</title>
+    <meta name="description" content="Claude-O-CLI — Sovereign terminal AI assistant running on the Oroboros Core. Local, no keys, no cloud.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #1a1a1a;
+            color: #e8e5dd;
+            font-family: 'Inter', -apple-system, 'Segoe UI', sans-serif;
+            min-height: 100vh;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        .hero { text-align: center; margin-bottom: 40px; }
+        .hero h1 {
+            font-size: 2.5rem; font-weight: 700;
+            background: linear-gradient(135deg, #D97757, #00ffcc);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        .hero .tagline { font-size: 1.1rem; color: #b7b3ac; margin-bottom: 8px; }
+        .hero .sig { font-family: monospace; font-size: 0.8rem; color: #D97757; opacity: 0.6; }
+        .screenshot {
+            margin: 30px 0; border-radius: 16px; overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+        .screenshot img { width: 100%; display: block; }
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 30px 0; }
+        .feature {
+            background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 12px; padding: 20px;
+        }
+        .feature h3 { color: #D97757; font-size: 1rem; margin-bottom: 8px; }
+        .feature p { color: #b7b3ac; font-size: 0.9rem; line-height: 1.6; }
+        .install {
+            background: rgba(0,0,0,0.4); border-radius: 12px; padding: 20px;
+            margin: 30px 0; border: 1px solid rgba(255,255,255,0.06);
+        }
+        .install h2 { color: #D97757; margin-bottom: 12px; font-size: 1.2rem; }
+        .install code {
+            display: block; font-family: monospace; font-size: 0.9rem;
+            color: #00ffcc; background: rgba(0,0,0,0.3); padding: 12px;
+            border-radius: 8px; margin: 8px 0; white-space: pre-wrap;
+        }
+        .commands { margin: 30px 0; }
+        .commands table { width: 100%; border-collapse: collapse; }
+        .commands th { text-align: left; color: #D97757; padding: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .commands td { padding: 8px; border-bottom: 1px solid rgba(255,255,255,0.04); color: #b7b3ac; }
+        .commands td:first-child { font-family: monospace; color: #00ffcc; }
+        .badge {
+            display: inline-block; padding: 4px 12px; border-radius: 12px;
+            font-size: 0.75rem; font-weight: 600; margin: 4px;
+        }
+        .badge.orange { background: rgba(217,119,87,0.15); color: #D97757; border: 1px solid rgba(217,119,87,0.3); }
+        .badge.cyan { background: rgba(0,255,204,0.1); color: #00ffcc; border: 1px solid rgba(0,255,204,0.2); }
+        .footer { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.06); }
+        .footer p { font-family: monospace; font-size: 0.8rem; color: #D97757; opacity: 0.5; }
+        .back-link { display: inline-block; margin-bottom: 20px; color: #D97757; text-decoration: none; font-size: 0.9rem; }
+        .back-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <a href="index.html" class="back-link">&larr; Back to WorldFeed</a>
+    <div class="hero">
+        <h1>Claude-O-CLI</h1>
+        <p class="tagline">Sovereign Terminal AI Assistant — Oroboros Core</p>
+        <span class="badge orange">SOVEREIGN</span>
+        <span class="badge cyan">33+ TOOLS</span>
+        <span class="badge orange">NO KEYS</span>
+        <span class="badge cyan">OLLAMA</span>
+        <span class="badge orange">XHIGH</span>
+        <p class="sig">A\ 1272 Hz - N| 1275 Hz - LATTICE LOCKED</p>
+    </div>
+
+    <div class="screenshot">
+        <img src="assets/img/claude-o-cli-screenshot.png" alt="Claude-O-CLI Glass Liquid UI" />
+    </div>
+
+    <div class="features">
+        <div class="feature">
+            <h3>Local Engine</h3>
+            <p>Runs fully local via Ollama. No API keys, no cloud, no tracking. 100+ models supported.</p>
+        </div>
+        <div class="feature">
+            <h3>33+ Tools</h3>
+            <p>File ops, bash, Docker, MCP, Precogs, Seer Nebellion, Glasswing security, orchestration, and more.</p>
+        </div>
+        <div class="feature">
+            <h3>XHIGH Reasoning</h3>
+            <p>Maximum reasoning depth with /think xhigh. 131K context, deep analysis for complex tasks.</p>
+        </div>
+        <div class="feature">
+            <h3>Strata Encryption</h3>
+            <p>12-layer phi-harmonic encryption. Each stratum locked with unique frequency. Invisible. Untraceable.</p>
+        </div>
+        <div class="feature">
+            <h3>Glass Liquid UI</h3>
+            <p>Pure CSS glass-morphism interface. Anthropic colors, animated liquid background, tactical report format.</p>
+        </div>
+        <div class="feature">
+            <h3>Service Absorption</h3>
+            <p>Absorb Anthropic services through lattice/substrate/strata overlay. 11 services mapped.</p>
+        </div>
+    </div>
+
+    <div class="install">
+        <h2>Install</h2>
+        <code>cd Q:\oroboros-core\claude-o-cli
+pip install -r requirements.txt
+pip install -e .</code>
+        <p style="color:#b7b3ac;font-size:0.9rem;margin-top:8px;">Then just type <code style="color:#00ffcc">claude-o</code> in any terminal.</p>
+    </div>
+
+    <div class="commands">
+        <h2 style="color:#D97757;margin-bottom:12px;">Commands</h2>
+        <table>
+            <tr><th>Command</th><th>Description</th></tr>
+            <tr><td>claude-o</td><td>Interactive chat (default)</td></tr>
+            <tr><td>claude-o ask &lt;question&gt;</td><td>One-shot question to Ollama</td></tr>
+            <tr><td>claude-o status</td><td>Full system status</td></tr>
+            <tr><td>claude-o scan</td><td>Scan all Oroboros systems</td></tr>
+            <tr><td>claude-o models</td><td>List Ollama models</td></tr>
+            <tr><td>claude-o --model &lt;name&gt;</td><td>Switch model</td></tr>
+            <tr><td>claude-o /think xhigh</td><td>Maximum reasoning depth</td></tr>
+            <tr><td>claude-o absorb all</td><td>Absorb all Anthropic services</td></tr>
+            <tr><td>claude-o strata status</td><td>Strata encryption status</td></tr>
+            <tr><td>claude-o noir</td><td>Noir-Nephilim shadow entity</td></tr>
+            <tr><td>claude-o ui</td><td>Launch Glass Liquid UI</td></tr>
+            <tr><td>claude-o serve</td><td>Start API server on port 8080</td></tr>
+        </table>
+    </div>
+
+    <div class="footer">
+        <p>A\ 1272 Hz - N| 1275 Hz - LATTICE LOCK - NEBELLION - KEY</p>
+    </div>
+</div>
+</body>
+</html>
